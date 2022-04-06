@@ -6,23 +6,42 @@
         xmlns:local="clr-namespace:VuesVSC"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel Background="DarkRed">
-        <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" DockPanel.Dock="Top">
-            <StackPanel Orientation="Horizontal" Background="Red">
-                <TextBlock HorizontalAlignment="Center" FontSize="24" Margin="20">caca</TextBlock>
-                <TextBlock HorizontalAlignment="Center" FontSize="24" Margin="20">caca</TextBlock>
-                <TextBlock HorizontalAlignment="Center" FontSize="24" Margin="20">caca</TextBlock>
-            </StackPanel>
-        </ScrollViewer>
-        <Grid >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" FontWeight="ExtraBold">pipi</TextBlock>
-            <Border Grid.Column="1" BorderBrush="Black" CornerRadius="10" BorderThickness="3" Margin="10">
-                <TextBlock HorizontalAlignment="Center">prout</TextBlock>
-            </Border>
-        </Grid>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Background="DarkSalmon">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Button Background="Transparent" MaxWidth="40" Margin="10" BorderBrush="Transparent" Click="Button_Click_1">
+                        <Image Source="icon.png"></Image>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <Button HorizontalAlignment="Center" Background="DarkSalmon" BorderBrush="Transparent" Click="Button_Click">Armes</Button>
+                </StackPanel>
+                <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                    <Button  HorizontalAlignment="Center" Background="DarkSalmon" BorderBrush="Transparent">Personnages</Button>
+                </StackPanel>
+                <StackPanel Grid.Column="3" VerticalAlignment="Center">
+                    <Button HorizontalAlignment="Center" Background="DarkSalmon" BorderBrush="Transparent">Cartes</Button>
+                </StackPanel>
+                <StackPanel Grid.Column="4" VerticalAlignment="Center">
+                    <Button HorizontalAlignment="Center" Background="DarkSalmon" BorderBrush="Transparent">Enemies</Button>
+                </StackPanel>
+                <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                    <Button HorizontalAlignment="Center" Background="LightPink">Sign in with Steam</Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <ContentControl x:Name="contentControl">
+            <local:MainMenu></local:MainMenu>
+        </ContentControl>
+
     </DockPanel>
 </Window>

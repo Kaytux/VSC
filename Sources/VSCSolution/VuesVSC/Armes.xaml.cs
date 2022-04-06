@@ -16,22 +16,13 @@ using System.Windows.Shapes;
 namespace VuesVSC
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Armes.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Armes : UserControl
     {
-        public MainWindow()
+        public Armes()
         {
             InitializeComponent();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new Armes();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new MainMenu();
         }
     }
 }
