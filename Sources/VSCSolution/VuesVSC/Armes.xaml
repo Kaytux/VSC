@@ -8,51 +8,24 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <DockPanel>
-            <ScrollViewer>
-                <StackPanel DockPanel.Dock="Left" Background="BlueViolet">
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                    <TextBlock Margin="16">Test</TextBlock>
-                </StackPanel>
-            </ScrollViewer>
-            <Rectangle Fill="Black" Width="3"></Rectangle>
             <StackPanel DockPanel.Dock="Top" Background="DarkOliveGreen">
-                <TextBlock Margin="10"> sous menu</TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Background="Transparent" BorderBrush="Transparent" Click="Button_Click">Armes Actives</Button>
+                    <Button Grid.Column="1" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_1">Armes Passsives</Button>
+                    <Button Grid.Column="2" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_2">Améliorations</Button>
+                    <Button Grid.Column="3" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_3">Récap</Button>
+                </Grid>
                 <Rectangle Height="3" Fill="Black"></Rectangle>
             </StackPanel>
-            <Grid Background="LightGray">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0">
-                    <TextBlock HorizontalAlignment="Center" Margin="10">Knife</TextBlock>
-                    <Image Source="Sprite-Knife.png" MaxWidth="40"></Image>
-                </StackPanel>
-                <StackPanel Grid.Column="1">
-                    <TextBlock HorizontalAlignment="Center" Margin="10">Magic Wand</TextBlock>
-                    <Image Source="Sprite-Magic_Wand.png" MaxWidth="40"></Image>
-                </StackPanel>
-                <StackPanel Grid.Column="2">
-                    <TextBlock HorizontalAlignment="Center" Margin="10">Whip</TextBlock>
-                    <Image Source="Sprite-Whip.png" MaxWidth="40"></Image>
-                </StackPanel>
-
-            </Grid>
+            <ContentControl x:Name="contentControl">
+                <local:ArmeActiveContol></local:ArmeActiveContol>
+            </ContentControl>
 
         </DockPanel>
     </Grid>

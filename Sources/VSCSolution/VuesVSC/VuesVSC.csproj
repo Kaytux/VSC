@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <None Remove="icon.png" />
+    <None Remove="Sprite-Bracer.png" />
+    <None Remove="Sprite-Empty_Tome.png" />
+    <None Remove="Sprite-Hollow_Heart.png" />
     <None Remove="Sprite-Knife.png" />
     <None Remove="Sprite-Magic_Wand.png" />
     <None Remove="Sprite-Whip.png" />
@@ -15,6 +18,15 @@
 
   <ItemGroup>
     <Content Include="icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprite-Bracer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprite-Empty_Tome.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprite-Hollow_Heart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Sprite-Knife.png">
