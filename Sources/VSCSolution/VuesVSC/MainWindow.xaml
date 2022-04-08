@@ -40,7 +40,7 @@
             </Grid>
         </StackPanel>
         <ContentControl x:Name="contentControl">
-            <local:MainMenu></local:MainMenu>
+            <local:UCMainPage></local:UCMainPage>
         </ContentControl>
 
     </DockPanel>

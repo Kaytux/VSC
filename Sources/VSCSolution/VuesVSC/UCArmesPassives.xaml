@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="VuesVSC.ArmePassiveControl"
+﻿<UserControl x:Class="VuesVSC.UCArmesPassives"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -32,7 +32,7 @@
         </ScrollViewer>
         <Rectangle Fill="Black" Width="3"></Rectangle>
         <ContentControl x:Name="contentControl">
-            <local:Passive1></local:Passive1>
+            <local:UCArmePassive></local:UCArmePassive>
         </ContentControl>
     </DockPanel>
 </UserControl>

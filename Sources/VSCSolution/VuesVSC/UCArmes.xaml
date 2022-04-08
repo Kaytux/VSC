@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="VuesVSC.Armes"
+﻿<UserControl x:Class="VuesVSC.UCArmes"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -24,7 +24,7 @@
                 <Rectangle Height="3" Fill="Black"></Rectangle>
             </StackPanel>
             <ContentControl x:Name="contentControl">
-                <local:ArmeActiveContol></local:ArmeActiveContol>
+                <local:UCArmesActives></local:UCArmesActives>
             </ContentControl>
 
         </DockPanel>

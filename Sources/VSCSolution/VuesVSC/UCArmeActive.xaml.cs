@@ -18,9 +18,9 @@ namespace VuesVSC
     /// <summary>
     /// Interaction logic for Passive2.xaml
     /// </summary>
-    public partial class Passive2 : UserControl
+    public partial class UCArmeActive : UserControl
     {
-        public Passive2()
+        public UCArmeActive()
         {
             InitializeComponent();
         }

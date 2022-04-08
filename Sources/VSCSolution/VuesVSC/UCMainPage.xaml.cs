@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace VuesVSC
 {
     /// <summary>
-    /// Interaction logic for ArmeActiveContol.xaml
+    /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class ArmeActiveContol : UserControl
+    public partial class UCMainPage : UserControl
     {
-        public ArmeActiveContol()
+        public UCMainPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new Active1();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new Active2();
         }
     }
 }
