@@ -14,15 +14,15 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1">
             <TextBlock HorizontalAlignment="Center" Margin="10">Bracer</TextBlock>
-            <Image Source="Sprite-Bracer.png" MaxWidth="40"></Image>
+            <Image Source="Images/Sprite-Bracer.png" MaxWidth="40"></Image>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock HorizontalAlignment="Center" Margin="10">Hollow Heart</TextBlock>
-            <Image Source="Sprite-Hollow_Heart.png" MaxWidth="40"></Image>
+            <Image Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40"></Image>
         </StackPanel>
         <StackPanel Grid.Column="0">
             <TextBlock HorizontalAlignment="Center" Margin="10">Empty Tome</TextBlock>
-            <Image Source="Sprite-Empty_Tome.png" MaxWidth="40"></Image>
+            <Image Source="Images/Sprite-Empty_Tome.png" MaxWidth="40"></Image>
         </StackPanel>
     </Grid>
 

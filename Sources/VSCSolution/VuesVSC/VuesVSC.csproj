@@ -17,25 +17,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="icon.png">
+    <Content Include="Images\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sprite-Bracer.png">
+    <Content Include="Images\Sprite-Bracer.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sprite-Empty_Tome.png">
+    <Content Include="Images\Sprite-Empty_Tome.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sprite-Hollow_Heart.png">
+    <Content Include="Images\Sprite-Hollow_Heart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sprite-Knife.png">
+    <Content Include="Images\Sprite-Knife.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sprite-Magic_Wand.png">
+    <Content Include="Images\Sprite-Magic_Wand.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sprite-Whip.png">
+    <Content Include="Images\Sprite-Whip.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -14,15 +14,15 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <TextBlock HorizontalAlignment="Center" Margin="10">Knife</TextBlock>
-                    <Image Source="Sprite-Knife.png" MaxWidth="40"></Image>
+                    <Image Source="Images/Sprite-Knife.png" MaxWidth="40"></Image>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBlock HorizontalAlignment="Center" Margin="10">Magic Wand</TextBlock>
-                    <Image Source="Sprite-Magic_Wand.png" MaxWidth="40"></Image>
+                    <Image Source="Images/Sprite-Magic_Wand.png" MaxWidth="40"></Image>
                 </StackPanel>
                 <StackPanel Grid.Column="2">
                     <TextBlock HorizontalAlignment="Center" Margin="10">Whip</TextBlock>
-                    <Image Source="Sprite-Whip.png" MaxWidth="40"></Image>
+                    <Image Source="Images/Sprite-Whip.png" MaxWidth="40"></Image>
                 </StackPanel>
             </Grid>
 </UserControl>
