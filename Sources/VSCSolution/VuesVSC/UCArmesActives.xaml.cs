@@ -27,12 +27,12 @@ namespace VuesVSC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new Active1();
+            contentControl.Content = new UCArmeActive();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new Active2();
+            contentControl.Content = new Active1();
         }
     }
 }

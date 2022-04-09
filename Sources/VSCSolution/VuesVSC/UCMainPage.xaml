@@ -13,8 +13,17 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock FontWeight="Bold" FontSize="24" Margin="8">A propos de Vampire Survivors Compagnon :</TextBlock>
-            <TextBlock Background="Transparent" Margin="8,20">
-                       okok
+            <TextBlock Background="Transparent" Margin="8,4" TextWrapping="Wrap">
+                L'idée de Vampire Survivors compagnon, est de pouvoir permettre aux joueurs d'accéder à une application regroupant chaque arme, améliorations et effets passifs de façon organisé et clair. Nous
+                souhaitons reprendre la philosophie des jeux de type Rogue-light comme Vampire Survivors, à savoir le theory-craft. Ce mouvement encourage les joueurs à imaginer, tester, et surtout optimiser leurs
+                stratégies. Chaque joueur peut avancer à son rythme mais nous aimons l'idée qu'il découvre le contenu et les possibilités par lui-même (contrairement aux aides comme celle de la page Fandom qui propose
+                directement les meilleurs solutions). Pour établir leurs différentes stratégies, nous mettrons à disposition les données du jeu pour que chaque étape du plan puisse être préparé et presque
+                mathématiquement (nous savons que les communautés de fans peuvent aller très loins dans cet objectif). <LineBreak/><LineBreak/>
+                Vampire Survivors est aussi très apprécié pour les succès qu'il offre aux joueurs. En effet, lors de réalisations de petits défis, le joueur est récompensé d'un succès. Ils sont nombreux et ne sont pas toujours
+                évidents à débloquer. L'application intégrerait donc une partie Succès, dans laquelle le joueur retrouverait les succès qu'il a réalisés. Nous y retrouverons des informations et des conseils afin d'obtenir les
+                succès manquants.<LineBreak/><LineBreak/>
+                Cette application est clairement orientée pour les joueurs de Vampire Survivors, qu'ils soient simples débutants, curieux ou aguérris. Elle propose un accompagnement, sans besoin de connexion internet,
+                pour l'expérience de jeu et l'établissement de stratégies, le tout personnalisable.
             </TextBlock>
         </StackPanel>
         <Border Grid.Column="1" BorderThickness="3" BorderBrush="Black" CornerRadius="10" Margin="25" Background="#FFA14B4B">
@@ -22,8 +31,15 @@
                 <TextBlock FontWeight="Bold" FontSize="24" Margin="5">
                         Patch Notes :
                 </TextBlock>
-                <TextBlock Background="Transparent" Margin="5,20">
-                        oui alors ok okok
+                <TextBlock Background="Transparent" Margin="5,10" TextWrapping="Wrap" >
+                    Contains 7 new achievements:<LineBreak/> 
+                    - 1 new stage, including new enemies and events <LineBreak/>
+                    - 1 new character <LineBreak/>
+                    - 1 new relic/gameplay option <LineBreak/>
+                    - 1 new weapon <LineBreak/>
+                    - 1 new evolution <LineBreak/>
+                    - 1 more Reroll <LineBreak/>
+                    - 1 more Banish 
                 </TextBlock>
             </StackPanel>
         </Border>

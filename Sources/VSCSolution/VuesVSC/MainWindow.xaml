@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VuesVSC"
         mc:Ignorable="d"
-        Title="Vampire Survivors Compagnon" Icon="Images/icon.png" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="Vampire Survivors Compagnon" Icon="Images/icon.png" Height="500" Width="800" MinHeight="500" MinWidth="800">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Top" Background="DarkSalmon">
+        <StackPanel DockPanel.Dock="Top" Background="#FF760606">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -23,19 +23,19 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                    <Button HorizontalAlignment="Center" Background="DarkSalmon" BorderBrush="Transparent" Click="Button_Click">Armes</Button>
+                    <Button HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Click">Armes</Button>
                 </StackPanel>
                 <StackPanel Grid.Column="2" VerticalAlignment="Center">
-                    <Button  HorizontalAlignment="Center" Background="DarkSalmon" BorderBrush="Transparent">Personnages</Button>
+                    <Button  HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent">Personnages</Button>
                 </StackPanel>
                 <StackPanel Grid.Column="3" VerticalAlignment="Center">
-                    <Button HorizontalAlignment="Center" Background="DarkSalmon" BorderBrush="Transparent">Cartes</Button>
+                    <Button HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent">Cartes</Button>
                 </StackPanel>
                 <StackPanel Grid.Column="4" VerticalAlignment="Center">
-                    <Button HorizontalAlignment="Center" Background="DarkSalmon" BorderBrush="Transparent">Enemies</Button>
+                    <Button HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent">Enemies</Button>
                 </StackPanel>
                 <StackPanel Grid.Column="5" VerticalAlignment="Center">
-                    <Button HorizontalAlignment="Center" Background="LightPink">Sign in with Steam</Button>
+                    <Button HorizontalAlignment="Center" Background="#FF57A838" Padding="10">Sign in with Steam</Button>
                 </StackPanel>
             </Grid>
         </StackPanel>

@@ -32,7 +32,7 @@ namespace VuesVSC
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCArmeActive();
+            contentControl.Content = new Passive1();
         }
     }
 }
