@@ -33,5 +33,10 @@ namespace VuesVSC
         {
             contentControl.Content = new UCMainPage();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            contentControl.Content = new UCPersonnages();
+        }
     }
 }
