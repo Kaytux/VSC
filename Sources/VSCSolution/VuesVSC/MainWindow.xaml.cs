@@ -38,5 +38,10 @@ namespace VuesVSC
         {
             contentControl.Content = new UCPersonnages();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            contentControl.Content = new UCProfil();
+        }
     }
 }
