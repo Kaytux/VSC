@@ -26,7 +26,7 @@ namespace VuesVSC
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCArmes();
+            contentControl.Content = new UCTypesArmes();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -36,7 +36,7 @@ namespace VuesVSC
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCPersonnages();
+            contentControl.Content = new UCListe();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -46,12 +46,12 @@ namespace VuesVSC
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCCartes();
+            contentControl.Content = new UCListe();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCEnnemies();
+            contentControl.Content = new UCListe();
         }
     }
 }

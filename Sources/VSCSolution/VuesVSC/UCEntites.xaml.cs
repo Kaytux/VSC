@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace VuesVSC
 {
     /// <summary>
-    /// Interaction logic for Passive2.xaml
+    /// Logique d'interaction pour UCPersonnages.xaml
     /// </summary>
-    public partial class UCArmeActive : UserControl
+    public partial class UCEntites : UserControl
     {
-        public UCArmeActive()
+        public UCEntites()
         {
             InitializeComponent();
         }

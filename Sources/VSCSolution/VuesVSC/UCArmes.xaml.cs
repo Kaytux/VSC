@@ -16,38 +16,13 @@ using System.Windows.Shapes;
 namespace VuesVSC
 {
     /// <summary>
-    /// Interaction logic for Armes.xaml
+    /// Interaction logic for Passive2.xaml
     /// </summary>
     public partial class UCArmes : UserControl
     {
         public UCArmes()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new UCArmesActives();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new UCArmesPassives();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void UCArmesActives_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
