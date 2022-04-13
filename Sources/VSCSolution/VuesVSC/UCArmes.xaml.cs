@@ -44,5 +44,10 @@ namespace VuesVSC
         {
 
         }
+
+        private void UCArmesActives_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
