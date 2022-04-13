@@ -42,7 +42,7 @@ namespace VuesVSC
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCListe();
+            contentControl.Content = new UCRecap();
         }
     }
 }

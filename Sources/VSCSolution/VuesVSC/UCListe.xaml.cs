@@ -30,11 +30,6 @@ namespace VuesVSC
             contentControl.Content = new UCArmes();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new UCRecap();
-        }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             contentControl.Content = new UCEntites();

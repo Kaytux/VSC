@@ -10,7 +10,6 @@
         <ScrollViewer>
             <StackPanel DockPanel.Dock="Left" Background="DarkRed">  
                 <Button Margin="16" Background="Transparent" BorderBrush="Transparent" Click="Button_Click">Armes Actives</Button>
-                <Button Margin="16" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_1" >Récapitulatif</Button>
                 <Button Margin="16" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_2">Entités</Button>
                 <Button Margin="16" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_3">Cartes</Button>
             </StackPanel>
