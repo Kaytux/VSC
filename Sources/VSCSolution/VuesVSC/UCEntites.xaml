@@ -10,7 +10,7 @@
     <DockPanel>
         <TextBox Height="80" Margin="10" DockPanel.Dock="Bottom">Notes sur le personnage</TextBox>
         <TextBlock DockPanel.Dock="Bottom" Margin="10" TextWrapping="Wrap" MinHeight="200"/>
-        <Image MaxWidth="100" Margin="10" Source="Images/icon.png" DockPanel.Dock="Top" HorizontalAlignment="Left"/>
+        <Image MaxWidth="100" Margin="10" Source="Images/icon.png" DockPanel.Dock="Left" HorizontalAlignment="Left"/>
         <TextBlock Margin="10" VerticalAlignment="Center">Nom perso 1</TextBlock>
     </DockPanel>
 </UserControl>
