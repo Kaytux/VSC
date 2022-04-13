@@ -44,8 +44,6 @@
                 <TextBlock Foreground="white" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
             </Grid>
         </StackPanel>
-        <StackPanel VerticalAlignment="Stretch" Margin="25">
-            <TextBox VerticalAlignment="Stretch">Notes : </TextBox>
-        </StackPanel>
+            <TextBox Height="80" Margin="20, 5" DockPanel.Dock="Bottom" VerticalAlignment="Stretch">Notes : </TextBox>
     </DockPanel>
 </UserControl>
