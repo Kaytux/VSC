@@ -7,38 +7,36 @@
         mc:Ignorable="d"
         Title="Vampire Survivors Compagnon" Icon="Images/icon.png" Height="500" Width="800" MinHeight="500" MinWidth="800">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Top" Background="#FF760606">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0">
-                    <Button Background="Transparent" MaxWidth="40" Margin="10" BorderBrush="Transparent" Click="Button_Click_1">
-                        <Image Source="Images/icon.png"></Image>
-                    </Button>
-                </StackPanel>
-                <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                    <Button HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Click">Armes</Button>
-                </StackPanel>
-                <StackPanel Grid.Column="2" VerticalAlignment="Center">
-                    <Button  HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_2">Personnages</Button>
-                </StackPanel>
-                <StackPanel Grid.Column="3" VerticalAlignment="Center">
-                    <Button HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent">Cartes</Button>
-                </StackPanel>
-                <StackPanel Grid.Column="4" VerticalAlignment="Center">
-                    <Button HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent">Enemies</Button>
-                </StackPanel>
-                <StackPanel Grid.Column="5" VerticalAlignment="Center">
-                    <Button HorizontalAlignment="Center" Background="#FF57A838" Padding="10" Click="Button_Click_3">Sign in with Steam</Button>
-                </StackPanel>
-            </Grid>
-        </StackPanel>
+        <Grid DockPanel.Dock="Top" Background="#FF760606">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Button Background="Transparent" MaxWidth="40" Margin="10" BorderBrush="Transparent" Click="Button_Click_1">
+                    <Image Source="Images/icon.png"></Image>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <Button HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Click">Armes</Button>
+            </StackPanel>
+            <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                <Button  HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_2">Personnages</Button>
+            </StackPanel>
+            <StackPanel Grid.Column="3" VerticalAlignment="Center">
+                <Button HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent">Cartes</Button>
+            </StackPanel>
+            <StackPanel Grid.Column="4" VerticalAlignment="Center">
+                <Button HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent">Enemies</Button>
+            </StackPanel>
+            <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                <Button HorizontalAlignment="Center" Background="#FF57A838" Padding="10" Click="Button_Click_3">Sign in with Steam</Button>
+            </StackPanel>
+        </Grid>
         <ContentControl x:Name="contentControl">
             <local:UCMainPage></local:UCMainPage>
         </ContentControl>

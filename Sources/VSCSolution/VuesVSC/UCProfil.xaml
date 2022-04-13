@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Right">
+        <StackPanel Margin="20" Width="250" DockPanel.Dock="Right">
             <TextBlock Text="Note :"/>
             <TextBlock Text="Test..."/>
             <TextBlock Text="Test..."/>
@@ -16,7 +16,7 @@
             <TextBlock Text="Test..."/>
             <TextBlock Text="Test..."/>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Right">
+        <StackPanel Margin="20" Width="250" DockPanel.Dock="Right">
             <TextBlock Text="Succes :"/>
             <TextBlock Text="Test..."/>
             <TextBlock Text="Test..."/>
@@ -25,9 +25,9 @@
             <TextBlock Text="Test..."/>
             <TextBlock Text="Test..."/>
         </StackPanel>
-        <Image DockPanel.Dock="Top" Source="Images/icon.png"/>
-        <TextBlock DockPanel.Dock="Top" Text="Nom_du_profil"/>
-        <StackPanel>
+        <Image Margin="40" MaxHeight="200" DockPanel.Dock="Top" Source="Images/icon.png"/>
+        <TextBlock Margin="20" DockPanel.Dock="Top" Text="Nom_du_profil"/>
+        <StackPanel Margin="20">
             <TextBlock Text="Stats 1"/>
             <TextBlock Text="Stats 2"/>
             <TextBlock Text="Stats 3"/>
