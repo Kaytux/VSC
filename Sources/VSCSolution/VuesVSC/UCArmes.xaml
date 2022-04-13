@@ -34,7 +34,7 @@
                 <TextBlock Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
                 <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
                 <TextBlock Foreground="White" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
-                <TextBlock Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">=</TextBlock>
+                <TextBlock Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24" Foreground="White">=</TextBlock>
                 <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
                 <TextBlock Foreground="white" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
         </Grid>

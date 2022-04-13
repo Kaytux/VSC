@@ -6,7 +6,106 @@
              xmlns:local="clr-namespace:VuesVSC"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+   <ScrollViewer>
+        <StackPanel Background="#373126">
+            <Grid Margin="25, 15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Foreground="white" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Armes Actives</TextBlock>
+                <TextBlock Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
+                <TextBlock Foreground="White" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Armes Passives</TextBlock>
+                <TextBlock Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24" Foreground="White">=</TextBlock>
+                <TextBlock Foreground="white" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Armes Améliorées</TextBlock>
+            </Grid>
+            <Rectangle Fill="White" Height="3"></Rectangle>
+            <Grid Margin="25, 15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="white" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
+                <TextBlock Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
+                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="White" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
+                <TextBlock Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24" Foreground="White">=</TextBlock>
+                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="white" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
+            </Grid>
+            <Grid Margin="25, 15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="white" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
+                <TextBlock Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
+                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="White" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
+                <TextBlock Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24" Foreground="White">=</TextBlock>
+                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="white" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
+            </Grid>
+            <Grid Margin="25, 15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="white" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
+                <TextBlock Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
+                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="White" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
+                <TextBlock Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24" Foreground="White">=</TextBlock>
+                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="white" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
+            </Grid>
+            <Grid Margin="25, 15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="white" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
+                <TextBlock Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
+                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="White" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
+                <TextBlock Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24" Foreground="White">=</TextBlock>
+                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
+                <TextBlock Foreground="white" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
