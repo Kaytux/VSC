@@ -6,7 +6,10 @@
              xmlns:local="clr-namespace:VuesVSC"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <DockPanel>
+        <TextBlock Margin="20" DockPanel.Dock="Top">Nom carte</TextBlock>
+        <TextBox Margin="20" MinHeight="100" DockPanel.Dock="Bottom">Notes pour la page:</TextBox>
+        <Image Margin="20" MaxWidth="400" DockPanel.Dock="Left" Source="Images/icon.png"/>
+        <TextBlock Margin="20" Background="Red">Texte</TextBlock>
+    </DockPanel>
 </UserControl>
