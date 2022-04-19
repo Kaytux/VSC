@@ -12,7 +12,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <TextBlock FontWeight="Bold" FontSize="24" Margin="8">A propos de Vampire Survivors Compagnon :</TextBlock>
+            <TextBlock FontWeight="Bold" FontSize="24" Margin="8" TextWrapping="Wrap">A propos de Vampire Survivors Compagnon :</TextBlock>
             <TextBlock Background="Transparent" Margin="8,4" TextWrapping="Wrap">
                 L'idée de Vampire Survivors compagnon, est de pouvoir permettre aux joueurs d'accéder à une application regroupant chaque arme, améliorations et effets passifs de façon organisé et clair. Nous
                 souhaitons reprendre la philosophie des jeux de type Rogue-light comme Vampire Survivors, à savoir le theory-craft. Ce mouvement encourage les joueurs à imaginer, tester, et surtout optimiser leurs

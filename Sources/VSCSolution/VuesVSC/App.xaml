@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:VuesVSC"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-                 
+        <FontFamily x:Key="FontVSC">pack://application:,,,/Fonts/#Courier New</FontFamily>         
     </Application.Resources>
 </Application>
