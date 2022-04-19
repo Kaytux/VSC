@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="icon.png" />
+    <None Remove="Images\introBG.png" />
     <None Remove="Images\Sprite-Bloody_Tear.png" />
     <None Remove="Sprite-Bracer.png" />
     <None Remove="Sprite-Empty_Tome.png" />
@@ -42,6 +43,10 @@
     <Content Include="Images\Sprite-Whip.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\introBG.png" />
   </ItemGroup>
 
 </Project>

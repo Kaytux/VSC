@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="Vampire Survivors Compagnon" Icon="Images/icon.png" Height="500" Width="800" MinHeight="500" MinWidth="800">
     <DockPanel>
-        <Grid DockPanel.Dock="Top" Background="#FF760606">
+        <DockPanel.Background>
+            <ImageBrush Stretch="UniformToFill" AlignmentY="Top" AlignmentX="Center" ImageSource="Images/introBG.png"/>
+        </DockPanel.Background>
+        <Grid DockPanel.Dock="Top" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
