@@ -24,10 +24,18 @@
             <Button Style="{StaticResource MenuButton}" Height="50" Margin="5" Padding="0" Click="Button_Click_1">
                 <Image Source="Images/icon.png"></Image>
             </Button>
-            <Button Grid.Column="1" Style="{StaticResource MenuButton}" Click="Button_Click">Armes</Button>
-            <Button Grid.Column="2" Style="{StaticResource MenuButton}" Click="Button_Click_2">Personnages</Button>
-            <Button Grid.Column="3" Style="{StaticResource MenuButton}" Click="Button_Click_4">Cartes</Button>
-            <Button Grid.Column="4" Style="{StaticResource MenuButton}" Click="Button_Click_5">Enemies</Button>
+            <Button Grid.Column="1" Style="{StaticResource MenuButton}" Click="Button_Click">
+                <TextBlock Style="{StaticResource MenuText}" Background="Transparent">Armes</TextBlock>
+            </Button>
+            <Button Grid.Column="2" Style="{StaticResource MenuButton}" Click="Button_Click_2">
+                <TextBlock Style="{StaticResource MenuText}" Background="Transparent">Personnages</TextBlock>
+            </Button>
+            <Button Grid.Column="3" Style="{StaticResource MenuButton}" Click="Button_Click_4">
+                <TextBlock Style="{StaticResource MenuText}" Background="Transparent">Cartes</TextBlock>
+            </Button>
+            <Button Grid.Column="4" Style="{StaticResource MenuButton}" Click="Button_Click_5">
+                <TextBlock Style="{StaticResource MenuText}" Background="Transparent">Enemies</TextBlock>
+            </Button>
             <Button Grid.Column="5" Style="{StaticResource MenuButton}" Click="Button_Click_3">
                 <ContentControl x:Name="contentControlConnexion">
                     <local:UCConnecte></local:UCConnecte>

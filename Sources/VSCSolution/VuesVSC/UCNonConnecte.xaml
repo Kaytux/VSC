@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:VuesVSC"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
-    <TextBlock HorizontalAlignment="Center" Background="#FF57A838" >Sign in with Steam</TextBlock>
+
+    <TextBlock Style="{StaticResource MenuText}" HorizontalAlignment="Center" Background="#FF57A838" >Sign in with Steam</TextBlock>
 
 </UserControl>
