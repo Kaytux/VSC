@@ -53,5 +53,10 @@ namespace VuesVSC
         {
             contentControl.Content = new UCListe();
         }
+
+        private void UCMainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

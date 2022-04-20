@@ -6,17 +6,10 @@
         xmlns:local="clr-namespace:VuesVSC"
         mc:Ignorable="d"
         Title="Vampire Survivors Compagnon" Icon="Images/icon.png" Height="500" Width="800" MinHeight="500" MinWidth="800">
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="FontFamily" Value="{StaticResource FontVSC}"/>
-        </Style>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource FontVSC}"/>
-        </Style>
-    </Window.Resources>
+    
     <DockPanel>
         <DockPanel.Background >
-            <ImageBrush Opacity="0.9" Stretch="UniformToFill" AlignmentY="Top" AlignmentX="Center" ImageSource="Images/introBG.png"/>
+            <ImageBrush Stretch="UniformToFill" AlignmentY="Top" AlignmentX="Center" ImageSource="Images/introBG.png"/>
         </DockPanel.Background>
         <Grid DockPanel.Dock="Top" >
             <Grid.ColumnDefinitions>
@@ -27,20 +20,15 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
-            <Button Background="Transparent" MaxWidth="40" Margin="10" BorderBrush="Transparent" Click="Button_Click_1">
+
+            <Button Style="{StaticResource MenuButton}" Height="50" Margin="5" Padding="0" Click="Button_Click_1">
                 <Image Source="Images/icon.png"></Image>
             </Button>
-            
-            <Button FontFamily="{StaticResource FontVSC}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Click">Armes</Button>
-            
-            <Button Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_2">Personnages</Button>
-            
-            <Button Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_4">Cartes</Button>
-            
-            <Button Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_5">Enemies</Button>
-    
-            <Button Grid.Column="5" VerticalAlignment="Center" Click="Button_Click_3"   Background="Transparent" BorderBrush="Transparent">
+            <Button Grid.Column="1" Style="{StaticResource MenuButton}" Click="Button_Click">Armes</Button>
+            <Button Grid.Column="2" Style="{StaticResource MenuButton}" Click="Button_Click_2">Personnages</Button>
+            <Button Grid.Column="3" Style="{StaticResource MenuButton}" Click="Button_Click_4">Cartes</Button>
+            <Button Grid.Column="4" Style="{StaticResource MenuButton}" Click="Button_Click_5">Enemies</Button>
+            <Button Grid.Column="5" Style="{StaticResource MenuButton}" Click="Button_Click_3">
                 <ContentControl x:Name="contentControlConnexion">
                     <local:UCConnecte></local:UCConnecte>
                 </ContentControl>
