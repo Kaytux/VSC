@@ -8,10 +8,16 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
         <ScrollViewer>
-            <StackPanel DockPanel.Dock="Left">  
-                <Button Margin="16" Background="Transparent" BorderBrush="Transparent" Click="Button_Click">Armes Actives</Button>
-                <Button Margin="16" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_2">Entités</Button>
-                <Button Margin="16" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_3">Cartes</Button>
+            <StackPanel DockPanel.Dock="Left" Background="{StaticResource GreyBackground}">
+                <Button Margin="16" Style="{StaticResource MenuButton}" Click="Button_Click">
+                    <TextBlock Style="{StaticResource MenuText}">Armes Actives</TextBlock>
+                </Button>
+                <Button Margin="16" Style="{StaticResource MenuButton}" Click="Button_Click_2">
+                    <TextBlock Style="{StaticResource MenuText}">Entités</TextBlock>
+                </Button>
+                <Button Margin="16" Style="{StaticResource MenuButton}" Click="Button_Click_3">
+                    <TextBlock Style="{StaticResource MenuText}">Cartes</TextBlock>
+                </Button>
             </StackPanel>
             
         </ScrollViewer>

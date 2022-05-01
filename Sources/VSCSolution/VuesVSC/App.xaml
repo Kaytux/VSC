@@ -5,7 +5,6 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <FontFamily x:Key="FontVSC">pack://application:,,,/Fonts/#Courier New</FontFamily>
-        
         <SolidColorBrush x:Key="GreyBackground" Color="LightGray" Opacity="0.2"/>
         
         <Style x:Key="MenuButton" TargetType="Button">
@@ -18,11 +17,18 @@
         
         <Style x:Key="MenuText" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="{StaticResource FontVSC}"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style>
         
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontFamily" Value="{StaticResource FontVSC}"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="Transparent"/>
@@ -36,6 +42,17 @@
             <Setter Property="Background" Value="{StaticResource GreyBackground}"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="{StaticResource FontVSC}"/>
+            <Setter Property="Background" Value="{StaticResource GreyBackground}"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
     </Application.Resources>
 </Application>

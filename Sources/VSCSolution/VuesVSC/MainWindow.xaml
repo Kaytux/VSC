@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VuesVSC"
         mc:Ignorable="d"
-        Title="Vampire Survivors Compagnon" Icon="Images/icon.png" Height="500" Width="800" MinHeight="500" MinWidth="800">
+        Title="Vampire Survivors Compagnon" Icon="Images/icon.png" WindowState="Maximized" Height="500" Width="800" MinHeight="500" MinWidth="850">
     
     <DockPanel>
         <DockPanel.Background >
             <ImageBrush Stretch="UniformToFill" AlignmentY="Top" AlignmentX="Center" ImageSource="Images/introBG.png"/>
         </DockPanel.Background>
-        <Grid DockPanel.Dock="Top" >
+        <Grid DockPanel.Dock="Top" Background="{StaticResource GreyBackground}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -21,20 +21,20 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Button Style="{StaticResource MenuButton}" Height="50" Margin="5" Padding="0" Click="Button_Click_1">
-                <Image Source="Images/icon.png"></Image>
+            <Button Style="{StaticResource MenuButton}" Margin="5" Padding="0" Click="Button_Click_1">
+                <Image MaxHeight="70" Source="Images/icon.png"></Image>
             </Button>
             <Button Grid.Column="1" Style="{StaticResource MenuButton}" Click="Button_Click">
-                <TextBlock Style="{StaticResource MenuText}" Background="Transparent">Armes</TextBlock>
+                <TextBlock Style="{StaticResource MenuText}">Armes</TextBlock>
             </Button>
             <Button Grid.Column="2" Style="{StaticResource MenuButton}" Click="Button_Click_2">
-                <TextBlock Style="{StaticResource MenuText}" Background="Transparent">Personnages</TextBlock>
+                <TextBlock Style="{StaticResource MenuText}">Personnages</TextBlock>
             </Button>
             <Button Grid.Column="3" Style="{StaticResource MenuButton}" Click="Button_Click_4">
-                <TextBlock Style="{StaticResource MenuText}" Background="Transparent">Cartes</TextBlock>
+                <TextBlock Style="{StaticResource MenuText}">Cartes</TextBlock>
             </Button>
             <Button Grid.Column="4" Style="{StaticResource MenuButton}" Click="Button_Click_5">
-                <TextBlock Style="{StaticResource MenuText}" Background="Transparent">Enemies</TextBlock>
+                <TextBlock Style="{StaticResource MenuText}">Enemies</TextBlock>
             </Button>
             <Button Grid.Column="5" Style="{StaticResource MenuButton}" Click="Button_Click_3">
                 <ContentControl x:Name="contentControlConnexion">

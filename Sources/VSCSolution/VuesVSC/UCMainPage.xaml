@@ -7,12 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel DockPanel.Dock="Top" >
-        <Border MaxWidth="250" DockPanel.Dock="Right" BorderThickness="3" BorderBrush="Black" CornerRadius="10" Margin="25" Background="#FFA14B4B">
+        <Border MaxWidth="250" DockPanel.Dock="Right" BorderThickness="3" BorderBrush="Black" CornerRadius="10" Margin="25" Background="{StaticResource GreyBackground}">
             <StackPanel>
-                <TextBlock FontWeight="Bold" FontSize="24">
+                <TextBlock Background="Transparent" FontWeight="Bold" FontSize="24">
                         Patch Notes :
                 </TextBlock>
-                <TextBlock TextWrapping="Wrap" >
+                <TextBlock Background="Transparent" TextWrapping="Wrap" >
                     Contains 7 new achievements:<LineBreak/> 
                     - 1 new stage, including new enemies and events <LineBreak/>
                     - 1 new character <LineBreak/>
