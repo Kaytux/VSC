@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:VuesVSC"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <DockPanel>
-            <StackPanel DockPanel.Dock="Top">
+    <DockPanel>
+        <Border BorderThickness="0,0,0,2" DockPanel.Dock="Top" BorderBrush="Black">
+            <StackPanel>
                 <Grid Background="{StaticResource GreyBackground}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
@@ -29,12 +29,12 @@
                         <TextBlock Style="{StaticResource MenuText}">Récap</TextBlock>
                     </Button>
                 </Grid>
-                <Rectangle Height="3" Fill="Black"></Rectangle>
             </StackPanel>
-            <ContentControl x:Name="contentControl">
-                <local:UCListe></local:UCListe>
-            </ContentControl>
+        </Border>
 
-        </DockPanel>
-    </Grid>
+        <ContentControl x:Name="contentControl">
+            <local:UCListe></local:UCListe>
+        </ContentControl>
+
+    </DockPanel>
 </UserControl>
