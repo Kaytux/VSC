@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VuesVSC"
         mc:Ignorable="d"
-        Title="Vampire Survivors Compagnon" Icon="Images/icon.png" WindowState="Maximized" Height="500" Width="800" MinHeight="500" MinWidth="850">
+        Title="Vampire Survivors Compagnon" Icon="Images/icon.png" WindowState="Maximized" Height="600" Width="800" MinHeight="600" MinWidth="800">
     
     <DockPanel>
         <DockPanel.Background >
@@ -13,9 +13,9 @@
         </DockPanel.Background>
         <Grid DockPanel.Dock="Top" Background="{StaticResource GreyBackground}">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="1.2*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>

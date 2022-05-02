@@ -42,7 +42,7 @@
                 <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
             <TextBlock Background="Transparent" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
         </Grid>
-        <TextBlock TextWrapping="Wrap" Margin="25">
+        <TextBlock Margin="25">
                 Le Whip est une arme dans Vampire Survivors. C'est l'arme de départ d'Antonio Belpaese. Il est débloqué par défaut, et peut être proposé au joueur dès le départ. Whip crée une barre oblique horizontale qui provient du torse du personnage.
         </TextBlock>
     </DockPanel>

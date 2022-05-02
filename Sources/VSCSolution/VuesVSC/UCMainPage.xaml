@@ -12,7 +12,7 @@
                 <TextBlock Background="Transparent" FontWeight="Bold" FontSize="24">
                         Patch Notes :
                 </TextBlock>
-                <TextBlock Background="Transparent" TextWrapping="Wrap" >
+                <TextBlock Background="Transparent">
                     Contains 7 new achievements:<LineBreak/> 
                     - 1 new stage, including new enemies and events <LineBreak/>
                     - 1 new character <LineBreak/>
@@ -25,9 +25,9 @@
             </StackPanel>
         </Border>
         
-        <TextBlock DockPanel.Dock="Top" FontWeight="Bold" FontSize="24" TextWrapping="Wrap">A propos de Vampire Survivors Compagnon :</TextBlock>
+        <TextBlock DockPanel.Dock="Top" FontWeight="Bold" FontSize="24" >A propos de Vampire Survivors Compagnon :</TextBlock>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <TextBlock TextWrapping="Wrap">
+            <TextBlock>
                 L'idée de Vampire Survivors compagnon, est de pouvoir permettre aux joueurs d'accéder à une application regroupant chaque arme, améliorations et effets passifs de façon organisé et clair. Nous
                 souhaitons reprendre la philosophie des jeux de type Rogue-light comme Vampire Survivors, à savoir le theory-craft. Ce mouvement encourage les joueurs à imaginer, tester, et surtout optimiser leurs
                 stratégies. Chaque joueur peut avancer à son rythme mais nous aimons l'idée qu'il découvre le contenu et les possibilités par lui-même (contrairement aux aides comme celle de la page Fandom qui propose

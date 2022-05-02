@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -41,6 +42,7 @@ namespace VuesVSC
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            SystemSounds.Hand.Play();
             contentControl.Content = new UCProfil();
         }
 
