@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32228.343
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliothequeClassesVSC", "BibliothequeClassesVSC\BibliothequeClassesVSC.csproj", "{5FA248D7-1D05-4051-807A-01AEB4E39AF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliothequeClassesVSC", "BibliothequeClassesVSC\BibliothequeClassesVSC.csproj", "{5FA248D7-1D05-4051-807A-01AEB4E39AF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VuesVSC", "VuesVSC\VuesVSC.csproj", "{67BF6207-D4D6-44B8-BD81-35157C4647EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VuesVSC", "VuesVSC\VuesVSC.csproj", "{67BF6207-D4D6-44B8-BD81-35157C4647EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppVSC", "ConsoleAppVSC\ConsoleAppVSC.csproj", "{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{67BF6207-D4D6-44B8-BD81-35157C4647EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67BF6207-D4D6-44B8-BD81-35157C4647EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67BF6207-D4D6-44B8-BD81-35157C4647EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
