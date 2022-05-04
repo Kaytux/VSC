@@ -8,11 +8,22 @@ namespace BibliothequeClassesVSC
 {
     public class Element
     {
-        public string Nom {  get; set; }
-
-        public Element(string nom)
+        public Element(string nom, string desc="N/A", string image="N/A")
         {
             Nom = nom;
+            Description = desc;
+            Image = image;
+        }
+
+        public string Nom { get; set; }
+
+        public string Description { get; set; }
+
+        public string Image { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Nom}{Description}";
         }
     }
 }
