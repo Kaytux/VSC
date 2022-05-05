@@ -29,7 +29,7 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// declaration de l'attribut Description avec son getter et setter
         /// </summary>
-        public string Description { get; set; }
+        public string Description { get; protected set; }
 
         /// <summary>
         /// declaration de l'attribut Image (chemin d'acces vers l'image) avec getter et setter
