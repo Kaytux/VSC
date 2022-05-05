@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    class Carte
+    public class Carte
     {
+        public List<Ennemie> LesEnnemies;
+
+        public List<ArmePassive> LesObjetsCaches;
+
+        public Carte(List<Ennemie> lesEnnemies, List<ArmePassive> lesObjetsCaches)
+        {
+            LesEnnemies = lesEnnemies;
+            LesObjetsCaches = lesObjetsCaches;
+        }
     }
 }
