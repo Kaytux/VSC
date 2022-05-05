@@ -8,6 +8,12 @@ namespace BibliothequeClassesVSC
 {
     public abstract class Element
     {
+        /// <summary>
+        /// constructeur de la classe abstraite Element
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="desc"></param>
+        /// <param name="image"></param>
         public Element(string nom, string desc="N/A", string image="N/A")
         {
             Nom = nom;
@@ -15,15 +21,19 @@ namespace BibliothequeClassesVSC
             Image = image;
         }
 
-        public string Nom { get; private set; }
+        /// <summary>
+        /// declaration de l'attribut Nom avec son getter et setter
+        /// </summary>
+        public string Nom { get; set; }
 
-        public string Description { get; private set; }
+        /// <summary>
+        /// declaration de l'attribut Description avec son getter et setter
+        /// </summary>
+        public string Description { get; set; }
 
-        public string Image { get; private set; }
-
-        public override string ToString()
-        {
-            return $"{Nom} {Description}";
-        }
+        /// <summary>
+        /// declaration de l'attribut Image (chemin d'acces vers l'image) avec getter et setter
+        /// </summary>
+        public string Image { get; set; }
     }
 }
