@@ -8,7 +8,7 @@ namespace BibliothequeClassesVSC
 {
     public class Ennemie : Entite
     {
-        public Ennemie(string nom, string desc = "N/A", string image = "N/A", Stat maxHealth = null, Stat moveSpeed = null) : base(nom, desc, image, maxHealth, moveSpeed)
+        public Ennemie(string nom, Stat maxHealth, Stat moveSpeed, List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, maxHealth, moveSpeed, particularite, desc, image)
         {
         }
     }

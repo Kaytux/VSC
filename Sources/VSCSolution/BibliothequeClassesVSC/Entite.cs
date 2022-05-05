@@ -8,7 +8,7 @@ namespace BibliothequeClassesVSC
 {
     public abstract class Entite : Element , IStatAffichable
     {
-        public Entite(string nom, string desc = "N/A", string image = "N/A", Stat maxHealth, Stat moveSpeed, List<Stat> particularite) : base(nom, desc, image)
+        public Entite(string nom, Stat maxHealth, Stat moveSpeed, List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
         {
             MaxHealth = maxHealth;
             MoveSpeed = moveSpeed;

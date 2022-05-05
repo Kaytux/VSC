@@ -8,7 +8,7 @@ namespace BibliothequeClassesVSC
 {
     public class Personnage : Entite
     {
-        public Personnage(string nom, string desc = "N/A", string image = "N/A", Stat maxHealth = null, Stat moveSpeed = null) : base(nom, desc, image, maxHealth, moveSpeed)
+        public Personnage(string nom, Stat maxHealth, Stat moveSpeed, List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, maxHealth, moveSpeed, particularite, desc, image)
         {
         }
 
@@ -26,5 +26,7 @@ namespace BibliothequeClassesVSC
         public Stat Curse;
         public Stat Magnet;
         public Stat Bonus;
+
+        
     }
 }
