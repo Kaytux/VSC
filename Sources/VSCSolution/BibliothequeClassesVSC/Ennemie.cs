@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    class Ennemie
+    public class Ennemie : Entite
     {
+        public Ennemie(string nom, string desc = "N/A", string image = "N/A", Stat maxHealth = null, Stat moveSpeed = null) : base(nom, desc, image, maxHealth, moveSpeed)
+        {
+        }
     }
 }
