@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    public class Element
+    public abstract class Element
     {
         public Element(string nom, string desc="N/A", string image="N/A")
         {
