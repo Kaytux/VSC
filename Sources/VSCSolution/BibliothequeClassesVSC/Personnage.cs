@@ -8,25 +8,24 @@ namespace BibliothequeClassesVSC
 {
     public class Personnage : Entite
     {
-        public Personnage(string nom, Stat maxHealth, Stat moveSpeed, List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, maxHealth, moveSpeed, particularite, desc, image)
+        public Personnage(string nom, List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
         {
-        }
+            stats.Add(new Stat(Stat.NomStat.Luck, 0));
+            stats.Add(new Stat(Stat.NomStat.Growth, 0));
+            stats.Add(new Stat(Stat.NomStat.Greed, 0));
+            stats.Add(new Stat(Stat.NomStat.Magnet, 0));
 
-        public Stat Recovery;
-        public Stat Armor;
-        public Stat Might;
-        public Stat Area;
-        public Stat Speed;
-        public Stat Duration;
-        public Stat Amount;
-        public Stat Cooldown;
-        public Stat Luck;
-        public Stat Growth;
-        public Stat Greed;
-        public Stat Curse;
-        public Stat Magnet;
-        public Stat Bonus;
-
-        
+            foreach (Stat stat in particularite)
+            {
+                for(int i = 0; i <stats.Count ; i++)
+                {
+                    if (stat.Equals(stats[i]))
+                    {
+                        stats[i] += stat;
+                        break;
+                    }
+                }
+            }
+        }        
     }
 }

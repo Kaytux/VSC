@@ -69,5 +69,27 @@ namespace BibliothequeClassesVSC
             Nom = nom;
             Valeur = valeur;
         }
+
+        public override string ToString()
+        {
+            return Nom.ToString() + " : " + Valeur;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || !(obj is Stat)) { return false; }
+            return this.Nom == ((Stat)obj).Nom;
+        }
+
+        public static Stat operator +(Stat a,Stat b)
+        {
+            a.Valeur += b.Valeur;
+            return a;
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
