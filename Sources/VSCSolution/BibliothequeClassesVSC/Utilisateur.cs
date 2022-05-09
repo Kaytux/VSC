@@ -35,13 +35,25 @@ namespace BibliothequeClassesVSC
 
         public void afficherNote(Element e)
         {
-            foreach (KeyValuePair < Element,string> kvp in this.Notes)
+            foreach (KeyValuePair < Element,string> kvp in Notes)
             {
                 if (kvp.Key == e)
                 {
                     Console.WriteLine("\n---\n");
                     Console.WriteLine("Element : " + kvp.Key.Nom + "\nNotes : " + kvp.Value); 
                     Console.WriteLine("\n---\n");
+                    break;
+                }
+            }
+        }
+
+        public void modifNote(Element e, string nouvelleNote)
+        {
+            foreach (KeyValuePair<Element, string> kvp in Notes)
+            {
+                if (kvp.Key == e)
+                {
+                    kvp.Value = nouvelleNote;
                     break;
                 }
             }
