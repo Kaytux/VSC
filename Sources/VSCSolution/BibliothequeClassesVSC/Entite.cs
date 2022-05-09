@@ -14,28 +14,27 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.MoveSpeed, 0));
         }
 
-        public List<Stat> stats=new List<Stat>();
+        public SortedSet<Stat> stats=new SortedSet<Stat>();
 
         protected void AjoutParticularite(List<Stat> particularite)
         {
             foreach (Stat stat in particularite)
             {
-                for (int i = 0; i < stats.Count; i++)
+                foreach(Stat stat2 in stats)
                 {
-                    if (stat.Equals(stats[i]))
+                    if (stat2.Equals(stat))
                     {
-                        stats[i] += stat;
+                        stat2.Valeur += stat.Valeur;
                         break;
                     }
                 }
             }
             this.AffichStats();
-
-            stats.Sort();
         }
 
         public void AffichStats() 
         {
+            Console.WriteLine("Statistiques de " + Nom+" :\n");
             foreach (Stat stat in stats)
             {                
                 Console.WriteLine(stat);

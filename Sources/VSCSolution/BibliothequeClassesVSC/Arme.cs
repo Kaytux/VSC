@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    public abstract class Arme: Element
+    public abstract class Arme: Element,IStatAffichable
     {
         /// <summary>
         /// constructeur de la classe abstraite  Arme
@@ -41,5 +41,7 @@ namespace BibliothequeClassesVSC
         {
             --this.Niveau;
         }
+
+        public void AffichStats() { }
     }
 }
