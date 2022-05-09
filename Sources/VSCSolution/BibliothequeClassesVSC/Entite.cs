@@ -8,18 +8,33 @@ namespace BibliothequeClassesVSC
 {
     public abstract class Entite : Element , IStatAffichable
     {
-        public Entite(string nom, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
+        public Entite(string nom, List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
         {
             stats.Add(new Stat(Stat.NomStat.MaxHealth, 0));
             stats.Add(new Stat(Stat.NomStat.MoveSpeed, 0));
         }
 
-        public List<Stat> stats=new List<Stat>();
+        protected List<Stat> stats=new List<Stat>();
+
+        protected void AjoutParticularite(List<Stat> particularite)
+        {
+            foreach (Stat stat in particularite)
+            {
+                for (int i = 0; i < stats.Count; i++)
+                {
+                    if (stat.Equals(stats[i]))
+                    {
+                        stats[i] += stat;
+                        break;
+                    }
+                }
+            }
+        }
 
         public void AffichStats() 
         {
             foreach (Stat stat in stats)
-            {
+            {                
                 Console.WriteLine(stat);
             }
         }

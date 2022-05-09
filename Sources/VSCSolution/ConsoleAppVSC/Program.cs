@@ -10,6 +10,7 @@ namespace ConsoleAppVSC
         {
             List<Stat> statFel = new List<Stat>();
             statFel.Add(new Stat(Stat.NomStat.MaxHealth, 40));
+            statFel.Add(new Stat(Stat.NomStat.MoveSpeed, -20));
             Personnage p1 = new Personnage("Félix Mielcarek", statFel);
             p1.AffichStats();
         }

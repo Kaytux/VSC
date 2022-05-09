@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Math;
 
 namespace BibliothequeClassesVSC
 {
@@ -72,7 +73,17 @@ namespace BibliothequeClassesVSC
 
         public override string ToString()
         {
-            return Nom.ToString() + " : " + Valeur;
+            string res = Nom.ToString() + " : ";
+            string val=Valeur.ToString();
+
+            if(Math.Sign(Valeur)==1) { val = "+" + Valeur.ToString(); }
+            if (Valeur == 0) { return res + "-"; }
+            switch (Nom)
+            {
+                case Stat.NomStat.MoveSpeed:
+                    return res+ val+" %";
+            }
+            return res+val;
         }
 
         public override bool Equals(object obj)

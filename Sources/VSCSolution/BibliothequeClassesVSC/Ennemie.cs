@@ -8,12 +8,9 @@ namespace BibliothequeClassesVSC
 {
     public class Ennemie : Entite
     {
-        public Ennemie(string nom,List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
+        public Ennemie(string nom, List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom,particularite, desc, image)
         {
-            foreach (Stat stat in particularite)
-            {
-
-            }
+            AjoutParticularite(particularite);
         }
     }
 }
