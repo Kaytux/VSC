@@ -3,6 +3,7 @@
 
     public partial class Stat
     {
+        // le byte correspond à l'ordre d'affichage des statistiques (plus il est bas, plus il est affiché en premier)
         public enum NomStat : byte
         {
             /// <summary>

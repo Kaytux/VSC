@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,8 +8,7 @@ using static System.Math;
 
 namespace BibliothequeClassesVSC
 {
-
-    public partial class Stat : IComparable<Stat>
+    public partial class Stat :IEquatable<Stat>, IComparable<Stat>,IComparable
     {
         /// <summary>
         /// Une stat possède sa valeur
@@ -41,66 +41,63 @@ namespace BibliothequeClassesVSC
             switch (Nom)
             {
                 case Stat.NomStat.MoveSpeed:
+                case Stat.NomStat.Luck:
                     return res+ val+" %";
             }
             return res+val;
         }
 
-        public override bool Equals(object obj)
+        public bool Equals([AllowNull] Stat other)
         {
-            if (obj == null || !(obj is Stat)) { return false; }
-            return this.Nom == ((Stat)obj).Nom;
+            return this.Nom.Equals(other.Nom);
         }
 
-        public static Stat operator +(Stat a,Stat b)
+        public override bool Equals(object obj)
         {
-            a.Valeur += b.Valeur;
-            return a;
+            if(ReferenceEquals(obj, null)) return false;
+            if(ReferenceEquals(obj, this)) return true;
+            if(obj.GetType() != this.GetType()) return false;
+            return Equals(obj as Stat);
         }
 
         public override int GetHashCode()
         {
-            throw new NotImplementedException();
+            return Nom.GetHashCode();
         }
 
-        public int CompareTo(Stat other)
+        public int CompareTo([AllowNull] Stat other)
         {
-            throw new NotImplementedException();
+            return ((int)Nom).CompareTo((int)(other.Nom));
         }
 
-        public static bool operator ==(Stat left, Stat right)
+        int IComparable.CompareTo(object obj)
         {
-            if (ReferenceEquals(left, null))
+            if(!(obj is Stat))
             {
-                return ReferenceEquals(right, null);
+                throw new ArgumentException("Argument is not a Stat", "obj");
             }
-
-            return left.Equals(right);
-        }
-
-        public static bool operator !=(Stat left, Stat right)
-        {
-            return !(left == right);
+            Stat otherstat=obj as Stat;
+            return this.CompareTo(otherstat);
         }
 
         public static bool operator <(Stat left, Stat right)
         {
-            return ReferenceEquals(left, null) ? !ReferenceEquals(right, null) : left.CompareTo(right) < 0;
+            return left.CompareTo(right) < 0;
         }
 
         public static bool operator <=(Stat left, Stat right)
         {
-            return ReferenceEquals(left, null) || left.CompareTo(right) <= 0;
+            return left.CompareTo(right) < 0;
         }
 
         public static bool operator >(Stat left, Stat right)
         {
-            return !ReferenceEquals(left, null) && left.CompareTo(right) > 0;
+            return left.CompareTo(right) < 0;
         }
 
         public static bool operator >=(Stat left, Stat right)
         {
-            return ReferenceEquals(left, null) ? ReferenceEquals(right, null) : left.CompareTo(right) >= 0;
+            return left.CompareTo(right) < 0;
         }
     }
 }

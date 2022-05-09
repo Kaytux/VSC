@@ -8,5 +8,6 @@ namespace BibliothequeClassesVSC
 {
     interface IStatAffichable
     {
+        public void AffichStats();
     }
 }
