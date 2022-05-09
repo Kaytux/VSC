@@ -18,6 +18,25 @@ namespace ConsoleAppVSC
             string descri = "Le dernier patch note est le meilleur que la Terre est jamais pu supportée !!!!!!!!!!!!!!!!!!!";
             Jeu j1 = new Jeu(descr, new Jeu.PatchNote(1,30,descri));
             Console.WriteLine(j1);
+       
+            Ennemie e = new Ennemie("Axel", statFel);
+            Ennemie e1 = new Ennemie("Felix", statFel);
+
+            List<Ennemie> lesE = new List<Ennemie>();
+            lesE.Add(e);
+            lesE.Add(e1);
+
+
+            ArmePassive a = new ArmePassive("spinach");
+            ArmePassive a1 = new ArmePassive("luckClover");
+
+            List<ArmePassive> objetCacher = new List<ArmePassive>();
+            objetCacher.Add(a);
+            objetCacher.Add(a1);
+
+            Carte c = new Carte(lesE, objetCacher);
+            c.affichArmePassive();
+            c.affichEnnemie();
         }
     }
 }

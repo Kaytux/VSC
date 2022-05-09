@@ -25,14 +25,21 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// declaration de l'attribut Amelioration avec son getter et setter
         /// </summary>
-        Amelioration Amelioration { get; set; }
+        public Amelioration Amelioration { get; set; }
 
         /// <summary>
         /// déclaration de la méthode AffichAmelioration qui permet l'affichage le nom de l'arme améliorée possible avec l'arme actuelle
         /// </summary>
-        public void AffichAmelioration()
+        public void AfficheArme()
         {
-            Console.WriteLine("Amelioration : " + this.Amelioration.Nom);
+            if (Amelioration != null)
+            {
+                Console.WriteLine("\n---\nNom : " + this.Nom + "\nDescription : " + this.Description + "\nImage : " + this.Image + "\nNiveau : " + this.Niveau + "\nAmélioration possible : " + this.Amelioration.Nom + "\n---\n");
+            }
+            else
+            {
+                Console.WriteLine("\n---\nNom : " + this.Nom + "\nDescription : " + this.Description + "\nImage : " + this.Image + "\nNiveau : " + this.Niveau + "\nAmélioration possible : N/A\n---\n");
+            }
         }
     }
 }
