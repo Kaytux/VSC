@@ -14,7 +14,7 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.MoveSpeed, 0));
         }
 
-        protected List<Stat> stats=new List<Stat>();
+        public List<Stat> stats=new List<Stat>();
 
         protected void AjoutParticularite(List<Stat> particularite)
         {
@@ -29,6 +29,9 @@ namespace BibliothequeClassesVSC
                     }
                 }
             }
+            this.AffichStats();
+
+            stats.Sort();
         }
 
         public void AffichStats() 
