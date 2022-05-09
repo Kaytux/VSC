@@ -18,8 +18,10 @@ namespace BibliothequeClassesVSC
         /// <param name="image"></param>
         /// <param name="niveau"></param>
         /// <param name="amelioration"></param>
-        public ArmeActive(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1) : base(nom, desc, image, niveau)
+        public ArmeActive(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1, Amelioration amelioration=null)
+            : base(nom, desc, image, niveau)
         {
+            Amelioration = amelioration;
         }
 
         /// <summary>
