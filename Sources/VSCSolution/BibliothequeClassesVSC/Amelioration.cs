@@ -17,8 +17,8 @@ namespace BibliothequeClassesVSC
         /// <param name="niveau"></param>
         /// <param name="active"></param>
         /// <param name="passive"></param>
-        public Amelioration(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1,ArmeActive active=null,ArmePassive passive=null)
-            : base(nom, desc, image, niveau) 
+        public Amelioration(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1, ArmeActive active = null, ArmePassive passive = null)
+            : base(nom, desc, image, niveau)
         {
             ArmeAct = active;
             ArmePass = passive;
@@ -27,7 +27,7 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// declaration de l'attribut ArmeAct (arme active necessaire à l'amélioration) avec son getter et setter
         /// </summary>
-        public ArmeActive ArmeAct{get;set;}
+        public ArmeActive ArmeAct { get; set; }
 
         /// <summary>
         /// declaration de l'attribut ArmePass (arme passive necessaire à l'amélioration) avec son getter et setter
@@ -37,10 +37,9 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// méthode d'affichage qui permet d'afficher les noms de l'arme active et de l'arme passive nécessaire pour l'amélioration
         /// </summary>
-        public void affichAmelioration()
+        public void afficheAmelioration()
         {
-            Console.WriteLine("Arme Active : "+this.ArmeAct.Nom);
-            Console.WriteLine("Arme Passive : " + this.ArmePass.Nom);
+            Console.WriteLine("\n---\nNom : " + this.Nom + "\nDescription : " + this.Description + "\nImage : "+this.Image + "\nNiveau : "+this.Niveau+ "\nArme Active nécessaire : "+this.ArmeAct.Nom + "\nArme Passive nécessaire : " + this.ArmePass.Nom + "\n---\n");
         }
     }
 }
