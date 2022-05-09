@@ -67,7 +67,7 @@ namespace BibliothequeClassesVSC
 
         public int CompareTo([AllowNull] Stat other)
         {
-            return ((int)Nom).CompareTo((int)(other.Nom));
+            return ((byte)Nom).CompareTo((byte)(other.Nom));
         }
 
         int IComparable.CompareTo(object obj)
