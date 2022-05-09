@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    public class Carte
+    public class Carte : Element
     {
         /// <summary>
         /// Une carte possède un attribut lesEnnemies qui correspond à une liste d'ennemie qui contient les ennemies présent dans la zone
@@ -23,7 +23,8 @@ namespace BibliothequeClassesVSC
         /// </summary>
         /// <param name="lesEnnemies">liste des ennemies présent dans la carte</param>
         /// <param name="lesObjetsCaches">liste des objets chachés dans la carte</param>
-        public Carte(List<Ennemie> lesEnnemies, List<ArmePassive> lesObjetsCaches)
+        public Carte(string nom,  List<Ennemie> lesEnnemies, List<ArmePassive> lesObjetsCaches, string desc="N/A")
+            :base(nom,desc)
         {
             LesEnnemies = lesEnnemies;
             LesObjetsCaches = lesObjetsCaches;

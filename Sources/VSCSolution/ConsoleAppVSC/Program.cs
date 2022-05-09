@@ -29,9 +29,18 @@ namespace ConsoleAppVSC
             objetCacher.Add(a);
             objetCacher.Add(a1);
 
-            Carte c = new Carte(lesE, objetCacher);
+            Carte c = new Carte("Map",lesE, objetCacher) ;
             c.affichArmePassive();
             c.affichEnnemie();
+
+            Console.WriteLine("\n---Test Utilisateur notes---\n");
+            Utilisateur Vincent = new Utilisateur("Vincou");
+
+            Vincent.ajouterNotes(a, "Cette arme est super");
+            Vincent.afficherNote(a);
+            Vincent.Notes.Add(c, "Cette map est super");
+            Vincent.afficherNotes();
+
         }
     }
 }
