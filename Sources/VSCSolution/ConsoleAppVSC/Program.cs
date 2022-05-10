@@ -30,42 +30,60 @@ namespace ConsoleAppVSC
 
             ArmeActive a1 = new ArmeActive("abcazeafv");
             ArmeActive a2 = new ArmeActive("abcazeafv");
-            List<Arme> objets = new List<Arme>();
-            objets.Add(new ArmePassive("abcazeafv"));
-            objets.Add(new ArmePassive("def"));
-            objets.Add(new ArmePassive("zae"));
-            objets.Add(new ArmePassive("sfgh"));
-            objets.Add(new ArmePassive("dnfgr"));
-            objets.Add(new ArmePassive("shrthzr"));
-            objets.Add(new ArmePassive("oimumy"));
-            objets.Add(new ArmePassive("xcvbfds"));
-            objets.Add(a1);
-            objets.Add(a2);
-            objets.Add(new ArmeActive("abcazeafv"));
-            objets.Add(new ArmeActive("abcazeafv"));
-            objets.Add(new ArmeActive("abcazeafv"));
+            List<Element> objets = new List<Element>();
+            objets = AjoutCollection(a1, a2);
+            objets = AjoutCollection(
+                a1,
+                a2,
+                new ArmePassive("oui"),
+                new ArmePassive("non"),
+                new ArmePassive("zae"),
+                new ArmePassive("sfgh"),
+                new ArmePassive("dnfgr"),
+                new ArmePassive("shrthzr"),
+                new ArmePassive("oimumy"),
+                new ArmePassive("xcvbfds"),
+                new ArmeActive("abcazeafv"),
+                new ArmeActive("abcazeafv"),
+                new ArmeActive("abcazeafv"));
 
+            Console.WriteLine("AFFICHAGE DE LA LISTE :\n");
+            AffichList(objets);
+            Console.WriteLine();
 
             // TESTS LINQ
 
             var listTrié = TriTailleNom(objets);
+
+            Console.WriteLine("TRI DE LA LISTE :\n");
             AffichList(listTrié);
-            Console.Write("\n");
+            Console.WriteLine();
+
             listTrié = TriNom(objets);
+
+            Console.WriteLine("AUTRE TRI DE LA LISTE :\n");
             AffichList(listTrié);
-            Console.Write("\n");
+            Console.WriteLine();
+
             var armesActives=objets.Where(a => a is ArmeActive);
+
+            Console.WriteLine("SELECTION DANS LA LISTE :\n");
             AffichList(armesActives);
+            Console.WriteLine();
+
             var armesPassives = objets.Where(a => a is ArmePassive);
+
+            Console.WriteLine("AUTRE SELECTION DANS LA LISTE :\n");
             AffichList(armesPassives);
+            Console.WriteLine();
 
             // TESTS COMPARER ELEMENT
 
-            Console.Write("\n");
+            Console.Write("TEST COMPARAISON ELEMENT");
             //doit afficher vrai
-            Console.WriteLine(a1 == a2);    //False
-            Console.WriteLine(a1.Equals(a2));   //False
-            Console.WriteLine(Element.FullEqComparer.Equals(a1, a2));   //True
+            Console.WriteLine("a1 == a2 : "+(a1 == a2));    //False
+            Console.WriteLine("a1.Equals(a2) : "+(a1.Equals(a2)));   //False
+            Console.WriteLine("Element.FullEqComparer.Equals(a1, a2) : "+(Element.FullEqComparer.Equals(a1, a2)));   //True
 
             /*Carte c = new Carte("Map",lesE, objetCacher) ;
             c.affichArmePassive();
@@ -91,6 +109,13 @@ namespace ConsoleAppVSC
         static IEnumerable<Element> TriTailleNom(IEnumerable<Element> liste) => liste.OrderBy(a => a.Nom.Length);
         static IEnumerable<Element> TriNom(IEnumerable<Element> liste) => liste.OrderBy(a => a.Nom);
 
+        // ATTENTION : écrase la liste de réception
+        static List<Element> AjoutCollection(params Element[] liste)
+        {
+            List<Element> list = new List<Element>();
+            list.AddRange(liste);
+            return list;
+        }
 
     }
 }
