@@ -1,6 +1,7 @@
 ﻿using BibliothequeClassesVSC;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleAppVSC
 {
@@ -8,7 +9,7 @@ namespace ConsoleAppVSC
     {
         static void Main(string[] args)
         {
-            List<Stat> statFel = new List<Stat>();
+            /*List<Stat> statFel = new List<Stat>();
             statFel.Add(new Stat(Stat.NomStat.MaxHealth, 40));
             statFel.Add(new Stat(Stat.NomStat.MoveSpeed, -20));
             Personnage p1 = new Personnage("Félix Mielcarek", statFel);
@@ -24,17 +25,49 @@ namespace ConsoleAppVSC
 
             List<Ennemie> lesE = new List<Ennemie>();
             lesE.Add(e);
-            lesE.Add(e1);
+            lesE.Add(e1);*/
 
 
-            ArmePassive a = new ArmePassive("spinach");
-            ArmePassive a1 = new ArmePassive("luckClover");
+            ArmeActive a1 = new ArmeActive("abcazeafv");
+            ArmeActive a2 = new ArmeActive("abcazeafv");
+            List<Arme> objets = new List<Arme>();
+            objets.Add(new ArmePassive("abcazeafv"));
+            objets.Add(new ArmePassive("def"));
+            objets.Add(new ArmePassive("zae"));
+            objets.Add(new ArmePassive("sfgh"));
+            objets.Add(new ArmePassive("dnfgr"));
+            objets.Add(new ArmePassive("shrthzr"));
+            objets.Add(new ArmePassive("oimumy"));
+            objets.Add(new ArmePassive("xcvbfds"));
+            objets.Add(a1);
+            objets.Add(a2);
+            objets.Add(new ArmeActive("abcazeafv"));
+            objets.Add(new ArmeActive("abcazeafv"));
+            objets.Add(new ArmeActive("abcazeafv"));
 
-            List<ArmePassive> objetCacher = new List<ArmePassive>();
-            objetCacher.Add(a);
-            objetCacher.Add(a1);
 
-            Carte c = new Carte("Map",lesE, objetCacher) ;
+            // TESTS LINQ
+
+            var listTrié = TriTailleNom(objets);
+            AffichList(listTrié);
+            Console.Write("\n");
+            listTrié = TriNom(objets);
+            AffichList(listTrié);
+            Console.Write("\n");
+            var armesActives=objets.Where(a => a is ArmeActive);
+            AffichList(armesActives);
+            var armesPassives = objets.Where(a => a is ArmePassive);
+            AffichList(armesPassives);
+
+            // TESTS COMPARER ELEMENT
+
+            Console.Write("\n");
+            //doit afficher vrai
+            Console.WriteLine(a1 == a2);    //False
+            Console.WriteLine(a1.Equals(a2));   //False
+            Console.WriteLine(Element.FullEqComparer.Equals(a1, a2));   //True
+
+            /*Carte c = new Carte("Map",lesE, objetCacher) ;
             c.affichArmePassive();
             c.affichEnnemie();
 
@@ -44,8 +77,20 @@ namespace ConsoleAppVSC
             Vincent.ajouterNotes(a, "Cette arme est super");
             Vincent.afficherNote(a);
             Vincent.Notes.Add(c, "Cette map est super");
-            Vincent.afficherNotes();
-
+            Vincent.afficherNotes();*/
         }
+
+        static void AffichList(IEnumerable<Element> liste)
+        {
+            foreach (Element ele in liste)
+            {
+                Console.WriteLine(ele.Nom.ToString());
+            }
+        }
+
+        static IEnumerable<Element> TriTailleNom(IEnumerable<Element> liste) => liste.OrderBy(a => a.Nom.Length);
+        static IEnumerable<Element> TriNom(IEnumerable<Element> liste) => liste.OrderBy(a => a.Nom);
+
+
     }
 }

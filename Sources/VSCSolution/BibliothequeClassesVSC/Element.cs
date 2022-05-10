@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    public abstract class Element
+    public abstract partial class Element
     {
         /// <summary>
         /// constructeur de la classe abstraite Element

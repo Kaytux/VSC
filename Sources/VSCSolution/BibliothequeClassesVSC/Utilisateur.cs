@@ -49,14 +49,14 @@ namespace BibliothequeClassesVSC
 
         public void modifNote(Element e, string nouvelleNote)
         {
-            foreach (KeyValuePair<Element, string> kvp in Notes)
+            /*foreach (KeyValuePair<Element, string> kvp in Notes)
             {
                 if (kvp.Key == e)
                 {
                     kvp.Value = nouvelleNote;
                     break;
                 }
-            }
+            }*/
         }
 
     }
