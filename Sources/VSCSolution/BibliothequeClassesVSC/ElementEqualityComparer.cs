@@ -33,7 +33,6 @@ namespace BibliothequeClassesVSC
                 return elementEqualityComparer;
             }
         }
-
         private static ElementEqualityComparer elementEqualityComparer = null;
     }
 }

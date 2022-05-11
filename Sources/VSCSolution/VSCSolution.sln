@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32421.90
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliothequeClassesVSC", "BibliothequeClassesVSC\BibliothequeClassesVSC.csproj", "{5FA248D7-1D05-4051-807A-01AEB4E39AF7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VuesVSC", "VuesVSC\VuesVSC.csproj", "{67BF6207-D4D6-44B8-BD81-35157C4647EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppVSC", "ConsoleAppVSC\ConsoleAppVSC.csproj", "{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppVSC", "ConsoleAppVSC\ConsoleAppVSC.csproj", "{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InitTests", "InitTests\InitTests.csproj", "{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
