@@ -77,14 +77,6 @@ namespace ConsoleAppVSC
             AffichList(armesPassives);
             Console.WriteLine();
 
-            // TESTS COMPARER ELEMENT
-
-            Console.Write("TEST COMPARAISON ELEMENT");
-            //doit afficher vrai
-            Console.WriteLine("a1 == a2 : "+(a1 == a2));    //False
-            Console.WriteLine("a1.Equals(a2) : "+(a1.Equals(a2)));   //False
-            Console.WriteLine("Element.FullEqComparer.Equals(a1, a2) : "+(Element.FullEqComparer.Equals(a1, a2)));   //True
-
             /*Carte c = new Carte("Map",lesE, objetCacher) ;
             c.affichArmePassive();
             c.affichEnnemie();

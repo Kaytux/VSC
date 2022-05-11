@@ -22,7 +22,7 @@ namespace BibliothequeClassesVSC
             {
                 foreach(Stat stat2 in stats)
                 {
-                    if (stat2.Equals(stat))
+                    if (Stat.FullEqComparer.Equals(stat,stat2))
                     {
                         stat2.Valeur += stat.Valeur;
                         break;

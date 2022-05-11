@@ -49,7 +49,7 @@ namespace BibliothequeClassesVSC
 
         public bool Equals([AllowNull] Stat other)
         {
-            return this.Nom.Equals(other.Nom);
+            return this.Nom.Equals(other.Nom) && this.Valeur.Equals(other.Valeur);
         }
 
         public override bool Equals(object obj)
