@@ -20,9 +20,7 @@ namespace InitTests
         {
             Stat stat = new Stat(Stat.NomStat.MaxHealth, 40);
 
-            string test = stat.ToString();
-
-            Assert.Equal("MaxHealth : +40", test);
+            Assert.Equal("MaxHealth : +40", stat.ToString());
         }
 
         [Fact]
@@ -30,6 +28,24 @@ namespace InitTests
         {
             Stat stat = new Stat(Stat.NomStat.MaxHealth, 40);
             Stat stat1 = new Stat(Stat.NomStat.MaxHealth, 40);
+            Stat stat2 = new Stat(Stat.NomStat.Amount, 40);
+            Stat stat3 = new Stat(Stat.NomStat.MaxHealth, 10);
+
+            Assert.True(stat.Equals(stat1));
+            Assert.False(stat.Equals(stat2));
+            Assert.False(stat.Equals(stat3));
+        }
+
+        [Fact]
+        public void TestCompareTo()
+        {
+            Stat stat = new Stat(Stat.NomStat.MaxHealth, 40);
+            Stat stat1 = new Stat(Stat.NomStat.MaxHealth, 10);
+            Stat stat2 = new Stat(Stat.NomStat.Cooldown, 20);
+
+            Assert.Equal(0, stat.CompareTo(stat1));
+            Assert.True(stat.CompareTo(stat2) < 0);
+            Assert.True(stat2.CompareTo(stat) > 0);
         }
     }
 }
