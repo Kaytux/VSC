@@ -19,20 +19,22 @@ namespace BibliothequeClassesVSC
 
         public struct PatchNote
         {
-            public PatchNote(byte num1,byte num2,string description)
+            public PatchNote(byte num1,byte num2,byte num3,string description)
             {
                 Num1 = num1;
                 Num2 = num2;
+                Num3 = num3;
                 Description = description;
             }
             
             public byte Num1 { get; private set; }
             public byte Num2 { get; private set; }
+            public byte Num3 { get; private set; }
             public string Description { get; private set; }
 
             public override string ToString()
             {
-                return "\n\nPatch notes " + Num1 + "." + Num2 + " :\n\n" + Description;
+                return "\n\nPatch notes " + Num1 + "." + Num2 + Num3 + " :\n\n" + Description;
             }
         }
 

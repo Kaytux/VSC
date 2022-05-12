@@ -9,105 +9,88 @@ namespace ConsoleAppVSC
     {
         static void Main(string[] args)
         {
-            /*List<Stat> statFel = new List<Stat>();
-            statFel.Add(new Stat(Stat.NomStat.MaxHealth, 40));
-            statFel.Add(new Stat(Stat.NomStat.MoveSpeed, -20));
-            Personnage p1 = new Personnage("Félix Mielcarek", statFel);
-            p1.AffichStats();
+            Utilisateur u1 = new Utilisateur("Axlr");
+            
+            Jeu j1 = new Jeu(
+                "Vampire Survivors est un Rogue Light.",
+                new Jeu.PatchNote(0,5,2,"De nombreux changements sont apparus."));
+            
+            HashSet<ArmePassive> ap1 = new HashSet<ArmePassive>();
+            HashSet<ArmeActive> aa1 = new HashSet<ArmeActive>();
+            HashSet<Amelioration> am1 = new HashSet<Amelioration>();
+            HashSet<Personnage> p1 = new HashSet<Personnage>();
+            HashSet<Ennemie> e1 = new HashSet<Ennemie>();
+            HashSet<Carte> c1 = new HashSet<Carte>();
 
-            string descr = "Vampire Survivors est le meilleur jeu du monde";
-            string descri = "Le dernier patch note est le meilleur que la Terre est jamais pu supportée !!!!!!!!!!!!!!!!!!!";
-            Jeu j1 = new Jeu(descr, new Jeu.PatchNote(1,30,descri));
-            Console.WriteLine(j1);
-       
-            Ennemie e = new Ennemie("Axel", statFel);
-            Ennemie e1 = new Ennemie("Felix", statFel);
+            AjoutCollection(ap1,
+                new ArmePassive("Passive 3"),
+                new ArmePassive("Passive 1"),
+                new ArmePassive("Passive 2")
+                );
 
-            List<Ennemie> lesE = new List<Ennemie>();
-            lesE.Add(e);
-            lesE.Add(e1);*/
+            AjoutCollection(aa1,
+                new ArmeActive("Active 3"),
+                new ArmeActive("Active 1"),
+                new ArmeActive("Active 2")
+                );
 
+            AjoutCollection(am1,
+                new Amelioration("Amelioration 3"),
+                new Amelioration("Amelioration 1"),
+                new Amelioration("Amelioration 2")
+                );
 
-            ArmeActive a1 = new ArmeActive("abcazeafv");
-            ArmeActive a2 = new ArmeActive("abcazeafv");
-            List<Element> objets = new List<Element>();
-            objets = AjoutCollection(a1, a2);
-            objets = AjoutCollection(
-                a1,
-                a2,
-                new ArmePassive("oui"),
-                new ArmePassive("non"),
-                new ArmePassive("zae"),
-                new ArmePassive("sfgh"),
-                new ArmePassive("dnfgr"),
-                new ArmePassive("shrthzr"),
-                new ArmePassive("oimumy"),
-                new ArmePassive("xcvbfds"),
-                new ArmeActive("abcazeafv"),
-                new ArmeActive("abcazeafv"),
-                new ArmeActive("abcazeafv"));
+            AjoutCollection(p1,
+                new Personnage("Personnage 3",ConstructionParticularite(new Stat(Stat.NomStat.Armor,20),new Stat(Stat.NomStat.Duration,-20))),
+                new Personnage("Personnage 1", ConstructionParticularite(new Stat(Stat.NomStat.Armor, 20), new Stat(Stat.NomStat.Duration, -20))),
+                new Personnage("Personnage 2", ConstructionParticularite(new Stat(Stat.NomStat.Armor, 20), new Stat(Stat.NomStat.Duration, -20)))
+                );
 
-            Console.WriteLine("AFFICHAGE DE LA LISTE :\n");
-            AffichList(objets);
-            Console.WriteLine();
+            AjoutCollection(e1,
+                new Ennemie("Ennemie 3", ConstructionParticularite(new Stat(Stat.NomStat.Armor, 20), new Stat(Stat.NomStat.Duration, -20))),
+                new Ennemie("Ennemie 1", ConstructionParticularite(new Stat(Stat.NomStat.Armor, 20), new Stat(Stat.NomStat.Duration, -20))),
+                new Ennemie("Ennemie 2", ConstructionParticularite(new Stat(Stat.NomStat.Armor, 20), new Stat(Stat.NomStat.Duration, -20)))
+                );
 
-            // TESTS LINQ
+            AjoutCollection(c1,
+                new Carte("Carte 3", e1.Where(a => a.Nom.Equals("Ennemie 1")).ToList(), ap1.Where(a => a.Nom.Equals("Passive 1")).ToList()),
+                new Carte("Carte 1", e1.Where(a => a.Nom.Equals("Ennemie 1")).ToList(), ap1.Where(a => a.Nom.Equals("Passive 1")).ToList()),
+                new Carte("Carte 2", e1.Where(a => a.Nom.Equals("Ennemie 1")).ToList(), ap1.Where(a => a.Nom.Equals("Passive 1")).ToList())
+                );
 
-            var listTrié = TriTailleNom(objets);
+            AffichList(ap1);
+            AffichList(aa1);
+            AffichList(am1);
+            AffichList(p1);
+            AffichList(e1);
+            AffichList(c1);
 
-            Console.WriteLine("TRI DE LA LISTE :\n");
-            AffichList(listTrié);
-            Console.WriteLine();
-
-            listTrié = TriNom(objets);
-
-            Console.WriteLine("AUTRE TRI DE LA LISTE :\n");
-            AffichList(listTrié);
-            Console.WriteLine();
-
-            var armesActives=objets.Where(a => a is ArmeActive);
-
-            Console.WriteLine("SELECTION DANS LA LISTE :\n");
-            AffichList(armesActives);
-            Console.WriteLine();
-
-            var armesPassives = objets.Where(a => a is ArmePassive);
-
-            Console.WriteLine("AUTRE SELECTION DANS LA LISTE :\n");
-            AffichList(armesPassives);
-            Console.WriteLine();
-
-            /*Carte c = new Carte("Map",lesE, objetCacher) ;
-            c.affichArmePassive();
-            c.affichEnnemie();
-
-            Console.WriteLine("\n---Test Utilisateur notes---\n");
-            Utilisateur Vincent = new Utilisateur("Vincou");
-
-            Vincent.ajouterNotes(a, "Cette arme est super");
-            Vincent.afficherNote(a);
-            Vincent.Notes.Add(c, "Cette map est super");
-            Vincent.afficherNotes();*/
+            ap1 = TriNom(ap1);
+            AffichList(ap1);
         }
-
         static void AffichList(IEnumerable<Element> liste)
         {
             foreach (Element ele in liste)
             {
-                Console.WriteLine(ele.Nom.ToString());
+                Console.WriteLine(ele.Nom);
             }
         }
 
-        static IEnumerable<Element> TriTailleNom(IEnumerable<Element> liste) => liste.OrderBy(a => a.Nom.Length);
-        static IEnumerable<Element> TriNom(IEnumerable<Element> liste) => liste.OrderBy(a => a.Nom);
-
-        // ATTENTION : écrase la liste de réception
-        static List<Element> AjoutCollection(params Element[] liste)
+        static HashSet<T> TriNom<T>(HashSet<T> liste) where T : Element
         {
-            List<Element> list = new List<Element>();
-            list.AddRange(liste);
-            return list;
+            var res=liste.OrderBy(a => a.Nom);
+            return res.ToHashSet();
         }
 
+        static void AjoutCollection<T>(HashSet<T> list, params T[] liste) where T : Element
+        {
+            list.UnionWith(liste);
+        }
+        static List<Stat> ConstructionParticularite(params Stat[] liste)
+        {
+            List<Stat> res = new List<Stat>();
+            res.AddRange(liste);
+            return res;
+        }
     }
 }

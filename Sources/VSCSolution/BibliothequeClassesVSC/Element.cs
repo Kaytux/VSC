@@ -52,7 +52,7 @@ namespace BibliothequeClassesVSC
 
         public override int GetHashCode()
         {
-            throw new NotImplementedException();
+            return Nom.GetHashCode();
         }
     }
 }
