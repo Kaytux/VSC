@@ -42,7 +42,7 @@ namespace BibliothequeClassesVSC
             {
                 case Stat.NomStat.MoveSpeed:
                 case Stat.NomStat.Luck:
-                    return res+ val+" %";
+                    return res+ val+"%";
             }
             return res+val;
         }
