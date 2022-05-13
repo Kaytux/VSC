@@ -3,17 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-//using SteamWebAPI2.Interfaces;
-//using SteamWebAPI2.Utilities;
-//using SteamworksSharp;
-//using SteamworksSharp.Native;
-//using System.Threading.Tasks;
+using SteamWebAPI2.Interfaces;
+using SteamWebAPI2.Utilities;
+using SteamworksSharp;
+using SteamworksSharp.Native;
+using System.Threading.Tasks;
 
 namespace ConsoleAppVSC
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Utilisateur u1 = new Utilisateur("Axlr");
 
@@ -77,9 +77,9 @@ namespace ConsoleAppVSC
 
             //// STEAM API
 
-            // ulong userId = InitializeSteam();
+            ulong userId = InitializeSteam();
 
-            /*
+            
             
             // Web API (différente)
 
@@ -103,8 +103,8 @@ namespace ConsoleAppVSC
             }
 
             
-            // News 
-            
+            // News (en test)
+            /*
             var steamNewsInterface = webInterfaceFactory.CreateSteamWebInterface<SteamNews>(new System.Net.Http.HttpClient());
             var news = await steamNewsInterface.GetNewsForAppAsync(1794680);
             
@@ -113,8 +113,8 @@ namespace ConsoleAppVSC
             Console.WriteLine(resNews.Current.Title);
             Console.WriteLine("\n"+resNews.Current.Contents+"\n");
             Console.WriteLine(resNews.Current.Author);
-            
             */
+            
         }
         static void AffichList(IEnumerable<Element> liste)
         {
@@ -141,10 +141,8 @@ namespace ConsoleAppVSC
             return res;
         }
 
-        static void InitializeSteam()
-        {
-            /*
-             
+        static ulong InitializeSteam()
+        { 
             // Native API 
 
             // Lancer steam
@@ -164,10 +162,8 @@ namespace ConsoleAppVSC
             Console.WriteLine($"Logged in as: {userName}"); // on écrit le nom de l'utilisateur
 
             var userId = SteamApi.SteamUser.GetSteamID(); // on récupère l'identifiant de l'utilisateur
-            
-            return userId
 
-             */
+            return userId;
         }
     }
 }
