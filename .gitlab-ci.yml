@@ -2,15 +2,15 @@ image: mcr.microsoft.com/dotnet/sdk:5.0
 
 before_script:
     - cd ./Sources/VSCSolution
-    - dotnet restore
+    - dotnet restore VSCSolution-CI.sln
 
 build:
     stage: build
     tags:
         - docker
     script :
-        - dotnet build -c Release --no-restore
-        - dotnet publish -c Release --no-restore -o $CI_PROJECT_DIR/build/release
+        - dotnet build VSCSolution-CI.sln -c Release --no-restore
+        - dotnet publish VSCSolution-CI.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release
     artifacts:
         paths:
             - $CI_PROJECT_DIR/build/release
@@ -20,4 +20,4 @@ test:
     tags:
         - docker 
     script:
-        dotnet test --no-restore
+        dotnet test VSCSolution-CI.sln --no-restore
