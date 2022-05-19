@@ -8,13 +8,16 @@ namespace BibliothequeClassesVSC
 {
     public class Utilisateur
     {
-        public Utilisateur(string nom)
+        public Utilisateur(string nom, ulong id)
         {
             Nom = nom;
+            Id = id;
             Notes = new Dictionary<Element, string>();
         }
 
         public string Nom{get;set;}
+
+        public ulong Id { get; set; }
 
         public Dictionary<Element,string> Notes { get; set; }
 

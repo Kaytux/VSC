@@ -15,7 +15,7 @@ namespace ConsoleAppVSC
     {
         static async Task Main(string[] args)
         {
-            Utilisateur u1 = new Utilisateur("Axlr");
+            Utilisateur u1 = new Utilisateur("Axlr",45678905);
 
             Jeu j1 = new Jeu(
                 "Vampire Survivors est un Rogue Light.",
