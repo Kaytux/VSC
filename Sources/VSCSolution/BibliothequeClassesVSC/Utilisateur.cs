@@ -17,7 +17,7 @@ namespace BibliothequeClassesVSC
 
         public string Nom{get;set;}
 
-        public ulong Id { get;set }
+        public ulong Id { get; set; }
 
         public Dictionary<Element,string> Notes { get; set; }
 
