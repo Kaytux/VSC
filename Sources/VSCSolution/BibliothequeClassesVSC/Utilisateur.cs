@@ -33,13 +33,20 @@ namespace BibliothequeClassesVSC
             //}
         }
         public Utilisateur(string nom)
+        public Utilisateur(string nom, ulong id)
         {
             Nom = nom;
             Notes = new HashSet<Note>();
+            Id = id;
+            Notes = new Dictionary<Element, string>();
         }
 
         public string Nom{get;set;}
         public HashSet<Note> Notes { get; set; }
+
+        public ulong Id { get; set; }
+
+        public Dictionary<Element,string> Notes { get; set; }
 
         public void ajouterNotes(Element e, string note) 
         {
