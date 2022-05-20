@@ -8,42 +8,49 @@ namespace BibliothequeClassesVSC
 {
     public class Utilisateur
     {
+        public class Note
+        {
+            public Element Element { get; set; }
+            public string Contenu { get; set; }
+            public Note(Element element, string contenu)
+            {
+                Element = element;
+                Contenu = contenu;
+            }
+
+            //public void afficherNote(Element e)
+            //{
+            //    foreach (KeyValuePair<Element, string> kvp in Notes)
+            //    {
+            //        if (kvp.Key == e)
+            //        {
+            //            Console.WriteLine("\n---\n");
+            //            Console.WriteLine("Element : " + kvp.Key.Nom + "\nNotes : " + kvp.Value);
+            //            Console.WriteLine("\n---\n");
+            //            break;
+            //        }
+            //    }
+            //}
+        }
         public Utilisateur(string nom)
         {
             Nom = nom;
-            Notes = new Dictionary<Element, string>();
+            Notes = new HashSet<Note>();
         }
 
         public string Nom{get;set;}
-
-        public Dictionary<Element,string> Notes { get; set; }
+        public HashSet<Note> Notes { get; set; }
 
         public void ajouterNotes(Element e, string note) 
         {
-            Notes.Add(e,note);
+            Notes.Add(new Note(e,note));
         }
 
         public void afficherNotes()
         {
-            Console.WriteLine("\n---\n");
-            foreach(KeyValuePair<Element,string> kvp in this.Notes)
+            foreach(Note n in Notes)
             {
-                Console.WriteLine("Element : " + kvp.Key.Nom + "\nNotes : " + kvp.Value+"\n");
-            }
-            Console.WriteLine("\n---\n");
-        }
-
-        public void afficherNote(Element e)
-        {
-            foreach (KeyValuePair < Element,string> kvp in Notes)
-            {
-                if (kvp.Key == e)
-                {
-                    Console.WriteLine("\n---\n");
-                    Console.WriteLine("Element : " + kvp.Key.Nom + "\nNotes : " + kvp.Value); 
-                    Console.WriteLine("\n---\n");
-                    break;
-                }
+                Console.WriteLine(n.ToString());
             }
         }
 

@@ -8,7 +8,7 @@ namespace BibliothequeClassesVSC
 {
     public abstract class Entite : Element , IStatAffichable
     {
-        public Entite(string nom, List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
+        public Entite(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
         {
             stats.Add(new Stat(Stat.NomStat.MaxHealth, 0));
             stats.Add(new Stat(Stat.NomStat.MoveSpeed, 0));
@@ -16,7 +16,7 @@ namespace BibliothequeClassesVSC
 
         public SortedSet<Stat> stats=new SortedSet<Stat>();
 
-        protected void AjoutParticularite(List<Stat> particularite)
+        protected void AjoutParticularite(HashSet<Stat> particularite)
         {
             foreach (Stat stat in particularite)
             {
