@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliothequeClassesVSC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Media;
@@ -21,6 +22,7 @@ namespace VuesVSC
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Manager Mgr => (App.Current as App).Manager;
         public MainWindow()
         {
             InitializeComponent();

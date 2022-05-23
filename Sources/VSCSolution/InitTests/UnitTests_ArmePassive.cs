@@ -4,16 +4,16 @@ using Xunit;
 
 namespace InitTests
 {
-    public class UnitTests_ArmeActive
+    public class UnitTests_ArmePassive
     {
         [Theory]
-        [InlineData("Magic Wand")]
-        [InlineData("Magic Wand","This a magic wand !")]
-        [InlineData("Magic Wand", "This a magic wand !","./images/Magic_Wand.png")]
-        [InlineData("Magic Wand", "This a magic wand !","./images/Magic_Wand.png",11)]
+        [InlineData("Empty Tome")]
+        [InlineData("Empty Tome","A huge empty tome")]
+        [InlineData("Empty Tome", "A huge empty tome", "./images/Empty_Tome.png")]
+        [InlineData("Empty Tome", "A huge empty tome", "./images/Empty_Tome.png",42)]
         public void TestConstructeurSansAmelioration(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1, Amelioration amelioration = null)
         {
-            ArmeActive arme = new ArmeActive(nom, desc, image, niveau, amelioration);
+            ArmePassive arme = new ArmePassive(nom, desc, image, niveau, amelioration);
 
             Assert.Equal(nom, arme.Nom);
             Assert.Equal(desc, arme.Description);
@@ -23,14 +23,14 @@ namespace InitTests
         }
 
         [Theory]
-        [InlineData("Magic Wand")]
-        [InlineData("Magic Wand", "This a magic wand !")]
-        [InlineData("Magic Wand", "This a magic wand !", "./images/Magic_Wand.png")]
-        [InlineData("Magic Wand", "This a magic wand !", "./images/Magic_Wand.png", 11)]
+        [InlineData("Empty Tome")]
+        [InlineData("Empty Tome", "A huge empty tome")]
+        [InlineData("Empty Tome", "A huge empty tome", "./images/Empty_Tome.png")]
+        [InlineData("Empty Tome", "A huge empty tome", "./images/Empty_Tome.png", 42)]
         public void TestConstructeurAvecAmelioration(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1)
         {
             Amelioration amelioration = new Amelioration("Holy Wand");
-            ArmeActive arme = new ArmeActive(nom, desc, image, niveau, amelioration);
+            ArmePassive arme = new ArmePassive(nom, desc, image, niveau, amelioration);
 
             Assert.Equal(nom, arme.Nom);
             Assert.Equal(desc, arme.Description);

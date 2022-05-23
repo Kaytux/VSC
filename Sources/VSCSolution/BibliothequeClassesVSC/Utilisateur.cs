@@ -8,59 +8,59 @@ namespace BibliothequeClassesVSC
 {
     public class Utilisateur
     {
+        /// <summary>
+        /// Interface permettant l'encapsulation profonde de la collection de Note.
+        /// Permet de l'afficher en lecture seule.
+        /// </summary>
+        public interface INote
+        {
+            string Contenu { get; }
+        }
+        /// <summary>
+        /// Classe représentant une note.
+        /// </summary>
+        public class Note : INote
+        {
+            public Element Element { get; set; }
+            public string Contenu { get; set; }
+            public Note(Element element, string contenu)
+            {
+                Element = element;
+                Contenu = contenu;
+            }
+
+            public override string ToString()
+            {
+                return Element.ToString() + " : " + Contenu;
+            }
+        }
+        /// <summary>
+        /// Classe représentant un utilisateur
+        /// </summary>
+        /// <param name="nom">Nom de l'utilisateur</param>
+        /// <param name="id">Identifiant récupéré par l'utilisateur</param>
         public Utilisateur(string nom, ulong id)
         {
             Nom = nom;
             Id = id;
-            Notes = new Dictionary<Element, string>();
         }
 
         public string Nom{get;set;}
-
-        public ulong Id { get;set }
-
-        public Dictionary<Element,string> Notes { get; set; }
+        public IEnumerable<INote> LesNotes => lesNotes;
+        public HashSet<Note> lesNotes = new HashSet<Note>();
+        public ulong Id { get; set; }
 
         public void ajouterNotes(Element e, string note) 
         {
-            Notes.Add(e,note);
+            lesNotes.Add(new Note(e,note));
         }
-
         public void afficherNotes()
         {
-            Console.WriteLine("\n---\n");
-            foreach(KeyValuePair<Element,string> kvp in this.Notes)
+            foreach(Note n in LesNotes)
             {
-                Console.WriteLine("Element : " + kvp.Key.Nom + "\nNotes : " + kvp.Value+"\n");
-            }
-            Console.WriteLine("\n---\n");
-        }
-
-        public void afficherNote(Element e)
-        {
-            foreach (KeyValuePair < Element,string> kvp in Notes)
-            {
-                if (kvp.Key == e)
-                {
-                    Console.WriteLine("\n---\n");
-                    Console.WriteLine("Element : " + kvp.Key.Nom + "\nNotes : " + kvp.Value); 
-                    Console.WriteLine("\n---\n");
-                    break;
-                }
+                Console.WriteLine(n.ToString());
             }
         }
-
-        public void modifNote(Element e, string nouvelleNote)
-        {
-            /*foreach (KeyValuePair<Element, string> kvp in Notes)
-            {
-                if (kvp.Key == e)
-                {
-                    kvp.Value = nouvelleNote;
-                    break;
-                }
-            }*/
-        }
-
+        public void modifNote() { }
     }
 }

@@ -23,8 +23,8 @@ namespace BibliothequeClassesVSC
         /// </summary>
         /// <param name="lesEnnemies">liste des ennemies présent dans la carte</param>
         /// <param name="lesObjetsCaches">liste des objets chachés dans la carte</param>
-        public Carte(string nom,  List<Ennemie> lesEnnemies, List<ArmePassive> lesObjetsCaches, string desc="N/A")
-            :base(nom,desc)
+        public Carte(string nom,  List<Ennemie> lesEnnemies, List<ArmePassive> lesObjetsCaches, string desc="N/A", string image="N/A")
+            :base(nom,desc,image)
         {
             LesEnnemies = lesEnnemies;
             LesObjetsCaches = lesObjetsCaches;
@@ -33,26 +33,33 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// affichage des objets présent sur la carte
         /// </summary>
-        public void affichArmePassive() {
+        public string affichArmePassive() 
+        {
+            string affichage = "";
             int i = 1;
             foreach (ArmePassive arme in LesObjetsCaches)
             {
+                affichage = affichage + "Arme passive caché n°" + i.ToString() + " : " + arme.Nom;
                 Console.WriteLine("Arme passive caché n°"+i+" : "+arme.Nom);
                 i++;
             }
+            return affichage;
         }
 
         /// <summary>
         /// affichage des ennemies présent sur la carte
         /// </summary>
-        public void affichEnnemie()
+        public string affichEnnemie()
         {
+            string affichage = "";
             int i = 1;
             foreach (Ennemie ennemie in LesEnnemies)
             {
+                affichage = affichage + "Ennemie n°" + i.ToString() + " présent dans la zone : " + ennemie.Nom;
                 Console.WriteLine("Ennemie n°" + i + " présent dans la zone : " + ennemie.Nom);
                 i++;
             }
+            return affichage;
         }
     }
 }

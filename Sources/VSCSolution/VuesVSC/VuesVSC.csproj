@@ -55,6 +55,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BibliothequeClassesVSC\BibliothequeClassesVSC.csproj" />
+    <ProjectReference Include="..\Stub\Stub.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Fonts\ANY.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

@@ -8,15 +8,34 @@ namespace BibliothequeClassesVSC
 {
     public abstract class Entite : Element , IStatAffichable
     {
-        public Entite(string nom, List<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
+        public Entite(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
         {
             stats.Add(new Stat(Stat.NomStat.MaxHealth, 0));
+            stats.Add(new Stat(Stat.NomStat.Recovery, 0));
+            stats.Add(new Stat(Stat.NomStat.Armor, 0));
             stats.Add(new Stat(Stat.NomStat.MoveSpeed, 0));
+            stats.Add(new Stat(Stat.NomStat.Might, 0));
+            stats.Add(new Stat(Stat.NomStat.Area, 0));
+            stats.Add(new Stat(Stat.NomStat.Speed, 0));
+            stats.Add(new Stat(Stat.NomStat.Duration , 0));
+            stats.Add(new Stat(Stat.NomStat.Amount, 0));
+            stats.Add(new Stat(Stat.NomStat.Cooldown, 0));
+            stats.Add(new Stat(Stat.NomStat.Luck, 0));
+            stats.Add(new Stat(Stat.NomStat.Growth, 0));
+            stats.Add(new Stat(Stat.NomStat.Greed, 0));
+            stats.Add(new Stat(Stat.NomStat.Magnet, 0));
+            stats.Add(new Stat(Stat.NomStat.XpGiven, 0));
+            stats.Add(new Stat(Stat.NomStat.KnockbackReceive, 0));
+            stats.Add(new Stat(Stat.NomStat.MaxLevel, 0));
+            stats.Add(new Stat(Stat.NomStat.Knockback, 0));
+            stats.Add(new Stat(Stat.NomStat.Rarity, 0));
+            stats.Add(new Stat(Stat.NomStat.CritRate, 0));
+            stats.Add(new Stat(Stat.NomStat.CritMultiplier, 0));
         }
 
         public SortedSet<Stat> stats=new SortedSet<Stat>();
 
-        protected void AjoutParticularite(List<Stat> particularite)
+        protected void AjoutParticularite(HashSet<Stat> particularite)
         {
             foreach (Stat stat in particularite)
             {
@@ -39,6 +58,11 @@ namespace BibliothequeClassesVSC
             {                
                 Console.WriteLine(stat);
             }
+        }
+
+        public override string ToString()
+        {
+            return Nom.ToString();
         }
     }
 }
