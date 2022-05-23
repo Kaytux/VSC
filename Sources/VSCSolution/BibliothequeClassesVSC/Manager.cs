@@ -74,7 +74,7 @@ namespace BibliothequeClassesVSC
         public Manager(IPersistanceManager persistance)
         {
             Persistance = persistance;
-            
+            ChargeDonnées();
             LesArmesPassives = new ReadOnlyCollection<ArmePassive>(new List<ArmePassive>(lesArmesPassives));
             LesArmesActives = new ReadOnlyCollection<ArmeActive>(new List<ArmeActive>(lesArmesActives));
             LesAmeliorations = new ReadOnlyCollection<Amelioration>(new List<Amelioration>(lesAmeliorations));

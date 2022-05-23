@@ -8,6 +8,7 @@ using SteamWebAPI2.Utilities;
 using SteamworksSharp;
 using SteamworksSharp.Native;
 using System.Threading.Tasks;
+using Stub;
 
 namespace ConsoleAppVSC
 {
@@ -15,6 +16,7 @@ namespace ConsoleAppVSC
     {
         static async Task Main(string[] args)
         {
+            Manager Manager = new Manager(new Stub.Stub());
 
             //// STEAM API
 

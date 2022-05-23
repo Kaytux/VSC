@@ -1,4 +1,5 @@
 ﻿using BibliothequeClassesVSC;
+using Stub;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,7 +15,7 @@ namespace VuesVSC
     /// </summary>
     public partial class App : Application
     {
-        public Manager Manager { get; private set; } = new Manager();
+        public Manager Manager { get; private set; } = new Manager(new Stub.Stub());
 
         public App() { }
     }
