@@ -26,11 +26,6 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.Magnet, 0));
             stats.Add(new Stat(Stat.NomStat.XpGiven, 0));
             stats.Add(new Stat(Stat.NomStat.KnockbackReceive, 0));
-            stats.Add(new Stat(Stat.NomStat.MaxLevel, 0));
-            stats.Add(new Stat(Stat.NomStat.Knockback, 0));
-            stats.Add(new Stat(Stat.NomStat.Rarity, 0));
-            stats.Add(new Stat(Stat.NomStat.CritRate, 0));
-            stats.Add(new Stat(Stat.NomStat.CritMultiplier, 0));
         }
 
         public SortedSet<Stat> stats=new SortedSet<Stat>();

@@ -15,10 +15,41 @@ namespace BibliothequeClassesVSC
         /// <param name="desc"></param>
         /// <param name="image"></param>
         /// <param name="niveau"></param>
-        public Arme(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1)
+        public Arme(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A", byte niveau = 1)
             : base(nom, desc, image)
         {
             Niveau = niveau;
+            stats.Add(new Stat(Stat.NomStat.MaxLevel, 0));
+            stats.Add(new Stat(Stat.NomStat.Knockback, 0));
+            stats.Add(new Stat(Stat.NomStat.Rarity, 0));
+            stats.Add(new Stat(Stat.NomStat.CritRate, 0));
+            stats.Add(new Stat(Stat.NomStat.CritMultiplier, 0));
+        }
+
+        public SortedSet<Stat> stats = new SortedSet<Stat>();
+
+        protected void AjoutParticularite(HashSet<Stat> particularite)
+        {
+            foreach (Stat stat in particularite)
+            {
+                foreach (Stat stat2 in stats)
+                {
+                    if (Stat.FullEqComparer.Equals(stat, stat2))
+                    {
+                        stat2.Valeur += stat.Valeur;
+                        break;
+                    }
+                }
+            }
+            this.AffichStats();
+        }
+        public void AffichStats()
+        {
+            Console.WriteLine("Statistiques de " + Nom + " :\n");
+            foreach (Stat stat in stats)
+            {
+                Console.WriteLine(stat);
+            }
         }
 
         /// <summary>
@@ -42,7 +73,5 @@ namespace BibliothequeClassesVSC
         {
             --this.Niveau;
         }
-
-        public void AffichStats() { }
     }
 }
