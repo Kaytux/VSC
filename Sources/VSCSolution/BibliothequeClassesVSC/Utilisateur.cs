@@ -8,7 +8,18 @@ namespace BibliothequeClassesVSC
 {
     public class Utilisateur
     {
-        public class Note
+        /// <summary>
+        /// Interface permettant l'encapsulation profonde de la collection de Note.
+        /// Permet de l'afficher en lecture seule.
+        /// </summary>
+        public interface INote
+        {
+            string Contenu { get; }
+        }
+        /// <summary>
+        /// Classe représentant une note.
+        /// </summary>
+        public class Note : INote
         {
             public Element Element { get; set; }
             public string Contenu { get; set; }
@@ -18,60 +29,38 @@ namespace BibliothequeClassesVSC
                 Contenu = contenu;
             }
 
-            //public void afficherNote(Element e)
-            //{
-            //    foreach (KeyValuePair<Element, string> kvp in Notes)
-            //    {
-            //        if (kvp.Key == e)
-            //        {
-            //            Console.WriteLine("\n---\n");
-            //            Console.WriteLine("Element : " + kvp.Key.Nom + "\nNotes : " + kvp.Value);
-            //            Console.WriteLine("\n---\n");
-            //            break;
-            //        }
-            //    }
-            //}
+            public override string ToString()
+            {
+                return Element.ToString() + " : " + Contenu;
+            }
         }
-        public Utilisateur(string nom)
+        /// <summary>
+        /// Classe représentant un utilisateur
+        /// </summary>
+        /// <param name="nom">Nom de l'utilisateur</param>
+        /// <param name="id">Identifiant récupéré par l'utilisateur</param>
         public Utilisateur(string nom, ulong id)
         {
             Nom = nom;
-            Notes = new HashSet<Note>();
             Id = id;
-            Notes = new Dictionary<Element, string>();
         }
 
         public string Nom{get;set;}
-        public HashSet<Note> Notes { get; set; }
-
+        public IEnumerable<INote> LesNotes => lesNotes;
+        public HashSet<Note> lesNotes = new HashSet<Note>();
         public ulong Id { get; set; }
-
-        public Dictionary<Element,string> Notes { get; set; }
 
         public void ajouterNotes(Element e, string note) 
         {
-            Notes.Add(new Note(e,note));
+            lesNotes.Add(new Note(e,note));
         }
-
         public void afficherNotes()
         {
-            foreach(Note n in Notes)
+            foreach(Note n in LesNotes)
             {
                 Console.WriteLine(n.ToString());
             }
         }
-
-        public void modifNote(Element e, string nouvelleNote)
-        {
-            /*foreach (KeyValuePair<Element, string> kvp in Notes)
-            {
-                if (kvp.Key == e)
-                {
-                    kvp.Value = nouvelleNote;
-                    break;
-                }
-            }*/
-        }
-
+        public void modifNote() { }
     }
 }
