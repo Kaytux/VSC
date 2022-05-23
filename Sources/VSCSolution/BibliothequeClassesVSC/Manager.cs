@@ -56,19 +56,40 @@ namespace BibliothequeClassesVSC
         public void ChargeDonnées()
         {
             var données = Persistance.ChargeDonnées();
-            foreach (var donn in données.ap)
+            foreach (var donn in données.lesArmesPassives)
             {
                 lesArmesPassives.Add(donn);
             }
-            foreach (var donn in données.pers)
+            foreach (var donn in données.lesArmesActives)
+            {
+                lesArmesActives.Add(donn);
+            }
+            foreach (var donn in données.lesAmeliorations)
+            {
+                lesAmeliorations.Add(donn);
+            }
+            foreach (var donn in données.lesPersonnages)
             {
                 lesPersonnages.Add(donn);
+            }
+            foreach (var donn in données.lesEnnemies)
+            {
+                lesEnnemies.Add(donn);
+            }
+            foreach (var donn in données.lesCartes)
+            {
+                lesCartes.Add(donn);
             }
         }
 
         public void SauvegardeDonnées()
         {
-            Persistance.SauvegardeDonnées(lesArmesPassives, lesPersonnages);
+            Persistance.SauvegardeDonnées(lesArmesPassives,
+                                          lesArmesActives,
+                                          lesAmeliorations,
+                                          lesPersonnages,
+                                          lesEnnemies,
+                                          lesCartes);
         }
 
         public Manager(IPersistanceManager persistance)
