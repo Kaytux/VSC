@@ -18,16 +18,18 @@ namespace BibliothequeClassesVSC
         /// <param name="image"></param>
         /// <param name="niveau"></param>
         /// <param name="amelioration"></param>
-        public ArmeActive(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1, Amelioration amelioration = null)
-            : base(nom, desc, image, niveau)
+        public ArmeActive(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A", byte niveau = 1, Amelioration amelioration = null)
+            : base(nom, particularite,desc, image, niveau)
         {
             Amelioration = amelioration;
+            AjoutParticularite(particularite);
+
         }
 
         /// <summary>
         /// declaration de l'attribut Amelioration avec son getter et setter
         /// </summary>
-        public Amelioration Amelioration { get; set; }
+        public new Amelioration Amelioration { get; set; }
 
         /// <summary>
         /// déclaration de la méthode AffichAmelioration qui permet l'affichage le nom de l'arme améliorée possible avec l'arme actuelle
