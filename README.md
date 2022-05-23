@@ -1,5 +1,3 @@
 # Vampire Survivors Compagnon
 
-test de git (faites pas gaffe)
-
-test de la branche
+[![Generic badge](https://img.shields.io/badge/<SUBJECT>-version-0.2.svg)](https://shields.io/)
