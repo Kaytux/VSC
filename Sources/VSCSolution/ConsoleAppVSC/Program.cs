@@ -15,11 +15,10 @@ namespace ConsoleAppVSC
     {
         static async Task Main(string[] args)
         {
+
             //// STEAM API
 
             ulong userId = InitializeSteam();
-
-            
             
             // Web API (différente)
 
