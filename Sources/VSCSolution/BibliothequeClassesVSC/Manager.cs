@@ -10,13 +10,13 @@ namespace BibliothequeClassesVSC
 {
     public class Manager
     {
+        public IPersistanceManager Persistance { get; private set; }
         public ReadOnlyCollection<ArmePassive> LesArmesPassives
         {
             get;
             private set;
         }
         private HashSet<ArmePassive> lesArmesPassives = new HashSet<ArmePassive>();
-
 
         public ReadOnlyCollection<ArmeActive> LesArmesActives
         {
@@ -37,7 +37,7 @@ namespace BibliothequeClassesVSC
             get;
             private set;
         }
-        private HashSet<Personnage> lesPersonnages= new HashSet<Personnage>();
+        private HashSet<Personnage> lesPersonnages = new HashSet<Personnage>();
 
         public ReadOnlyCollection<Ennemie> LesEnnemies
         {
@@ -53,16 +53,28 @@ namespace BibliothequeClassesVSC
         }
         private HashSet<Carte> lesCartes = new HashSet<Carte>();
 
-        public Manager()
+        public void ChargeDonnées()
         {
-            AjoutCollection(lesArmesPassives,
-                new ArmePassive("Armes Passives 1"),
-                new ArmePassive("Armes Passives 2"));
-            AjoutCollection(lesPersonnages,
-                new Personnage("Perso 1", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth,40))),
-                new Personnage("Perso 2", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40))),
-                new Personnage("Perso 3", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40))),
-                new Personnage("Perso 4", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40))));
+            var données = Persistance.ChargeDonnées();
+            foreach (var donn in données.ap)
+            {
+                lesArmesPassives.Add(donn);
+            }
+            foreach (var donn in données.pers)
+            {
+                lesPersonnages.Add(donn);
+            }
+        }
+
+        public void SauvegardeDonnées()
+        {
+            Persistance.SauvegardeDonnées(lesArmesPassives, lesPersonnages);
+        }
+
+        public Manager(IPersistanceManager persistance)
+        {
+            Persistance = persistance;
+            
             LesArmesPassives = new ReadOnlyCollection<ArmePassive>(new List<ArmePassive>(lesArmesPassives));
             LesArmesActives = new ReadOnlyCollection<ArmeActive>(new List<ArmeActive>(lesArmesActives));
             LesAmeliorations = new ReadOnlyCollection<Amelioration>(new List<Amelioration>(lesAmeliorations));
@@ -70,7 +82,7 @@ namespace BibliothequeClassesVSC
             LesEnnemies = new ReadOnlyCollection<Ennemie>(new List<Ennemie>(lesEnnemies));
             LesCartes = new ReadOnlyCollection<Carte>(new List<Carte>(lesCartes));
         }
-        
+
         public void AffichList(IEnumerable<Element> liste)
         {
             foreach (Element ele in liste)
@@ -106,17 +118,6 @@ namespace BibliothequeClassesVSC
                     break;
             }
             return res.ToHashSet();
-        }
-
-        private void AjoutCollection<T>(HashSet<T> list, params T[] liste) where T : Element
-        {
-            list.UnionWith(liste);
-        }
-        private HashSet<Stat> ConstructionParticularite(params Stat[] liste)
-        {
-            HashSet<Stat> res = new HashSet<Stat>();
-            res.UnionWith(liste);
-            return res;
         }
     }
 }
