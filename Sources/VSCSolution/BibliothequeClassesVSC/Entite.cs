@@ -59,5 +59,10 @@ namespace BibliothequeClassesVSC
                 Console.WriteLine(stat);
             }
         }
+
+        public override string ToString()
+        {
+            return Nom.ToString();
+        }
     }
 }

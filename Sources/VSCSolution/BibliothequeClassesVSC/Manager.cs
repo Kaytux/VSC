@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,61 +10,79 @@ namespace BibliothequeClassesVSC
 {
     public class Manager
     {
+        public IPersistanceManager Persistance { get; private set; }
         public ReadOnlyCollection<ArmePassive> LesArmesPassives
         {
             get;
             private set;
         }
-        HashSet<ArmePassive> lesArmesPassives = new HashSet<ArmePassive>();
+        private HashSet<ArmePassive> lesArmesPassives = new HashSet<ArmePassive>();
 
         public ReadOnlyCollection<ArmeActive> LesArmesActives
         {
             get;
             private set;
         }
-        HashSet<ArmeActive> lesArmesActives = new HashSet<ArmeActive>();
+        private HashSet<ArmeActive> lesArmesActives = new HashSet<ArmeActive>();
 
         public ReadOnlyCollection<Amelioration> LesAmeliorations
         {
             get;
             private set;
         }
-        HashSet<Amelioration> lesAmeliorations = new HashSet<Amelioration>();
+        private HashSet<Amelioration> lesAmeliorations = new HashSet<Amelioration>();
 
         public ReadOnlyCollection<Personnage> LesPersonnages
         {
             get;
             private set;
         }
-        HashSet<Personnage> lesPersonnages= new HashSet<Personnage>();
+        private HashSet<Personnage> lesPersonnages = new HashSet<Personnage>();
 
         public ReadOnlyCollection<Ennemie> LesEnnemies
         {
             get;
             private set;
         }
-        HashSet<Ennemie> lesEnnemies = new HashSet<Ennemie>();
+        private HashSet<Ennemie> lesEnnemies = new HashSet<Ennemie>();
 
         public ReadOnlyCollection<Carte> LesCartes
         {
             get;
             private set;
         }
-        HashSet<Carte> lesCartes = new HashSet<Carte>();
+        private HashSet<Carte> lesCartes = new HashSet<Carte>();
 
-        public Manager()
+        public void ChargeDonnées()
         {
-            AjoutCollection(lesArmesPassives,
-                new ArmePassive("Armes Passives 1"),
-                new ArmePassive("Armes Passives 2"));
-            LesArmesPassives = new ReadOnlyCollection<ArmePassive>((IList<ArmePassive>)lesArmesPassives);
-            LesArmesActives = new ReadOnlyCollection<ArmeActive>((IList<ArmeActive>)lesArmesActives);
-            LesAmeliorations = new ReadOnlyCollection<Amelioration>((IList<Amelioration>)lesAmeliorations);
-            LesPersonnages = new ReadOnlyCollection<Personnage>((IList<Personnage>)lesPersonnages);
-            LesEnnemies = new ReadOnlyCollection<Ennemie>((IList<Ennemie>)lesEnnemies);
-            LesCartes = new ReadOnlyCollection<Carte>((IList<Carte>)lesCartes);
+            var données = Persistance.ChargeDonnées();
+            foreach (var donn in données.ap)
+            {
+                lesArmesPassives.Add(donn);
+            }
+            foreach (var donn in données.pers)
+            {
+                lesPersonnages.Add(donn);
+            }
         }
-        
+
+        public void SauvegardeDonnées()
+        {
+            Persistance.SauvegardeDonnées(lesArmesPassives, lesPersonnages);
+        }
+
+        public Manager(IPersistanceManager persistance)
+        {
+            Persistance = persistance;
+            ChargeDonnées();
+            LesArmesPassives = new ReadOnlyCollection<ArmePassive>(new List<ArmePassive>(lesArmesPassives));
+            LesArmesActives = new ReadOnlyCollection<ArmeActive>(new List<ArmeActive>(lesArmesActives));
+            LesAmeliorations = new ReadOnlyCollection<Amelioration>(new List<Amelioration>(lesAmeliorations));
+            LesPersonnages = new ReadOnlyCollection<Personnage>(new List<Personnage>(lesPersonnages));
+            LesEnnemies = new ReadOnlyCollection<Ennemie>(new List<Ennemie>(lesEnnemies));
+            LesCartes = new ReadOnlyCollection<Carte>(new List<Carte>(lesCartes));
+        }
+
         public void AffichList(IEnumerable<Element> liste)
         {
             foreach (Element ele in liste)
@@ -80,36 +99,25 @@ namespace BibliothequeClassesVSC
             switch(liste.GetType())
             {
                 case IEnumerable<ArmePassive>:
-                    LesArmesPassives = new ReadOnlyCollection<ArmePassive>((IList<ArmePassive>)lesArmesPassives);
+                    LesArmesPassives = new ReadOnlyCollection<ArmePassive>(new List<ArmePassive>(lesArmesPassives));
                     break;
                 case IEnumerable<ArmeActive>:
-                    LesArmesActives = new ReadOnlyCollection<ArmeActive>((IList<ArmeActive>)lesArmesActives);
+                    LesArmesActives = new ReadOnlyCollection<ArmeActive>(new List<ArmeActive>(lesArmesActives));
                     break;
                 case IEnumerable<Amelioration>:
-                    LesAmeliorations = new ReadOnlyCollection<Amelioration>((IList<Amelioration>)lesAmeliorations);
+                    LesAmeliorations = new ReadOnlyCollection<Amelioration>(new List<Amelioration>(lesAmeliorations));
                     break;
                 case IEnumerable<Personnage>:
-                    LesPersonnages = new ReadOnlyCollection<Personnage>((IList<Personnage>)lesPersonnages);
+                    LesPersonnages = new ReadOnlyCollection<Personnage>(new List<Personnage>(lesPersonnages));
                     break;
                 case IEnumerable<Ennemie>:
-                    LesEnnemies = new ReadOnlyCollection<Ennemie>((IList<Ennemie>)lesEnnemies);
+                    LesEnnemies = new ReadOnlyCollection<Ennemie>(new List<Ennemie>(lesEnnemies));
                     break;
                 case IEnumerable<Carte>:
-                    LesCartes = new ReadOnlyCollection<Carte>((IList<Carte>)lesCartes);
+                    LesCartes = new ReadOnlyCollection<Carte>(new List<Carte>(lesCartes));
                     break;
             }
             return res.ToHashSet();
-        }
-
-        private void AjoutCollection<T>(HashSet<T> list, params T[] liste) where T : Element
-        {
-            list.UnionWith(liste);
-        }
-        private HashSet<Stat> ConstructionParticularite(params Stat[] liste)
-        {
-            HashSet<Stat> res = new HashSet<Stat>();
-            res.UnionWith(liste);
-            return res;
         }
     }
 }

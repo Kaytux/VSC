@@ -8,7 +8,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
         <Border DockPanel.Dock="Left" BorderThickness="0,0,2,0" BorderBrush="Black">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ListBox Background="{StaticResource GreyBackground}"
+                     ItemsSource="{Binding LesPersonnages}"/>
+            <!--<ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel Background="{StaticResource GreyBackground}">
                     <Button Margin="16" Style="{StaticResource MenuButton}" Click="Button_Click">
                         <TextBlock Style="{StaticResource MenuText}">Armes Actives</TextBlock>
@@ -20,8 +22,7 @@
                         <TextBlock Style="{StaticResource MenuText}">Cartes</TextBlock>
                     </Button>
                 </StackPanel>
-
-            </ScrollViewer>
+            </ScrollViewer>-->
         </Border>
         <ContentControl x:Name="contentControl"></ContentControl>
     </DockPanel>

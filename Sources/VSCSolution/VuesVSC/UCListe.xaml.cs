@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliothequeClassesVSC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace VuesVSC
     /// </summary>
     public partial class UCListe : UserControl
     {
+        public Manager Mgr => (App.Current as App).Manager;
         public UCListe()
         {
             InitializeComponent();
+            DataContext = Mgr;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
