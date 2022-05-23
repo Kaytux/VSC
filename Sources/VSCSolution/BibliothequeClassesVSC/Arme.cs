@@ -25,6 +25,7 @@ namespace BibliothequeClassesVSC
         /// declaration de l'attribut Niveau avec son getter et setter
         /// </summary>
         public byte Niveau { get; set; }
+        public IEnumerable<object> Amelioration { get; set; }
 
         /// <summary>
         /// méthode qui permet d'augmenter de 1 le Niveau d'une arme 
