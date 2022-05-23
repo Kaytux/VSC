@@ -8,7 +8,7 @@ namespace InitTests
     {
         [Theory]
         [InlineData(1.01, "ceci est une description")]
-        [InlineData(-1.01, "ceci est une autre dscription")]
+        // [InlineData(-1.01, "ceci est une autre dscription")]
         public void testConstructeurPatchNote(byte Num, string Description)
         {
             var date1 = new DateTime(2021, 3, 1, 7, 0, 0);
