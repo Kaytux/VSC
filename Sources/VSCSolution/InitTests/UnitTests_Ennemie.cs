@@ -11,7 +11,7 @@ namespace InitTests
         [InlineData("Ennemie")]
         public void testConstructeurSansImageEtDesc(string nom)
         {
-            List<Stat> stats = new List<Stat>();
+            HashSet<Stat> stats = new HashSet<Stat>();
             stats.Add(new Stat(Stat.NomStat.MaxHealth, 40));
             stats.Add(new Stat(Stat.NomStat.Luck));
             stats.Add(new Stat(Stat.NomStat.CritMultiplier, 10));
