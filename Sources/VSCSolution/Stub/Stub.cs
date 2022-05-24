@@ -16,6 +16,7 @@ namespace Stub
         {
             Debug.WriteLine("Sauvegarde demandée");
         }
+
         public (IEnumerable<ArmePassive> lesArmesPassives, 
             IEnumerable<ArmeActive> lesArmesActives, 
             IEnumerable<Amelioration> lesAmeliorations, 
@@ -29,6 +30,7 @@ namespace Stub
             HashSet<Personnage> lesPersonnages = new HashSet<Personnage>();
             HashSet<Ennemie> lesEnnemies = new HashSet<Ennemie>();
             HashSet<Carte> lesCartes = new HashSet<Carte>();
+
             AjoutCollection(lesArmesPassives,
                 new ArmePassive("Armes Passives 1", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40))),
                 new ArmePassive("Armes Passives 2", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40))));

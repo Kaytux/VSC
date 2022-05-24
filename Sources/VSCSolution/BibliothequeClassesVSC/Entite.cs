@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    public abstract class Entite : Element , IStatAffichable
+    public abstract class Entite : PossedeStats
     {
-        public Entite(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom, desc, image)
+        public Entite(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom,particularite, desc, image)
         {
             stats.Add(new Stat(Stat.NomStat.MaxHealth, 0));
             stats.Add(new Stat(Stat.NomStat.Recovery, 0));
@@ -26,35 +26,7 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.Magnet, 0));
             stats.Add(new Stat(Stat.NomStat.XpGiven, 0));
             stats.Add(new Stat(Stat.NomStat.KnockbackReceive, 0));
-        }
-
-        public SortedSet<Stat> stats=new SortedSet<Stat>();
-
-        protected void AjoutParticularite(HashSet<Stat> particularite)
-        {
-            foreach (Stat stat in particularite)
-            {
-                foreach(Stat stat2 in stats)
-                {
-                    if (Stat.FullEqComparer.Equals(stat,stat2))
-                    {
-                        stat2.Valeur += stat.Valeur;
-                        break;
-                    }
-                }
-            }
-            this.AffichStats();
-        }
-
-        public void AffichStats() 
-        {
-            Console.WriteLine("Statistiques de " + Nom+" :\n");
-            foreach (Stat stat in stats)
-            {                
-                Console.WriteLine(stat);
-            }
-        }
-
+        }        
         public override string ToString()
         {
             return Nom.ToString();

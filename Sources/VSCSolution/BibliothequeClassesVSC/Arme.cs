@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    public abstract class Arme: Element,IStatAffichable
+    public abstract class Arme: PossedeStats
     {
         /// <summary>
         /// constructeur de la classe abstraite  Arme
@@ -16,7 +16,7 @@ namespace BibliothequeClassesVSC
         /// <param name="image"></param>
         /// <param name="niveau"></param>
         public Arme(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A", byte niveau = 1)
-            : base(nom, desc, image)
+            : base(nom, particularite, desc, image)
         {
             Niveau = niveau;
             stats.Add(new Stat(Stat.NomStat.MaxLevel, 0));
@@ -25,33 +25,6 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.CritRate, 0));
             stats.Add(new Stat(Stat.NomStat.CritMultiplier, 0));
         }
-
-        public SortedSet<Stat> stats = new SortedSet<Stat>();
-
-        protected void AjoutParticularite(HashSet<Stat> particularite)
-        {
-            foreach (Stat stat in particularite)
-            {
-                foreach (Stat stat2 in stats)
-                {
-                    if (Stat.FullEqComparer.Equals(stat, stat2))
-                    {
-                        stat2.Valeur += stat.Valeur;
-                        break;
-                    }
-                }
-            }
-            this.AffichStats();
-        }
-        public void AffichStats()
-        {
-            Console.WriteLine("Statistiques de " + Nom + " :\n");
-            foreach (Stat stat in stats)
-            {
-                Console.WriteLine(stat);
-            }
-        }
-
         /// <summary>
         /// declaration de l'attribut Niveau avec son getter et setter
         /// </summary>

@@ -33,9 +33,6 @@ namespace BibliothequeClassesVSC
                 Description = description;
                 Date = date;
             }
-            
-            
-
             public override string ToString()
             {
                 return "Patch notes " + Num + Date.ToLongDateString() + " : " + Description;
