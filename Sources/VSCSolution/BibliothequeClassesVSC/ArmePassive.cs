@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace BibliothequeClassesVSC
         /// <param name="image"></param>
         /// <param name="niveau"></param>
         /// <param name="amelioration"></param>
-    public ArmePassive(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1, Amelioration amelioration=null)
+        public ArmePassive(string nom, string desc = "N/A", string image = "N/A", byte niveau = 1, Amelioration amelioration=null)
             : base(nom, desc, image, niveau) 
         {
             Amelioration = amelioration;

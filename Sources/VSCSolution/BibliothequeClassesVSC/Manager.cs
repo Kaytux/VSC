@@ -10,7 +10,7 @@ namespace BibliothequeClassesVSC
 {
     public class Manager
     {
-        public IPersistanceManager Persistance { get; private set; }
+        public IPersistanceManager Persistance { get; /*private*/ set; }
         public ReadOnlyCollection<ArmePassive> LesArmesPassives
         {
             get;
