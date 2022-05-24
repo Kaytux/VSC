@@ -34,13 +34,5 @@ namespace BibliothequeClassesVSC
         /// declaration de l'attribut ArmePass (arme passive necessaire à l'amélioration) avec son getter et setter
         /// </summary>
         public ArmePassive ArmePass { get; set; }
-
-        /// <summary>
-        /// méthode d'affichage qui permet d'afficher les noms de l'arme active et de l'arme passive nécessaire pour l'amélioration
-        /// </summary>
-        public void afficheAmelioration()
-        {
-            Console.WriteLine("\n---\nNom : " + this.Nom + "\nDescription : " + this.Description + "\nImage : "+this.Image + "\nNiveau : "+this.Niveau+ "\nArme Active nécessaire : "+this.ArmeAct.Nom + "\nArme Passive nécessaire : " + this.ArmePass.Nom + "\n---\n");
-        }
     }
 }

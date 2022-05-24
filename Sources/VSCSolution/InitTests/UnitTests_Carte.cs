@@ -158,80 +158,80 @@ namespace InitTests
             Assert.Equal(image, carte.Image);
         }
 
-        [Fact]
-        public void testAffichEnnemie()
-        {
-            string nom = "carte";
+        //[Fact]
+        //public void testAffichEnnemie()
+        //{
+        //    string nom = "carte";
 
-            HashSet<Stat> stats = new HashSet<Stat>(); ;
-            stats.Add(new Stat(Stat.NomStat.Growth, 40));
-            stats.Add(new Stat(Stat.NomStat.Luck));
-            stats.Add(new Stat(Stat.NomStat.Magnet, 10));
+        //    HashSet<Stat> stats = new HashSet<Stat>(); ;
+        //    stats.Add(new Stat(Stat.NomStat.Growth, 40));
+        //    stats.Add(new Stat(Stat.NomStat.Luck));
+        //    stats.Add(new Stat(Stat.NomStat.Magnet, 10));
 
-            Ennemie e1 = new Ennemie("ennemie1", stats);
-            Ennemie e2 = new Ennemie("ennemie2", stats);
+        //    Ennemie e1 = new Ennemie("ennemie1", stats);
+        //    Ennemie e2 = new Ennemie("ennemie2", stats);
 
-            ArmePassive a1 = new ArmePassive("objet1",stats);
-            ArmePassive a2 = new ArmePassive("objet2",stats);
+        //    ArmePassive a1 = new ArmePassive("objet1",stats);
+        //    ArmePassive a2 = new ArmePassive("objet2",stats);
 
-            List<Ennemie> lesEnnemies = new List<Ennemie> { e1, e2 };
-            List<ArmePassive> lesObjetsCacher = new List<ArmePassive> { a1, a2 };
+        //    List<Ennemie> lesEnnemies = new List<Ennemie> { e1, e2 };
+        //    List<ArmePassive> lesObjetsCacher = new List<ArmePassive> { a1, a2 };
 
-            string image = "/Sources/VSCSolution/VuesVSC/Images/Sprite-Empty_Tome.png";
+        //    string image = "/Sources/VSCSolution/VuesVSC/Images/Sprite-Empty_Tome.png";
 
-            string desc = "ceci est une carte";
+        //    string desc = "ceci est une carte";
 
-            Carte carte = new Carte(nom, lesEnnemies, lesObjetsCacher, desc, image);
+        //    Carte carte = new Carte(nom, lesEnnemies, lesObjetsCacher, desc, image);
 
-            string attente = "";
-            int i = 1;
+        //    string attente = "";
+        //    int i = 1;
             
-            foreach (Ennemie ennemie in lesEnnemies)
-            {
-                attente = attente + "Ennemie n°" + i.ToString() + " présent dans la zone : " + ennemie.Nom;
-                i++;
+        //    foreach (Ennemie ennemie in lesEnnemies)
+        //    {
+        //        attente = attente + "Ennemie n°" + i.ToString() + " présent dans la zone : " + ennemie.Nom;
+        //        i++;
 
-            }
+        //    }
 
-            Assert.Equal(attente, carte.affichEnnemie());
-        }
+        //    Assert.Equal(attente, carte.affichEnnemie());
+        //}
 
-        [Fact]
-        public void testAffichArmePassive()
-        {
-            string nom = "carte";
+        //[Fact]
+        //public void testAffichArmePassive()
+        //{
+        //    string nom = "carte";
 
-            HashSet<Stat> stats = new HashSet<Stat>(); ;
-            stats.Add(new Stat(Stat.NomStat.Growth, 40));
-            stats.Add(new Stat(Stat.NomStat.Luck));
-            stats.Add(new Stat(Stat.NomStat.Magnet, 10));
+        //    HashSet<Stat> stats = new HashSet<Stat>(); ;
+        //    stats.Add(new Stat(Stat.NomStat.Growth, 40));
+        //    stats.Add(new Stat(Stat.NomStat.Luck));
+        //    stats.Add(new Stat(Stat.NomStat.Magnet, 10));
 
-            Ennemie e1 = new Ennemie("ennemie1", stats);
-            Ennemie e2 = new Ennemie("ennemie2", stats);
+        //    Ennemie e1 = new Ennemie("ennemie1", stats);
+        //    Ennemie e2 = new Ennemie("ennemie2", stats);
 
-            ArmePassive a1 = new ArmePassive("objet1",stats);
-            ArmePassive a2 = new ArmePassive("objet2",stats);
+        //    ArmePassive a1 = new ArmePassive("objet1",stats);
+        //    ArmePassive a2 = new ArmePassive("objet2",stats);
 
-            List<Ennemie> lesEnnemies = new List<Ennemie> { e1, e2 };
-            List<ArmePassive> lesObjetsCacher = new List<ArmePassive> { a1, a2 };
+        //    List<Ennemie> lesEnnemies = new List<Ennemie> { e1, e2 };
+        //    List<ArmePassive> lesObjetsCacher = new List<ArmePassive> { a1, a2 };
 
-            string image = "/Sources/VSCSolution/VuesVSC/Images/Sprite-Empty_Tome.png";
+        //    string image = "/Sources/VSCSolution/VuesVSC/Images/Sprite-Empty_Tome.png";
 
-            string desc = "ceci est une carte";
+        //    string desc = "ceci est une carte";
 
-            Carte carte = new Carte(nom, lesEnnemies, lesObjetsCacher, desc, image);
+        //    Carte carte = new Carte(nom, lesEnnemies, lesObjetsCacher, desc, image);
 
-            string attente = "";
-            int i = 1;
+        //    string attente = "";
+        //    int i = 1;
             
-            foreach (ArmePassive objetCacher in lesObjetsCacher)
-            {
-                attente = attente + "Arme passive caché n°" + i.ToString() + " : " + objetCacher.Nom;
-                i++;
-            }
+        //    foreach (ArmePassive objetCacher in lesObjetsCacher)
+        //    {
+        //        attente = attente + "Arme passive caché n°" + i.ToString() + " : " + objetCacher.Nom;
+        //        i++;
+        //    }
 
-            Assert.Equal(attente, carte.affichArmePassive());
-        }
+        //    Assert.Equal(attente, carte.affichArmePassive());
+        //}
 
     }
 }

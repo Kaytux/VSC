@@ -26,10 +26,6 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.Magnet, 0));
             stats.Add(new Stat(Stat.NomStat.XpGiven, 0));
             stats.Add(new Stat(Stat.NomStat.KnockbackReceive, 0));
-        }        
-        public override string ToString()
-        {
-            return Nom.ToString();
         }
     }
 }

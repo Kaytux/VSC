@@ -58,7 +58,6 @@ namespace ConsoleAppVSC
             
         }
         
-
         static ulong InitializeSteam()
         { 
             // Native API 

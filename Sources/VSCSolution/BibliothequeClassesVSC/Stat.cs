@@ -62,7 +62,7 @@ namespace BibliothequeClassesVSC
 
         public override int GetHashCode()
         {
-            return Nom.GetHashCode();
+            return Nom.GetHashCode() * Valeur.GetHashCode();
         }
 
         public int CompareTo([AllowNull] Stat other)

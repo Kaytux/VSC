@@ -13,10 +13,8 @@ namespace BibliothequeClassesVSC
             Description=description;
             Patch=patch;
         }
-        
         public string Description { get; private set; }
         public PatchNote Patch { get; private set; }
-
         public struct PatchNote
         {
             public byte Num { get; private set; }

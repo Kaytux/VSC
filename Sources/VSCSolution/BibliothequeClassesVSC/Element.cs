@@ -52,7 +52,11 @@ namespace BibliothequeClassesVSC
 
         public override int GetHashCode()
         {
-            return Nom.GetHashCode();
+            return Nom.GetHashCode() * this.GetType().GetHashCode();
+        }
+        public override string ToString()
+        {
+            return Nom.ToString();
         }
     }
 }

@@ -54,13 +54,6 @@ namespace BibliothequeClassesVSC
         {
             lesNotes.Add(new Note(e,note));
         }
-        public void afficherNotes()
-        {
-            foreach(Note n in LesNotes)
-            {
-                Console.WriteLine(n.ToString());
-            }
-        }
         public void modifNote() { }
     }
 }

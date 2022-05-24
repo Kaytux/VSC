@@ -29,37 +29,5 @@ namespace BibliothequeClassesVSC
             LesEnnemies = lesEnnemies;
             LesObjetsCaches = lesObjetsCaches;
         }
-
-        /// <summary>
-        /// affichage des objets présent sur la carte
-        /// </summary>
-        public string affichArmePassive() 
-        {
-            string affichage = "";
-            int i = 1;
-            foreach (ArmePassive arme in LesObjetsCaches)
-            {
-                affichage = affichage + "Arme passive caché n°" + i.ToString() + " : " + arme.Nom;
-                Console.WriteLine("Arme passive caché n°"+i+" : "+arme.Nom);
-                i++;
-            }
-            return affichage;
-        }
-
-        /// <summary>
-        /// affichage des ennemies présent sur la carte
-        /// </summary>
-        public string affichEnnemie()
-        {
-            string affichage = "";
-            int i = 1;
-            foreach (Ennemie ennemie in LesEnnemies)
-            {
-                affichage = affichage + "Ennemie n°" + i.ToString() + " présent dans la zone : " + ennemie.Nom;
-                Console.WriteLine("Ennemie n°" + i + " présent dans la zone : " + ennemie.Nom);
-                i++;
-            }
-            return affichage;
-        }
     }
 }
