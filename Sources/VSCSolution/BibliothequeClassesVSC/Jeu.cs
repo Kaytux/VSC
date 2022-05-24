@@ -24,6 +24,11 @@ namespace BibliothequeClassesVSC
             public DateTime Date { get; private set; }
             public PatchNote(byte num, string description, DateTime date)
             {
+                if (num < 0)
+                {
+                    throw new ArgumentException();
+                }
+
                 Num = num;
                 Description = description;
                 Date = date;

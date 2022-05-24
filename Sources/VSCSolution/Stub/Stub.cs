@@ -30,8 +30,8 @@ namespace Stub
             HashSet<Ennemie> lesEnnemies = new HashSet<Ennemie>();
             HashSet<Carte> lesCartes = new HashSet<Carte>();
             AjoutCollection(lesArmesPassives,
-                new ArmePassive("Armes Passives 1"),
-                new ArmePassive("Armes Passives 2"));
+                new ArmePassive("Armes Passives 1", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40))),
+                new ArmePassive("Armes Passives 2", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40))));
             AjoutCollection(lesPersonnages,
                 new Personnage("Perso 1", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40))),
                 new Personnage("Perso 2", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40))),

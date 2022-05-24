@@ -21,8 +21,8 @@ namespace InitTests
             Ennemie e1 = new Ennemie("ennemie1", stats);
             Ennemie e2 = new Ennemie("ennemie2", stats);
 
-            ArmePassive a1 = new ArmePassive("objet1");
-            ArmePassive a2 = new ArmePassive("objet2");
+            ArmePassive a1 = new ArmePassive("objet1",stats);
+            ArmePassive a2 = new ArmePassive("objet2",stats) ;
 
             List<Ennemie> lesEnnemies = new List<Ennemie> { e1, e2 };
             List<ArmePassive> lesObjetsCacher = new List<ArmePassive> { a1, a2 };
@@ -67,8 +67,8 @@ namespace InitTests
             Ennemie e1 = new Ennemie("ennemie1", stats);
             Ennemie e2 = new Ennemie("ennemie2", stats);
 
-            ArmePassive a1 = new ArmePassive("objet1");
-            ArmePassive a2 = new ArmePassive("objet2");
+            ArmePassive a1 = new ArmePassive("objet1",stats);
+            ArmePassive a2 = new ArmePassive("objet2",stats);
 
             List<Ennemie> lesEnnemies = new List<Ennemie> { e1, e2 };
             List<ArmePassive> lesObjetsCacher = new List<ArmePassive> { a1, a2 };
@@ -117,8 +117,8 @@ namespace InitTests
             Ennemie e1 = new Ennemie("ennemie1", stats);
             Ennemie e2 = new Ennemie("ennemie2", stats);
 
-            ArmePassive a1 = new ArmePassive("objet1");
-            ArmePassive a2 = new ArmePassive("objet2");
+            ArmePassive a1 = new ArmePassive("objet1",stats);
+            ArmePassive a2 = new ArmePassive("objet2",stats);
 
             List<Ennemie> lesEnnemies = new List<Ennemie> { e1, e2 };
             List<ArmePassive> lesObjetsCacher = new List<ArmePassive> { a1, a2 };
@@ -171,8 +171,8 @@ namespace InitTests
             Ennemie e1 = new Ennemie("ennemie1", stats);
             Ennemie e2 = new Ennemie("ennemie2", stats);
 
-            ArmePassive a1 = new ArmePassive("objet1");
-            ArmePassive a2 = new ArmePassive("objet2");
+            ArmePassive a1 = new ArmePassive("objet1",stats);
+            ArmePassive a2 = new ArmePassive("objet2",stats);
 
             List<Ennemie> lesEnnemies = new List<Ennemie> { e1, e2 };
             List<ArmePassive> lesObjetsCacher = new List<ArmePassive> { a1, a2 };
@@ -209,8 +209,8 @@ namespace InitTests
             Ennemie e1 = new Ennemie("ennemie1", stats);
             Ennemie e2 = new Ennemie("ennemie2", stats);
 
-            ArmePassive a1 = new ArmePassive("objet1");
-            ArmePassive a2 = new ArmePassive("objet2");
+            ArmePassive a1 = new ArmePassive("objet1",stats);
+            ArmePassive a2 = new ArmePassive("objet2",stats);
 
             List<Ennemie> lesEnnemies = new List<Ennemie> { e1, e2 };
             List<ArmePassive> lesObjetsCacher = new List<ArmePassive> { a1, a2 };
