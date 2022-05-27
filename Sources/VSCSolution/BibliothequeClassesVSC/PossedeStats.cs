@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
+    [DataContract, KnownType(typeof(Arme))]
     public abstract class PossedeStats : Element
     {
         protected PossedeStats(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A") 

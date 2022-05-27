@@ -7,8 +7,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BibliothequeClassesVSC\BibliothequeClassesVSC.csproj" />
-    <ProjectReference Include="..\DataContractPersistance\DataContractPersistance.csproj" />
-    <ProjectReference Include="..\Stub\Stub.csproj" />
+    <ProjectReference Include="..\DataContractPersistance\DataContractPersistanceVSC.csproj" />
+    <ProjectReference Include="..\Stub\StubVSC.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
+    [DataContract, KnownType(typeof(PossedeStats))]
     public abstract class Element
     {
         /// <summary>
@@ -25,6 +27,7 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// declaration de l'attribut Nom avec son getter et setter
         /// </summary>
+        [DataMember]
         public string Nom { get; set; }
 
         /// <summary>

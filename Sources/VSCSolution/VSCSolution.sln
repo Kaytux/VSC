@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VuesVSC", "VuesVSC\VuesVSC.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppVSC", "ConsoleAppVSC\ConsoleAppVSC.csproj", "{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InitTests", "InitTests\InitTests.csproj", "{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InitTestsVSC", "InitTests\InitTestsVSC.csproj", "{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stub", "Stub\Stub.csproj", "{337F6EB5-5719-482F-99FF-5DFEF6270082}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StubVSC", "Stub\StubVSC.csproj", "{337F6EB5-5719-482F-99FF-5DFEF6270082}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContractPersistance", "DataContractPersistance\DataContractPersistance.csproj", "{53C35130-204F-4090-914B-C1B9F514EE4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataContractPersistanceVSC", "DataContractPersistance\DataContractPersistanceVSC.csproj", "{53C35130-204F-4090-914B-C1B9F514EE4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDataContract", "TestDataContract\TestDataContract.csproj", "{F14A2CB3-3926-4014-9CEA-F35486CF956C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestPersistanceVSC", "TestDataContract\TestPersistanceVSC.csproj", "{F14A2CB3-3926-4014-9CEA-F35486CF956C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

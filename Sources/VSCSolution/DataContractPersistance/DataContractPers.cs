@@ -1,8 +1,10 @@
 ﻿using BibliothequeClassesVSC;
+using DataContractPersistanceVSC;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
+using System.Xml;
 
 namespace DataContractPersistance
 {
@@ -10,7 +12,12 @@ namespace DataContractPersistance
     {
         public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML");
         public string FileName { get; set; } = "vsc.xml";
-        public string File => Path.Combine(FilePath, FileName);
+        public string PersFile => Path.Combine(FilePath, FileName);
+        private DataContractSerializer Serializer { get; set; } = new DataContractSerializer(typeof(DataToPersist),
+                                                                                             new DataContractSerializerSettings()
+                                                                                             {
+                                                                                                 PreserveObjectReferences = true
+                                                                                             });
 
         public (IEnumerable<ArmePassive> lesArmesPassives, 
                 IEnumerable<ArmeActive> lesArmesActives, 
@@ -22,29 +29,26 @@ namespace DataContractPersistance
             throw new NotImplementedException();
         }
 
-        public void SauvegardeDonnées(IEnumerable<ArmePassive> lesArmesPassives, 
-                                      IEnumerable<ArmeActive> lesArmesActives, 
-                                      IEnumerable<Amelioration> lesAmeliorations, 
+        public void SauvegardeDonnées(IEnumerable<ArmePassive> lesArmesPassives,
+                                      IEnumerable<ArmeActive> lesArmesActives,
+                                      IEnumerable<Amelioration> lesAmeliorations,
                                       IEnumerable<Personnage> lesPersonnages,
                                       IEnumerable<Ennemie> lesEnnemies,
                                       IEnumerable<Carte> lesCartes)
         {
-            //var serializer = new DataContractSerializer(typeof(IEnumerable<ArmePassive>),
-            //                                            typeof(IEnumerable<ArmeActive>),
-            //                                            typeof(IEnumerable<Amelioration>),
-            //                                            typeof(IEnumerable<Personnage>),
-            //                                            typeof(IEnumerable<Ennemie>),
-            //                                            typeof(IEnumerable<Carte>));
-            //var serializer = new DataContractSerializer(typeof(IEnumerable<Element>));
-            //if(!Directory.Exists(FilePath))
-            //{
-            //    Directory.CreateDirectory(FilePath);
-            //}
-            //using (Stream s = File.Create(Path.Combine(FilePath, FileName)))
-            //{
-            //    serializer.WriteObject(s, lesArmesPassives);
-            //    serializer.WriteObject(s, lesArmesActives);
-            //}
+            var serializer=new DataContractSerializer(typeof(IEnumerable<Personnage>));
+            if (!Directory.Exists(FilePath))
+            {
+                Directory.CreateDirectory(FilePath);
+            }
+            var settings = new XmlWriterSettings() { Indent = true };
+            using (TextWriter tw = File.CreateText(PersFile))
+            {
+                using (XmlWriter writer = XmlWriter.Create(tw, settings))
+                {
+                    serializer.WriteObject(writer, lesPersonnages);
+                }
+            }
         }
     }
 }

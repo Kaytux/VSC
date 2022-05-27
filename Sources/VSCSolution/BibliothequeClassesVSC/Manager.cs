@@ -80,6 +80,12 @@ namespace BibliothequeClassesVSC
             {
                 lesCartes.Add(donn);
             }
+            LesArmesPassives = new ReadOnlyCollection<ArmePassive>(new List<ArmePassive>(lesArmesPassives));
+            LesArmesActives = new ReadOnlyCollection<ArmeActive>(new List<ArmeActive>(lesArmesActives));
+            LesAmeliorations = new ReadOnlyCollection<Amelioration>(new List<Amelioration>(lesAmeliorations));
+            LesPersonnages = new ReadOnlyCollection<Personnage>(new List<Personnage>(lesPersonnages));
+            LesEnnemies = new ReadOnlyCollection<Ennemie>(new List<Ennemie>(lesEnnemies));
+            LesCartes = new ReadOnlyCollection<Carte>(new List<Carte>(lesCartes));
         }
 
         public void SauvegardeDonnées()
@@ -95,13 +101,6 @@ namespace BibliothequeClassesVSC
         public Manager(IPersistanceManager persistance)
         {
             Persistance = persistance;
-            ChargeDonnées();
-            LesArmesPassives = new ReadOnlyCollection<ArmePassive>(new List<ArmePassive>(lesArmesPassives));
-            LesArmesActives = new ReadOnlyCollection<ArmeActive>(new List<ArmeActive>(lesArmesActives));
-            LesAmeliorations = new ReadOnlyCollection<Amelioration>(new List<Amelioration>(lesAmeliorations));
-            LesPersonnages = new ReadOnlyCollection<Personnage>(new List<Personnage>(lesPersonnages));
-            LesEnnemies = new ReadOnlyCollection<Ennemie>(new List<Ennemie>(lesEnnemies));
-            LesCartes = new ReadOnlyCollection<Carte>(new List<Carte>(lesCartes));
         }
 
         public void AffichList(IEnumerable<Element> liste)

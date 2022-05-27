@@ -18,11 +18,11 @@ namespace Stub
         }
 
         public (IEnumerable<ArmePassive> lesArmesPassives, 
-            IEnumerable<ArmeActive> lesArmesActives, 
-            IEnumerable<Amelioration> lesAmeliorations, 
-            IEnumerable<Personnage> lesPersonnages,
-            IEnumerable<Ennemie> lesEnnemies,
-            IEnumerable<Carte> lesCartes) ChargeDonnées()
+                IEnumerable<ArmeActive> lesArmesActives, 
+                IEnumerable<Amelioration> lesAmeliorations, 
+                IEnumerable<Personnage> lesPersonnages,
+                IEnumerable<Ennemie> lesEnnemies,
+                IEnumerable<Carte> lesCartes) ChargeDonnées()
         {
             HashSet<ArmePassive> lesArmesPassives = new HashSet<ArmePassive>();
             HashSet<ArmeActive> lesArmesActives = new HashSet<ArmeActive>();
