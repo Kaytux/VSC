@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliothequeClassesVSC", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppVSC", "ConsoleAppVSC\ConsoleAppVSC.csproj", "{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InitTests", "InitTests\InitTests.csproj", "{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InitTestsVSC", "InitTests\InitTestsVSC.csproj", "{BE043D05-69E8-4D3D-848A-0AD492B5370E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E20D9D5-BC2E-47E7-8541-C7761CEFCD11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DEB3E6E-ACA0-4C2A-AE8A-D84C58855A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE043D05-69E8-4D3D-848A-0AD492B5370E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE043D05-69E8-4D3D-848A-0AD492B5370E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE043D05-69E8-4D3D-848A-0AD492B5370E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE043D05-69E8-4D3D-848A-0AD492B5370E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
