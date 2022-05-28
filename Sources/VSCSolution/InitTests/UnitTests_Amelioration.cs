@@ -106,5 +106,36 @@ namespace InitTests
             Assert.Equal(active, amelioration.ArmeAct);
             Assert.Equal(passive, amelioration.ArmePass);
         }
+
+        [Fact]
+        public void TestStatsAmelioration()
+        {
+            string nom = "amelioration";
+
+            HashSet<Stat> stats = new HashSet<Stat>();
+            stats.Add(new Stat(Stat.NomStat.MaxLevel, 10));
+            stats.Add(new Stat(Stat.NomStat.Knockback, 20));
+            stats.Add(new Stat(Stat.NomStat.Rarity, 30));
+            stats.Add(new Stat(Stat.NomStat.CritRate, 10));
+            stats.Add(new Stat(Stat.NomStat.CritMultiplier, 15));
+
+            Amelioration amelioration = new Amelioration(nom, stats);
+
+            Assert.Equal(nom, amelioration.Nom);
+
+            foreach (Stat particularite in stats)
+            {
+                foreach (Stat stat in amelioration.stats)
+                {
+                    if (particularite.Nom == stat.Nom)
+                    {
+                        Assert.Equal(particularite, stat);
+                    }
+                }
+            }
+
+            Assert.Equal("N/A", amelioration.Description);
+            Assert.Equal("N/A", amelioration.Image);
+        }
     }
 }

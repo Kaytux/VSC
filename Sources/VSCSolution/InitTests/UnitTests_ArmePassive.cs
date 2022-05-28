@@ -53,5 +53,35 @@ namespace InitTests
             Assert.Equal(niveau, arme.Niveau);
             Assert.Equal(amelioration, arme.Amelioration);
         }
+        [Fact]
+        public void TestStatsAemePasive()
+        {
+            string nom = "passive";
+
+            HashSet<Stat> stats = new HashSet<Stat>();
+            stats.Add(new Stat(Stat.NomStat.MaxLevel, 20));
+            stats.Add(new Stat(Stat.NomStat.Knockback, 20));
+            stats.Add(new Stat(Stat.NomStat.Rarity, 10));
+            stats.Add(new Stat(Stat.NomStat.CritRate, 5));
+            stats.Add(new Stat(Stat.NomStat.CritMultiplier, 15));
+
+            ArmePassive passive = new ArmePassive(nom, stats);
+
+            Assert.Equal(nom, passive.Nom);
+
+            foreach (Stat particularite in stats)
+            {
+                foreach (Stat stat in passive.stats)
+                {
+                    if (particularite.Nom == stat.Nom)
+                    {
+                        Assert.Equal(particularite, stat);
+                    }
+                }
+            }
+
+            Assert.Equal("N/A", passive.Description);
+            Assert.Equal("N/A", passive.Image);
+        }
     }
 }
