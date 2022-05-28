@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    [DataContract, KnownType(typeof(ArmePassive))]
+    [DataContract, KnownType(typeof(ArmePassive)), KnownType(typeof(ArmeActive)), KnownType(typeof(Amelioration))]
     public abstract class Arme: PossedeStats
     {
         /// <summary>
@@ -31,6 +31,7 @@ namespace BibliothequeClassesVSC
         /// declaration de l'attribut Niveau avec son getter et setter
         /// </summary>
         public byte Niveau { get; set; }
+        [DataMember]
         public IEnumerable<object> Amelioration { get; set; }
 
         /// <summary>

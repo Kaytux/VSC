@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
+    [DataContract]
     public class ArmeActive : Arme
     {
         /// <summary>
@@ -27,6 +29,7 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// declaration de l'attribut Amelioration avec son getter et setter
         /// </summary>
+        [DataMember]
         public new Amelioration Amelioration { get; set; }
     } 
 }

@@ -1,4 +1,6 @@
-﻿namespace BibliothequeClassesVSC
+﻿using System.Runtime.Serialization;
+
+namespace BibliothequeClassesVSC
 {
     public partial class Stat
     {

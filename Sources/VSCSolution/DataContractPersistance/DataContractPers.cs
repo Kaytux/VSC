@@ -26,7 +26,23 @@ namespace DataContractPersistance
                 IEnumerable<Ennemie> lesEnnemies, 
                 IEnumerable<Carte> lesCartes) ChargeDonnées()
         {
-            throw new NotImplementedException();
+            if(!File.Exists(PersFile))
+            {
+                throw new FileNotFoundException("the persistance file is missing");
+            }
+
+            DataToPersist data;
+
+            using (Stream s = File.OpenRead(PersFile))
+            {
+                data = Serializer.ReadObject(s) as DataToPersist;
+            }
+            return (data.Ap,
+                    data.Aa,
+                    data.Am,
+                    data.Pe,
+                    data.En,
+                    data.Ca);
         }
 
         public void SauvegardeDonnées(IEnumerable<ArmePassive> lesArmesPassives,
@@ -36,17 +52,25 @@ namespace DataContractPersistance
                                       IEnumerable<Ennemie> lesEnnemies,
                                       IEnumerable<Carte> lesCartes)
         {
-            var serializer=new DataContractSerializer(typeof(IEnumerable<Personnage>));
             if (!Directory.Exists(FilePath))
             {
                 Directory.CreateDirectory(FilePath);
             }
+
+            DataToPersist data = new DataToPersist();
+            data.Ap.AddRange(lesArmesPassives);
+            data.Aa.AddRange(lesArmesActives);
+            data.Am.AddRange(lesAmeliorations);
+            data.Pe.AddRange(lesPersonnages);
+            data.En.AddRange(lesEnnemies);
+            data.Ca.AddRange(lesCartes);
+
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(PersFile))
             {
                 using (XmlWriter writer = XmlWriter.Create(tw, settings))
                 {
-                    serializer.WriteObject(writer, lesPersonnages);
+                    Serializer.WriteObject(writer, data);
                 }
             }
         }

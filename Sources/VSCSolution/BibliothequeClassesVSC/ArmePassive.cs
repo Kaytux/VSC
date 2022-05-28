@@ -28,6 +28,7 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// declaration de l'attribut Amelioration avec son getter et setter
         /// </summary>
+        [DataMember]
         public new Amelioration Amelioration { get; set; }
     }
 }

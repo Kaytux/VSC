@@ -2,22 +2,26 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Math;
 
 namespace BibliothequeClassesVSC
 {
+    [DataContract]
     public partial class Stat :IEquatable<Stat>, IComparable<Stat>,IComparable
     {
         /// <summary>
         /// Une stat possède sa valeur
         /// </summary>
+        [DataMember]
         public int Valeur { get; set; }
 
         /// <summary>
         /// Une stat possède son nom
         /// </summary>
+        [DataMember]
         public NomStat Nom { get; private set; }
 
         /// <summary>

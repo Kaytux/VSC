@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    [DataContract, KnownType(typeof(Arme))]
+    [DataContract, KnownType(typeof(Arme)), KnownType(typeof(Entite))]
     public abstract class PossedeStats : Element
     {
         protected PossedeStats(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A") 
             : base(nom, desc, image) { }
 
+        [DataMember]
         public SortedSet<Stat> stats = new SortedSet<Stat>();
 
         protected void AjoutParticularite(HashSet<Stat> particularite)
