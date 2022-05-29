@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    [DataContract, KnownType(typeof(Personnage)), KnownType(typeof(Ennemie))]
     public abstract class Entite : PossedeStats
     {
         public Entite(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom,particularite, desc, image)

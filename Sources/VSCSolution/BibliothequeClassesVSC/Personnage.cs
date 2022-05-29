@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    [DataContract]
     public class Personnage : Entite
     {
         /// <summary>
@@ -17,7 +15,10 @@ namespace BibliothequeClassesVSC
         /// <param name="particularite">liste de Stat qui correspond au différentes particularité du personnage que l'on souhaite créer. Ces particularités sont des amélioration des stats de bases communes à tout les personnages qui lui sont propres</param>
         /// <param name="desc">description du personnage que l'on souhaite créer</param>
         /// <param name="image">chemin permettant d'accéder à l'image qui correspond au personnage que l'on souhaite créer</param>
-        public Personnage(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom,particularite, desc, image)
+        public Personnage(string nom, 
+                          HashSet<Stat> particularite, 
+                          string desc = "N/A", 
+                          string image = "N/A") : base(nom,particularite, desc, image)
         {
             stats.Add(new Stat(Stat.NomStat.Luck, 0));
             stats.Add(new Stat(Stat.NomStat.Growth, 0));

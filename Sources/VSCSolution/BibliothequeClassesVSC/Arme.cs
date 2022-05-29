@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    [DataContract, KnownType(typeof(ArmePassive)), KnownType(typeof(ArmeActive)), KnownType(typeof(Amelioration))]
     public abstract class Arme: PossedeStats
     {
         /// <summary>
@@ -31,8 +29,6 @@ namespace BibliothequeClassesVSC
         /// declaration de l'attribut Niveau avec son getter et setter
         /// </summary>
         public byte Niveau { get; set; }
-        [DataMember]
-        public IEnumerable<object> Amelioration { get; set; }
 
         /// <summary>
         /// méthode qui permet d'augmenter de 1 le Niveau d'une arme 

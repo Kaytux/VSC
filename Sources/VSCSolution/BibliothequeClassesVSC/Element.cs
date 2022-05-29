@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    [DataContract, KnownType(typeof(PossedeStats)), KnownType(typeof(Carte))]
     public abstract class Element
     {
         /// <summary>
@@ -27,19 +25,16 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// declaration de l'attribut Nom avec son getter et setter
         /// </summary>
-        [DataMember]
         public string Nom { get; set; }
 
         /// <summary>
         /// declaration de l'attribut Description avec son getter et setter
         /// </summary>
-        [DataMember] 
         public string Description { get; protected set; }
 
         /// <summary>
         /// declaration de l'attribut Image (chemin d'acces vers l'image) avec getter et setter
         /// </summary>
-        [DataMember]
         public string Image { get; set; }
 
         public bool Equals([AllowNull] Element other)

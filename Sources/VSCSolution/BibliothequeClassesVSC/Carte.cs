@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    [DataContract]
     public class Carte : Element
     {
         /// <summary>
         /// Une carte possède un attribut lesEnnemies qui correspond à une liste d'ennemie qui contient les ennemies présent dans la zone
         /// </summary>
-        [DataMember]
         public List<Ennemie> LesEnnemies;
 
         /// <summary>
         /// Une carte possède un attribut lesObjetsCaches qui correspond à une liste d'arme passive qui contient les armes passives qui sont cacher un peu partout sur la carte
         /// </summary>
-        [DataMember]
         public List<ArmePassive> LesObjetsCaches;
 
         /// <summary>
