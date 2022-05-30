@@ -12,16 +12,16 @@ namespace DataContractPersistanceVSC
     public class DataToPersist
     {
         [DataMember]
-        public List<ArmePassive> Ap { get; set; } = new List<ArmePassive>();
+        public List<ArmePassiveDTO> Ap { get; set; } = new List<ArmePassiveDTO>();
         [DataMember]
-        public List<ArmeActive> Aa { get; set; } = new List<ArmeActive>();
+        public List<ArmeActiveDTO> Aa { get; set; } = new List<ArmeActiveDTO>();
         [DataMember]
-        public List<Amelioration> Am { get; set; } = new List<Amelioration>();
+        public List<AmeliorationDTO> Am { get; set; } = new List<AmeliorationDTO>();
         [DataMember]
-        public List<Personnage> Pe { get; set; } = new List<Personnage>();
+        public List<PersonnageDTO> Pe { get; set; } = new List<PersonnageDTO>();
         [DataMember]
-        public List<Ennemie> En { get; set; } = new List<Ennemie>();
+        public List<EnnemieDTO> En { get; set; } = new List<EnnemieDTO>();
         [DataMember]
-        public List<Carte> Ca { get; set; } = new List<Carte>();
+        public List<CarteDTO> Ca { get; set; } = new List<CarteDTO>();
     }
 }

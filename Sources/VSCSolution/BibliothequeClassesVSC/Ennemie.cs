@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
-    [DataContract]
     public class Ennemie : Entite
     {
         /// <summary>

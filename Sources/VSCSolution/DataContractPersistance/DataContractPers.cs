@@ -3,6 +3,7 @@ using DataContractPersistanceVSC;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Xml;
 
@@ -13,6 +14,14 @@ namespace DataContractPersistance
         public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML");
         public string FileName { get; set; } = "vsc.xml";
         public string PersFile => Path.Combine(FilePath, FileName);
+
+        internal List<ArmePassive> LesArmesPassives { get; set; } = new List<ArmePassive>();
+        internal List<ArmeActive> LesArmesActives { get; set; } = new List<ArmeActive>();
+        internal List<Amelioration> LesAmeliorations { get; set; } = new List<Amelioration>();
+        internal List<Personnage> LesPersonnages { get; set; } = new List<Personnage>();
+        internal List<Ennemie> LesEnnemies { get; set; } = new List<Ennemie>();
+        internal List<Carte> LesCartes { get; set; } = new List<Carte>();
+
         private DataContractSerializer Serializer { get; set; } = new DataContractSerializer(typeof(DataToPersist),
                                                                                              new DataContractSerializerSettings()
                                                                                              {
@@ -37,12 +46,20 @@ namespace DataContractPersistance
             {
                 data = Serializer.ReadObject(s) as DataToPersist;
             }
-            return (data.Ap,
-                    data.Aa,
-                    data.Am,
-                    data.Pe,
-                    data.En,
-                    data.Ca);
+
+            LesPersonnages = data.Pe.ToPOCOs().ToList();
+            LesEnnemies = data.En.ToPOCOs().ToList();
+            LesAmeliorations = data.Am.ToPOCOs(LesArmesActives, LesArmesPassives).ToList();
+            LesArmesPassives = data.Ap.ToPOCOs(LesAmeliorations).ToList();
+            LesArmesActives = data.Aa.ToPOCOs(LesAmeliorations).ToList();
+            LesCartes = data.Ca.ToPOCOs(LesEnnemies,LesArmesPassives).ToList();
+
+            return (LesArmesPassives,
+                    LesArmesActives,
+                    LesAmeliorations,
+                    LesPersonnages,
+                    LesEnnemies,
+                    LesCartes);
         }
 
         public void SauvegardeDonnées(IEnumerable<ArmePassive> lesArmesPassives,
@@ -58,12 +75,12 @@ namespace DataContractPersistance
             }
 
             DataToPersist data = new DataToPersist();
-            data.Ap.AddRange(lesArmesPassives);
-            data.Aa.AddRange(lesArmesActives);
-            data.Am.AddRange(lesAmeliorations);
-            data.Pe.AddRange(lesPersonnages);
-            data.En.AddRange(lesEnnemies);
-            data.Ca.AddRange(lesCartes);
+            data.Ap.AddRange(lesArmesPassives.ToDTOs());
+            data.Aa.AddRange(lesArmesActives.ToDTOs());
+            data.Am.AddRange(lesAmeliorations.ToDTOs());
+            data.Pe.AddRange(lesPersonnages.ToDTOs());
+            data.En.AddRange(lesEnnemies.ToDTOs());
+            data.Ca.AddRange(lesCartes.ToDTOs());
 
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(PersFile))
