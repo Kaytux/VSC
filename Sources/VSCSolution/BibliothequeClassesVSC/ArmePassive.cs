@@ -16,16 +16,20 @@ namespace BibliothequeClassesVSC
         /// <param name="image"></param>
         /// <param name="niveau"></param>
         /// <param name="amelioration"></param>
-        public ArmePassive(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A", byte niveau = 1, Amelioration amelioration=null)
-            : base(nom, particularite, desc, image, niveau) 
+        public ArmePassive(string nom, HashSet<Stat> particularite, string desc, string image)
+            : base(nom, particularite, desc, image) 
         {
-            Amelioration = amelioration;
             AjoutParticularite(particularite);
         }
 
         /// <summary>
         /// declaration de l'attribut Amelioration avec son getter et setter
         /// </summary>
-        public new Amelioration Amelioration { get; set; }
+        public Amelioration Amelioration { get; set; }
+
+        public void ajouterAmelioration(Amelioration amelio)
+        {
+            Amelioration = amelio;
+        }
     }
 }
