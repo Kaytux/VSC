@@ -15,10 +15,10 @@ namespace BibliothequeClassesVSC
         /// <param name="desc"></param>
         /// <param name="image"></param>
         /// <param name="niveau"></param>
-        public Arme(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A", byte niveau = 1)
+        public Arme(string nom, HashSet<Stat> particularite, string desc, string image)
             : base(nom, particularite, desc, image)
         {
-            Niveau = niveau;
+            Niveau = 1;
             stats.Add(new Stat(Stat.NomStat.MaxLevel, 0));
             stats.Add(new Stat(Stat.NomStat.Knockback, 0));
             stats.Add(new Stat(Stat.NomStat.Rarity, 0));

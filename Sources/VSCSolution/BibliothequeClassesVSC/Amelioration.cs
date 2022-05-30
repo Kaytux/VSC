@@ -17,12 +17,14 @@ namespace BibliothequeClassesVSC
         /// <param name="niveau"></param>
         /// <param name="active"></param>
         /// <param name="passive"></param>
-        public Amelioration(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A", byte niveau = 1, ArmeActive active = null, ArmePassive passive = null)
-            : base(nom, particularite, desc, image, niveau)
+        public Amelioration(string nom, HashSet<Stat> particularite, string desc, string image, ArmeActive active, ArmePassive passive)
+            : base(nom, particularite, desc, image)
         {
             ArmeAct = active;
             ArmePass = passive;
             AjoutParticularite(particularite);
+            active.ajouterAmelioration(this); 
+            passive.ajouterAmelioration(this);
         }
 
         /// <summary>
