@@ -8,7 +8,7 @@ namespace BibliothequeClassesVSC
 {
     public abstract class PossedeStats : Element
     {
-        protected PossedeStats(string nom, HashSet<Stat> particularites, string desc = "N/A", string image = "N/A") 
+        protected PossedeStats(string nom, string desc, string image, HashSet<Stat> particularites) 
             : base(nom, desc, image) 
         {
             this.particularites = particularites;

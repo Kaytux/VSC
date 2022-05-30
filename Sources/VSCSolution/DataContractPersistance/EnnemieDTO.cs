@@ -24,7 +24,7 @@ namespace DataContractPersistanceVSC
     static class EnnemieExtensions
     {
         public static Ennemie ToPOCO(this EnnemieDTO dto)
-            => new Ennemie(dto.Nom, dto.particularites.ToPOCOs().ToHashSet(), dto.Description, dto.Image);
+            => new Ennemie(dto.Nom, dto.Description, dto.Image, dto.particularites.ToPOCOs().ToHashSet() );
 
         public static IEnumerable<Ennemie> ToPOCOs(this IEnumerable<EnnemieDTO> dtos)
             => dtos.Select(dto => dto.ToPOCO());

@@ -15,7 +15,7 @@ namespace BibliothequeClassesVSC
         /// <param name="nom"></param>
         /// <param name="desc"></param>
         /// <param name="image"></param>
-        public Element(string nom, string desc="N/A", string image="N/A")
+        public Element(string nom, string desc, string image)
         {
             Nom = nom;
             Description = desc;

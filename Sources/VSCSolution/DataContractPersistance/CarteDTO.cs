@@ -25,19 +25,15 @@ namespace DataContractPersistanceVSC
 
     static class CarteExtensions
     {
-        public static Carte ToPOCO(this CarteDTO dto, IEnumerable<Ennemie> e, IEnumerable<ArmePassive> a)
+        public static Carte ToPOCO(this CarteDTO dto)
             => new Carte(dto.Nom,
-                         (from en in e
-                         join nom in dto.NomsEnnemies on en.Nom equals nom
-                         select en).ToList(),
-                         (from ap in a
-                         join nom in dto.NomsArmesPass on ap.Nom equals nom
-                         select ap).ToList(),
                          dto.Description,
-                         dto.Image);
+                         dto.Image,
+                         dto.NomsEnnemies,
+                         dto.NomsArmesPass);
 
-        public static IEnumerable<Carte> ToPOCOs(this IEnumerable<CarteDTO> dtos, IEnumerable<Ennemie> e, IEnumerable<ArmePassive> a)
-            => dtos.Select(dto => dto.ToPOCO(e,a));
+        public static IEnumerable<Carte> ToPOCOs(this IEnumerable<CarteDTO> dtos)
+            => dtos.Select(dto => dto.ToPOCO());
 
         public static CarteDTO ToDTO(this Carte poco)
             => new CarteDTO
@@ -45,11 +41,8 @@ namespace DataContractPersistanceVSC
                 Nom = poco.Nom,
                 Description = poco.Description,
                 Image = poco.Image,
-                NomsEnnemies = (from en in poco.LesEnnemies
-                                select en.Nom).ToList(),
-                NomsArmesPass = (from ap in poco.LesObjetsCaches
-                                select ap.Nom).ToList(),
-            };
+                NomsEnnemies = poco.NomEnn,
+                NomsArmesPass = poco.NomArmPass};
         public static IEnumerable<CarteDTO> ToDTOs(this IEnumerable<Carte> pocos)
             => pocos.Select(poco => poco.ToDTO());
     }

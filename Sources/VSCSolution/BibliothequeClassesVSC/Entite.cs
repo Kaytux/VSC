@@ -9,7 +9,7 @@ namespace BibliothequeClassesVSC
 {
     public abstract class Entite : PossedeStats
     {
-        public Entite(string nom, HashSet<Stat> particularite, string desc = "N/A", string image = "N/A") : base(nom,particularite, desc, image)
+        public Entite(string nom, string desc, string image, HashSet<Stat> particularite) : base(nom, desc, image, particularite)
         {
             stats.Add(new Stat(Stat.NomStat.MaxHealth, 0));
             stats.Add(new Stat(Stat.NomStat.Recovery, 0));

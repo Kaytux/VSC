@@ -24,7 +24,7 @@ namespace DataContractPersistanceVSC
     static class PersonnageExtensions
     {
         public static Personnage ToPOCO(this PersonnageDTO dto)
-            => new Personnage(dto.Nom, dto.particularites.ToPOCOs().ToHashSet(), dto.Description, dto.Image);
+            => new Personnage(dto.Nom, dto.Description, dto.Image, dto.particularites.ToPOCOs().ToHashSet());
 
         public static IEnumerable<Personnage> ToPOCOs(this IEnumerable<PersonnageDTO> dtos)
             => dtos.Select(dto => dto.ToPOCO());

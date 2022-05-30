@@ -19,7 +19,7 @@ namespace BibliothequeClassesVSC
                           string desc,
                           string image,
                           HashSet<Stat> particularite
-                          ) : base(nom,particularite, desc, image)
+                          ) : base(nom, desc, image, particularite)
         {
             stats.Add(new Stat(Stat.NomStat.Luck, 0));
             stats.Add(new Stat(Stat.NomStat.Growth, 0));

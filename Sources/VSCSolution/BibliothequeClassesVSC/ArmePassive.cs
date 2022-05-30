@@ -16,8 +16,8 @@ namespace BibliothequeClassesVSC
         /// <param name="image"></param>
         /// <param name="niveau"></param>
         /// <param name="amelioration"></param>
-        public ArmePassive(string nom, HashSet<Stat> particularite, string desc, string image)
-            : base(nom, particularite, desc, image) 
+        public ArmePassive(string nom, string desc, string image, HashSet<Stat> particularite)
+            : base(nom, desc, image, particularite) 
         {
             AjoutParticularite(particularite);
         }

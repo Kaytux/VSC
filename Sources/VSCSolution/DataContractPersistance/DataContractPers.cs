@@ -49,10 +49,10 @@ namespace DataContractPersistance
 
             LesPersonnages = data.Pe.ToPOCOs().ToList();
             LesEnnemies = data.En.ToPOCOs().ToList();
-            LesAmeliorations = data.Am.ToPOCOs(LesArmesActives, LesArmesPassives).ToList();
-            LesArmesPassives = data.Ap.ToPOCOs(LesAmeliorations).ToList();
-            LesArmesActives = data.Aa.ToPOCOs(LesAmeliorations).ToList();
-            LesCartes = data.Ca.ToPOCOs(LesEnnemies,LesArmesPassives).ToList();
+            LesAmeliorations = data.Am.ToPOCOs().ToList();
+            LesArmesPassives = data.Ap.ToPOCOs().ToList();
+            LesArmesActives = data.Aa.ToPOCOs().ToList();
+            LesCartes = data.Ca.ToPOCOs().ToList();
 
             return (LesArmesPassives,
                     LesArmesActives,

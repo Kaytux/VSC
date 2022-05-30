@@ -19,22 +19,17 @@ namespace DataContractPersistanceVSC
         public string Image { get; set; }
         [DataMember]
         public HashSet<StatDTO> particularites = new HashSet<StatDTO>();
-        [DataMember]
-        public string NomAmelioration { get; set; } = "";
     }
 
     static class ArmeActiveExtensions
     {
-        public static ArmeActive ToPOCO(this ArmeActiveDTO dto, IEnumerable<Amelioration> a)
+        public static ArmeActive ToPOCO(this ArmeActiveDTO dto)
             => new ArmeActive(dto.Nom,
-                               dto.particularites.ToPOCOs().ToHashSet(),
                                dto.Description,
                                dto.Image,
-                               1,
-                               a.SingleOrDefault(ame => ame.Nom == dto.NomAmelioration));
-
-        public static IEnumerable<ArmeActive> ToPOCOs(this IEnumerable<ArmeActiveDTO> dtos, IEnumerable<Amelioration> a)
-            => dtos.Select(dto => dto.ToPOCO(a));
+                               dto.particularites.ToPOCOs().ToHashSet());
+        public static IEnumerable<ArmeActive> ToPOCOs(this IEnumerable<ArmeActiveDTO> dtos)
+            => dtos.Select(dto => dto.ToPOCO());
 
         public static ArmeActiveDTO ToDTO(this ArmeActive poco)
             => new ArmeActiveDTO

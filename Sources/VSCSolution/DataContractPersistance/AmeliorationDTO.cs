@@ -20,24 +20,23 @@ namespace DataContractPersistanceVSC
         [DataMember]
         public HashSet<StatDTO> particularites = new HashSet<StatDTO>();
         [DataMember]
-        public string NomArmeAct { get; set; } = "";
+        public string NomArmeAct { get; set; }
         [DataMember]
-        public string NomArmePass { get; set; } = "";
+        public string NomArmePass { get; set; }
     }
 
     static class AmeliorationExtensions
     {
-        public static Amelioration ToPOCO(this AmeliorationDTO dto, IEnumerable<ArmeActive> a, IEnumerable<ArmePassive> p)
-            => new Amelioration(dto.Nom, 
-                                dto.particularites.ToPOCOs().ToHashSet(), 
-                                dto.Description, 
+        public static Amelioration ToPOCO(this AmeliorationDTO dto)
+            => new Amelioration(dto.Nom,
+                                dto.Description,
                                 dto.Image,
-                                1,
-                                a.SingleOrDefault(ame => ame.Nom == dto.NomArmeAct),
-                                p.SingleOrDefault(ame => ame.Nom == dto.NomArmePass));
+                                dto.particularites.ToPOCOs().ToHashSet(), 
+                                dto.NomArmeAct,
+                                dto.NomArmePass);
 
-        public static IEnumerable<Amelioration> ToPOCOs(this IEnumerable<AmeliorationDTO> dtos, IEnumerable<ArmeActive> a, IEnumerable<ArmePassive> p)
-            => dtos.Select(dto => dto.ToPOCO(a,p));
+        public static IEnumerable<Amelioration> ToPOCOs(this IEnumerable<AmeliorationDTO> dtos)
+            => dtos.Select(dto => dto.ToPOCO());
 
         public static AmeliorationDTO ToDTO(this Amelioration poco)
             => new AmeliorationDTO
@@ -45,7 +44,9 @@ namespace DataContractPersistanceVSC
                 Nom = poco.Nom,
                 Description = poco.Description,
                 Image = poco.Image,
-                particularites = poco.particularites.ToDTOs().ToHashSet()
+                particularites = poco.particularites.ToDTOs().ToHashSet(),
+                NomArmeAct = poco.NomArmeAct,
+                NomArmePass = poco.NomArmePass
             };
         public static IEnumerable<AmeliorationDTO> ToDTOs(this IEnumerable<Amelioration> pocos)
             => pocos.Select(poco => poco.ToDTO());
