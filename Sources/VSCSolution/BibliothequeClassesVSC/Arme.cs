@@ -15,10 +15,11 @@ namespace BibliothequeClassesVSC
         /// <param name="desc"></param>
         /// <param name="image"></param>
         /// <param name="niveau"></param>
-        public Arme(string nom, string desc, string image, HashSet<Stat> particularite)
+        public Arme(string nom, string desc, string image, HashSet<Stat> particularite, List<HashSet<Stat>> statsNiveau)
             : base(nom, desc, image ,particularite)
         {
-            Niveau = 1;
+            Niveau = 0;
+            this.statsNiveau = statsNiveau;
             stats.Add(new Stat(Stat.NomStat.MaxLevel, 0));
             stats.Add(new Stat(Stat.NomStat.Knockback, 0));
             stats.Add(new Stat(Stat.NomStat.Rarity, 0));
@@ -28,14 +29,19 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// declaration de l'attribut Niveau avec son getter et setter
         /// </summary>
-        public byte Niveau { get; set; }
+        public int Niveau { get; set; }
+
+        public List<HashSet<Stat>> statsNiveau;
 
         /// <summary>
         /// méthode qui permet d'augmenter de 1 le Niveau d'une arme 
         /// </summary>
         public void AugmenterNiveau()
         {
-            ++this.Niveau;
+            Niveau = Niveau + 1 ;
+            this.AjoutStats(statsNiveau[Niveau-1]);
+            this.AjoutParticularite(statsNiveau[Niveau-1]);
+
         }
 
         /// <summary>
@@ -43,7 +49,9 @@ namespace BibliothequeClassesVSC
         /// </summary>
         public void BaisserNiveau()
         {
-            --this.Niveau;
+            Niveau = Niveau - 1;
+            this.EnleverStats(statsNiveau[Niveau]);
+            this.EnleverParticularite(statsNiveau[Niveau]);
         }
     }
 }

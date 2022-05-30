@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BibliothequeClassesVSC\BibliothequeClassesVSC.csproj" />
-    <ProjectReference Include="..\Stub\StubVSC.csproj" />
   </ItemGroup>
 
 </Project>

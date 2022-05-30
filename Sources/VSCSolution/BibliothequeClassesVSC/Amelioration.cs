@@ -17,8 +17,8 @@ namespace BibliothequeClassesVSC
         /// <param name="niveau"></param>
         /// <param name="active"></param>
         /// <param name="passive"></param>
-        public Amelioration(string nom, string desc, string image, HashSet<Stat> particularite, string active, string passive)
-            : base(nom, desc, image, particularite)
+        public Amelioration(string nom, string desc, string image, HashSet<Stat> particularite, string active, string passive, List<HashSet<Stat>> statsNiveau)
+            : base(nom, desc, image, particularite, statsNiveau)
         {
             NomArmeAct = active;
             NomArmePass = passive;
