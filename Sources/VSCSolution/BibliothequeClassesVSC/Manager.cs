@@ -11,46 +11,22 @@ namespace BibliothequeClassesVSC
     public class Manager
     {
         public IPersistanceManager Persistance { get; /*private*/ set; }
-        public ReadOnlyCollection<ArmePassive> LesArmesPassives
-        {
-            get;
-            private set;
-        }
+        public ReadOnlyCollection<ArmePassive> LesArmesPassives {get; private set;}
+
         private HashSet<ArmePassive> lesArmesPassives = new HashSet<ArmePassive>();
+        public ReadOnlyCollection<ArmeActive> LesArmesActives{get; private set;}
 
-        public ReadOnlyCollection<ArmeActive> LesArmesActives
-        {
-            get;
-            private set;
-        }
         private HashSet<ArmeActive> lesArmesActives = new HashSet<ArmeActive>();
-
-        public ReadOnlyCollection<Amelioration> LesAmeliorations
-        {
-            get;
-            private set;
-        }
+        public ReadOnlyCollection<Amelioration> LesAmeliorations{get;private set;}
         private HashSet<Amelioration> lesAmeliorations = new HashSet<Amelioration>();
 
-        public ReadOnlyCollection<Personnage> LesPersonnages
-        {
-            get;
-            private set;
-        }
+        public ReadOnlyCollection<Personnage> LesPersonnages{get;private set;}
         private HashSet<Personnage> lesPersonnages = new HashSet<Personnage>();
 
-        public ReadOnlyCollection<Ennemie> LesEnnemies
-        {
-            get;
-            private set;
-        }
+        public ReadOnlyCollection<Ennemie> LesEnnemies{get; private set;}
         private HashSet<Ennemie> lesEnnemies = new HashSet<Ennemie>();
 
-        public ReadOnlyCollection<Carte> LesCartes
-        {
-            get;
-            private set;
-        }
+        public ReadOnlyCollection<Carte> LesCartes{get;private set;}
         private HashSet<Carte> lesCartes = new HashSet<Carte>();
 
         public void ChargeDonnées()

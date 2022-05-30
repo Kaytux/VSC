@@ -22,7 +22,6 @@ namespace VuesVSC
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Manager Mgr => (App.Current as App).Manager;
         public MainWindow()
         {
             InitializeComponent();
@@ -39,7 +38,7 @@ namespace VuesVSC
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCListe();
+            contentControl.Content = new UCEntites();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

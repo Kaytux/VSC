@@ -17,6 +17,9 @@ namespace VuesVSC
     {
         public Manager Manager { get; private set; } = new Manager(new Stub.Stub());
 
-        public App() { }
+        public App() 
+        {
+            Manager.ChargeDonnées();
+        }
     }
 }
