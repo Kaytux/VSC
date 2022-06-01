@@ -13,49 +13,13 @@ namespace ConsoleAppVSC
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //testArme();
-            /*
+
             // Manager Manager = new Manager(new Stub.Stub());
 
-            //// STEAM API
-
-            ulong userId = InitializeSteam();
-            
-            // Web API (différente)
-
-            var webInterfaceFactory = new SteamWebInterfaceFactory("A44E58E08ACF6F1C2AA345462C1E6FBE"); // on initialize notre créateur d'interface entre steam et l'application avec la clé d'authentification steam partner
-
-            // Succés
-
-            var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
-
-            var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, userId); // on récupere les succés de l'utilisateur sur Vampire Survivors
-
-            IEnumerator<Steam.Models.SteamPlayer.PlayerAchievementModel> res = ach.Data.Achievements.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
-            res.MoveNext(); // on avance une première fois l'itérateur car il se trouve sur une valeur null au début
-
-            while (res.MoveNext()) // tant que l'iterateur n'est pas null afficher Nom + desc + validation
-            {
-                Console.WriteLine("Achievement name : "+res.Current.Name);
-                Console.WriteLine("Achievement descirption : "+ res.Current.Description);
-                Console.WriteLine("Achieved ? (1=yes / 0=no) : "+res.Current.Achieved);
-                res.MoveNext();
-            }
-            
-            // News (en test)
-            /*
-            var steamNewsInterface = webInterfaceFactory.CreateSteamWebInterface<SteamNews>(new System.Net.Http.HttpClient());
-            var news = await steamNewsInterface.GetNewsForAppAsync(1794680);
-            
-            IEnumerator<Steam.Models.NewsItemModel> resNews = news.Data.NewsItems.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
-            resNews.MoveNext();
-            Console.WriteLine(resNews.Current.Title);
-            Console.WriteLine("\n"+resNews.Current.Contents+"\n");
-            Console.WriteLine(resNews.Current.Author);
-            */
-            
+            //await getPlayerAchiev();
         }
         
         static ulong InitializeSteam()
@@ -81,6 +45,44 @@ namespace ConsoleAppVSC
             var userId = SteamApi.SteamUser.GetSteamID(); // on récupère l'identifiant de l'utilisateur
 
             return userId;
+        }
+
+        static async Task getPlayerAchiev()
+        {
+            ulong userId = InitializeSteam();
+
+            // Web API (différente)
+
+            var webInterfaceFactory = new SteamWebInterfaceFactory("A44E58E08ACF6F1C2AA345462C1E6FBE"); // on initialize notre créateur d'interface entre steam et l'application avec la clé d'authentification steam partner
+
+            // Succés
+
+            var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
+
+            var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, userId); // on récupere les succés de l'utilisateur sur Vampire Survivors
+
+            IEnumerator<Steam.Models.SteamPlayer.PlayerAchievementModel> res = ach.Data.Achievements.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
+            res.MoveNext(); // on avance une première fois l'itérateur car il se trouve sur une valeur null au début
+
+            while (res.MoveNext()) // tant que l'iterateur n'est pas null afficher Nom + desc + validation
+            {
+                Console.WriteLine("Achievement name : " + res.Current.Name);
+                Console.WriteLine("Achievement descirption : " + res.Current.Description);
+                Console.WriteLine("Achieved ? (1=yes / 0=no) : " + res.Current.Achieved);
+                res.MoveNext();
+            }
+
+            // News (en test)
+            /*
+            var steamNewsInterface = webInterfaceFactory.CreateSteamWebInterface<SteamNews>(new System.Net.Http.HttpClient());
+            var news = await steamNewsInterface.GetNewsForAppAsync(1794680);
+            
+            IEnumerator<Steam.Models.NewsItemModel> resNews = news.Data.NewsItems.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
+            resNews.MoveNext();
+            Console.WriteLine(resNews.Current.Title);
+            Console.WriteLine("\n"+resNews.Current.Contents+"\n");
+            Console.WriteLine(resNews.Current.Author);
+            */
         }
 
         static void testArme()

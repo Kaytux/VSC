@@ -8,6 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
+using SteamWebAPI2.Interfaces;
+using SteamWebAPI2.Utilities;
+using SteamworksSharp;
+using SteamworksSharp.Native;
+
 namespace VuesVSC
 {
     /// <summary>
@@ -21,5 +26,7 @@ namespace VuesVSC
         {
             Manager.ChargeDonnées();
         }
+
+        
     }
 }

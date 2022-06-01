@@ -2,9 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using SteamWebAPI2.Interfaces;
+using SteamWebAPI2.Utilities;
+using SteamworksSharp;
+using SteamworksSharp.Native;
 
 namespace BibliothequeClassesVSC
 {
@@ -114,6 +120,68 @@ namespace BibliothequeClassesVSC
                     break;
             }
             return res.ToHashSet();
+        }
+
+        public (ulong, string) ChargeSteamAPI()
+        {
+            // Lancer steam
+            SteamNative.Initialize(); // initialisation de Steam Native (permet de détecter le lancement de steam sur la machine)
+            var result = SteamApi.IsSteamRunning(); // verifie si steam est lancer
+            if (!result)
+            {
+                Debug.WriteLine("Veuillez lancé steam !"); // si il n'est pas lancé, affiche un message pour demander de laner
+                return default;
+            }
+            else
+            {
+                Debug.WriteLine("Steam c'est bien lancé"); // une fois lancer on envoie un message pour le dire
+                SteamApi.Initialize(1794680); // on initialise l'api sur Vampire Survivors
+
+                // Récupération des infos de l'utilisateur
+
+                string userName = SteamApi.SteamFriends.GetPersonaName(); // on récupère le nom de l'utilisateur
+                Debug.WriteLine($"Logged in as: {userName}"); // on écrit le nom de l'utilisateur
+
+                var userId = SteamApi.SteamUser.GetSteamID(); // on récupère l'identifiant de l'utilisateur
+
+                return (userId, userName);
+            }
+        }
+
+        public async Task GetSuccesJoueur(ulong userId)
+        {
+            //ulong userId = ChargeSteamAPI();
+
+            // Web API (différente)
+
+            var webInterfaceFactory = new SteamWebInterfaceFactory("A44E58E08ACF6F1C2AA345462C1E6FBE"); // on initialize notre créateur d'interface entre steam et l'application avec la clé d'authentification steam partner
+
+            // Succés
+
+            var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
+
+            var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, userId); // on récupere les succés de l'utilisateur sur Vampire Survivors
+
+            IEnumerator<Steam.Models.SteamPlayer.PlayerAchievementModel> res = ach.Data.Achievements.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
+            res.MoveNext(); // on avance une première fois l'itérateur car il se trouve sur une valeur null au début
+
+              ///
+            ////////
+            ////////
+              ///
+              /// REMPLIR UNE LIST DE SUCCES ET LA RETURN  ------- ::::
+              ///
+            ////////
+            ////////
+              ///
+
+            while (res.MoveNext()) // tant que l'iterateur n'est pas null afficher Nom + desc + validation
+            {
+                //Console.WriteLine("Achievement name : " + res.Current.Name);
+                //Console.WriteLine("Achievement descirption : " + res.Current.Description);
+                //Console.WriteLine("Achieved ? (1=yes / 0=no) : " + res.Current.Achieved);
+                res.MoveNext();
+            }
         }
     }
 }
