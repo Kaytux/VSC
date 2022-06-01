@@ -35,14 +35,14 @@ namespace Stub
             Ennemie e2 = new Ennemie("Ennemie 2", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)));
 
             AjoutCollection(lesArmesPassives,
-                            new ArmePassive("Arme Passive 1","","", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40))),
-                            new ArmePassive("Arme Passive 2", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40))));
+                            new ArmePassive("Arme Passive 1","","", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()),
+                            new ArmePassive("Arme Passive 2", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()));
             AjoutCollection(lesArmesActives,
-                            new ArmeActive("Arme Active 1","","", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40))),
-                            new ArmeActive("Arme Active 2", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40))));
+                            new ArmeActive("Arme Active 1","","", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()),
+                            new ArmeActive("Arme Active 2", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()));
             AjoutCollection(lesAmeliorations,
-                            new Amelioration("Amelioration 1", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)),"Arme Active 1", "Arme Passive 1"),
-                            new Amelioration("Amelioration 2", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)), "Arme Active 2", "Arme Passive 2"));
+                            new Amelioration("Amelioration 1", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)),"Arme Active 1", "Arme Passive 1",new List<HashSet<Stat>>()),
+                            new Amelioration("Amelioration 2", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)), "Arme Active 2", "Arme Passive 2",new List<HashSet<Stat>>()));
             AjoutCollection(lesPersonnages,
                             new Personnage("Antonio Belpaese",
                                             "Antonio Belpaese is one of the playable characters in Vampire Survivors. He is the character that every player begins with and he is the only free character in the game. His starting weapon is the Whip. He gains +10% Might every 10 levels until level 50. The maximum Might gained this way is +50%.",

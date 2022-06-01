@@ -23,6 +23,8 @@ namespace DataContractPersistanceVSC
         public string NomArmeAct { get; set; }
         [DataMember]
         public string NomArmePass { get; set; }
+        [DataMember]
+        public List<HashSet<StatDTO>> statsNiveau = new List<HashSet<StatDTO>>();
     }
 
     static class AmeliorationExtensions
@@ -33,7 +35,10 @@ namespace DataContractPersistanceVSC
                                 dto.Image,
                                 dto.particularites.ToPOCOs().ToHashSet(), 
                                 dto.NomArmeAct,
-                                dto.NomArmePass);
+                                dto.NomArmePass,
+                                dto.statsNiveau.ToListHashSetPOCO());
+
+        
 
         public static IEnumerable<Amelioration> ToPOCOs(this IEnumerable<AmeliorationDTO> dtos)
             => dtos.Select(dto => dto.ToPOCO());
@@ -46,8 +51,11 @@ namespace DataContractPersistanceVSC
                 Image = poco.Image,
                 particularites = poco.particularites.ToDTOs().ToHashSet(),
                 NomArmeAct = poco.NomArmeAct,
-                NomArmePass = poco.NomArmePass
+                NomArmePass = poco.NomArmePass,
+                statsNiveau = poco.statsNiveau.ToListHashSetDTO()
             };
+
+        
         public static IEnumerable<AmeliorationDTO> ToDTOs(this IEnumerable<Amelioration> pocos)
             => pocos.Select(poco => poco.ToDTO());
     }
