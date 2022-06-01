@@ -54,6 +54,8 @@ namespace DataContractPersistance
             LesArmesActives = data.Aa.ToPOCOs().ToList();
             LesCartes = data.Ca.ToPOCOs().ToList();
 
+            //LiensDesClasses(LesArmesPassives, LesArmesActives, LesAmeliorations, LesCartes, LesEnnemies);
+
             return (LesArmesPassives,
                     LesArmesActives,
                     LesAmeliorations,
@@ -62,6 +64,38 @@ namespace DataContractPersistance
                     LesCartes);
         }
 
+        public void LiensDesClasses(List<ArmePassive> armesPassives, List<ArmeActive> armesActives, List<Amelioration> ameliortions, List<Carte> cartes, List<Ennemie> ennemies)
+        {
+            foreach(Amelioration amelio in ameliortions)
+            {
+                foreach(ArmeActive active in armesActives)
+                {
+                    if (amelio.NomArmeAct == active.Nom)
+                    {
+                        amelio.ArmeAct = active;
+                        active.ajouterAmelioration(amelio);
+                    }
+                }
+                foreach(ArmePassive passive in armesPassives)
+                {
+                    if(amelio.NomArmePass == passive.Nom)
+                    {
+                        amelio.ArmePass = passive;
+                        passive.ajouterAmelioration(amelio);
+                    }
+                }
+            }
+            foreach(Carte carte in cartes)
+            {
+                carte.LesEnnemies = (from en in ennemies
+                                    join nomen in carte.NomEnn on en.Nom equals nomen
+                                    select en).ToList();
+
+                carte.LesObjetsCaches = (from ap in armesPassives
+                                         join objcach in carte.NomArmPass on ap.Nom equals objcach
+                                         select ap).ToList();
+            }
+        }
         public void SauvegardeDonnées(IEnumerable<ArmePassive> lesArmesPassives,
                                       IEnumerable<ArmeActive> lesArmesActives,
                                       IEnumerable<Amelioration> lesAmeliorations,
