@@ -33,5 +33,25 @@ namespace DataContractPersistanceVSC
             };
         public static IEnumerable<StatDTO> ToDTOs(this IEnumerable<Stat> pocos)
             => pocos.Select(poco => poco.ToDTO());
+
+        public static List<HashSet<StatDTO>> ToListHashSetDTO(this List<HashSet<Stat>> l)
+        {
+            List<HashSet<StatDTO>> res = new List<HashSet<StatDTO>>();
+            foreach (var item in l)
+            {
+                res.Add(item.ToDTOs().ToHashSet());
+            }
+            return res;
+        }
+
+        public static List<HashSet<Stat>> ToListHashSetPOCO(this List<HashSet<StatDTO>> l)
+        {
+            List<HashSet<Stat>> res = new List<HashSet<Stat>>();
+            foreach (var item in l)
+            {
+                res.Add(item.ToPOCOs().ToHashSet());
+            }
+            return res;
+        }
     }
 }

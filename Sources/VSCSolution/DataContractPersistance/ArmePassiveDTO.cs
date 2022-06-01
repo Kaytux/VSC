@@ -19,6 +19,8 @@ namespace DataContractPersistanceVSC
         public string Image { get; set; }
         [DataMember]
         public HashSet<StatDTO> particularites = new HashSet<StatDTO>();
+        [DataMember]
+        public List<HashSet<StatDTO>> statsNiveau = new List<HashSet<StatDTO>>();
     }
 
     static class ArmePassiveExtensions
@@ -27,7 +29,8 @@ namespace DataContractPersistanceVSC
             => new ArmePassive(dto.Nom,
                                dto.Description,
                                dto.Image,
-                               dto.particularites.ToPOCOs().ToHashSet());
+                               dto.particularites.ToPOCOs().ToHashSet(),
+                               dto.statsNiveau.ToListHashSetPOCO());
 
         public static IEnumerable<ArmePassive> ToPOCOs(this IEnumerable<ArmePassiveDTO> dtos)
             => dtos.Select(dto => dto.ToPOCO());
@@ -38,7 +41,8 @@ namespace DataContractPersistanceVSC
                     Nom = poco.Nom,
                     Description = poco.Description,
                     Image = poco.Image,
-                    particularites = poco.particularites.ToDTOs().ToHashSet()
+                    particularites = poco.particularites.ToDTOs().ToHashSet(),
+                    statsNiveau = poco.statsNiveau.ToListHashSetDTO()
                 };
         public static IEnumerable<ArmePassiveDTO> ToDTOs(this IEnumerable<ArmePassive> pocos)
             => pocos.Select(poco => poco.ToDTO());
