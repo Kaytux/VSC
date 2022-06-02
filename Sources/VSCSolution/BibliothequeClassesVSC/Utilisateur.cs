@@ -48,6 +48,7 @@ namespace BibliothequeClassesVSC
         public string Nom{get;set;}
         public IEnumerable<INote> LesNotes => lesNotes;
         public HashSet<Note> lesNotes = new HashSet<Note>();
+        public List<Steam.Models.SteamPlayer.PlayerAchievementModel> achievement = new List<Steam.Models.SteamPlayer.PlayerAchievementModel>();
         public ulong Id { get; set; }
 
         public void ajouterNotes(Element e, string note) 

@@ -26,7 +26,6 @@ namespace VuesVSC
         {
             Manager.ChargeDonnées();
         }
-
-        
+               
     }
 }

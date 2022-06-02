@@ -122,7 +122,7 @@ namespace BibliothequeClassesVSC
             return res.ToHashSet();
         }
 
-        public (ulong, string) ChargeSteamAPI()
+        public void ChargeSteamAPI()
         {
             // Lancer steam
             SteamNative.Initialize(); // initialisation de Steam Native (permet de détecter le lancement de steam sur la machine)
@@ -130,7 +130,6 @@ namespace BibliothequeClassesVSC
             if (!result)
             {
                 Debug.WriteLine("Veuillez lancé steam !"); // si il n'est pas lancé, affiche un message pour demander de laner
-                return default;
             }
             else
             {
@@ -144,11 +143,13 @@ namespace BibliothequeClassesVSC
 
                 var userId = SteamApi.SteamUser.GetSteamID(); // on récupère l'identifiant de l'utilisateur
 
-                return (userId, userName);
+                Utilisateur utilisateur = new Utilisateur(userName, userId);
+
+                Task task = GetSuccesJoueur(utilisateur);
             }
         }
 
-        public async Task GetSuccesJoueur(ulong userId)
+        public async Task GetSuccesJoueur(Utilisateur utilisateur)
         {
             //ulong userId = ChargeSteamAPI();
 
@@ -160,26 +161,17 @@ namespace BibliothequeClassesVSC
 
             var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
 
-            var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, userId); // on récupere les succés de l'utilisateur sur Vampire Survivors
+            var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, utilisateur.Id); // on récupere les succés de l'utilisateur sur Vampire Survivors
 
             IEnumerator<Steam.Models.SteamPlayer.PlayerAchievementModel> res = ach.Data.Achievements.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
             res.MoveNext(); // on avance une première fois l'itérateur car il se trouve sur une valeur null au début
 
-              ///
-            ////////
-            ////////
-              ///
-              /// REMPLIR UNE LIST DE SUCCES ET LA RETURN  ------- ::::
-              ///
-            ////////
-            ////////
-              ///
-
             while (res.MoveNext()) // tant que l'iterateur n'est pas null afficher Nom + desc + validation
             {
-                //Console.WriteLine("Achievement name : " + res.Current.Name);
-                //Console.WriteLine("Achievement descirption : " + res.Current.Description);
-                //Console.WriteLine("Achieved ? (1=yes / 0=no) : " + res.Current.Achieved);
+                utilisateur.achievement.Add(res.Current);
+                //Debug.WriteLine("Achievement name : " + res.Current.Name);
+                //Debug.WriteLine("Achievement descirption : " + res.Current.Description);
+                //Debug.WriteLine("Achieved ? (1=yes / 0=no) : " + res.Current.Achieved);
                 res.MoveNext();
             }
         }
