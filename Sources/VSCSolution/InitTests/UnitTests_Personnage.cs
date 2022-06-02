@@ -8,70 +8,7 @@ namespace InitTests
     public class UnitTests_Personnage
     {
         [Fact]
-        public void testConstructeurSansImageEtDesc()
-        {
-            string nom = "personnage";
-
-            HashSet<Stat> stats = new HashSet<Stat>();
-            stats.Add(new Stat(Stat.NomStat.Growth, 40));
-            stats.Add(new Stat(Stat.NomStat.Luck));
-            stats.Add(new Stat(Stat.NomStat.Magnet, 10));
-
-            Personnage personnage = new Personnage(nom, stats);
-
-            Assert.Equal(nom, personnage.Nom);
-
-            foreach (Stat particularite in stats)
-            {
-                foreach (Stat stat in personnage.stats)
-                {
-                    if (particularite.Nom == stat.Nom)
-                    {
-                        Assert.Equal(particularite, stat);
-                    }
-                }
-            }
-
-            Assert.Equal("N/A", personnage.Description);
-            Assert.Equal("N/A", personnage.Image);
-
-
-        }
-
-        [Fact]
-        public void testConstructeurAvecImage()
-        {
-            string nom = "personnage";
-
-            HashSet<Stat> stats = new HashSet<Stat>();
-            stats.Add(new Stat(Stat.NomStat.Growth, 40));
-            stats.Add(new Stat(Stat.NomStat.Luck));
-            stats.Add(new Stat(Stat.NomStat.Magnet, 10));
-
-            string image = "/Sources/VSCSolution/VuesVSC/Images/Sprite-Hollow_Heart.png";
-
-            Personnage personnage = new Personnage(nom, stats, image:image);
-
-            Assert.Equal(nom, personnage.Nom);
-
-            foreach (Stat particularite in stats)
-            {
-                foreach (Stat stat in personnage.stats)
-                {
-                    if (particularite.Nom == stat.Nom)
-                    {
-                        Assert.Equal(particularite, stat);
-                    }
-                }
-            }
-
-            Assert.Equal("N/A", personnage.Description);
-            Assert.Equal(image, personnage.Image);
-
-        }
-
-        [Fact]
-        public void testConstructeurAvecImageEtDesc()
+        public void testConstructeurPersonnage()
         {
             string nom = "personnage";
 
@@ -85,7 +22,7 @@ namespace InitTests
             string image = "/Sources/VSCSolution/VuesVSC/Images/Sprite-Hollow_Heart.png";
 
 
-            Personnage personnage = new Personnage(nom, stats, desc, image);
+            Personnage personnage = new Personnage(nom, desc, image, stats);
 
             Assert.Equal(nom, personnage.Nom);
 

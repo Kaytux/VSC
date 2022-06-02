@@ -7,12 +7,14 @@ namespace InitTests
 {
     public class UnitTests_ArmeActive
     {
-        [Theory]
-        [InlineData("Magic Wand")]
-        [InlineData("Magic Wand", "This a magic wand !")]
-        [InlineData("Magic Wand", "This a magic wand !", "./images/Magic_Wand.png")]
-        public void TestConstructeurArmeActive(string nom, string desc = "N/A", string image = "N/A", byte ExpectedNiveau = 1)
+        [Fact]
+        public void TestConstructeurArmeActive()
         {
+            string nom = "Magic Wand";
+            string desc = "Test desc";
+            string image = "test/img";
+            byte ExpectedNiveau = 0;
+
             HashSet<Stat> stats = new HashSet<Stat>();
             stats.Add(new Stat(Stat.NomStat.MaxLevel, 40));
             stats.Add(new Stat(Stat.NomStat.Knockback, 10));
@@ -20,8 +22,14 @@ namespace InitTests
             stats.Add(new Stat(Stat.NomStat.CritRate, 5));
             stats.Add(new Stat(Stat.NomStat.CritMultiplier, 60));
 
-            Amelioration amelioration = new Amelioration("Holy Wand", stats, "N/A", "N/A", null, null);
-            ArmeActive arme = new ArmeActive(nom, stats,desc, image);
+            List<HashSet<Stat>> statsNiveau = new List<HashSet<Stat>>();
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.MaxLevel, 2) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Area, 3) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Growth, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Luck, 12) });
+
+            Amelioration amelioration = new Amelioration("Holy Wand", "N/A", "N/A", stats, nom, "N/A", statsNiveau);
+            ArmeActive arme = new ArmeActive(nom, desc, image, stats, statsNiveau);
 
             arme.Amelioration = amelioration;
 
@@ -44,8 +52,13 @@ namespace InitTests
             stats.Add(new Stat(Stat.NomStat.CritRate, 5));
             stats.Add(new Stat(Stat.NomStat.CritMultiplier, 15));
 
-            ArmeActive active = new ArmeActive(nom, stats,"N/A","N/A");
+            List<HashSet<Stat>> statsNiveau = new List<HashSet<Stat>>();
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.MaxLevel, 2) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Area, 3) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Growth, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Luck, 12) });
 
+            ArmeActive active = new ArmeActive(nom, "N/A","N/A", stats, statsNiveau);
 
             Assert.Equal(nom, active.Nom);
 
