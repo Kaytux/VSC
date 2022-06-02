@@ -13,13 +13,11 @@ namespace ConsoleAppVSC
 {
     internal class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            //testArme();
-
             // Manager Manager = new Manager(new Stub.Stub());
 
-            //await getPlayerAchiev();
+            //Task t = await getPlayerAchiev();
         }
         
         static ulong InitializeSteam()
@@ -85,80 +83,5 @@ namespace ConsoleAppVSC
             */
         }
 
-        static void testArme()
-        {
-            HashSet<Stat> testStat = new HashSet<Stat>();
-
-            testStat.Add(new Stat(Stat.NomStat.Area, 0));
-            testStat.Add(new Stat(Stat.NomStat.Growth, 0));
-            testStat.Add(new Stat(Stat.NomStat.Luck, 0));
-
-            List<HashSet<Stat>> LvlStat = new List<HashSet<Stat>>();
-
-            LvlStat.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.MaxLevel, 2) });
-            LvlStat.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Area, 3) });
-            LvlStat.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Growth, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
-            LvlStat.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Luck, 12) });
-
-            ArmeActive a = new ArmeActive("Test", "Desc", "/img/test", testStat, LvlStat);
-
-
-            Console.WriteLine("Nom : " + a.Nom);
-            Console.WriteLine("Niveau : " + a.Niveau);
-            foreach (Stat stat in a.particularites)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-            foreach (Stat stat in a.stats)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-
-            a.AugmenterNiveau();
-
-            Console.WriteLine("\n\nNiveau : " + a.Niveau);
-            foreach (Stat stat in a.particularites)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-            foreach (Stat stat in a.stats)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-
-            a.AugmenterNiveau();
-            Console.WriteLine("\n\nNiveau : " + a.Niveau);
-            foreach (Stat stat in a.particularites)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-            foreach (Stat stat in a.stats)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-
-            a.AugmenterNiveau();
-            Console.WriteLine("\n\nNiveau : " + a.Niveau);
-            foreach (Stat stat in a.particularites)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-            foreach (Stat stat in a.stats)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-
-            a.BaisserNiveau();
-            Console.WriteLine("\n\nNiveau : " + a.Niveau);
-            foreach (Stat stat in a.particularites)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-            foreach (Stat stat in a.stats)
-            {
-                Console.WriteLine(stat.ToString());
-            }
-            return;
-        }
-    }
+     }
 }

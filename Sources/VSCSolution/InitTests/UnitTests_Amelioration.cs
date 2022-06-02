@@ -7,40 +7,6 @@ namespace InitTests
 {
     public class UnitTests_Amelioration
     {
-
-        [Fact]
-        public void TestConstructeurArmePassive()
-        {
-            string nom = "Empy Tome";
-            string desc = "Test desc";
-            string image = "test/img";
-            byte ExpectedNiveau = 0;
-
-            HashSet<Stat> stats = new HashSet<Stat>();
-            stats.Add(new Stat(Stat.NomStat.MaxLevel, 40));
-            stats.Add(new Stat(Stat.NomStat.Knockback, 10));
-            stats.Add(new Stat(Stat.NomStat.Rarity, 20));
-            stats.Add(new Stat(Stat.NomStat.CritRate, 5));
-            stats.Add(new Stat(Stat.NomStat.CritMultiplier, 60));
-
-            List<HashSet<Stat>> statsNiveau = new List<HashSet<Stat>>();
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.MaxLevel, 2) });
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Area, 3) });
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Growth, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Luck, 12) });
-
-            Amelioration amelioration = new Amelioration("Holy Wand", "N/A", "N/A", stats, nom, "N/A", statsNiveau);
-            ArmePassive arme = new ArmePassive(nom, desc, image, stats, statsNiveau);
-
-            arme.Amelioration = amelioration;
-
-            Assert.Equal(nom, arme.Nom);
-            Assert.Equal(desc, arme.Description);
-            Assert.Equal(image, arme.Image);
-            Assert.Equal(ExpectedNiveau, arme.Niveau);
-            Assert.Equal(amelioration, arme.Amelioration);
-        }
-
         [Fact]
         public void TestConstructeurAvecArmeActEtPas()
         {
@@ -49,22 +15,22 @@ namespace InitTests
             string image = "test/img";
             byte ExpectedNiveau = 1;
 
-            HashSet<Stat> stats = new HashSet<Stat>();
-            stats.Add(new Stat(Stat.NomStat.MaxLevel, 40));
-            stats.Add(new Stat(Stat.NomStat.Knockback, 10));
-            stats.Add(new Stat(Stat.NomStat.Rarity, 20));
-            stats.Add(new Stat(Stat.NomStat.CritRate, 5));
-            stats.Add(new Stat(Stat.NomStat.CritMultiplier, 60));
+            HashSet<Stat> particularites = new HashSet<Stat>();
+            particularites.Add(new Stat(Stat.NomStat.MaxLevel, 20));
+            particularites.Add(new Stat(Stat.NomStat.Knockback, 20));
+            particularites.Add(new Stat(Stat.NomStat.Rarity, 10));
+            particularites.Add(new Stat(Stat.NomStat.CritRate, 5));
+            particularites.Add(new Stat(Stat.NomStat.CritMultiplier, 15));
 
             List<HashSet<Stat>> statsNiveau = new List<HashSet<Stat>>();
             statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.MaxLevel, 2) });
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Area, 3) });
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Growth, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Luck, 12) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Rarity, 3) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritMultiplier, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritRate, 12) });
 
-            ArmeActive active = new ArmeActive("Magic Wand","N/A","N/A",stats, statsNiveau);
-            ArmePassive passive = new ArmePassive("Empty Tome", "N/A","N/A", stats, statsNiveau);
-            Amelioration amelioration = new Amelioration(nom, desc, image, stats, "Magic Wand", "Empty Tome", statsNiveau);
+            ArmeActive active = new ArmeActive("Magic Wand","N/A","N/A", particularites, statsNiveau);
+            ArmePassive passive = new ArmePassive("Empty Tome", "N/A","N/A", particularites, statsNiveau);
+            Amelioration amelioration = new Amelioration(nom, desc, image, particularites, "Magic Wand", "Empty Tome", statsNiveau);
 
             amelioration.ArmeAct = active;
             amelioration.ArmePass = passive;
@@ -86,25 +52,25 @@ namespace InitTests
             string desc = "Test desc";
             string image = "test/img";
 
-            HashSet<Stat> stats = new HashSet<Stat>();
-            stats.Add(new Stat(Stat.NomStat.MaxLevel, 10));
-            stats.Add(new Stat(Stat.NomStat.Knockback, 20));
-            stats.Add(new Stat(Stat.NomStat.Rarity, 30));
-            stats.Add(new Stat(Stat.NomStat.CritRate, 10));
-            stats.Add(new Stat(Stat.NomStat.CritMultiplier, 15));
+            HashSet<Stat> particularites = new HashSet<Stat>();
+            particularites.Add(new Stat(Stat.NomStat.MaxLevel, 20));
+            particularites.Add(new Stat(Stat.NomStat.Knockback, 20));
+            particularites.Add(new Stat(Stat.NomStat.Rarity, 10));
+            particularites.Add(new Stat(Stat.NomStat.CritRate, 5));
+            particularites.Add(new Stat(Stat.NomStat.CritMultiplier, 15));
 
             List<HashSet<Stat>> statsNiveau = new List<HashSet<Stat>>();
             statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.MaxLevel, 2) });
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Area, 3) });
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Growth, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
-            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Luck, 12) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Rarity, 3) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritMultiplier, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritRate, 12) });
 
 
-            Amelioration amelioration = new Amelioration(nom, desc, image, stats, "Magic Wand", "Empty Tome", statsNiveau);
+            Amelioration amelioration = new Amelioration(nom, desc, image, particularites, "Magic Wand", "Empty Tome", statsNiveau);
 
             Assert.Equal(nom, amelioration.Nom);
 
-            foreach (Stat particularite in stats)
+            foreach (Stat particularite in particularites)
             {
                 foreach (Stat stat in amelioration.stats)
                 {
@@ -115,8 +81,8 @@ namespace InitTests
                 }
             }
 
-            Assert.Equal("N/A", amelioration.Description);
-            Assert.Equal("N/A", amelioration.Image);
+            Assert.Equal(desc, amelioration.Description);
+            Assert.Equal(image, amelioration.Image);
         }
     }
 }

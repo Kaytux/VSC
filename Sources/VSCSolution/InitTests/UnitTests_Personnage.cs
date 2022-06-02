@@ -12,21 +12,21 @@ namespace InitTests
         {
             string nom = "personnage";
 
-            HashSet<Stat> stats = new HashSet<Stat>();
-            stats.Add(new Stat(Stat.NomStat.Growth, 40));
-            stats.Add(new Stat(Stat.NomStat.Luck));
-            stats.Add(new Stat(Stat.NomStat.Magnet, 10));
+            HashSet<Stat> particularites = new HashSet<Stat>();
+            particularites.Add(new Stat(Stat.NomStat.Growth, 40));
+            particularites.Add(new Stat(Stat.NomStat.Luck));
+            particularites.Add(new Stat(Stat.NomStat.Magnet, 10));
 
             string desc = "ceci est un personnage";
 
             string image = "/Sources/VSCSolution/VuesVSC/Images/Sprite-Hollow_Heart.png";
 
 
-            Personnage personnage = new Personnage(nom, desc, image, stats);
+            Personnage personnage = new Personnage(nom, desc, image, particularites);
 
             Assert.Equal(nom, personnage.Nom);
 
-            foreach (Stat particularite in stats)
+            foreach (Stat particularite in particularites)
             {
                 foreach (Stat stat in personnage.stats)
                 {

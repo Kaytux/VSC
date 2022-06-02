@@ -15,11 +15,12 @@ namespace BibliothequeClassesVSC
         /// <param name="desc"></param>
         /// <param name="image"></param>
         /// <param name="niveau"></param>
-        public Arme(string nom, string desc, string image, HashSet<Stat> particularite, List<HashSet<Stat>> statsNiveau)
-            : base(nom, desc, image ,particularite)
+        public Arme(string nom, string desc, string image, HashSet<Stat> lesStats, List<HashSet<Stat>> statsNiveau)
+            : base(nom, desc, image , lesStats)
         {
-            Niveau = 0;
+            Niveau = 1;
             this.statsNiveau = statsNiveau;
+
             stats.Add(new Stat(Stat.NomStat.MaxLevel, 0));
             stats.Add(new Stat(Stat.NomStat.Knockback, 0));
             stats.Add(new Stat(Stat.NomStat.Rarity, 0));
@@ -38,10 +39,15 @@ namespace BibliothequeClassesVSC
         /// </summary>
         public void AugmenterNiveau()
         {
-            Niveau = Niveau + 1 ;
-            this.AjoutStats(statsNiveau[Niveau-1]);
-            this.AjoutParticularite(statsNiveau[Niveau-1]);
-
+            if (Niveau > 8)
+            {
+                return;
+            }
+            else
+            {
+                Niveau = Niveau + 1;
+                this.AjoutStats(statsNiveau[Niveau - 2]);
+            }
         }
 
         /// <summary>
@@ -49,9 +55,15 @@ namespace BibliothequeClassesVSC
         /// </summary>
         public void BaisserNiveau()
         {
-            Niveau = Niveau - 1;
-            this.EnleverStats(statsNiveau[Niveau]);
-            this.EnleverParticularite(statsNiveau[Niveau]);
+            if (Niveau <= 1)
+            {
+                return;
+            }
+            else
+            {
+                Niveau = Niveau - 1;
+                this.EnleverStats(statsNiveau[Niveau - 1]);
+            } 
         }
     }
 }

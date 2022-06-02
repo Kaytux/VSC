@@ -26,7 +26,7 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.Greed, 0));
             stats.Add(new Stat(Stat.NomStat.Magnet, 0));
 
-            AjoutParticularite(particularite);
+            AjoutStats(particularite);
         }        
     }
 }

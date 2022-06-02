@@ -17,9 +17,9 @@ namespace BibliothequeClassesVSC
         public SortedSet<Stat> stats = new SortedSet<Stat>();
         public HashSet<Stat> particularites = new HashSet<Stat>();
 
-        protected void AjoutStats(HashSet<Stat> particularite)
+        protected void AjoutStats(HashSet<Stat> lesStats)
         {
-            foreach (Stat stat in particularite)
+            foreach (Stat stat in lesStats)
             {
                 foreach (Stat stat2 in stats)
                 {
@@ -32,39 +32,11 @@ namespace BibliothequeClassesVSC
             }
         }
 
-        protected void EnleverStats(HashSet<Stat> particularite)
+        protected void EnleverStats(HashSet<Stat> lesStats)
         {
-            foreach (Stat stat in particularite)
+            foreach (Stat stat in lesStats)
             {
                 foreach (Stat stat2 in stats)
-                {
-                    if (Stat.FullEqComparer.Equals(stat, stat2))
-                    {
-                        stat2.Valeur -= stat.Valeur;
-                        break;
-                    }
-                }
-            }
-        }
-        protected void AjoutParticularite(HashSet<Stat> particularite)
-        {
-            foreach (Stat stat in particularite)
-            {
-                foreach (Stat stat2 in particularites)
-                {
-                    if (Stat.FullEqComparer.Equals(stat, stat2))
-                    {
-                        stat2.Valeur += stat.Valeur;
-                        break;
-                    }
-                }
-            }
-        }
-        protected void EnleverParticularite(HashSet<Stat> particularite)
-        {
-            foreach (Stat stat in particularite)
-            {
-                foreach (Stat stat2 in particularites)
                 {
                     if (Stat.FullEqComparer.Equals(stat, stat2))
                     {

@@ -19,7 +19,7 @@ namespace BibliothequeClassesVSC
         public ArmeActive(string nom, string desc, string image,HashSet<Stat> particularite, List<HashSet<Stat>> statsNiveau)
             : base(nom, desc, image, particularite, statsNiveau)
         {
-            AjoutParticularite(particularite);
+            AjoutStats(particularite);
         }
 
         /// <summary>

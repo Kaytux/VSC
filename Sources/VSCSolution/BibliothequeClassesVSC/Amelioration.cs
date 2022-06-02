@@ -22,7 +22,7 @@ namespace BibliothequeClassesVSC
         {
             NomArmeAct = active;
             NomArmePass = passive;
-            AjoutParticularite(particularite);
+            AjoutStats(particularite);
             //active.ajouterAmelioration(this); 
             //passive.ajouterAmelioration(this);
         }

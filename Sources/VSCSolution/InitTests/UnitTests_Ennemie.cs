@@ -13,16 +13,16 @@ namespace InitTests
             string desc = "TestDesc";
             string img = "Test/img";
 
-            HashSet<Stat> stats = new HashSet<Stat>();
-            stats.Add(new Stat(Stat.NomStat.MaxHealth, 40));
-            stats.Add(new Stat(Stat.NomStat.Luck));
-            stats.Add(new Stat(Stat.NomStat.CritMultiplier, 10));
+            HashSet<Stat> particularites = new HashSet<Stat>();
+            particularites.Add(new Stat(Stat.NomStat.MaxHealth, 40));
+            particularites.Add(new Stat(Stat.NomStat.Luck));
+            particularites.Add(new Stat(Stat.NomStat.CritMultiplier, 10));
 
-            Ennemie ennemie = new Ennemie(nom, desc, img, stats);
+            Ennemie ennemie = new Ennemie(nom, desc, img, particularites);
 
             Assert.Equal(nom, ennemie.Nom);
 
-            foreach (Stat particularite in stats)
+            foreach (Stat particularite in particularites)
             {
                 foreach (Stat stat in ennemie.stats)
                 {
