@@ -37,11 +37,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <DockPanel>
-                        <Ellipse Width="50" Height="50">
-                            <Ellipse.Fill>
-                                <ImageBrush ImageSource="{Binding Image}"/>
-                            </Ellipse.Fill>
-                        </Ellipse>
+                        <Image Width="50" Height="50" Source="{Binding Image}"/>
                         <TextBlock Text="{Binding Nom}"/>
                     </DockPanel>
                 </DataTemplate>     

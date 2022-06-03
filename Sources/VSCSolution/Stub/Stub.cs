@@ -35,13 +35,13 @@ namespace Stub
             Ennemie e2 = new Ennemie("Ennemie 2", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)));
 
             AjoutCollection(lesArmesPassives,
-                            new ArmePassive("Bracer","","./Sprite-Bracer.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()),
-                            new ArmePassive("Empty Tome", "", "./Sprite-Empty_Tome.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()));
+                            new ArmePassive("Bracer","","./Images/Sprite-Bracer.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()),
+                            new ArmePassive("Empty Tome", "", "./Images/Sprite-Empty_Tome.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()));
             AjoutCollection(lesArmesActives,
-                            new ArmeActive("Knife","","./Sprite-Knife.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()),
-                            new ArmeActive("Whip", "", "./Sprite-Whip.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()));
+                            new ArmeActive("Knife","","./Images/Sprite-Knife.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()),
+                            new ArmeActive("Whip", "", "./Images/Sprite-Whip.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()));
             AjoutCollection(lesAmeliorations,
-                            new Amelioration("Bloody Tear", "", "./Sprite-Bloody_Tear.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)),"Arme Active 1", "Arme Passive 1",new List<HashSet<Stat>>()),
+                            new Amelioration("Bloody Tear", "", "./Images/Sprite-Bloody_Tear.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)),"Arme Active 1", "Arme Passive 1",new List<HashSet<Stat>>()),
                             new Amelioration("Amelioration 2", "", "", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)), "Arme Active 2", "Arme Passive 2",new List<HashSet<Stat>>()));
             AjoutCollection(lesPersonnages,
                             new Personnage("Antonio Belpaese",
