@@ -32,18 +32,20 @@
             </StackPanel>
         </Border>
 
-        <ListBox x:Name="lBox" DockPanel.Dock="Left" Grid.Row="1"
+        <ListBox x:Name="lBox" DockPanel.Dock="Left" Background="{StaticResource GreyBackground}"
                  ItemsSource="{Binding LesArmesActives}">
-            <DataTemplate>
-                <DockPanel>
-                    <Ellipse Width="50" Height="50">
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="{Binding Image}"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <TextBlock Text="{Binding Nom}"/>
-                </DockPanel>
-            </DataTemplate>            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <Ellipse Width="50" Height="50">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding Image}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock Text="{Binding Nom}"/>
+                    </DockPanel>
+                </DataTemplate>     
+            </ListBox.ItemTemplate>     
         </ListBox>
 
 
