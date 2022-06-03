@@ -17,6 +17,7 @@
     <None Remove="Sprite-Knife.png" />
     <None Remove="Sprite-Magic_Wand.png" />
     <None Remove="Sprite-Whip.png" />
+    <None Remove="UCTypesArmes.xaml~RF698911cf.TMP" />
   </ItemGroup>
 
   <ItemGroup>

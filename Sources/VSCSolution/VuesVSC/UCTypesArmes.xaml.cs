@@ -21,29 +21,31 @@ namespace VuesVSC
     /// </summary>
     public partial class UCTypesArmes : UserControl
     {
+        public Manager Mgr => (App.Current as App).Manager;
         public UCTypesArmes()
         {
             InitializeComponent();
+            DataContext = Mgr;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCListe();
+            lBox.ItemsSource = Mgr.LesArmesActives;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCListe();
+            lBox.ItemsSource = Mgr.LesArmesPassives;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCListe();
+            lBox.ItemsSource = Mgr.LesAmeliorations;
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCRecap();
+            //
         }
     }
 }
