@@ -38,7 +38,7 @@ namespace BibliothequeClassesVSC
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ArmeActive ArmeSélectionné
+        public Arme ArmeSélectionné
         {
             get => armeSélectionné; 
             set
@@ -50,7 +50,7 @@ namespace BibliothequeClassesVSC
                 }
             }
         }
-        private ArmeActive armeSélectionné; 
+        private Arme armeSélectionné; 
         void OnPropertyChanged(string propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
