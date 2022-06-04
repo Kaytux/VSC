@@ -31,16 +31,19 @@ namespace VuesVSC
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             lBox.ItemsSource = Mgr.LesArmesActives;
+            Mgr.ArmeSélectionné = Mgr.LesArmesActives[0];
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             lBox.ItemsSource = Mgr.LesArmesPassives;
+            Mgr.ArmeSélectionné = Mgr.LesArmesPassives[0];
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             lBox.ItemsSource = Mgr.LesAmeliorations;
+            Mgr.ArmeSélectionné = Mgr.LesAmeliorations[0];
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
