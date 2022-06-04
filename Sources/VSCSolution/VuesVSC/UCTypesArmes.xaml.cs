@@ -50,7 +50,7 @@ namespace VuesVSC
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            UCAffichage.DataContext = lBox.ItemsSource;
+            Mgr.ArmeSélectionné = e.AddedItems[0] as ArmeActive;
         }
     }
 }
