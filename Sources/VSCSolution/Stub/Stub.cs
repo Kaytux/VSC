@@ -38,7 +38,7 @@ namespace Stub
                             new ArmePassive("Bracer","","./Images/Sprite-Bracer.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()),
                             new ArmePassive("Empty Tome", "", "./Images/Sprite-Empty_Tome.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()));
             AjoutCollection(lesArmesActives,
-                            new ArmeActive("Knife","","./Images/Sprite-Knife.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()),
+                            new ArmeActive("Knife","Le couteau est une arme","./Images/Sprite-Knife.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()),
                             new ArmeActive("Whip", "", "./Images/Sprite-Whip.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxLevel, 40)), new List<HashSet<Stat>>()));
             AjoutCollection(lesAmeliorations,
                             new Amelioration("Bloody Tear", "", "./Images/Sprite-Bloody_Tear.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 40)),"Arme Active 1", "Arme Passive 1",new List<HashSet<Stat>>()),

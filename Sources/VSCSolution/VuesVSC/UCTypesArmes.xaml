@@ -32,7 +32,7 @@
             </StackPanel>
         </Border>
 
-        <ListBox x:Name="lBox" DockPanel.Dock="Left" Background="{StaticResource GreyBackground}"
+        <ListBox x:Name="lBox" DockPanel.Dock="Left" Background="{StaticResource GreyBackground}" SelectionChanged="lBox_SelectionChanged"
                  ItemsSource="{Binding LesArmesActives}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -44,6 +44,9 @@
             </ListBox.ItemTemplate>     
         </ListBox>
 
+        <ContentControl x:Name="UCAffichage" DockPanel.Dock="right" DataContext="{Binding LesArmesActives}">
+            <local:UCArmes Texte="{Binding Nom}" ImageName="{Binding Image}" TexteDescription="{Binding Description}"/>
+        </ContentControl>
 
     </DockPanel>
 </UserControl>
