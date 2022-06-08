@@ -166,35 +166,35 @@ namespace BibliothequeClassesVSC
 
                 Utilisateur utilisateur = new Utilisateur(userName, userId);
 
-                Task task = GetSuccesJoueur(utilisateur);
+                //Task task = GetSuccesJoueur(utilisateur);
             }
         }
 
-        public async Task GetSuccesJoueur(Utilisateur utilisateur)
-        {
-            //ulong userId = ChargeSteamAPI();
+        //public async Task GetSuccesJoueur(Utilisateur utilisateur)
+        //{
+        //    ulong userId = ChargeSteamAPI();
 
-            // Web API (différente)
+        //    Web API(différente)
 
-            var webInterfaceFactory = new SteamWebInterfaceFactory("A44E58E08ACF6F1C2AA345462C1E6FBE"); // on initialize notre créateur d'interface entre steam et l'application avec la clé d'authentification steam partner
+        //    var webInterfaceFactory = new SteamWebInterfaceFactory("A44E58E08ACF6F1C2AA345462C1E6FBE"); // on initialize notre créateur d'interface entre steam et l'application avec la clé d'authentification steam partner
 
-            // Succés
+        //    Succés
 
-            var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
+        //   var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
 
-            var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, utilisateur.Id); // on récupere les succés de l'utilisateur sur Vampire Survivors
+        //    var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, utilisateur.Id); // on récupere les succés de l'utilisateur sur Vampire Survivors
 
-            IEnumerator<Steam.Models.SteamPlayer.PlayerAchievementModel> res = ach.Data.Achievements.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
-            res.MoveNext(); // on avance une première fois l'itérateur car il se trouve sur une valeur null au début
+        //    IEnumerator<Steam.Models.SteamPlayer.PlayerAchievementModel> res = ach.Data.Achievements.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
+        //    res.MoveNext(); // on avance une première fois l'itérateur car il se trouve sur une valeur null au début
 
-            while (res.MoveNext()) // tant que l'iterateur n'est pas null afficher Nom + desc + validation
-            {
-                utilisateur.achievement.Add(res.Current);
-                //Debug.WriteLine("Achievement name : " + res.Current.Name);
-                //Debug.WriteLine("Achievement descirption : " + res.Current.Description);
-                //Debug.WriteLine("Achieved ? (1=yes / 0=no) : " + res.Current.Achieved);
-                res.MoveNext();
-            }
-        }
+        //    while (res.MoveNext()) // tant que l'iterateur n'est pas null afficher Nom + desc + validation
+        //    {
+        //        utilisateur.achievement.Add(res.Current);
+        //        Debug.WriteLine("Achievement name : " + res.Current.Name);
+        //        Debug.WriteLine("Achievement descirption : " + res.Current.Description);
+        //        Debug.WriteLine("Achieved ? (1=yes / 0=no) : " + res.Current.Achieved);
+        //        res.MoveNext();
+        //    }
+        //}
     }
 }

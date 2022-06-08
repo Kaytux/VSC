@@ -31,22 +31,8 @@
                 </Grid>
             </StackPanel>
         </Border>
-
-        <ListBox x:Name="lBox" DockPanel.Dock="Left" Background="{StaticResource GreyBackground}" SelectionChanged="lBox_SelectionChanged"
-                 ItemsSource="{Binding LesArmesActives}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <DockPanel>
-                        <Image Width="50" Height="50" Source="{Binding Image}"/>
-                        <TextBlock Text="{Binding Nom}"/>
-                    </DockPanel>
-                </DataTemplate>     
-            </ListBox.ItemTemplate>     
-        </ListBox>
-
         <ContentControl x:Name="UCAffichage" DockPanel.Dock="right" DataContext="{Binding ArmeSélectionné}">
             <local:UCArmes Texte="{Binding Nom}" ImageName="{Binding Image}" TexteDescription="{Binding Description}"/>
         </ContentControl>
-
     </DockPanel>
 </UserControl>

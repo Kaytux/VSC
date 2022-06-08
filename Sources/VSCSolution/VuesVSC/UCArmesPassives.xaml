@@ -1,15 +1,13 @@
-﻿<UserControl x:Class="VuesVSC.UCArmes"
+﻿<UserControl x:Class="VuesVSC.UCArmesPassives"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VuesVSC"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             x:Name="root"
-             >
+             d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <ListBox x:Name="lBox" DockPanel.Dock="Left" Background="{StaticResource GreyBackground}" SelectionChanged="lBox_SelectionChanged" ItemsSource="{Binding LesArmesActives}">
+        <ListBox x:Name="lBox" DockPanel.Dock="Left" Background="{StaticResource GreyBackground}" SelectionChanged="lBox_SelectionChanged" ItemsSource="{Binding LesArmesPassives}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <DockPanel>
@@ -31,28 +29,28 @@
         <TextBox Height="80" Margin="20, 5" DockPanel.Dock="Bottom" VerticalAlignment="Stretch">Notes :</TextBox>
 
         <Grid DockPanel.Dock="Bottom" Margin="25" Background="{StaticResource GreyBackground}" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-            <Image Source="{Binding ArmeSélectionné.Image}" MaxWidth="40px"></Image>
-            <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.Nom}"></TextBlock>
+            <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
+            <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
 
             <TextBlock Background="Transparent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
-            
-            <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
-            <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
+
+            <Image Grid.Column="3"  Source="{Binding ArmeSélectionné.Image}" MaxWidth="40px"></Image>
+            <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.Nom}"></TextBlock>
 
             <TextBlock Background="Transparent" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">=</TextBlock>
-                
-                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
+
+            <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
             <TextBlock Background="Transparent" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
         </Grid>
         <TextBlock Margin="25" Text="{Binding ArmeSélectionné.Description}"/>

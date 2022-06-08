@@ -17,17 +17,16 @@ using System.Windows.Shapes;
 namespace VuesVSC
 {
     /// <summary>
-    /// Interaction logic for Passive2.xaml
+    /// Interaction logic for UCAmelioration.xaml
     /// </summary>
-    public partial class UCArmes : UserControl
+    public partial class UCAmelioration : UserControl
     {
         public Manager Mgr => (App.Current as App).Manager;
-        public UCArmes()
+        public UCAmelioration()
         {
             InitializeComponent();
             DataContext = Mgr;
         }
-
         public string Texte
         {
             get { return (string)GetValue(TexteProperty); }
@@ -36,7 +35,7 @@ namespace VuesVSC
 
         // Using a DependencyProperty as the backing store for Texte.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TexteProperty =
-            DependencyProperty.Register("Texte", typeof(string), typeof(UCArmes), new PropertyMetadata("N/A"));
+            DependencyProperty.Register("Texte", typeof(string), typeof(UCAmelioration), new PropertyMetadata("N/A"));
 
 
 
@@ -48,9 +47,7 @@ namespace VuesVSC
 
         // Using a DependencyProperty as the backing store for ImageName.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ImageNameProperty =
-            DependencyProperty.Register("ImageName", typeof(string), typeof(UCArmes), new PropertyMetadata("N/A"));
-
-
+            DependencyProperty.Register("ImageName", typeof(string), typeof(UCAmelioration), new PropertyMetadata("N/A"));
 
         public string TexteDescription
         {
@@ -60,12 +57,11 @@ namespace VuesVSC
 
         // Using a DependencyProperty as the backing store for TexteDescription.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TexteDescriptionProperty =
-            DependencyProperty.Register("TexteDescription", typeof(string), typeof(UCArmes), new PropertyMetadata("N/A"));
+            DependencyProperty.Register("TexteDescription", typeof(string), typeof(UCAmelioration), new PropertyMetadata("N/A"));
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Mgr.ArmeSélectionné = e.AddedItems[0] as ArmeActive;
+            Mgr.ArmeSélectionné = e.AddedItems[0] as Arme;
         }
-
     }
 }
