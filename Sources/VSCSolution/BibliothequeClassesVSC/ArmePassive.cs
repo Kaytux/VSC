@@ -27,9 +27,16 @@ namespace BibliothequeClassesVSC
         /// </summary>
         public Amelioration Amelioration { get; set; }
 
+        public ArmeActive ArmeAct { get; set; }
+
         public void ajouterAmelioration(Amelioration amelio)
         {
             Amelioration = amelio;
+        }
+
+        public void ajouterArmeActive(ArmeActive arme)
+        {
+            ArmeAct = arme;
         }
     }
 }

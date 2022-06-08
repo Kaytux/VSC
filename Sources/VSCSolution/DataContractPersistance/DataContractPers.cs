@@ -54,7 +54,7 @@ namespace DataContractPersistance
             LesArmesActives = data.Aa.ToPOCOs().ToList();
             LesCartes = data.Ca.ToPOCOs().ToList();
 
-            //LiensDesClasses(LesArmesPassives, LesArmesActives, LesAmeliorations, LesCartes, LesEnnemies);
+            LiensDesClasses(LesArmesPassives, LesArmesActives, LesAmeliorations, LesCartes, LesEnnemies);
 
             return (LesArmesPassives,
                     LesArmesActives,
@@ -82,6 +82,14 @@ namespace DataContractPersistance
                     {
                         amelio.ArmePass = passive;
                         passive.ajouterAmelioration(amelio);
+                        passive.ajouterArmeActive(amelio.ArmeAct);
+                    }
+                }
+                foreach (ArmeActive active in armesActives)
+                {
+                    if (amelio.NomArmeAct == active.Nom)
+                    {
+                        active.ajouterArmePasssive(amelio.ArmePass);
                     }
                 }
             }
