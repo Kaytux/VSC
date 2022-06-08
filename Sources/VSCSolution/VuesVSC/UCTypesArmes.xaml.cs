@@ -30,30 +30,26 @@ namespace VuesVSC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            lBox.ItemsSource = Mgr.LesArmesActives;
             Mgr.ArmeSélectionné = Mgr.LesArmesActives[0];
+            UCAffichage.Content = new UCArmes();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            lBox.ItemsSource = Mgr.LesArmesPassives;
             Mgr.ArmeSélectionné = Mgr.LesArmesPassives[0];
+            UCAffichage.Content = new UCArmesPassives();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            lBox.ItemsSource = Mgr.LesAmeliorations;
             Mgr.ArmeSélectionné = Mgr.LesAmeliorations[0];
+            UCAffichage.Content = new UCAmelioration();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            //
+            UCAffichage.Content = new UCRecap();
         }
 
-        private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Mgr.ArmeSélectionné = e.AddedItems[0] as Arme;
-        }
     }
 }

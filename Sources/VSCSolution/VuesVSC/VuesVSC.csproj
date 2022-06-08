@@ -11,6 +11,9 @@
     <None Remove="icon.png" />
     <None Remove="Images\introBG.png" />
     <None Remove="Images\Sprite-Bloody_Tear.png" />
+    <None Remove="Images\Sprite-Holy_Wand.png" />
+    <None Remove="Images\Sprite-Holy_Wand.webp" />
+    <None Remove="Images\Sprite-Thousand_Edge.png" />
     <None Remove="Sprite-Bracer.png" />
     <None Remove="Sprite-Empty_Tome.png" />
     <None Remove="Sprite-Hollow_Heart.png" />
@@ -42,6 +45,9 @@
     <Content Include="Images\Sprite-Magic_Wand.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Sprite-Thousand_Edge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Sprite-Whip.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -66,6 +72,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\introBG.png" />
+    <Content Include="Images\Sprite-Holy_Wand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
