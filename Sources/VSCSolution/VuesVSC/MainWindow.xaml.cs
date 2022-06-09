@@ -1,7 +1,10 @@
 ﻿using BibliothequeClassesVSC;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Media;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace VuesVSC
 {
@@ -10,26 +13,12 @@ namespace VuesVSC
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Navigator Nav => (App.Current as App).Navigator;
         public Manager Mgr => (App.Current as App).Manager;
         public MainWindow()
         {
             InitializeComponent();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
-            contentControl.Content = new UCTypesArmes();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new UCMainPage();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Mgr.StatsSelectionne=Mgr.PersonnageSelectionne.stats.ToList();
-            contentControl.Content = new UCPersonnages();
+            DataContext = this;
         }
 
         private async void Button_Click_3(object sender, RoutedEventArgs e)
@@ -61,22 +50,6 @@ namespace VuesVSC
                     }
                 }
             }
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new UCCartes();
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            Mgr.StatsSelectionne=Mgr.EnnemieSelectionne.stats.ToList();
-            contentControl.Content = new UCEnnemie();
-        }
-
-        private void UCMainPage_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

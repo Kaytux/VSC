@@ -30,28 +30,36 @@
 
         <Grid DockPanel.Dock="Bottom" Margin="25" Background="{StaticResource GreyBackground}" >
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Image Source="{Binding ArmeSélectionné.ArmeAct.Image}" MaxWidth="40px"></Image>
-            <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.ArmeAct.Nom}" ></TextBlock>
+            <Button Click="Active_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding ArmeSélectionné.ArmeAct.Image}" MaxWidth="40px"></Image>
+                    <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.ArmeAct}"></TextBlock>
+                </StackPanel>
+            </Button>
 
-            <TextBlock Background="Transparent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
+            <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
 
-            <Image Grid.Column="3"  Source="{Binding ArmeSélectionné.ArmePass.Image}" MaxWidth="40px"></Image>
-            <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.ArmePass.Nom}"></TextBlock>
+            <Button Grid.Column="2" Click="Passive_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding ArmeSélectionné.ArmePass.Image}" MaxWidth="40px"></Image>
+                    <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.ArmePass}"></TextBlock>
+                </StackPanel>
+            </Button>
 
-            <TextBlock Background="Transparent" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">=</TextBlock>
+            <TextBlock Background="Transparent" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">=</TextBlock>
 
-            <Image Grid.Column="6" Source="{Binding ArmeSélectionné.Image}" MaxWidth="40px"></Image>
-            <TextBlock Background="Transparent" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.Nom}"></TextBlock>
+            <StackPanel Grid.Column="4" Orientation="Horizontal">
+                <Image MaxHeight="45" Source="{Binding ArmeSélectionné.Image}"/>
+                <TextBlock Background="Transparent" Text="{Binding ArmeSélectionné}"/>
+            </StackPanel>
+            
         </Grid>
         <TextBlock Margin="25" Text="{Binding ArmeSélectionné.Description}"/>
     </DockPanel>

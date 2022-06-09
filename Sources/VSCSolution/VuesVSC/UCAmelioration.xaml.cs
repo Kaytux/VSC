@@ -22,14 +22,32 @@ namespace VuesVSC
     public partial class UCAmelioration : UserControl
     {
         public Manager Mgr => (App.Current as App).Manager;
+        public Navigator Nav => (App.Current as App).Navigator;
         public UCAmelioration()
         {
             InitializeComponent();
             DataContext = Mgr;
+            if (Mgr.ArmeSélectionné as Amelioration == default)
+            {
+                Mgr.ArmeSélectionné = Mgr.LesAmeliorations[0];
+            }
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
         }
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
             Mgr.ArmeSélectionné = e.AddedItems[0] as Arme;
+        }
+        private void Passive_Click(object sender, RoutedEventArgs e)
+        {
+            Mgr.ArmeSélectionné = (Mgr.ArmeSélectionné as Amelioration).ArmePass;
+            Nav.NavigateTo(Navigator.PART_ARMES, Navigator.PART_PASS);
+        }
+
+        private void Active_Click(object sender, RoutedEventArgs e)
+        {
+            Mgr.ArmeSélectionné = (Mgr.ArmeSélectionné as Amelioration).ArmeAct;
+            Nav.NavigateTo(Navigator.PART_ARMES, Navigator.PART_ACT);
         }
     }
 }

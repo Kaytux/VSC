@@ -22,37 +22,11 @@ namespace VuesVSC
     public partial class UCTypesArmes : UserControl
     {
         public Manager Mgr => (App.Current as App).Manager;
+        public Navigator Nav => (App.Current as App).Navigator;
         public UCTypesArmes()
         {
             InitializeComponent();
-            DataContext = Mgr;
+            DataContext = this;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Mgr.ArmeSélectionné = Mgr.LesArmesActives[0];
-            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
-            UCAffichage.Content = new UCArmes();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Mgr.ArmeSélectionné = Mgr.LesArmesPassives[0];
-            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
-            UCAffichage.Content = new UCArmesPassives();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Mgr.ArmeSélectionné = Mgr.LesAmeliorations[0];
-            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
-            UCAffichage.Content = new UCAmelioration();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            UCAffichage.Content = new UCRecap();
-        }
-
     }
 }

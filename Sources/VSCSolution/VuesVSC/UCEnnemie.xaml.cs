@@ -26,13 +26,13 @@ namespace VuesVSC
         {
             InitializeComponent();
             DataContext = Manager;
+            Manager.StatsSelectionne = Manager.EnnemieSelectionne.stats.ToList();
         }
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Manager.StatsSelectionne = Manager.EnnemieSelectionne.stats.ToList();
             Manager.EnnemieSelectionne= e.AddedItems[0] as Ennemie;
-
         }
     }
 }
