@@ -26,7 +26,7 @@
 
         <TextBlock Background="Transparent" FontSize="42"  Text="{Binding EnnemieSelectionne}" DockPanel.Dock="Top" VerticalAlignment="Center"/>
 
-        <Image Source="{Binding EnnemieSelectionne.Image}" Width="600" Height="600" Margin="10" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
+        <Image Source="{Binding EnnemieSelectionne.Image}" MaxWidth="600" MaxHeight="600" Margin="10" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
 
     </DockPanel>
 </UserControl>
