@@ -53,11 +53,11 @@ namespace VuesVSC
                 {
                     if (test == 1)
                     {
-                        System.Windows.MessageBox.Show("Erreur : Veuillez lancer Steam, et réessayez");
+                        MessageBox.Show("Erreur : Veuillez lancer Steam, et réessayez");
                     }
                     else if(test == 2)
                     {
-                        System.Windows.MessageBox.Show("Erreur : Votre compte Steam ne possède pas Vampire Survivors, initialisation impossible");
+                        MessageBox.Show("Erreur : Votre compte Steam ne possède pas Vampire Survivors, initialisation impossible");
                     }
                 }
             }
