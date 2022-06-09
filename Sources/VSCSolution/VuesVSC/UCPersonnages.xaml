@@ -17,10 +17,12 @@
         <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
         <TextBlock Text="{Binding PersonnageSelectionne.Description}" DockPanel.Dock="Bottom" MinHeight="200"/>
         <Image Source="{Binding PersonnageSelectionne.Image}" MaxWidth="100" Margin="10" DockPanel.Dock="Left" HorizontalAlignment="Left"/>
-        <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center">
-            <TextBlock DockPanel.Dock="Bottom" TextAlignment="Center" Text="{Binding PersonnageSelectionne.Arme}"/>
-            <Image MaxHeight="200" Source="{Binding PersonnageSelectionne.Arme.Image}"/>
-        </DockPanel>
+        <Button Click="Arme_Click" DockPanel.Dock="Right" VerticalAlignment="Center">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Bottom" TextAlignment="Center" Text="{Binding PersonnageSelectionne.Arme}"/>
+                <Image MaxHeight="200" Source="{Binding PersonnageSelectionne.Arme.Image}"/>
+            </DockPanel>
+        </Button>        
         <TextBlock Text="{Binding PersonnageSelectionne}" VerticalAlignment="Center"/>
     </DockPanel>
 </UserControl>

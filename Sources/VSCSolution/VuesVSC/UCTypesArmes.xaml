@@ -8,31 +8,25 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
         <Border BorderThickness="0,0,0,2" DockPanel.Dock="Top" BorderBrush="Black">
-            <StackPanel>
-                <Grid Background="{StaticResource GreyBackground}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Button Style="{StaticResource MenuButton}" Click="Button_Click">
-                        <TextBlock Style="{StaticResource MenuText}">Armes Actives</TextBlock>
-                    </Button>
-                    <Button Style="{StaticResource MenuButton}" Grid.Column="1" Click="Button_Click_1">
-                        <TextBlock Style="{StaticResource MenuText}">Armes Passives</TextBlock>
-                    </Button>
-                    <Button Style="{StaticResource MenuButton}" Grid.Column="2" Click="Button_Click_2">
-                        <TextBlock Style="{StaticResource MenuText}">Améliorations</TextBlock>
-                    </Button>
-                    <Button Style="{StaticResource MenuButton}" Grid.Column="3" Click="Button_Click_3">
-                        <TextBlock Style="{StaticResource MenuText}">Récap</TextBlock>
-                    </Button>
-                </Grid>
-            </StackPanel>
+            <ListBox Background="{StaticResource GreyBackground}" 
+                     ItemsSource="{Binding Nav.WindowPartsScnd}" 
+                     SelectedItem="{Binding Nav.SelectedUserControlCreatorScnd}"
+                     IsSynchronizedWithCurrentItem="True">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource MenuText}" Text="{Binding Key}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Border>
-        <ContentControl x:Name="UCAffichage" DockPanel.Dock="right">
-            <local:UCArmes></local:UCArmes>
-        </ContentControl>
+        <ContentControl x:Name="contentControlScnd" DockPanel.Dock="Bottom"
+                        DataContext="{Binding Nav}"
+                        Content="{Binding SelectedUserControlCreatorScnd.Value,Converter={StaticResource Func2WpConv}}"/>
+
     </DockPanel>
 </UserControl>

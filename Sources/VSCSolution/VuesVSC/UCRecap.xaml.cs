@@ -22,10 +22,26 @@ namespace VuesVSC
     public partial class UCRecap : UserControl
     {
         public Manager Mgr => (App.Current as App).Manager;
+        public Navigator Nav => (App.Current as App).Navigator;
         public UCRecap()
         {
             InitializeComponent();
             DataContext = Mgr;
+        }
+
+        private void Act_Click(object sender, RoutedEventArgs e)
+        {
+            Mgr.ArmeSélectionné = (Mgr.ArmeSélectionné as Amelioration).ArmeAct;
+            Nav.NavigateTo(Navigator.PART_ARMES, Navigator.PART_ACT);
+        }
+        private void Pass_Click(object sender, RoutedEventArgs e)
+        {
+            Mgr.ArmeSélectionné = (Mgr.ArmeSélectionné as Amelioration).ArmePass;
+            Nav.NavigateTo(Navigator.PART_ARMES, Navigator.PART_PASS);
+        }
+        private void Amelio_Click(object sender, RoutedEventArgs e)
+        {
+            Nav.NavigateTo(Navigator.PART_ARMES, Navigator.PART_AMELIO);
         }
     }
 }

@@ -14,8 +14,6 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.MaxHealth, 0));
             stats.Add(new Stat(Stat.NomStat.MoveSpeed, 0));
             stats.Add(new Stat(Stat.NomStat.Might, 0));
-
-
         }
     }
 }

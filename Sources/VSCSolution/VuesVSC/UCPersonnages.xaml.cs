@@ -22,16 +22,24 @@ namespace VuesVSC
     public partial class UCPersonnages : UserControl
     {
         public Manager Manager => (App.Current as App).Manager;
+        public Navigator Nav => (App.Current as App).Navigator;
         public UCPersonnages()
         {
             InitializeComponent();
             DataContext = Manager;
+            Manager.StatsSelectionne = Manager.PersonnageSelectionne.stats.ToList();
         }
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Manager.StatsSelectionne = Manager.PersonnageSelectionne.stats.ToList();
             Manager.PersonnageSelectionne = e.AddedItems[0] as Personnage;
+        }
+
+        private void Arme_Click(object sender,RoutedEventArgs e)
+        {
+            Manager.ArmeSélectionné = Manager.PersonnageSelectionne.Arme;
+            Nav.NavigateTo(Navigator.PART_ARMES,Navigator.PART_ACT);
         }
     }
 }

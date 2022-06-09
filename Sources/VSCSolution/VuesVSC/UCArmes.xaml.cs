@@ -22,31 +22,34 @@ namespace VuesVSC
     public partial class UCArmes : UserControl
     {
         public Manager Mgr => (App.Current as App).Manager;
+        public Navigator Nav => (App.Current as App).Navigator;
         public UCArmes()
         {
             InitializeComponent();
             DataContext = Mgr;
+            if(Mgr.ArmeSélectionné as ArmeActive == default)
+            {
+                Mgr.ArmeSélectionné = Mgr.LesArmesActives[0];
+            }
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
         }
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Mgr.StatsSelectionne = Mgr.PersonnageSelectionne.stats.ToList();
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
             Mgr.ArmeSélectionné = e.AddedItems[0] as ArmeActive;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Passive_Click(object sender,RoutedEventArgs e)
         {
-            
+            Mgr.ArmeSélectionné = (Mgr.ArmeSélectionné as ArmeActive).ArmePass;
+            Nav.NavigateTo(Navigator.PART_ARMES, Navigator.PART_PASS);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Amelio_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
+            Mgr.ArmeSélectionné = (Mgr.ArmeSélectionné as ArmeActive).Amelioration;
+            Nav.NavigateTo(Navigator.PART_ARMES,Navigator.PART_AMELIO);
         }
     }
 }
