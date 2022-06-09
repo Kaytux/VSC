@@ -32,7 +32,7 @@ namespace VuesVSC
             contentControl.Content = new UCPersonnages();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private async void Button_Click_3(object sender, RoutedEventArgs e)
         {
             if (Mgr.Utilisateur != null)
             {
@@ -45,9 +45,9 @@ namespace VuesVSC
                 if (test==0)
                 {
                     SystemSounds.Hand.Play();
+                    await Mgr.GetSuccesJoueur();
                     contentControlConnexion.Content = new UCConnecte();
                     contentControl.Content = new UCProfil();
-                    _ = Mgr.GetSuccesJoueur();
                 }
                 else
                 {
