@@ -37,7 +37,7 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Button>
+            <Button Click="Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image MaxHeight="45" Source="{Binding ArmeSélectionné.Image}"/>
                     <TextBlock Background="Transparent" Text="{Binding ArmeSélectionné}"/>
@@ -46,7 +46,7 @@
 
             <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
 
-            <Button Grid.Column="2">
+            <Button Grid.Column="2" Click="Button_Click_1">
                 <StackPanel Orientation="Horizontal">
                     <Image Grid.Column="3"  Source="{Binding ArmeSélectionné.ArmePass.Image}" MaxWidth="40px"></Image>
                     <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.ArmePass}"></TextBlock>
@@ -55,7 +55,7 @@
 
             <TextBlock Background="Transparent" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">=</TextBlock>
 
-            <Button Grid.Column="4">
+            <Button Grid.Column="4" Click="Button_Click_2">
                 <StackPanel Orientation="Horizontal">
                     <Image Grid.Column="6" Source="{Binding ArmeSélectionné.Amelioration.Image}" MaxWidth="40px"></Image>
                     <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.Amelioration}"></TextBlock>
