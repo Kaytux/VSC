@@ -36,6 +36,8 @@ namespace BibliothequeClassesVSC
         public ReadOnlyCollection<Carte> LesCartes { get; private set; }
         private HashSet<Carte> lesCartes = new HashSet<Carte>();
 
+        public Utilisateur utilisateur { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Arme ArmeSélectionné
@@ -189,7 +191,7 @@ namespace BibliothequeClassesVSC
             return res.ToHashSet();
         }
 
-        public void ChargeSteamAPI()
+        public bool ChargeSteamAPI()
         {
             // Lancer steam
             SteamNative.Initialize(); // initialisation de Steam Native (permet de détecter le lancement de steam sur la machine)
@@ -197,6 +199,7 @@ namespace BibliothequeClassesVSC
             if (!result)
             {
                 Debug.WriteLine("Veuillez lancé steam !"); // si il n'est pas lancé, affiche un message pour demander de laner
+                return false;
             }
             else
             {
@@ -210,9 +213,11 @@ namespace BibliothequeClassesVSC
 
                 var userId = SteamApi.SteamUser.GetSteamID(); // on récupère l'identifiant de l'utilisateur
 
-                Utilisateur utilisateur = new Utilisateur(userName, userId);
+                utilisateur = new Utilisateur(userName, userId);
 
                 //Task task = GetSuccesJoueur(utilisateur);
+
+                return true;
             }
         }
 

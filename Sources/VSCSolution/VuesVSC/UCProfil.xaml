@@ -26,7 +26,7 @@
             <TextBlock Text="Test..."/>
         </StackPanel>
         <Image Margin="40" MaxHeight="200" DockPanel.Dock="Top" Source="Images/icon.png"/>
-        <TextBlock Margin="20" DockPanel.Dock="Top" Text="Nom_du_profil"/>
+        <TextBlock Margin="20" DockPanel.Dock="Top" Text="{Binding utilisateur.Nom}"/>
         <StackPanel Margin="20">
             <TextBlock Text="Stats 1"/>
             <TextBlock Text="Stats 2"/>

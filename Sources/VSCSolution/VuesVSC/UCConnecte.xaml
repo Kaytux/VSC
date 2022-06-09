@@ -7,5 +7,5 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <TextBlock Style="{StaticResource MenuText}">Username</TextBlock>
+    <TextBlock Style="{StaticResource MenuText}"  Text="{Binding utilisateur.Nom}" ></TextBlock>
 </UserControl>
