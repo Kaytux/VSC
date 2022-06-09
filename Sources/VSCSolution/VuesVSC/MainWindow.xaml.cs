@@ -62,10 +62,7 @@ namespace VuesVSC
                 }
                 else
                 {
-                    var window = new PopUpSteam();
-
-                    window.Owner = this;
-                    window.Show();
+                    System.Windows.MessageBox.Show("Veuillez lancer Steam, et réessayez");
                 }
             }
         }
