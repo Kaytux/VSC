@@ -27,6 +27,13 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.Growth, 0));
             stats.Add(new Stat(Stat.NomStat.Greed, 0));
             stats.Add(new Stat(Stat.NomStat.Magnet, 0));
+            stats.Add(new Stat(Stat.NomStat.Area, 0));
+            stats.Add(new Stat(Stat.NomStat.Speed, 0));
+            stats.Add(new Stat(Stat.NomStat.Duration , 0));
+            stats.Add(new Stat(Stat.NomStat.Amount, 0));
+            stats.Add(new Stat(Stat.NomStat.Cooldown, 0));
+            stats.Add(new Stat(Stat.NomStat.Recovery, 0));
+            stats.Add(new Stat(Stat.NomStat.Armor, 0));
 
             AjoutStats(particularite);
         }

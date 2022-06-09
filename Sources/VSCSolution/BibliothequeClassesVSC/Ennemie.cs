@@ -18,6 +18,8 @@ namespace BibliothequeClassesVSC
         /// <param name="image">Chemin qui permet d'accéder à l'image correspondante à l'ennemie que l'on douhaite créer.</param>
         public Ennemie(string nom, string desc, string image, HashSet<Stat> particularite) : base(nom, desc, image, particularite)
         {
+            stats.Add(new Stat(Stat.NomStat.XpGiven, 0));
+            stats.Add(new Stat(Stat.NomStat.KnockbackReceive, 0));
             AjoutStats(particularite);
         }
     }
