@@ -34,6 +34,20 @@ namespace BibliothequeClassesVSC
                 return Element.ToString() + " : " + Contenu;
             }
         }
+
+        public class AchievementMinimal
+        {
+            public AchievementMinimal(string nom, string desc, string reussis)
+            {
+                Nom = nom;
+                Desc = desc;
+                Reussis = reussis;
+            }
+            public string Nom { get; set; }
+            public string Desc { get; set; }
+            public string Reussis { get; set; }
+        }
+
         /// <summary>
         /// Classe représentant un utilisateur
         /// </summary>
@@ -48,7 +62,8 @@ namespace BibliothequeClassesVSC
         public string Nom{get;set;}
         public IEnumerable<INote> LesNotes => lesNotes;
         public HashSet<Note> lesNotes = new HashSet<Note>();
-        public List<Steam.Models.SteamPlayer.PlayerAchievementModel> achievement = new List<Steam.Models.SteamPlayer.PlayerAchievementModel>();
+        //public List<Steam.Models.SteamPlayer.PlayerAchievementModel> achievement { get; set; } = new List<Steam.Models.SteamPlayer.PlayerAchievementModel>();
+        public List<AchievementMinimal> achievementMinimals { get; set; } = new List<AchievementMinimal>();
         public ulong Id { get; set; }
 
         public void ajouterNotes(Element e, string note) 
