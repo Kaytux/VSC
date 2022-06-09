@@ -57,7 +57,7 @@ namespace VuesVSC
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCListe();
+            contentControl.Content = new UCEnnemie();
         }
 
         private void UCMainPage_Loaded(object sender, RoutedEventArgs e)

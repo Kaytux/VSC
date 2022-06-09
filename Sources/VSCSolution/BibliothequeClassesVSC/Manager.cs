@@ -66,6 +66,21 @@ namespace BibliothequeClassesVSC
         }
         private Personnage personnageSelectionne;
 
+        public Ennemie EnnemieSelectionne
+        {
+            get => ennemieSelectionne;
+            set
+            {
+                if (EnnemieSelectionne != value)
+                {
+                    ennemieSelectionne = value;
+                    OnPropertyChanged(nameof(EnnemieSelectionne));
+                }
+            }
+        }
+
+        private Ennemie ennemieSelectionne;
+
         public List<Stat> StatsSelectionne
         {
             get => statsSelectionne;
@@ -119,6 +134,7 @@ namespace BibliothequeClassesVSC
 
             ArmeSélectionné = LesArmesActives[0];
             PersonnageSelectionne = LesPersonnages[0];
+            EnnemieSelectionne = LesEnnemies[0];
         }
 
         public void SauvegardeDonnées()
