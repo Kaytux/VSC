@@ -70,6 +70,7 @@ namespace VuesVSC
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
+            Mgr.StatsSelectionne=Mgr.EnnemieSelectionne.stats.ToList();
             contentControl.Content = new UCEnnemie();
         }
 
