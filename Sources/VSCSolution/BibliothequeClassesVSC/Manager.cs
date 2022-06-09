@@ -289,7 +289,13 @@ namespace BibliothequeClassesVSC
             res.MoveNext(); // on avance une première fois l'itérateur car il se trouve sur une valeur null au début
             while (res.MoveNext()) // tant que l'iterateur n'est pas null afficher Nom + desc + validation
             {
-                Utilisateur.achievement.Add(res.Current);
+                if (res.Current.Achieved == 1)
+                {
+                    Utilisateur.achievements.Add(new Utilisateur.Achievements(res.Current.Name, res.Current.Description, "Oui"));
+                }
+                else if(res.Current.Achieved == 0){
+                    Utilisateur.achievements.Add( new Utilisateur.Achievements(res.Current.Name, res.Current.Description, "Non"));
+                }
                 Debug.WriteLine("Achievement name : " + res.Current.Name);
                 Debug.WriteLine("Achievement descirption : " + res.Current.Description);
                 Debug.WriteLine("Achieved ? (1=yes / 0=no) : " + res.Current.Achieved);
