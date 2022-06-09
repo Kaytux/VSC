@@ -5,9 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VuesVSC"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             x:Name="root"
-             >
+             d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
         <ListBox x:Name="lBox" DockPanel.Dock="Left" Background="{StaticResource GreyBackground}" SelectionChanged="lBox_SelectionChanged" ItemsSource="{Binding LesArmesActives}">
             <ListBox.ItemTemplate>
@@ -47,7 +45,7 @@
 
             <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
 
-            <Button Grid.Column="2">
+            <Button Grid.Column="2" Click="ArmesPassives_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Grid.Column="3"  Source="{Binding ArmeSélectionné.ArmePass.Image}" MaxWidth="40px"></Image>
                     <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.ArmePass}"></TextBlock>

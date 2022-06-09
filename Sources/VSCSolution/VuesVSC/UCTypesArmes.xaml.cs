@@ -22,6 +22,8 @@ namespace VuesVSC
     public partial class UCTypesArmes : UserControl
     {
         public Manager Mgr => (App.Current as App).Manager;
+
+        public Navigator Navigator => (App.Current as App).Navigator;
         public UCTypesArmes()
         {
             InitializeComponent();

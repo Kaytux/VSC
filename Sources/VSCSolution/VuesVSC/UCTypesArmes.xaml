@@ -5,10 +5,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VuesVSC"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:conv="clr-namespace:VuesVSC.converters">
+    <UserControl.Resources>
+        <conv:Func2WindowPartConverter x:Name="func2WindowPartConverter"/>
+    </UserControl.Resources>
     <DockPanel>
         <Border BorderThickness="0,0,0,2" DockPanel.Dock="Top" BorderBrush="Black">
             <StackPanel>
+                <!--<ListBox ItemsSource="{Binding Navigator.WindowParts}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Key}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>-->
                 <Grid Background="{StaticResource GreyBackground}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
@@ -31,8 +47,8 @@
                 </Grid>
             </StackPanel>
         </Border>
-        <ContentControl x:Name="UCAffichage" DockPanel.Dock="right" DataContext="{Binding ArmeSélectionné}">
-            <local:UCArmes Texte="{Binding Nom}" ImageName="{Binding Image}" TexteDescription="{Binding Description}"/>
-        </ContentControl>
+        <ContentControl x:Name="UCAffichage" DockPanel.Dock="right" DataContext="{Binding Navigator}"
+                        Content="{Binding SelectedUserControlCreator.Value}"/>
+
     </DockPanel>
 </UserControl>

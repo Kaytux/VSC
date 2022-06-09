@@ -2,11 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:VuesVSC"
+             xmlns:conv="clr-namespace:VuesVSC.converters"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <FontFamily x:Key="FontVSC">pack://application:,,,/Fonts/#Courier New</FontFamily>
         <SolidColorBrush x:Key="GreyBackground" Color="LightGray" Opacity="0.2"/>
-        
+
         <Style x:Key="MenuButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
