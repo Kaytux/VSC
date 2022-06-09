@@ -7,13 +7,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:conv="clr-namespace:VuesVSC.converters">
+    
     <UserControl.Resources>
-        <conv:Func2WindowPartConverter x:Name="func2WindowPartConverter"/>
+        <conv:Func2WindowPartConverter x:Key="func2WinPartConv"/>
     </UserControl.Resources>
+    
     <DockPanel>
         <Border BorderThickness="0,0,0,2" DockPanel.Dock="Top" BorderBrush="Black">
             <StackPanel>
-                <!--<ListBox ItemsSource="{Binding Navigator.WindowParts}">
+                <ListBox ItemsSource="{Binding Navigator.WindowParts}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel/>
@@ -24,8 +26,8 @@
                             <TextBlock Text="{Binding Key}"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
-                </ListBox>-->
-                <Grid Background="{StaticResource GreyBackground}">
+                </ListBox>
+                <!--<Grid Background="{StaticResource GreyBackground}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -44,11 +46,11 @@
                     <Button Style="{StaticResource MenuButton}" Grid.Column="3" Click="Button_Click_3">
                         <TextBlock Style="{StaticResource MenuText}">Récap</TextBlock>
                     </Button>
-                </Grid>
+                </Grid>-->
             </StackPanel>
         </Border>
         <ContentControl x:Name="UCAffichage" DockPanel.Dock="right" DataContext="{Binding Navigator}"
-                        Content="{Binding SelectedUserControlCreator.Value}"/>
+                        Content="{Binding SelectedUserControlCreator.Value, Converter={StaticResource func2WinPartConv}}"/>
 
     </DockPanel>
 </UserControl>
