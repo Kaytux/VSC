@@ -28,42 +28,9 @@ namespace VuesVSC
             DataContext = Mgr;
         }
 
-        public string Texte
-        {
-            get { return (string)GetValue(TexteProperty); }
-            set { SetValue(TexteProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for Texte.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TexteProperty =
-            DependencyProperty.Register("Texte", typeof(string), typeof(UCArmes), new PropertyMetadata("N/A"));
-
-
-
-        public string ImageName
-        {
-            get { return (string)GetValue(ImageNameProperty); }
-            set { SetValue(ImageNameProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for ImageName.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ImageNameProperty =
-            DependencyProperty.Register("ImageName", typeof(string), typeof(UCArmes), new PropertyMetadata("N/A"));
-
-
-
-        public string TexteDescription
-        {
-            get { return (string)GetValue(TexteDescriptionProperty); }
-            set { SetValue(TexteDescriptionProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for TexteDescription.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TexteDescriptionProperty =
-            DependencyProperty.Register("TexteDescription", typeof(string), typeof(UCArmes), new PropertyMetadata("N/A"));
-
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Mgr.StatsSelectionne = Mgr.PersonnageSelectionne.stats.ToList();
             Mgr.ArmeSélectionné = e.AddedItems[0] as ArmeActive;
         }
 

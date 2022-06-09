@@ -18,15 +18,20 @@ namespace BibliothequeClassesVSC
         public Personnage(string nom,
                           string desc,
                           string image,
-                          HashSet<Stat> particularite
+                          HashSet<Stat> particularite,
+                          string nomArme
                           ) : base(nom, desc, image, particularite)
         {
+            this.NomArme = nomArme;
             stats.Add(new Stat(Stat.NomStat.Luck, 0));
             stats.Add(new Stat(Stat.NomStat.Growth, 0));
             stats.Add(new Stat(Stat.NomStat.Greed, 0));
             stats.Add(new Stat(Stat.NomStat.Magnet, 0));
 
             AjoutStats(particularite);
-        }        
+        }
+
+        public string NomArme { get; private set; }
+        public ArmeActive Arme { get; set; }
     }
 }

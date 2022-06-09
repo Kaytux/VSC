@@ -19,12 +19,14 @@ namespace DataContractPersistanceVSC
         public string Image { get; set; }
         [DataMember]
         public HashSet<StatDTO> particularites = new HashSet<StatDTO>();
+        [DataMember]
+        public string NomArme { get; set; }
     }
 
     static class PersonnageExtensions
     {
         public static Personnage ToPOCO(this PersonnageDTO dto)
-            => new Personnage(dto.Nom, dto.Description, dto.Image, dto.particularites.ToPOCOs().ToHashSet());
+            => new Personnage(dto.Nom, dto.Description, dto.Image, dto.particularites.ToPOCOs().ToHashSet(),dto.NomArme);
 
         public static IEnumerable<Personnage> ToPOCOs(this IEnumerable<PersonnageDTO> dtos)
             => dtos.Select(dto => dto.ToPOCO());
@@ -35,7 +37,8 @@ namespace DataContractPersistanceVSC
                 Nom = poco.Nom,
                 Description = poco.Description,
                 Image = poco.Image,
-                particularites = poco.particularites.ToDTOs().ToHashSet()
+                particularites = poco.particularites.ToDTOs().ToHashSet(),
+                NomArme = poco.Arme.Nom
             };
         public static IEnumerable<PersonnageDTO> ToDTOs(this IEnumerable<Personnage> pocos)
             => pocos.Select(poco => poco.ToDTO());

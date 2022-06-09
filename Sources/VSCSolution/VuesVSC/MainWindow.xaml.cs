@@ -22,12 +22,14 @@ namespace VuesVSC
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Manager Mgr => (App.Current as App).Manager;
         public MainWindow()
         {
             InitializeComponent();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
             contentControl.Content = new UCTypesArmes();
         }
 
@@ -38,7 +40,8 @@ namespace VuesVSC
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCEntites();
+            Mgr.StatsSelectionne=Mgr.PersonnageSelectionne.stats.ToList();
+            contentControl.Content = new UCPersonnages();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

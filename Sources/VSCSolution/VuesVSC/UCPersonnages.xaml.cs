@@ -19,13 +19,19 @@ namespace VuesVSC
     /// <summary>
     /// Logique d'interaction pour UCPersonnages.xaml
     /// </summary>
-    public partial class UCEntites : UserControl
+    public partial class UCPersonnages : UserControl
     {
         public Manager Manager => (App.Current as App).Manager;
-        public UCEntites()
+        public UCPersonnages()
         {
             InitializeComponent();
             DataContext = Manager;
+        }
+
+        private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Manager.StatsSelectionne = Manager.PersonnageSelectionne.stats.ToList();
+            Manager.PersonnageSelectionne = e.AddedItems[0] as Personnage;
         }
     }
 }

@@ -54,7 +54,7 @@ namespace DataContractPersistance
             LesArmesActives = data.Aa.ToPOCOs().ToList();
             LesCartes = data.Ca.ToPOCOs().ToList();
 
-            LiensDesClasses(LesArmesPassives, LesArmesActives, LesAmeliorations, LesCartes, LesEnnemies);
+            LiensDesClasses(LesArmesPassives, LesArmesActives, LesAmeliorations, LesCartes, LesEnnemies,LesPersonnages);
 
             return (LesArmesPassives,
                     LesArmesActives,
@@ -64,7 +64,7 @@ namespace DataContractPersistance
                     LesCartes);
         }
 
-        public void LiensDesClasses(List<ArmePassive> armesPassives, List<ArmeActive> armesActives, List<Amelioration> ameliortions, List<Carte> cartes, List<Ennemie> ennemies)
+        public void LiensDesClasses(List<ArmePassive> armesPassives, List<ArmeActive> armesActives, List<Amelioration> ameliortions, List<Carte> cartes, List<Ennemie> ennemies,List<Personnage> persos)
         {
             foreach(Amelioration amelio in ameliortions)
             {
@@ -102,6 +102,10 @@ namespace DataContractPersistance
                 carte.LesObjetsCaches = (from ap in armesPassives
                                          join objcach in carte.NomArmPass on ap.Nom equals objcach
                                          select ap).ToList();
+            }
+            foreach(Personnage p in persos)
+            {
+                p.Arme = armesActives.Where(ap => ap.Nom == p.NomArme) as ArmeActive;
             }
         }
         public void SauvegardeDonnées(IEnumerable<ArmePassive> lesArmesPassives,

@@ -31,8 +31,8 @@
                 </Grid>
             </StackPanel>
         </Border>
-        <ContentControl x:Name="UCAffichage" DockPanel.Dock="right" DataContext="{Binding ArmeSélectionné}">
-            <local:UCArmes Texte="{Binding Nom}" ImageName="{Binding Image}" TexteDescription="{Binding Description}"/>
+        <ContentControl x:Name="UCAffichage" DockPanel.Dock="right">
+            <local:UCArmes></local:UCArmes>
         </ContentControl>
     </DockPanel>
 </UserControl>

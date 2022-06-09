@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="VuesVSC.UCPersonnages"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VuesVSC" xmlns:bibliothequeclassesvsc="clr-namespace:BibliothequeClassesVSC;assembly=BibliothequeClassesVSC" d:DataContext="{d:DesignInstance Type=bibliothequeclassesvsc:Manager}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <DockPanel>
+        <ListBox x:Name="lBox"
+                 SelectionChanged="lBox_SelectionChanged"
+                 DockPanel.Dock="Left" 
+                 Background="{StaticResource GreyBackground}"
+                 ItemsSource="{Binding LesPersonnages}"/>
+        <TextBox Height="80" Margin="10" DockPanel.Dock="Bottom">Notes sur le personnage</TextBox>
+        <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
+        <TextBlock Text="{Binding PersonnageSelectionne.Description}" DockPanel.Dock="Bottom" MinHeight="200"/>
+        <Image Source="{Binding PersonnageSelectionne.Image}" MaxWidth="100" Margin="10" DockPanel.Dock="Left" HorizontalAlignment="Left"/>
+        <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center">
+            <TextBlock DockPanel.Dock="Bottom" TextAlignment="Center" Text="{Binding PersonnageSelectionne.Arme}"/>
+            <Image MaxHeight="200" Source="{Binding PersonnageSelectionne.Arme.Image}"/>
+        </DockPanel>
+        <TextBlock Text="{Binding PersonnageSelectionne}" VerticalAlignment="Center"/>
+    </DockPanel>
+</UserControl>

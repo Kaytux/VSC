@@ -51,6 +51,35 @@ namespace BibliothequeClassesVSC
             }
         }
         private Arme armeSélectionné; 
+        
+        public Personnage PersonnageSelectionne
+        {
+            get => personnageSelectionne;
+            set
+            {
+                if (PersonnageSelectionne != value)
+                {
+                    personnageSelectionne = value;
+                    OnPropertyChanged(nameof(PersonnageSelectionne));
+                }
+            }
+        }
+        private Personnage personnageSelectionne;
+
+        public List<Stat> StatsSelectionne
+        {
+            get => statsSelectionne;
+            set
+            {
+                if (StatsSelectionne != value)
+                {
+                    statsSelectionne = value;
+                    OnPropertyChanged(nameof(StatsSelectionne));
+                }
+            }
+        }
+        private List<Stat> statsSelectionne;
+
         void OnPropertyChanged(string propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
@@ -89,6 +118,7 @@ namespace BibliothequeClassesVSC
             LesCartes = new ReadOnlyCollection<Carte>(new List<Carte>(lesCartes));
 
             ArmeSélectionné = LesArmesActives[0];
+            PersonnageSelectionne = LesPersonnages[0];
         }
 
         public void SauvegardeDonnées()

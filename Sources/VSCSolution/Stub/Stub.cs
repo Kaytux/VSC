@@ -56,36 +56,42 @@ namespace Stub
                                             "antonio.png",
                                             ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 20),
                                                                         new Stat(Stat.NomStat.Armor, 1),
-                                                                        new Stat(Stat.NomStat.Might, 1))),
+                                                                        new Stat(Stat.NomStat.Might, 1)),
+                                            "Whip"),
                             new Personnage("Imelda Belpaese",
                                             "Imelda Belpaese is one of the playable characters in Vampire Survivors. Her starting weapon is Magic Wand. Imelda gains +10% Growth every 5 levels until level 15. The maximum Growth gained this way is +30%. ",
                                             "imelda.png",
-                                            ConstructionParticularite()),
+                                            ConstructionParticularite(),
+                                            "Magic Wand"),
                             new Personnage("Pasqualina Belpaese",
                                             "Pasqualina Belpaese is one of the playable characters in Vampire Survivors. Her starting weapon is Runetracer. Pasqualina she gains +10% Speed every 5 levels until level 15. The maximum Speed gained this way is +30%, or +40% with the starting bonus included. ",
                                             "pasqualina.png",
-                                            ConstructionParticularite(new Stat(Stat.NomStat.Speed, 10))),
+                                            ConstructionParticularite(new Stat(Stat.NomStat.Speed, 10)),
+                                            "Runetracer"),
                             new Personnage("Gennaro Belpaese",
                                             "Gennaro Belpaese is one of the playable characters in Vampire Survivors. His starting weapon is Knife.",
                                             "gennaro.png",
                                             ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 20),
-                                                                        new Stat(Stat.NomStat.Amount, 1))),
+                                                                        new Stat(Stat.NomStat.Amount, 1)),
+                                            "Knife"),
                             new Personnage("Arca Ladonna",
                                             "Arca Ladonna is one of the playable characters in Vampire Survivors. His starting weapon is Fire Wand. Arca gains -5% Cooldown every 10 levels until level 30. The maximum Cooldown reduction gained this way is -15%.",
                                             "arca.png",
-                                            ConstructionParticularite()),
+                                            ConstructionParticularite(),
+                                            "Fire Wand"),
                             new Personnage("Porta Ladonna",
                                             "Porta Ladonna is one of the playable characters in Vampire Survivors. Her starting weapon is Lightning Ring. Porta starts with -90% Cooldown bonus, which increases by 30% on every level up until negated upon reaching level 4, allowing the Lightning Ring to quickly kill enemies for experience. ",
                                             "antonio.png",
                                             ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 20),
                                                                       new Stat(Stat.NomStat.Armor, 1),
-                                                                      new Stat(Stat.NomStat.Might, 1))));
+                                                                      new Stat(Stat.NomStat.Might, 1)),
+                                            "Lightning Ring"));
             AjoutCollection(lesEnnemies,e1,e2);
             AjoutCollection(lesCartes,
                 new Carte("Carte 1","","", new List<string>() { "Ennemie 1" }, new List<string>() { "Arme Passive 1" }),
                 new Carte("Carte 2", "", "", new List<string>() { "Ennemie 2" }, new List<string>() { "Arme Passive 2" }));
 
-            LiensDesClasses(lesArmesPassives, lesArmesActives, lesAmeliorations, lesCartes, lesEnnemies);
+            LiensDesClasses(lesArmesPassives, lesArmesActives, lesAmeliorations, lesCartes, lesEnnemies,lesPersonnages);
 
             return (lesArmesPassives,lesArmesActives,lesAmeliorations, lesPersonnages, lesEnnemies, lesCartes);
         }
@@ -100,7 +106,7 @@ namespace Stub
             res.UnionWith(liste);
             return res;
         }
-        public void LiensDesClasses(HashSet<ArmePassive> armesPassives, HashSet<ArmeActive> armesActives, HashSet<Amelioration> ameliortions, HashSet<Carte> cartes, HashSet<Ennemie> ennemies)
+        public void LiensDesClasses(HashSet<ArmePassive> armesPassives, HashSet<ArmeActive> armesActives, HashSet<Amelioration> ameliortions, HashSet<Carte> cartes, HashSet<Ennemie> ennemies,HashSet<Personnage> persos)
         {
             foreach (Amelioration amelio in ameliortions)
             {
@@ -138,6 +144,10 @@ namespace Stub
                 carte.LesObjetsCaches = (from ap in armesPassives
                                          join objcach in carte.NomArmPass on ap.Nom equals objcach
                                          select ap).ToList();
+            }
+            foreach (Personnage p in persos)
+            {
+                p.Arme = armesActives.Where(a => a.Nom == p.NomArme).DefaultIfEmpty().First();
             }
         }
 

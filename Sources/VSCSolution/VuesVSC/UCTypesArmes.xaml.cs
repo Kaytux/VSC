@@ -31,18 +31,21 @@ namespace VuesVSC
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Mgr.ArmeSélectionné = Mgr.LesArmesActives[0];
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
             UCAffichage.Content = new UCArmes();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Mgr.ArmeSélectionné = Mgr.LesArmesPassives[0];
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
             UCAffichage.Content = new UCArmesPassives();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Mgr.ArmeSélectionné = Mgr.LesAmeliorations[0];
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
             UCAffichage.Content = new UCAmelioration();
         }
 

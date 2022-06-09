@@ -35,7 +35,7 @@ namespace VuesVSC
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCEntites();
+            contentControl.Content = new UCPersonnages();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
