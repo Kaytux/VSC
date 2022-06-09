@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800"
              >
     <DockPanel>
+
         <ListBox x:Name="lBox" DockPanel.Dock="Left" Background="{StaticResource GreyBackground}" SelectionChanged="lBox_SelectionChanged" ItemsSource="{Binding LesArmesActives}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -18,16 +19,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
-        <Grid DockPanel.Dock="Top" Margin="25">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="4*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Image Source="{Binding ArmeSélectionné.Image}" MaxWidth="50px"></Image>
-            <TextBlock Text="{Binding ArmeSélectionné}" Padding="15" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold"/>
-        </Grid>
         <TextBox Height="80" Margin="20, 5" DockPanel.Dock="Bottom" VerticalAlignment="Stretch">Notes :</TextBox>
+
+        <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
+
         <Grid DockPanel.Dock="Bottom" Margin="25" Background="{StaticResource GreyBackground}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -60,6 +55,15 @@
                 </StackPanel>
             </Button>
         </Grid>
-        <TextBlock Margin="25" Text="{Binding ArmeSélectionné.Description}"/>
+
+        <TextBlock DockPanel.Dock="Bottom" Margin="25" Text="{Binding ArmeSélectionné.Description}"/>
+        <Grid Margin="25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding ArmeSélectionné.Image}" MinWidth="50px" MaxWidth="200px"></Image>
+            <TextBlock Text="{Binding ArmeSélectionné}" Padding="15" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold"/>
+        </Grid>
     </DockPanel>
 </UserControl>

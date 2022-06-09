@@ -21,25 +21,33 @@ namespace VuesVSC
             DataContext = this;
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private async void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            if (Mgr.utilisateur != null)
+            if (Mgr.Utilisateur != null)
             {
                 contentControl.Content = new UCProfil();
             }
             else
             {
-                bool test = Mgr.ChargeSteamAPI();
+                int test = Mgr.ChargeSteamAPI();
 
-                if (test)
+                if (test==0)
                 {
                     SystemSounds.Hand.Play();
-                    //contentControlConnexion.Content = new UCConnecte();
+                    await Mgr.GetSuccesJoueur();
+                    contentControlConnexion.Content = new UCConnecte();
                     contentControl.Content = new UCProfil();
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Veuillez lancer Steam, et réessayez");
+                    if (test == 1)
+                    {
+                        MessageBox.Show("Erreur : Veuillez lancer Steam, et réessayez");
+                    }
+                    else if(test == 2)
+                    {
+                        MessageBox.Show("Erreur : Votre compte Steam ne possède pas Vampire Survivors, initialisation impossible");
+                    }
                 }
             }
         }

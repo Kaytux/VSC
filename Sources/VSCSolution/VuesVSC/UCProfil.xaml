@@ -7,7 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <StackPanel Margin="20" Width="250" DockPanel.Dock="Right">
+        <TextBlock Margin="20" DockPanel.Dock="Top" Background="Transparent" FontSize="42" Text="{Binding Utilisateur.Nom}"/>
+        <TextBlock DockPanel.Dock="Top" Background="Transparent" Text="Succes : (Nom / Description / Réussis ?"/>
+        <ListBox DockPanel.Dock="Left" x:Name="lBox" Background="{StaticResource GreyBackground}" ItemsSource="{Binding Utilisateur.achievements}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <TextBlock Background="Transparent" Text="{Binding Nom}"/>
+                            <TextBlock Background="Transparent"> : </TextBlock>
+                            <TextBlock Background="Transparent" Text="{Binding Desc}"/>
+                            <TextBlock Background="Transparent"> :</TextBlock>
+                            <TextBlock Background="Transparent" Text="{Binding Reussis}"/>
+                        </DockPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        <StackPanel Margin="20" DockPanel.Dock="Right">
             <TextBlock Text="Note :"/>
             <TextBlock Text="Test..."/>
             <TextBlock Text="Test..."/>
@@ -15,24 +30,6 @@
             <TextBlock Text="Test..."/>
             <TextBlock Text="Test..."/>
             <TextBlock Text="Test..."/>
-        </StackPanel>
-        <StackPanel Margin="20" Width="250" DockPanel.Dock="Right">
-            <TextBlock Text="Succes :"/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-        </StackPanel>
-        <Image Margin="40" MaxHeight="200" DockPanel.Dock="Top" Source="Images/icon.png"/>
-        <TextBlock Margin="20" DockPanel.Dock="Top" Text="{Binding utilisateur.Nom}"/>
-        <StackPanel Margin="20">
-            <TextBlock Text="Stats 1"/>
-            <TextBlock Text="Stats 2"/>
-            <TextBlock Text="Stats 3"/>
-            <TextBlock Text="Stats 4"/>
-            <TextBlock Text="Stats 5"/>
         </StackPanel>
     </DockPanel>
 </UserControl>

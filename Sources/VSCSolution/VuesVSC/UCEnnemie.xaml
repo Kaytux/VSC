@@ -12,21 +12,24 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <DockPanel>
-                        <Image Width="50" Height="50" Source="{Binding Image}"/>
+                        <Image Width="60" Height="60" Source="{Binding Image}"/>
                         <TextBlock Text="{Binding Nom}"/>
                     </DockPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>    
-        
+        </ListBox>
+
         <TextBox Height="80" Margin="10" DockPanel.Dock="Bottom">Notes sur le personnage</TextBox>
+
+        <ScrollViewer DockPanel.Dock="Bottom" MinHeight="150" MaxHeight="300" VerticalScrollBarVisibility="Auto">
+            <TextBlock FontSize="30" Text="{Binding EnnemieSelectionne.Description}"/>
+        </ScrollViewer>
         
         <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
-        <TextBlock Text="{Binding EnnemieSelectionne.Description}" DockPanel.Dock="Bottom" MinHeight="200"/>
-        
-        <Image Source="{Binding EnnemieSelectionne.Image}" MaxWidth="100" Margin="10" DockPanel.Dock="Left" HorizontalAlignment="Left"/>
-        
-        <TextBlock Text="{Binding EnnemieSelectionne}" VerticalAlignment="Center"/>
+
+        <TextBlock Background="Transparent" FontSize="42"  Text="{Binding EnnemieSelectionne}" DockPanel.Dock="Top" VerticalAlignment="Center"/>
+
+        <Image Source="{Binding EnnemieSelectionne.Image}" MaxWidth="600" MaxHeight="600" Margin="10" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
 
     </DockPanel>
 </UserControl>

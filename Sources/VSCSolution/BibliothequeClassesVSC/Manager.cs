@@ -36,10 +36,9 @@ namespace BibliothequeClassesVSC
         public ReadOnlyCollection<Carte> LesCartes { get; private set; }
         private HashSet<Carte> lesCartes = new HashSet<Carte>();
 
-        public Utilisateur utilisateur { get; set; }
+        public Utilisateur Utilisateur { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         public Arme ArmeSélectionné
         {
             get => armeSélectionné; 
@@ -238,61 +237,70 @@ namespace BibliothequeClassesVSC
         {
             SteamNative.Initialize();
         }
-        public bool ChargeSteamAPI()
+        public int ChargeSteamAPI()
         {
             // Lancer steam
             // initialisation de Steam Native (permet de détecter le lancement de steam sur la machine)
             var result = SteamApi.IsSteamRunning(); // verifie si steam est lancer
             if (!result)
             {
-                Debug.WriteLine("Veuillez lancé steam !"); // si il n'est pas lancé, affiche un message pour demander de laner
-                return false;
+                Debug.WriteLine("Veuillez lancer steam !"); // si il n'est pas lancé, affiche un message pour demander de laner
+                return 1;
             }
             else
             {
                 Debug.WriteLine("Steam c'est bien lancé"); // une fois lancer on envoie un message pour le dire
-                SteamApi.Initialize(1794680); // on initialise l'api sur Vampire Survivors
+                
+                bool test = SteamApi.Initialize(1794680); // on initialise l'api sur Vampire Survivors
 
-                // Récupération des infos de l'utilisateur
+                if (!test)
+                {
+                    return 2;
+                }
+                else
+                {
+                    // Récupération des infos de l'utilisateur
 
-                string userName = SteamApi.SteamFriends.GetPersonaName(); // on récupère le nom de l'utilisateur
-                Debug.WriteLine($"Logged in as: {userName}"); // on écrit le nom de l'utilisateur
+                    string userName = SteamApi.SteamFriends.GetPersonaName(); // on récupère le nom de l'utilisateur
+                    Debug.WriteLine($"Logged in as: {userName}"); // on écrit le nom de l'utilisateur
 
-                var userId = SteamApi.SteamUser.GetSteamID(); // on récupère l'identifiant de l'utilisateur
+                    var userId = SteamApi.SteamUser.GetSteamID(); // on récupère l'identifiant de l'utilisateur
 
-                utilisateur = new Utilisateur(userName, userId);
+                    Utilisateur = new Utilisateur(userName, userId);
 
-                //Task task = GetSuccesJoueur(utilisateur);
-
-                return true;
+                    return 0;
+                }
             }
         }
 
-        //public async Task GetSuccesJoueur(Utilisateur utilisateur)
-        //{
-        //    ulong userId = ChargeSteamAPI();
+        public async Task GetSuccesJoueur()
+        {
+            //Web API(différente)
 
-        //    Web API(différente)
+            var webInterfaceFactory = new SteamWebInterfaceFactory("A44E58E08ACF6F1C2AA345462C1E6FBE"); // on initialize notre créateur d'interface entre steam et l'application avec la clé d'authentification steam partner
 
-        //    var webInterfaceFactory = new SteamWebInterfaceFactory("A44E58E08ACF6F1C2AA345462C1E6FBE"); // on initialize notre créateur d'interface entre steam et l'application avec la clé d'authentification steam partner
+            //Succés
 
-        //    Succés
+             var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
 
-        //   var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
+            var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, Utilisateur.Id); // on récupere les succés de l'utilisateur sur Vampire Survivors
 
-        //    var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, utilisateur.Id); // on récupere les succés de l'utilisateur sur Vampire Survivors
-
-        //    IEnumerator<Steam.Models.SteamPlayer.PlayerAchievementModel> res = ach.Data.Achievements.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
-        //    res.MoveNext(); // on avance une première fois l'itérateur car il se trouve sur une valeur null au début
-
-        //    while (res.MoveNext()) // tant que l'iterateur n'est pas null afficher Nom + desc + validation
-        //    {
-        //        utilisateur.achievement.Add(res.Current);
-        //        Debug.WriteLine("Achievement name : " + res.Current.Name);
-        //        Debug.WriteLine("Achievement descirption : " + res.Current.Description);
-        //        Debug.WriteLine("Achieved ? (1=yes / 0=no) : " + res.Current.Achieved);
-        //        res.MoveNext();
-        //    }
-        //}
+            IEnumerator<Steam.Models.SteamPlayer.PlayerAchievementModel> res = ach.Data.Achievements.GetEnumerator(); // création d'un iterateur pour parcourir la liste des succés
+            res.MoveNext(); // on avance une première fois l'itérateur car il se trouve sur une valeur null au début
+            while (res.MoveNext()) // tant que l'iterateur n'est pas null afficher Nom + desc + validation
+            {
+                if (res.Current.Achieved == 1)
+                {
+                    Utilisateur.achievements.Add(new Utilisateur.Achievements(res.Current.Name, res.Current.Description, "Oui"));
+                }
+                else if(res.Current.Achieved == 0){
+                    Utilisateur.achievements.Add( new Utilisateur.Achievements(res.Current.Name, res.Current.Description, "Non"));
+                }
+                Debug.WriteLine("Achievement name : " + res.Current.Name);
+                Debug.WriteLine("Achievement descirption : " + res.Current.Description);
+                Debug.WriteLine("Achieved ? (1=yes / 0=no) : " + res.Current.Achieved);
+                res.MoveNext();
+            }
+        }
     }
 }
