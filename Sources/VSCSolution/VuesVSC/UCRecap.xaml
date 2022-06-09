@@ -24,126 +24,46 @@
                     <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Armes Améliorées</TextBlock>
                 </Grid>
             </Border>
-            <Grid Background="{StaticResource GreyBackground}" Margin="25, 15">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">+</TextBlock>
-                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">=</TextBlock>
-                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
-            </Grid>
-            <Grid Background="{StaticResource GreyBackground}" Margin="25, 15">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">+</TextBlock>
-                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">=</TextBlock>
-                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
-            </Grid>
-            <Grid Background="{StaticResource GreyBackground}" Margin="25, 15">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">+</TextBlock>
-                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">=</TextBlock>
-                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
-            </Grid>
-            <Grid Background="{StaticResource GreyBackground}" Margin="25, 15">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">+</TextBlock>
-                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">=</TextBlock>
-                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
-            </Grid>
-            <Grid Background="{StaticResource GreyBackground}" Margin="25, 15">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">+</TextBlock>
-                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">=</TextBlock>
-                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
-            </Grid>
-            <Grid Background="{StaticResource GreyBackground}" Margin="25, 15">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Image Source="Images/Sprite-Whip.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Whip</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">+</TextBlock>
-                <Image Grid.Column="3"  Source="Images/Sprite-Hollow_Heart.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">Hollow Heart</TextBlock>
-                <TextBlock Background="Transparent" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">=</TextBlock>
-                <Image Grid.Column="6" Source="Images/Sprite-Bloody_Tear.png" MaxWidth="40px"></Image>
-                <TextBlock Background="Transparent" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Bloody Tear</TextBlock>
-            </Grid>
+            <ListBox ItemsSource="{Binding LesAmeliorations}" Background="{StaticResource GreyBackground}" Margin="10" BorderThickness="0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                            <Button>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image MaxHeight="45" Source="{Binding ArmeAct.Image}"/>
+                                    <TextBlock Background="Transparent" Text="{Binding ArmeAct}"/>
+                                </StackPanel>
+                            </Button>
+
+                            <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
+
+                            <Button Grid.Column="2">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Grid.Column="3"  Source="{Binding ArmePass.Image}" MaxWidth="40px"></Image>
+                                    <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmePass}"></TextBlock>
+                                </StackPanel>
+                            </Button>
+
+                            <TextBlock Background="Transparent" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">=</TextBlock>
+
+                            <Button Grid.Column="4">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Grid.Column="6" Source="{Binding Image}" MaxWidth="40px"></Image>
+                                    <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Nom}"></TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </ScrollViewer>
 </UserControl>
