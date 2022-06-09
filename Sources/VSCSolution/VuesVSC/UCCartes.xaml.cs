@@ -1,4 +1,5 @@
 ﻿using BibliothequeClassesVSC;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace VuesVSC
@@ -14,6 +15,13 @@ namespace VuesVSC
         {
             InitializeComponent();
             DataContext = Manager;
+        }
+
+        private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Manager.ApCarteSelectionne = Manager.CarteSelectionne.LesObjetsCaches;
+            Manager.EnnCarteSelectionne = Manager.CarteSelectionne.LesEnnemies;
+            Manager.CarteSelectionne = e.AddedItems[0] as Carte;
         }
     }
 }

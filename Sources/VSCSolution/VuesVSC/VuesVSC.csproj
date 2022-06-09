@@ -9,11 +9,60 @@
   <ItemGroup>
     <None Remove="Fonts\ANY.ttf" />
     <None Remove="icon.png" />
+    <None Remove="Images\icon.png" />
     <None Remove="Images\introBG.png" />
+    <None Remove="Images\Sprite-Adept_Witch.png" />
+    <None Remove="Images\Sprite-Apprentice_Witch.png" />
+    <None Remove="Images\Sprite-Bat.png" />
     <None Remove="Images\Sprite-Bloody_Tear.png" />
+    <None Remove="Images\Sprite-Bracer.png" />
+    <None Remove="Images\Sprite-Count.png" />
+    <None Remove="Images\Sprite-Crimson_Bat.png" />
+    <None Remove="Images\Sprite-Devil.png" />
+    <None Remove="Images\Sprite-Dragon_Shrimp.png" />
+    <None Remove="Images\Sprite-Dullahan.png" />
+    <None Remove="Images\Sprite-Ectoplasm.png" />
+    <None Remove="Images\Sprite-Elite_Devil.png" />
+    <None Remove="Images\Sprite-Elite_Dullahan.png" />
+    <None Remove="Images\Sprite-Empty_Tome.png" />
+    <None Remove="Images\Sprite-Flame_Dragon_Shrimp.png" />
+    <None Remove="Images\Sprite-Flower.png" />
+    <None Remove="Images\Sprite-Ghost.png" />
+    <None Remove="Images\Sprite-Giant_Bat.png" />
+    <None Remove="Images\Sprite-Giant_Magus.png" />
+    <None Remove="Images\Sprite-Giant_Medusa.png" />
+    <None Remove="Images\Sprite-Giant_Red_Knight.png" />
+    <None Remove="Images\Sprite-Giant_Shieldbearer.png" />
+    <None Remove="Images\Sprite-Giant_Skull.png" />
+    <None Remove="Images\Sprite-Glowing_Bat.png" />
+    <None Remove="Images\Sprite-Gray_Mudman.png" />
+    <None Remove="Images\Sprite-Green_Mudman.png" />
+    <None Remove="Images\Sprite-Harpy.png" />
+    <None Remove="Images\Sprite-Hollow_Heart.png" />
     <None Remove="Images\Sprite-Holy_Wand.png" />
     <None Remove="Images\Sprite-Holy_Wand.webp" />
+    <None Remove="Images\Sprite-Imp.png" />
+    <None Remove="Images\Sprite-Knife.png" />
+    <None Remove="Images\Sprite-Lesser_Dullahan.png" />
+    <None Remove="Images\Sprite-Lion_Head.png" />
+    <None Remove="Images\Sprite-Magic_Wand.png" />
+    <None Remove="Images\Sprite-Medusa_Head.png" />
+    <None Remove="Images\Sprite-Mud.png" />
+    <None Remove="Images\Sprite-Mummy.png" />
+    <None Remove="Images\Sprite-Nesuferit.png" />
+    <None Remove="Images\Sprite-Poltergeist.png" />
+    <None Remove="Images\Sprite-Red_Eyed_Bat.png" />
+    <None Remove="Images\Sprite-Red_Shade.png" />
+    <None Remove="Images\Sprite-Silver_Bat.png" />
+    <None Remove="Images\Sprite-Skelangue.png" />
+    <None Remove="Images\Sprite-Skeleton.png" />
+    <None Remove="Images\Sprite-Skullino.png" />
+    <None Remove="Images\Sprite-Skulorosso.png" />
+    <None Remove="Images\Sprite-Small_Ectoplasm.png" />
     <None Remove="Images\Sprite-Thousand_Edge.png" />
+    <None Remove="Images\Sprite-Werewolf.png" />
+    <None Remove="Images\Sprite-Whip.png" />
+    <None Remove="Images\Sprite-Zombie.png" />
     <None Remove="Sprite-Bracer.png" />
     <None Remove="Sprite-Empty_Tome.png" />
     <None Remove="Sprite-Hollow_Heart.png" />
@@ -27,28 +76,160 @@
     <Content Include="Images\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\introBG.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Adept_Witch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Apprentice_Witch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Bat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Sprite-Bloody_Tear.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Sprite-Bracer.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Sprite-Count.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Crimson_Bat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Devil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Dragon_Shrimp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Dullahan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Ectoplasm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Elite_Devil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Elite_Dullahan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Sprite-Empty_Tome.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Flame_Dragon_Shrimp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Flower.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Ghost.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Giant_Bat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Giant_Magus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Giant_Medusa.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Giant_Red_Knight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Giant_Shieldbearer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Giant_Skull.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Glowing_Bat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Gray_Mudman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Green_Mudman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Harpy.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Sprite-Hollow_Heart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Sprite-Holy_Wand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Imp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Sprite-Knife.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Lesser_Dullahan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Lion_Head.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Sprite-Magic_Wand.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Sprite-Medusa_Head.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Mud.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Mummy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Nesuferit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Poltergeist.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Red_Eyed_Bat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Red_Shade.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Silver_Bat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Skelangue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Skeleton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Skullino.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Skulorosso.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Small_Ectoplasm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Sprite-Thousand_Edge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Sprite-Werewolf.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Sprite-Whip.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Zombie.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -71,10 +252,6 @@
     <Resource Include="Fonts\ANY.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\introBG.png" />
-    <Content Include="Images\Sprite-Holy_Wand.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>

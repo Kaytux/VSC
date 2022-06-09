@@ -65,7 +65,7 @@ namespace VuesVSC
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCListe();
+            contentControl.Content = new UCCartes();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)

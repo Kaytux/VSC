@@ -79,7 +79,6 @@ namespace BibliothequeClassesVSC
                 }
             }
         }
-
         private Ennemie ennemieSelectionne;
 
         public List<Stat> StatsSelectionne
@@ -95,6 +94,48 @@ namespace BibliothequeClassesVSC
             }
         }
         private List<Stat> statsSelectionne;
+
+        public Carte CarteSelectionne
+        {
+            get => carteSelectionne;
+            set
+            {
+                if (CarteSelectionne != value)
+                {
+                    carteSelectionne = value;
+                    OnPropertyChanged(nameof(CarteSelectionne));
+                }
+            }
+        }
+        private Carte carteSelectionne;
+
+        public List<ArmePassive> ApCarteSelectionne
+        {
+            get => apCarteSelectionne;
+            set
+            {
+                if (ApCarteSelectionne != value)
+                {
+                    apCarteSelectionne = value;
+                    OnPropertyChanged(nameof(ApCarteSelectionne));
+                }
+            }
+        }
+        private List<ArmePassive> apCarteSelectionne;
+
+        public List<Ennemie> EnnCarteSelectionne
+        {
+            get => ennCarteSelectionne;
+            set
+            {
+                if (EnnCarteSelectionne != value)
+                {
+                    ennCarteSelectionne = value;
+                    OnPropertyChanged(nameof(EnnCarteSelectionne));
+                }
+            }
+        }
+        private List<Ennemie> ennCarteSelectionne;
 
         void OnPropertyChanged(string propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -136,6 +177,9 @@ namespace BibliothequeClassesVSC
             ArmeSélectionné = LesArmesActives[0];
             PersonnageSelectionne = LesPersonnages[0];
             EnnemieSelectionne = LesEnnemies[0];
+            CarteSelectionne = LesCartes[0];
+            ApCarteSelectionne = CarteSelectionne.LesObjetsCaches;
+            EnnCarteSelectionne = CarteSelectionne.LesEnnemies;
         }
 
         public void SauvegardeDonnées()

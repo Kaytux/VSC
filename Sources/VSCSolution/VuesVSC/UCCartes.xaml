@@ -7,12 +7,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <ListBox ItemsSource="{Binding LesCartes}" DockPanel.Dock="Left"/>
+        <ListBox Background="{StaticResource GreyBackground}"
+                 ItemsSource="{Binding LesCartes}" 
+                 SelectionChanged="lBox_SelectionChanged"
+                 DockPanel.Dock="Left"/>
         <TextBox Margin="5" MinHeight="100" DockPanel.Dock="Bottom">Notes pour la page:</TextBox>
-        <TextBlock DockPanel.Dock="Bottom">Texte</TextBlock>
+        <TextBlock DockPanel.Dock="Bottom" Text="{Binding CarteSelectionne.Description}"/>
         <ListBox DockPanel.Dock="Right"/>
         <ListBox DockPanel.Dock="Right"/>
-        <TextBlock DockPanel.Dock="Top">Nom carte</TextBlock>
+        <TextBlock DockPanel.Dock="Top" Text="{Binding CarteSelectionne}"/>
         <Image Margin="5" MaxWidth="400" Source="Images/icon.png"/>
     </DockPanel>
 </UserControl>

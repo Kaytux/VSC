@@ -64,8 +64,9 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="Focusable" Value="False"/>
         </Style>
-
+        
         <Style x:Key="lb_stats" TargetType="ListBox">
+            <Setter Property="MinWidth" Value="400"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="Focusable" Value="False"/>
