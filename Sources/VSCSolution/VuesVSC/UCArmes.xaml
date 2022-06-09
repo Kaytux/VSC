@@ -29,20 +29,19 @@
             <TextBlock Text="{Binding ArmeSélectionné}" Padding="15" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold"/>
         </Grid>
         <TextBox Height="80" Margin="20, 5" DockPanel.Dock="Bottom" VerticalAlignment="Stretch">Notes :</TextBox>
-
         <Grid DockPanel.Dock="Bottom" Margin="25" Background="{StaticResource GreyBackground}" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-            <Image Source="{Binding ArmeSélectionné.Image}" MaxWidth="40px"></Image>
+            <Button Content="{Binding ArmeSélectionné.Image}"/>
             <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné}"></TextBlock>
 
             <TextBlock Background="Transparent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
