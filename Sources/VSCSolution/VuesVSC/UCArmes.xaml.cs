@@ -30,7 +30,7 @@ namespace VuesVSC
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Mgr.StatsSelectionne = Mgr.PersonnageSelectionne.stats.ToList();
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
             Mgr.ArmeSélectionné = e.AddedItems[0] as ArmeActive;
         }
 
