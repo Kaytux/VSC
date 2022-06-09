@@ -34,8 +34,25 @@ namespace VuesVSC
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            SystemSounds.Hand.Play();
-            contentControl.Content = new UCProfil();
+            if (Mgr.utilisateur != null)
+            {
+                contentControl.Content = new UCProfil();
+            }
+            else
+            {
+                bool test = Mgr.ChargeSteamAPI();
+
+                if (test)
+                {
+                    SystemSounds.Hand.Play();
+                    contentControlConnexion.Content = new UCConnecte();
+                    contentControl.Content = new UCProfil();
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Veuillez lancer Steam, et réessayez");
+                }
+            }
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -45,7 +62,8 @@ namespace VuesVSC
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCListe();
+            Mgr.StatsSelectionne=Mgr.EnnemieSelectionne.stats.ToList();
+            contentControl.Content = new UCEnnemie();
         }
 
         private void UCMainPage_Loaded(object sender, RoutedEventArgs e)
