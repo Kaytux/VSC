@@ -21,10 +21,11 @@
 
         <TextBox Height="80" Margin="10" DockPanel.Dock="Bottom">Notes sur le personnage</TextBox>
 
-        <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
-        <ScrollViewer DockPanel.Dock="Bottom" MinHeight="150" MaxHeight="300">
+        <ScrollViewer DockPanel.Dock="Bottom" MinHeight="150" MaxHeight="300" VerticalScrollBarVisibility="Auto">
             <TextBlock FontSize="30" Text="{Binding EnnemieSelectionne.Description}"/>
         </ScrollViewer>
+        
+        <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
 
         <TextBlock Background="Transparent" FontSize="42"  Text="{Binding EnnemieSelectionne}" DockPanel.Dock="Top" VerticalAlignment="Center"/>
 
