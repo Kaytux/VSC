@@ -5,7 +5,7 @@ using System.Windows.Data;
 
 namespace VuesVSC.converters
 {
-    class Func2WindowPartConverter : IValueConverter
+    public class Func2WindowPartConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

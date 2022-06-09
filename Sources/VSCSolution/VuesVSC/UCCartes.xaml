@@ -7,8 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <TextBlock DockPanel.Dock="Top">Nom carte</TextBlock>
         <TextBox Margin="5" MinHeight="100" DockPanel.Dock="Bottom">Notes pour la page:</TextBox>
+        <TextBlock DockPanel.Dock="Top">Nom carte</TextBlock>
+        
         <Image Margin="5" MaxWidth="400" DockPanel.Dock="Left" Source="Images/icon.png"/>
         <TextBlock>Texte</TextBlock>
     </DockPanel>
