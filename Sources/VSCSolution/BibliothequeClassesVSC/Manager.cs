@@ -190,11 +190,14 @@ namespace BibliothequeClassesVSC
             }
             return res.ToHashSet();
         }
-
+        public void InitSteamAPI()
+        {
+            SteamNative.Initialize();
+        }
         public bool ChargeSteamAPI()
         {
             // Lancer steam
-            SteamNative.Initialize(); // initialisation de Steam Native (permet de détecter le lancement de steam sur la machine)
+            // initialisation de Steam Native (permet de détecter le lancement de steam sur la machine)
             var result = SteamApi.IsSteamRunning(); // verifie si steam est lancer
             if (!result)
             {

@@ -21,11 +21,10 @@ namespace VuesVSC
     public partial class App : Application
     {
         public Manager Manager { get; private set; } = new Manager(new Stub.Stub());
-
         public App() 
         {
             Manager.ChargeDonnées();
+            Manager.InitSteamAPI();
         }
-               
     }
 }

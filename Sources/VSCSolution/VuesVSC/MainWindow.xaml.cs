@@ -60,6 +60,13 @@ namespace VuesVSC
                     contentControlConnexion.Content = new UCConnecte();
                     contentControl.Content = new UCProfil();
                 }
+                else
+                {
+                    var window = new PopUpSteam();
+
+                    window.Owner = this;
+                    window.Show();
+                }
             }
         }
 
