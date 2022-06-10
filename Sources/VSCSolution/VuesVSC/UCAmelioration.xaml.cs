@@ -35,8 +35,8 @@ namespace VuesVSC
         }
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
             Mgr.ArmeSélectionné = e.AddedItems[0] as Arme;
+            Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
         }
         private void Passive_Click(object sender, RoutedEventArgs e)
         {

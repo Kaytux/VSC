@@ -15,13 +15,15 @@ namespace VuesVSC
         {
             InitializeComponent();
             DataContext = Manager;
+            Manager.ApCarteSelectionne = Manager.CarteSelectionne.LesObjetsCaches;
+            Manager.EnnCarteSelectionne = Manager.CarteSelectionne.LesEnnemies;
         }
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Manager.CarteSelectionne = e.AddedItems[0] as Carte;
             Manager.ApCarteSelectionne = Manager.CarteSelectionne.LesObjetsCaches;
             Manager.EnnCarteSelectionne = Manager.CarteSelectionne.LesEnnemies;
-            Manager.CarteSelectionne = e.AddedItems[0] as Carte;
         }
     }
 }
