@@ -249,11 +249,6 @@ namespace BibliothequeClassesVSC
             Persistance = persistance;
         }
 
-        ~Manager()
-        {
-            Debug.WriteLine("testDestruct");
-            SauvegardeDonnées();
-        }
         /// <summary>
         /// Fonction pour initialiser l'API Steam.
         /// </summary>
