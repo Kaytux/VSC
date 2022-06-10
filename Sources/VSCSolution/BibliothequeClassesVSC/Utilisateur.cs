@@ -53,22 +53,43 @@ namespace BibliothequeClassesVSC
         public string Nom{get;set;}
         public IEnumerable<INote> LesNotes => lesNotes.Where(note => note.Contenu.Length >0);
         public HashSet<Note> lesNotes = new HashSet<Note>();
-
+        /// <summary>
+        /// classe interne à Utilisateur, créant un succès composé de 3 attributs (nom, desc, reussi)
+        /// </summary>
         public class Achievements
         {
+            /// <summary>
+            /// constructeur d'un achivement
+            /// </summary>
+            /// <param name="nom"></param>
+            /// <param name="desc"></param>
+            /// <param name="reussis"></param>
             public Achievements(string nom, string desc, string reussis)
             {
                 Nom = nom;
                 Desc = desc;
                 Reussis = reussis;
             }
-
+            /// <summary>
+            /// déclaration de l'attribut Nom de l'achievement
+            /// </summary>
             public string Nom { get; set; }
+            /// <summary>
+            /// déclaration de l'attribut Description de l'achievement
+            /// </summary>
             public string Desc { get; set; }
+            /// <summary>
+            /// déclaration de l'attribut Reussis de l'achievement (prend la valeur "Oui" si le succés est compléter par le joueur, prend la valeur "Non" si le succès n'est pas complété.
+            /// </summary>
             public string Reussis { get; set; }
         }
-
+        /// <summary>
+        /// déclaration de l'attribut liste d'Achievement pour l'utilisateur
+        /// </summary>
         public List<Achievements> achievements { get; set; } = new List<Achievements>();
+        /// <summary>
+        /// déclaration de l'attribut Id de l'utilisateur (il s'agit de son identifiant Steam récupéré par l'API)
+        /// </summary>
         public ulong Id { get; set; }
     }
 }

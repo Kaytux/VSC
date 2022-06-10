@@ -39,7 +39,7 @@ namespace BibliothequeClassesVSC
         public ArmePassive ArmePass { get; set; }
 
         /// <summary>
-        /// declaration de la methode ajouterAmelioration qui permet de donner l'amelioration en quoi notre arme active se transforme
+        /// declaration de la methode ajouterAmelioration qui permet de donner l'amelioration liée à l'arme active
         /// </summary>
         /// <param name="amelio"></param>
         public void ajouterAmelioration(Amelioration amelio)

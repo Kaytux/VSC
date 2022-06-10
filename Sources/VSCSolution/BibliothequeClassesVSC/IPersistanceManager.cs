@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
+    /// <summary>
+    /// Interface du Manager
+    /// </summary>
     public interface IPersistanceManager
     {
         (IEnumerable<ArmePassive> lesArmesPassives,

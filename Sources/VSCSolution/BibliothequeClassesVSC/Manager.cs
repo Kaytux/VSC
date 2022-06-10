@@ -153,7 +153,9 @@ namespace BibliothequeClassesVSC
 
         void OnPropertyChanged(string propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
+        /// <summary>
+        /// Fonction permettant de charger les données.
+        /// </summary>
         public void ChargeDonnées()
         {
             var données = Persistance.ChargeDonnées();
@@ -200,7 +202,9 @@ namespace BibliothequeClassesVSC
             ApCarteSelectionne = CarteSelectionne.LesObjetsCaches;
             EnnCarteSelectionne = CarteSelectionne.LesEnnemies;
         }
-
+        /// <summary>
+        /// Méthode de Manager permettant la sauvegarde des données en appellant la méthode "SauvegardeDonnées" de la persistance
+        /// </summary>
         public void SauvegardeDonnées()
         {
             if(Utilisateur!=default)
@@ -226,7 +230,10 @@ namespace BibliothequeClassesVSC
                                           lesCartes,
                                           lesNotes);
         }
-
+        /// <summary>
+        /// Constructeur du Manager
+        /// </summary>
+        /// <param name="persistance"></param>
         public Manager(IPersistanceManager persistance)
         {
             Persistance = persistance;
@@ -237,11 +244,17 @@ namespace BibliothequeClassesVSC
             Debug.WriteLine("testDestruct");
             SauvegardeDonnées();
         }
-
+        /// <summary>
+        /// Fonction pour initialiser l'API Steam.
+        /// </summary>
         public void InitSteamAPI()
         {
             SteamNative.Initialize();
         }
+        /// <summary>
+        /// Fonction utilisant l'API Steam, afin de récupérer l'identifiant de l'utilisateur, dans le cas ou Steam est bien lancé.
+        /// </summary>
+        /// <returns></returns>
         public int ChargeSteamAPI()
         {
             // Lancer steam
@@ -288,6 +301,11 @@ namespace BibliothequeClassesVSC
                 }
             }
         }
+        /// <summary>
+        /// Fonction utilisant l'API Steam afin de récupérer les succès d'un joueur en fonction de son Id
+        /// Cette fonctione effectue des requêtes http, à tracvers l'API. Il faut donc qu'elle soit asynchrone.
+        /// </summary>
+        /// <returns></returns>
         public async Task GetSuccesJoueur()
         {
             //Web API(différente)

@@ -36,12 +36,20 @@ namespace BibliothequeClassesVSC
         /// declaration de l'attribut Image (chemin d'acces vers l'image) avec getter et setter
         /// </summary>
         public string Image { get; set; }
-
+        /// <summary>
+        /// fonction de protocole d'égalité entre deux Element
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public bool Equals([AllowNull] Element other)
         {
             return this.GetType().Equals(other.GetType()) && this.Nom.Equals(other.Nom);
         }
-
+        /// <summary>
+        /// surcharge du Equal de Element
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(obj, null)) return false;
@@ -49,11 +57,18 @@ namespace BibliothequeClassesVSC
             if (obj.GetType() != this.GetType()) return false;
             return Equals(obj as Stat);
         }
-
+        /// <summary>
+        /// surcharge du GetHashCode de Element
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return Nom.GetHashCode() * this.GetType().GetHashCode();
         }
+        /// <summary>
+        /// surcharge du ToString de Element
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return Nom.ToString();
