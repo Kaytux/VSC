@@ -39,7 +39,13 @@ namespace BibliothequeClassesVSC
             AjoutStats(particularite);
         }
 
+        /// <summary>
+        /// declaration de l'attribut NomArme de Personnage avec son getter et setter qui correspond au nom de l'arme de depart du personnage
+        /// </summary>
         public string NomArme { get; private set; }
+        /// <summary>
+        /// declaration de l'attribut Arme de Personnage avec son getter et setter
+        /// </summary>
         public ArmeActive Arme { get; set; }
     }
 }

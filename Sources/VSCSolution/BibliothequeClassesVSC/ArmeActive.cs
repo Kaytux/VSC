@@ -33,13 +33,24 @@ namespace BibliothequeClassesVSC
         /// </summary>
         public Amelioration Amelioration { get; set; }
 
+        /// <summary>
+        /// declaration de l'attribut ArmePass correspondant à l'arme passive liée à notre arme active via leur amelioration commune avec son getter et setter
+        /// </summary>
         public ArmePassive ArmePass { get; set; }
 
+        /// <summary>
+        /// declaration de la methode ajouterAmelioration qui permet de donner l'amelioration liée à l'arme active
+        /// </summary>
+        /// <param name="amelio"></param>
         public void ajouterAmelioration(Amelioration amelio)
         {
             Amelioration = amelio;
         }
 
+        /// <summary>
+        /// declaration de la methode ajouterArmePassive qui permet de donner l'arme passive necessaire à la transformation de notre arme active
+        /// </summary>
+        /// <param name="arme"></param>
         public void ajouterArmePasssive(ArmePassive arme)
         {
             ArmePass = arme;

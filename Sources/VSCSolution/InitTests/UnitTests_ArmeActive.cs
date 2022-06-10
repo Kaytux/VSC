@@ -77,5 +77,54 @@ namespace InitTests
             Assert.Equal("N/A", active.Image);
         }
 
+        [Fact]
+        public void testAjouterAmelioration()
+        {
+            HashSet<Stat> particularites = new HashSet<Stat>();
+            particularites.Add(new Stat(Stat.NomStat.MaxLevel, 20));
+            particularites.Add(new Stat(Stat.NomStat.Knockback, 20));
+            particularites.Add(new Stat(Stat.NomStat.Rarity, 10));
+            particularites.Add(new Stat(Stat.NomStat.CritRate, 5));
+            particularites.Add(new Stat(Stat.NomStat.CritMultiplier, 15));
+
+            List<HashSet<Stat>> statsNiveau = new List<HashSet<Stat>>();
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.MaxLevel, 2) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Rarity, 3) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritMultiplier, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritRate, 12) });
+
+            ArmeActive armeActive = new ArmeActive("test", "test", "test", particularites, statsNiveau);
+
+            Amelioration amelioration = new Amelioration("test", "test", "test", particularites, "test", "test", statsNiveau);
+
+            armeActive.ajouterAmelioration(amelioration);
+
+            Assert.Equal(amelioration, armeActive.Amelioration);
+        }
+
+        [Fact]
+        public void testAjouterArmePassive()
+        {
+            HashSet<Stat> particularites = new HashSet<Stat>();
+            particularites.Add(new Stat(Stat.NomStat.MaxLevel, 20));
+            particularites.Add(new Stat(Stat.NomStat.Knockback, 20));
+            particularites.Add(new Stat(Stat.NomStat.Rarity, 10));
+            particularites.Add(new Stat(Stat.NomStat.CritRate, 5));
+            particularites.Add(new Stat(Stat.NomStat.CritMultiplier, 15));
+
+            List<HashSet<Stat>> statsNiveau = new List<HashSet<Stat>>();
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.MaxLevel, 2) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Knockback, 4), new Stat(Stat.NomStat.Rarity, 3) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritMultiplier, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
+            statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritRate, 12) });
+
+            ArmeActive armeActive = new ArmeActive("test", "test", "test", particularites, statsNiveau);
+
+            ArmePassive armePassive = new ArmePassive("test", "test", "test", particularites, statsNiveau);
+
+            armeActive.ajouterArmePasssive(armePassive);
+
+            Assert.Equal(armePassive, armeActive.ArmePass);
+        }
     }
 }
