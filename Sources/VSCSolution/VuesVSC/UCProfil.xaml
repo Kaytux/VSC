@@ -9,21 +9,23 @@
     <DockPanel>
         <TextBlock Margin="20" DockPanel.Dock="Top" Background="Transparent" FontSize="42" Text="{Binding Utilisateur.Nom}"/>
         <TextBlock DockPanel.Dock="Top" Background="Transparent" Text="Succes : (Nom / Réussis ? / Description )"/>
-        <ListBox DockPanel.Dock="Left" x:Name="lBox" Background="{StaticResource GreyBackground}" ItemsSource="{Binding Utilisateur.achievements}" MaxWidth="800">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <DockPanel>
-                        <TextBlock Background="Transparent" >
+        <ScrollViewer>
+            <ItemsControl DockPanel.Dock="Left" x:Name="lBox" Background="{StaticResource GreyBackground}" ItemsSource="{Binding Utilisateur.achievements}" MaxWidth="800">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <TextBlock Background="Transparent" >
                         <TextBlock Background="Transparent" Text="{Binding Nom}"/>
                         <TextBlock Background="Transparent"> :</TextBlock>
                         <TextBlock Background="Transparent" Text="{Binding Reussis}"/>
                         <TextBlock Background="Transparent"> :</TextBlock>  <LineBreak /> 
                         <TextBlock Background="Transparent" Text="{Binding Desc}" TextWrapping="WrapWithOverflow"/> 
                     </TextBlock>
-                    </DockPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                        </DockPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
         <TextBlock DockPanel.Dock="Top" Text="Note :"/>
         <ItemsControl ItemsSource="{Binding Utilisateur.LesNotes}">
             <ItemsControl.ItemTemplate>

@@ -203,12 +203,14 @@ namespace BibliothequeClassesVSC
 
         public void SauvegardeDonnées()
         {
+            bool exist = false;
             if(Utilisateur!=default)
             {
                 foreach(var user in lesNotes)
                 {
                     if(user.Key == Utilisateur.Id)
                     {
+                        exist = true;
                         user.Value.Clear();
                         foreach(var note in Utilisateur.lesNotes)
                         {
@@ -217,8 +219,16 @@ namespace BibliothequeClassesVSC
                         break;
                     }
                 }
+                if(!exist)
+                {
+                    lesNotes.Add(Utilisateur.Id,new Dictionary<string, string>());
+                    foreach(var note in Utilisateur.lesNotes)
+                    {
+                        lesNotes[Utilisateur.Id].Add(note.Element, note.Contenu);
+                    }
+                }
             }
-            Persistance.SauvegardeDonnées(lesArmesPassives,
+             Persistance.SauvegardeDonnées(lesArmesPassives,
                                           lesArmesActives,
                                           lesAmeliorations,
                                           lesPersonnages,
@@ -230,12 +240,6 @@ namespace BibliothequeClassesVSC
         public Manager(IPersistanceManager persistance)
         {
             Persistance = persistance;
-        }
-
-        ~Manager()
-        {
-            Debug.WriteLine("testDestruct");
-            SauvegardeDonnées();
         }
 
         public void InitSteamAPI()

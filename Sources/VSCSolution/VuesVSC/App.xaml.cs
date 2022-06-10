@@ -23,7 +23,7 @@ namespace VuesVSC
     {
         public Manager Manager { get; private set; } = new Manager(new DataContractPers());
         public Navigator Navigator { get; private set; } = new Navigator();
-        public App() 
+        public App()
         {
             Manager.ChargeDonnées();
             Manager.InitSteamAPI();

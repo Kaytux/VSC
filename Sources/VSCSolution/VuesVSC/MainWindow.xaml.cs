@@ -1,6 +1,7 @@
 ﻿using BibliothequeClassesVSC;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Media;
 using System.Windows;
@@ -20,7 +21,7 @@ namespace VuesVSC
             InitializeComponent();
             DataContext = this;
         }
-
+        
         private void Main_Click(object sender, RoutedEventArgs e)
         {
             Nav.NavigateTo(Navigator.PART_MAIN);
@@ -62,6 +63,12 @@ namespace VuesVSC
                     }
                 }
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Debug.WriteLine("test close");
+            Mgr.SauvegardeDonnées();
         }
     }
 }
