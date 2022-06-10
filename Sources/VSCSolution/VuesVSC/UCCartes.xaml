@@ -13,9 +13,31 @@
                  DockPanel.Dock="Left"/>
         <TextBox Margin="5" MinHeight="100" DockPanel.Dock="Bottom">Notes pour la page:</TextBox>
         <TextBlock DockPanel.Dock="Bottom" Text="{Binding CarteSelectionne.Description}"/>
-        <ListBox DockPanel.Dock="Right"/>
-        <ListBox DockPanel.Dock="Right"/>
+        <ItemsControl ItemsSource="{Binding ApCarteSelectionne}"
+                      Style="{StaticResource lb_stats}"
+                      DockPanel.Dock="Right">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <Image MaxWidth="60" Source="{Binding Image,Converter={StaticResource String2ImageConv}}"/>
+                        <TextBlock VerticalAlignment="Center" Text="{Binding Nom}"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>            
+        </ItemsControl>
+        <ItemsControl ItemsSource="{Binding EnnCarteSelectionne}"
+                      DockPanel.Dock="Right"
+                      Style="{StaticResource lb_stats}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <Image MaxWidth="60" Source="{Binding Image,Converter={StaticResource String2ImageConv}}"/>
+                        <TextBlock VerticalAlignment="Center" Text="{Binding Nom}"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
         <TextBlock DockPanel.Dock="Top" Text="{Binding CarteSelectionne}"/>
-        <Image Margin="5" MaxWidth="400" Source="Images/icon.png"/>
+        <Image Margin="5" MaxWidth="400" Source="{Binding CarteSelectionne.Image,Converter={StaticResource String2ImageConv}}"/>
     </DockPanel>
 </UserControl>

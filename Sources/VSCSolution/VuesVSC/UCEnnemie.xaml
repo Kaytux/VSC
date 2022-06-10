@@ -25,7 +25,7 @@
             <TextBlock FontSize="30" Text="{Binding EnnemieSelectionne.Description}"/>
         </ScrollViewer>
         
-        <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
+        <ItemsControl Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
 
         <TextBlock Background="Transparent" FontSize="42"  Text="{Binding EnnemieSelectionne}" DockPanel.Dock="Top" VerticalAlignment="Center"/>
 

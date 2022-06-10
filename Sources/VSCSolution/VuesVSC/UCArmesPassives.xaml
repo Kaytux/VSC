@@ -55,7 +55,7 @@
             </Button>
         </Grid>
         
-        <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
+        <ItemsControl Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
         
         <Grid DockPanel.Dock="Top" Margin="25">
             <Grid.ColumnDefinitions>

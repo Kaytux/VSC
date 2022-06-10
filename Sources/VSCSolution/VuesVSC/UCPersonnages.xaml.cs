@@ -32,8 +32,8 @@ namespace VuesVSC
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Manager.StatsSelectionne = Manager.PersonnageSelectionne.stats.ToList();
             Manager.PersonnageSelectionne = e.AddedItems[0] as Personnage;
+            Manager.StatsSelectionne = Manager.PersonnageSelectionne.stats.ToList();
         }
 
         private void Arme_Click(object sender,RoutedEventArgs e)

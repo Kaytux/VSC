@@ -20,7 +20,7 @@
         </ListBox>
         
         <TextBox Height="80" Margin="10" DockPanel.Dock="Bottom">Notes sur le personnage</TextBox>
-        <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
+        <ItemsControl Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
         <TextBlock Text="{Binding PersonnageSelectionne.Description}" DockPanel.Dock="Bottom" MinHeight="200"/>
         <Image Source="{Binding PersonnageSelectionne.Image, Converter={StaticResource String2ImageConv}}" MaxWidth="100" Margin="10" DockPanel.Dock="Left" HorizontalAlignment="Left"/>
         <Button Click="Arme_Click" DockPanel.Dock="Right" VerticalAlignment="Center">
