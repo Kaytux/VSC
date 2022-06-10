@@ -19,10 +19,8 @@ namespace BibliothequeClassesVSC
     {
         public IPersistanceManager Persistance { get; /*private*/ set; }
         public ReadOnlyCollection<ArmePassive> LesArmesPassives { get; private set; }
-
         private HashSet<ArmePassive> lesArmesPassives = new HashSet<ArmePassive>();
         public ReadOnlyCollection<ArmeActive> LesArmesActives { get; private set; }
-
         private HashSet<ArmeActive> lesArmesActives = new HashSet<ArmeActive>();
         public ReadOnlyCollection<Amelioration> LesAmeliorations { get; private set; }
         private HashSet<Amelioration> lesAmeliorations = new HashSet<Amelioration>();

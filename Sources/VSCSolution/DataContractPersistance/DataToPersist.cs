@@ -23,5 +23,7 @@ namespace DataContractPersistanceVSC
         public List<EnnemieDTO> En { get; set; } = new List<EnnemieDTO>();
         [DataMember]
         public List<CarteDTO> Ca { get; set; } = new List<CarteDTO>();
+        [DataMember]
+        public List<UtilisateurDTO> Us { get; set; } = new List<UtilisateurDTO>();
     }
 }
