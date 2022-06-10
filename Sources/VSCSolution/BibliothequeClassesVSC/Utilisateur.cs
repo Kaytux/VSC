@@ -47,6 +47,9 @@ namespace BibliothequeClassesVSC
             Id = id;
         }
 
+        /// <summary>
+        /// declaration de l'attribut Nom avec son getter et setter
+        /// </summary>
         public string Nom{get;set;}
         public IEnumerable<INote> LesNotes => lesNotes.Where(note => note.Contenu.Length >0);
         public HashSet<Note> lesNotes = new HashSet<Note>();

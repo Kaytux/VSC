@@ -32,6 +32,9 @@ namespace BibliothequeClassesVSC
         /// </summary>
         public int Niveau { get; set; }
 
+        /// <summary>
+        /// declaration d'une liste de HashSet de Stat correspondant a toute les stats qui seront modifiées par la montée de niveau d'une arme
+        /// </summary>
         public List<HashSet<Stat>> statsNiveau;
 
         /// <summary>
