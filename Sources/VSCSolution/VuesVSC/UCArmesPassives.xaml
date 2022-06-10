@@ -18,8 +18,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        
-        <TextBox Height="80" Margin="20, 5" DockPanel.Dock="Bottom" VerticalAlignment="Stretch">Notes :</TextBox>
+
+        <TextBox x:Name="tb_note" Text="{Binding NoteSelectionne.Contenu}" Height="80" Margin="20, 5" DockPanel.Dock="Bottom" VerticalAlignment="Stretch"/>
 
         <Grid DockPanel.Dock="Bottom" Margin="25" Background="{StaticResource GreyBackground}" >
             <Grid.ColumnDefinitions>

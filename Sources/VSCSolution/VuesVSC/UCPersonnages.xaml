@@ -18,8 +18,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
-        <TextBox Height="80" Margin="10" DockPanel.Dock="Bottom">Notes sur le personnage</TextBox>
+
+        <TextBox x:Name="tb_note" Text="{Binding NoteSelectionne.Contenu}" Height="80" Margin="10" DockPanel.Dock="Bottom"/>
         <ItemsControl Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
         <TextBlock Text="{Binding PersonnageSelectionne.Description}" DockPanel.Dock="Bottom" MinHeight="200"/>
         <Image Source="{Binding PersonnageSelectionne.Image, Converter={StaticResource String2ImageConv}}" MaxWidth="100" Margin="10" DockPanel.Dock="Left" HorizontalAlignment="Left"/>

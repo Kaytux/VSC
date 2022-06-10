@@ -36,6 +36,8 @@ namespace BibliothequeClassesVSC
 
         public Utilisateur Utilisateur { get; set; }
 
+        public Dictionary<ulong, Dictionary<string,string>> lesNotes=new Dictionary<ulong, Dictionary<string,string>>();
+
         public event PropertyChangedEventHandler PropertyChanged;
         public Arme ArmeSélectionné
         {
@@ -135,6 +137,20 @@ namespace BibliothequeClassesVSC
         }
         private List<Ennemie> ennCarteSelectionne;
 
+        public Utilisateur.Note NoteSelectionne
+        {
+            get => noteSelectionne;
+            set
+            {
+                if (NoteSelectionne != value)
+                {
+                    noteSelectionne = value;
+                    OnPropertyChanged(nameof(NoteSelectionne));
+                }
+            }
+        }
+        private Utilisateur.Note noteSelectionne;
+
         void OnPropertyChanged(string propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
@@ -165,6 +181,11 @@ namespace BibliothequeClassesVSC
             {
                 lesCartes.Add(donn);
             }
+            foreach(var donn in données.lesNotes)
+            {
+                lesNotes.Add(donn.Key,donn.Value);
+            }
+
             LesArmesPassives = new ReadOnlyCollection<ArmePassive>(new List<ArmePassive>(lesArmesPassives));
             LesArmesActives = new ReadOnlyCollection<ArmeActive>(new List<ArmeActive>(lesArmesActives));
             LesAmeliorations = new ReadOnlyCollection<Amelioration>(new List<Amelioration>(lesAmeliorations));
@@ -182,12 +203,28 @@ namespace BibliothequeClassesVSC
 
         public void SauvegardeDonnées()
         {
+            if(Utilisateur!=default)
+            {
+                foreach(var user in lesNotes)
+                {
+                    if(user.Key == Utilisateur.Id)
+                    {
+                        user.Value.Clear();
+                        foreach(var note in Utilisateur.lesNotes)
+                        {
+                            user.Value.Add(note.Element, note.Contenu);
+                        }
+                        break;
+                    }
+                }
+            }
             Persistance.SauvegardeDonnées(lesArmesPassives,
                                           lesArmesActives,
                                           lesAmeliorations,
                                           lesPersonnages,
                                           lesEnnemies,
-                                          lesCartes);
+                                          lesCartes,
+                                          lesNotes);
         }
 
         public Manager(IPersistanceManager persistance)
@@ -195,42 +232,12 @@ namespace BibliothequeClassesVSC
             Persistance = persistance;
         }
 
-        public void AffichList(IEnumerable<Element> liste)
+        ~Manager()
         {
-            foreach (Element ele in liste)
-            {
-                Console.WriteLine(ele.Nom);
-            }
+            Debug.WriteLine("testDestruct");
+            SauvegardeDonnées();
         }
 
-        public HashSet<T> TriNom<T>(IEnumerable<T> liste) where T : Element
-        {
-            if(!liste.Any()) return null;
-            var res = liste.OrderBy(a => a.Nom);
-
-            switch(liste.GetType())
-            {
-                case IEnumerable<ArmePassive>:
-                    LesArmesPassives = new ReadOnlyCollection<ArmePassive>(new List<ArmePassive>(lesArmesPassives));
-                    break;
-                case IEnumerable<ArmeActive>:
-                    LesArmesActives = new ReadOnlyCollection<ArmeActive>(new List<ArmeActive>(lesArmesActives));
-                    break;
-                case IEnumerable<Amelioration>:
-                    LesAmeliorations = new ReadOnlyCollection<Amelioration>(new List<Amelioration>(lesAmeliorations));
-                    break;
-                case IEnumerable<Personnage>:
-                    LesPersonnages = new ReadOnlyCollection<Personnage>(new List<Personnage>(lesPersonnages));
-                    break;
-                case IEnumerable<Ennemie>:
-                    LesEnnemies = new ReadOnlyCollection<Ennemie>(new List<Ennemie>(lesEnnemies));
-                    break;
-                case IEnumerable<Carte>:
-                    LesCartes = new ReadOnlyCollection<Carte>(new List<Carte>(lesCartes));
-                    break;
-            }
-            return res.ToHashSet();
-        }
         public void InitSteamAPI()
         {
             SteamNative.Initialize();
@@ -266,11 +273,21 @@ namespace BibliothequeClassesVSC
 
                     Utilisateur = new Utilisateur(userName, userId);
 
+                    foreach(var user in lesNotes)
+                    {
+                        if(user.Key == Utilisateur.Id)
+                        {
+                            foreach(var note in user.Value)
+                            {
+                                Utilisateur.lesNotes.Add(new Utilisateur.Note(note.Key,note.Value));
+                            }
+                            break;
+                        }
+                    }
                     return 0;
                 }
             }
         }
-
         public async Task GetSuccesJoueur()
         {
             //Web API(différente)

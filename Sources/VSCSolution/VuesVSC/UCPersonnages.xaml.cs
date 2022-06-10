@@ -28,12 +28,40 @@ namespace VuesVSC
             InitializeComponent();
             DataContext = Manager;
             Manager.StatsSelectionne = Manager.PersonnageSelectionne.stats.ToList();
+
+            if (Manager.Utilisateur != default)
+            {
+                Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.PersonnageSelectionne.Nom));
+                if (Manager.NoteSelectionne == default)
+                {
+                    Manager.Utilisateur.lesNotes.Add(new Utilisateur.Note(Manager.PersonnageSelectionne.Nom, ""));
+                    Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.PersonnageSelectionne.Nom));
+                }
+            }
+            else
+            {
+                tb_note.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Manager.PersonnageSelectionne = e.AddedItems[0] as Personnage;
             Manager.StatsSelectionne = Manager.PersonnageSelectionne.stats.ToList();
+
+            if (Manager.Utilisateur != default)
+            {
+                Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.PersonnageSelectionne.Nom));
+                if (Manager.NoteSelectionne == default)
+                {
+                    Manager.Utilisateur.lesNotes.Add(new Utilisateur.Note(Manager.PersonnageSelectionne.Nom, ""));
+                    Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.PersonnageSelectionne.Nom));
+                }
+            }
+            else
+            {
+                tb_note.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         private void Arme_Click(object sender,RoutedEventArgs e)

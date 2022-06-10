@@ -19,7 +19,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <TextBox Height="80" Margin="10" DockPanel.Dock="Bottom">Notes sur le personnage</TextBox>
+        <TextBox x:Name="tb_note" Text="{Binding NoteSelectionne.Contenu}" Height="80" Margin="10" DockPanel.Dock="Bottom"/>
 
         <ScrollViewer DockPanel.Dock="Bottom" MinHeight="150" MaxHeight="300" VerticalScrollBarVisibility="Auto">
             <TextBlock FontSize="30" Text="{Binding EnnemieSelectionne.Description}"/>

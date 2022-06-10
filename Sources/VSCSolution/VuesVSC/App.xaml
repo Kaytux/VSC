@@ -53,10 +53,6 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
 
-        <Style TargetType="ListBox">
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="{StaticResource FontVSC}"/>
             <Setter Property="Background" Value="{StaticResource GreyBackground}"/>

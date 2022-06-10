@@ -13,7 +13,8 @@ namespace Stub
                                       IEnumerable<Amelioration> lesAmeliorations,
                                       IEnumerable<Personnage> lesPersonnages,
                                       IEnumerable<Ennemie> lesEnnemies,
-                                      IEnumerable<Carte> lesCartes)
+                                      IEnumerable<Carte> lesCartes,
+                                      Dictionary<ulong, Dictionary<string, string>> lesNotes)
         {
             Debug.WriteLine("Sauvegarde demandée");
         }
@@ -23,7 +24,8 @@ namespace Stub
                 IEnumerable<Amelioration> lesAmeliorations, 
                 IEnumerable<Personnage> lesPersonnages,
                 IEnumerable<Ennemie> lesEnnemies,
-                IEnumerable<Carte> lesCartes) ChargeDonnées()
+                IEnumerable<Carte> lesCartes,
+                Dictionary<ulong, Dictionary<string, string>> lesNotes) ChargeDonnées()
         {
             HashSet<ArmePassive> lesArmesPassives = new HashSet<ArmePassive>();
             HashSet<ArmeActive> lesArmesActives = new HashSet<ArmeActive>();
@@ -32,7 +34,7 @@ namespace Stub
             HashSet<Ennemie> lesEnnemies = new HashSet<Ennemie>();
             HashSet<Carte> lesCartes = new HashSet<Carte>();
 
-            AjoutCollection(lesEnnemies,
+        AjoutCollection(lesEnnemies,
                            new Ennemie("Bat", "Bat is an enemy that appears in Mad Forest.", "Sprite-Bat.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 1), new Stat(Stat.NomStat.XpGiven, 1), new Stat(Stat.NomStat.Might, 5), new Stat(Stat.NomStat.MoveSpeed, 140), new Stat(Stat.NomStat.KnockbackReceive, 1))),
                            new Ennemie("Red-Eyed Bat", "Red-Eyed Bat is an enemy that appears in Mad Forest and Gallo Tower. It only appears as a normal enemy.", "Sprite-Red_Eyed_Bat.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 5), new Stat(Stat.NomStat.XpGiven, 1), new Stat(Stat.NomStat.Might, 5), new Stat(Stat.NomStat.MoveSpeed, 140), new Stat(Stat.NomStat.KnockbackReceive, 1))),
                            new Ennemie("Crimson Bat", "Crimson Bat is an enemy that appears in Gallo Tower. It only appears as a normal enemy.", "Sprite-Crimson_Bat.png", ConstructionParticularite(new Stat(Stat.NomStat.MaxHealth, 11), new Stat(Stat.NomStat.XpGiven, 1), new Stat(Stat.NomStat.Might, 5), new Stat(Stat.NomStat.MoveSpeed, 200), new Stat(Stat.NomStat.KnockbackReceive, 1))),
@@ -144,7 +146,8 @@ namespace Stub
 
             LiensDesClasses(lesArmesPassives, lesArmesActives, lesAmeliorations, lesCartes, lesEnnemies,lesPersonnages);
 
-            return (lesArmesPassives,lesArmesActives,lesAmeliorations, lesPersonnages, lesEnnemies, lesCartes);
+            return (lesArmesPassives, lesArmesActives, lesAmeliorations, lesPersonnages, 
+                    lesEnnemies, lesCartes, new Dictionary<ulong, Dictionary<string,string>>());
         }
         private void AjoutCollection<T>(HashSet<T> list, params T[] liste) where T : Element
         {

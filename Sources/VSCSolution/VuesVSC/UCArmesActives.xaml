@@ -19,7 +19,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBox Height="80" Margin="20, 5" DockPanel.Dock="Bottom" VerticalAlignment="Stretch">Notes :</TextBox>
+        <TextBox x:Name="tb_note" Text="{Binding NoteSelectionne.Contenu}" Height="80" Margin="20, 5" DockPanel.Dock="Bottom" VerticalAlignment="Stretch"/>
 
         <ItemsControl Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
 

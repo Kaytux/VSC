@@ -32,11 +32,34 @@ namespace VuesVSC
                 Mgr.ArmeSélectionné = Mgr.LesAmeliorations[0];
             }
             Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
+
+            if (Mgr.Utilisateur != default)
+            {
+                Mgr.NoteSelectionne = Mgr.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Mgr.ArmeSélectionné.Nom));
+                if (Mgr.NoteSelectionne == default)
+                {
+                    Mgr.Utilisateur.lesNotes.Add(new Utilisateur.Note(Mgr.ArmeSélectionné.Nom, ""));
+                    Mgr.NoteSelectionne = Mgr.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Mgr.ArmeSélectionné.Nom));
+                }
+            }
+            else
+            {
+                tb_note.Visibility = Visibility.Collapsed;
+            }
         }
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Mgr.ArmeSélectionné = e.AddedItems[0] as Arme;
             Mgr.StatsSelectionne = Mgr.ArmeSélectionné.stats.ToList();
+            if (Mgr.Utilisateur != default)
+            {
+                Mgr.NoteSelectionne = Mgr.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Mgr.ArmeSélectionné.Nom));
+                if(Mgr.NoteSelectionne == default)
+                {
+                    Mgr.Utilisateur.lesNotes.Add(new Utilisateur.Note(Mgr.ArmeSélectionné.Nom, ""));
+                    Mgr.NoteSelectionne = Mgr.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Mgr.ArmeSélectionné.Nom));
+                }
+            }
         }
         private void Passive_Click(object sender, RoutedEventArgs e)
         {

@@ -12,6 +12,7 @@ using SteamWebAPI2.Interfaces;
 using SteamWebAPI2.Utilities;
 using SteamworksSharp;
 using SteamworksSharp.Native;
+using DataContractPersistance;
 
 namespace VuesVSC
 {
@@ -20,7 +21,7 @@ namespace VuesVSC
     /// </summary>
     public partial class App : Application
     {
-        public Manager Manager { get; private set; } = new Manager(new Stub.Stub());
+        public Manager Manager { get; private set; } = new Manager(new DataContractPers());
         public Navigator Navigator { get; private set; } = new Navigator();
         public App() 
         {

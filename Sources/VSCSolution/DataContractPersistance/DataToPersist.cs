@@ -24,6 +24,6 @@ namespace DataContractPersistanceVSC
         [DataMember]
         public List<CarteDTO> Ca { get; set; } = new List<CarteDTO>();
         [DataMember]
-        public List<UtilisateurDTO> Us { get; set; } = new List<UtilisateurDTO>();
+        public Dictionary<ulong, Dictionary<string, string>> No { get; set; } = new Dictionary<ulong, Dictionary<string, string>>();
     }
 }

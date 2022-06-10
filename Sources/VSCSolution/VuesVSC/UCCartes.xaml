@@ -11,7 +11,7 @@
                  ItemsSource="{Binding LesCartes}" 
                  SelectionChanged="lBox_SelectionChanged"
                  DockPanel.Dock="Left"/>
-        <TextBox Margin="5" MinHeight="100" DockPanel.Dock="Bottom">Notes pour la page:</TextBox>
+        <TextBox x:Name="tb_note" Text="{Binding NoteSelectionne.Contenu}" Margin="5" MinHeight="100" DockPanel.Dock="Bottom"/>
         <TextBlock DockPanel.Dock="Bottom" Text="{Binding CarteSelectionne.Description}"/>
         <ItemsControl ItemsSource="{Binding ApCarteSelectionne}"
                       Style="{StaticResource lb_stats}"

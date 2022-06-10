@@ -14,6 +14,7 @@ namespace BibliothequeClassesVSC
         /// </summary>
         public interface INote
         {
+            string Element { get; }
             string Contenu { get; }
         }
         /// <summary>
@@ -21,9 +22,9 @@ namespace BibliothequeClassesVSC
         /// </summary>
         public class Note : INote
         {
-            public Element Element { get; set; }
+            public string Element { get; set; }
             public string Contenu { get; set; }
-            public Note(Element element, string contenu)
+            public Note(string element, string contenu)
             {
                 Element = element;
                 Contenu = contenu;
@@ -47,7 +48,7 @@ namespace BibliothequeClassesVSC
         }
 
         public string Nom{get;set;}
-        public IEnumerable<INote> LesNotes => lesNotes;
+        public IEnumerable<INote> LesNotes => lesNotes.Where(note => note.Contenu.Length >0);
         public HashSet<Note> lesNotes = new HashSet<Note>();
 
         public class Achievements
@@ -66,11 +67,5 @@ namespace BibliothequeClassesVSC
 
         public List<Achievements> achievements { get; set; } = new List<Achievements>();
         public ulong Id { get; set; }
-
-        public void ajouterNotes(Element e, string note) 
-        {
-            lesNotes.Add(new Note(e,note));
-        }
-        public void modifNote() { }
     }
 }

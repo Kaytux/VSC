@@ -17,6 +17,20 @@ namespace VuesVSC
             DataContext = Manager;
             Manager.ApCarteSelectionne = Manager.CarteSelectionne.LesObjetsCaches;
             Manager.EnnCarteSelectionne = Manager.CarteSelectionne.LesEnnemies;
+
+            if (Manager.Utilisateur != default)
+            {
+                Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.CarteSelectionne.Nom));
+                if (Manager.NoteSelectionne == default)
+                {
+                    Manager.Utilisateur.lesNotes.Add(new Utilisateur.Note(Manager.CarteSelectionne.Nom, ""));
+                    Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.CarteSelectionne.Nom));
+                }
+            }
+            else
+            {
+                tb_note.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

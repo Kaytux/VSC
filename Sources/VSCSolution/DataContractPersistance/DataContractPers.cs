@@ -21,6 +21,7 @@ namespace DataContractPersistance
         internal List<Personnage> LesPersonnages { get; set; } = new List<Personnage>();
         internal List<Ennemie> LesEnnemies { get; set; } = new List<Ennemie>();
         internal List<Carte> LesCartes { get; set; } = new List<Carte>();
+        internal Dictionary<ulong, Dictionary<string, string>> LesNotes { get; set; } = new Dictionary<ulong, Dictionary<string, string>>();
 
         private DataContractSerializer Serializer { get; set; } = new DataContractSerializer(typeof(DataToPersist),
                                                                                              new DataContractSerializerSettings()
@@ -33,7 +34,8 @@ namespace DataContractPersistance
                 IEnumerable<Amelioration> lesAmeliorations, 
                 IEnumerable<Personnage> lesPersonnages, 
                 IEnumerable<Ennemie> lesEnnemies, 
-                IEnumerable<Carte> lesCartes) ChargeDonnées()
+                IEnumerable<Carte> lesCartes,
+                Dictionary<ulong, Dictionary<string,string>> lesNotes) ChargeDonnées()
         {
             if(!File.Exists(PersFile))
             {
@@ -53,6 +55,7 @@ namespace DataContractPersistance
             LesArmesPassives = data.Ap.ToPOCOs().ToList();
             LesArmesActives = data.Aa.ToPOCOs().ToList();
             LesCartes = data.Ca.ToPOCOs().ToList();
+            LesNotes = data.No;
 
             LiensDesClasses(LesArmesPassives, LesArmesActives, LesAmeliorations, LesCartes, LesEnnemies,LesPersonnages);
 
@@ -61,14 +64,15 @@ namespace DataContractPersistance
                     LesAmeliorations,
                     LesPersonnages,
                     LesEnnemies,
-                    LesCartes);
+                    LesCartes,
+                    LesNotes);
         }
 
-        public void LiensDesClasses(List<ArmePassive> armesPassives, List<ArmeActive> armesActives, List<Amelioration> ameliortions, List<Carte> cartes, List<Ennemie> ennemies,List<Personnage> persos)
+        public void LiensDesClasses(List<ArmePassive> armesPassives, List<ArmeActive> armesActives, List<Amelioration> ameliortions, List<Carte> cartes, List<Ennemie> ennemies, List<Personnage> persos)
         {
-            foreach(Amelioration amelio in ameliortions)
+            foreach (Amelioration amelio in ameliortions)
             {
-                foreach(ArmeActive active in armesActives)
+                foreach (ArmeActive active in armesActives)
                 {
                     if (amelio.NomArmeAct == active.Nom)
                     {
@@ -76,9 +80,9 @@ namespace DataContractPersistance
                         active.ajouterAmelioration(amelio);
                     }
                 }
-                foreach(ArmePassive passive in armesPassives)
+                foreach (ArmePassive passive in armesPassives)
                 {
-                    if(amelio.NomArmePass == passive.Nom)
+                    if (amelio.NomArmePass == passive.Nom)
                     {
                         amelio.ArmePass = passive;
                         passive.ajouterAmelioration(amelio);
@@ -93,19 +97,19 @@ namespace DataContractPersistance
                     }
                 }
             }
-            foreach(Carte carte in cartes)
+            foreach (Carte carte in cartes)
             {
                 carte.LesEnnemies = (from en in ennemies
-                                    join nomen in carte.NomEnn on en.Nom equals nomen
-                                    select en).ToList();
+                                     join nomen in carte.NomEnn on en.Nom equals nomen
+                                     select en).ToList();
 
                 carte.LesObjetsCaches = (from ap in armesPassives
                                          join objcach in carte.NomArmPass on ap.Nom equals objcach
                                          select ap).ToList();
             }
-            foreach(Personnage p in persos)
+            foreach (Personnage p in persos)
             {
-                p.Arme = armesActives.Where(ap => ap.Nom == p.NomArme) as ArmeActive;
+                p.Arme = armesActives.Where(a => a.Nom == p.NomArme).DefaultIfEmpty().First();
             }
         }
         public void SauvegardeDonnées(IEnumerable<ArmePassive> lesArmesPassives,
@@ -113,7 +117,8 @@ namespace DataContractPersistance
                                       IEnumerable<Amelioration> lesAmeliorations,
                                       IEnumerable<Personnage> lesPersonnages,
                                       IEnumerable<Ennemie> lesEnnemies,
-                                      IEnumerable<Carte> lesCartes)
+                                      IEnumerable<Carte> lesCartes,
+                                      Dictionary<ulong, Dictionary<string, string>> lesNotes)
         {
             if (!Directory.Exists(FilePath))
             {
@@ -127,6 +132,7 @@ namespace DataContractPersistance
             data.Pe.AddRange(lesPersonnages.ToDTOs());
             data.En.AddRange(lesEnnemies.ToDTOs());
             data.Ca.AddRange(lesCartes.ToDTOs());
+            data.No = lesNotes.ToDictionary(entry => entry.Key, entry => entry.Value);
 
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(PersFile))

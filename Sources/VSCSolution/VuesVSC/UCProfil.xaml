@@ -10,28 +10,30 @@
         <TextBlock Margin="20" DockPanel.Dock="Top" Background="Transparent" FontSize="42" Text="{Binding Utilisateur.Nom}"/>
         <TextBlock DockPanel.Dock="Top" Background="Transparent" Text="Succes : (Nom / Réussis ? / Description )"/>
         <ListBox DockPanel.Dock="Left" x:Name="lBox" Background="{StaticResource GreyBackground}" ItemsSource="{Binding Utilisateur.achievements}" MaxWidth="800">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
                     <DockPanel>
                         <TextBlock Background="Transparent" >
-                            <TextBlock Background="Transparent" Text="{Binding Nom}"/>
-                            <TextBlock Background="Transparent"> :</TextBlock>
-                            <TextBlock Background="Transparent" Text="{Binding Reussis}"/>
-                            <TextBlock Background="Transparent"> :</TextBlock>  <LineBreak /> 
-                            <TextBlock Background="Transparent" Text="{Binding Desc}" TextWrapping="WrapWithOverflow"/> 
-                        </TextBlock>
-                        </DockPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        <StackPanel Margin="20" DockPanel.Dock="Right">
-            <TextBlock Text="Note :"/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-            <TextBlock Text="Test..."/>
-        </StackPanel>
+                        <TextBlock Background="Transparent" Text="{Binding Nom}"/>
+                        <TextBlock Background="Transparent"> :</TextBlock>
+                        <TextBlock Background="Transparent" Text="{Binding Reussis}"/>
+                        <TextBlock Background="Transparent"> :</TextBlock>  <LineBreak /> 
+                        <TextBlock Background="Transparent" Text="{Binding Desc}" TextWrapping="WrapWithOverflow"/> 
+                    </TextBlock>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock DockPanel.Dock="Top" Text="Note :"/>
+        <ItemsControl ItemsSource="{Binding Utilisateur.LesNotes}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Left" Text="{Binding Element}"/>
+                        <TextBlock Text="{Binding Contenu}"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </DockPanel>
 </UserControl>

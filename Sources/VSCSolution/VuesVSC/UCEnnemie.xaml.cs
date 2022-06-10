@@ -27,12 +27,40 @@ namespace VuesVSC
             InitializeComponent();
             DataContext = Manager;
             Manager.StatsSelectionne = Manager.EnnemieSelectionne.stats.ToList();
+
+            if (Manager.Utilisateur != default)
+            {
+                Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.EnnemieSelectionne.Nom));
+                if (Manager.NoteSelectionne == default)
+                {
+                    Manager.Utilisateur.lesNotes.Add(new Utilisateur.Note(Manager.EnnemieSelectionne.Nom, ""));
+                    Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.EnnemieSelectionne.Nom));
+                }
+            }
+            else
+            {
+                tb_note.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Manager.EnnemieSelectionne= e.AddedItems[0] as Ennemie;
             Manager.StatsSelectionne = Manager.EnnemieSelectionne.stats.ToList();
+
+            if (Manager.Utilisateur != default)
+            {
+                Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.EnnemieSelectionne.Nom));
+                if (Manager.NoteSelectionne == default)
+                {
+                    Manager.Utilisateur.lesNotes.Add(new Utilisateur.Note(Manager.EnnemieSelectionne.Nom, ""));
+                    Manager.NoteSelectionne = Manager.Utilisateur.lesNotes.SingleOrDefault(note => note.Element.Equals(Manager.EnnemieSelectionne.Nom));
+                }
+            }
+            else
+            {
+                tb_note.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
     }
 }
