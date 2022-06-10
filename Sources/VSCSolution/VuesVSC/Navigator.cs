@@ -13,6 +13,8 @@ namespace VuesVSC
     public class Navigator : INotifyPropertyChanged
     {
         public const string PART_MAIN = "Main";
+        public const string PART_PROFIL = "Profil";
+
         public const string PART_ARMES = "Armes";
         public const string PART_PERSONNAGES = "Personnages";
         public const string PART_ENNEMIES = "Ennemies";
@@ -22,10 +24,16 @@ namespace VuesVSC
         public const string PART_PASS = "Armes passives";
         public const string PART_AMELIO = "Améliorations";
         public const string PART_RECAP = "Récap";
+
+        public ReadOnlyDictionary<string, Func<UserControl>> WindowPartsSpecial { get; private set; }
+        Dictionary<string, Func<UserControl>> windowPartsSpecial { get; set; } = new Dictionary<string, Func<UserControl>>
+        {
+            [PART_MAIN] = () => new UCMainPage(),
+            [PART_PROFIL] = () => new UCProfil()
+        };
         public ReadOnlyDictionary<string,Func<UserControl>> WindowParts { get; private set; }
         Dictionary<string, Func<UserControl>> windowParts { get; set; } = new Dictionary<string, Func<UserControl>>
         {
-            [PART_MAIN] = () => new UCMainPage(),
             [PART_ARMES] = () => new UCTypesArmes(),
             [PART_PERSONNAGES] = () => new UCPersonnages(),
             [PART_ENNEMIES] = () => new UCEnnemie(),
@@ -44,8 +52,10 @@ namespace VuesVSC
         public Navigator()
         {
             WindowParts = new ReadOnlyDictionary<string, Func<UserControl>>(windowParts);
-            SelectedUserControlCreator = WindowParts.First();
+            WindowPartsSpecial = new ReadOnlyDictionary<string, Func<UserControl>>(windowPartsSpecial);
             WindowPartsScnd = new ReadOnlyDictionary<string, Func<UserControl>>(windowPartsScnd);
+
+            SelectedUserControlCreator = WindowPartsSpecial.First();
             SelectedUserControlCreatorScnd = WindowPartsScnd.First();
         }
 
@@ -87,6 +97,10 @@ namespace VuesVSC
                     else NavigateToScnd(windowPartNameScnd);
                 }
                 SelectedUserControlCreator = WindowParts.Single(kvp => kvp.Key == windowPartName);
+            }
+            if (WindowPartsSpecial.ContainsKey(windowPartName))
+            {
+                SelectedUserControlCreator = WindowPartsSpecial.Single(kvp => kvp.Key == windowPartName);
             }
         }
         private void NavigateToScnd(string windowPartName)

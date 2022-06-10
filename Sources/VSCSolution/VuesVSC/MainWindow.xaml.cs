@@ -21,11 +21,18 @@ namespace VuesVSC
             DataContext = this;
         }
 
-        private async void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Main_Click(object sender, RoutedEventArgs e)
+        {
+            Nav.NavigateTo(Navigator.PART_MAIN);
+            lboxMenu.SelectedIndex = -1;
+        }
+
+        private async void Steam_Click(object sender, RoutedEventArgs e)
         {
             if (Mgr.Utilisateur != null)
             {
-                contentControl.Content = new UCProfil();
+                Nav.NavigateTo(Navigator.PART_PROFIL);
+                lboxMenu.SelectedIndex = -1;
             }
             else
             {
@@ -36,7 +43,8 @@ namespace VuesVSC
                     SystemSounds.Hand.Play();
                     await Mgr.GetSuccesJoueur();
                     contentControlConnexion.Content = new UCConnecte();
-                    contentControl.Content = new UCProfil();
+                    Nav.NavigateTo(Navigator.PART_PROFIL);
+                    lboxMenu.SelectedIndex = -1;
                 }
                 else
                 {
