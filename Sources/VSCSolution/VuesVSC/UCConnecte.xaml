@@ -7,5 +7,5 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <TextBlock Style="{StaticResource MenuText}"  Text="{Binding Utilisateur.Nom}" ></TextBlock>
+    <TextBlock Style="{StaticResource MenuText}"  Text="{Binding Utilisateur.Nom}" HorizontalAlignment="Center"></TextBlock>
 </UserControl>

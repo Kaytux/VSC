@@ -36,6 +36,7 @@ namespace VuesVSC
             }
             else
             {
+                contentControlConnexion.Content = new UCChargement();
                 int test = Mgr.ChargeSteamAPI();
 
                 if (test==0)
@@ -51,10 +52,13 @@ namespace VuesVSC
                     if (test == 1)
                     {
                         MessageBox.Show("Erreur : Veuillez lancer Steam, et réessayez");
+                        contentControlConnexion.Content = new UCNonConnecte();
+
                     }
                     else if(test == 2)
                     {
                         MessageBox.Show("Erreur : Votre compte Steam ne possède pas Vampire Survivors, initialisation impossible");
+                        contentControlConnexion.Content = new UCNonConnecte();
                     }
                 }
             }
