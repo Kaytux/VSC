@@ -18,7 +18,7 @@
                 <Button Click="Main_Click" Margin="5">
                     <Image MaxHeight="120" Source="Images/icon.png"/>
                 </Button>
-                <Button DockPanel.Dock="Right" Style="{StaticResource MenuButton}" Click="Steam_Click">
+                <Button DockPanel.Dock="Right" Style="{StaticResource MenuButton}" Click="Steam_Click" Margin="10,0, 10,0">
                     <ContentControl x:Name="contentControlConnexion">
                         <local:UCNonConnecte></local:UCNonConnecte>
                     </ContentControl>
