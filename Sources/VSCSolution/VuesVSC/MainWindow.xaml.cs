@@ -35,7 +35,7 @@ namespace VuesVSC
                 {
                     SystemSounds.Hand.Play();
                     await Mgr.GetSuccesJoueur();
-                    contentControlConnexion.Content = new UCConnecte();
+                    // contentControlConnexion.Content = new UCConnecte();
                     contentControl.Content = new UCProfil();
                 }
                 else

@@ -16,11 +16,11 @@
         <TextBox Height="80" Margin="10" DockPanel.Dock="Bottom">Notes sur le personnage</TextBox>
         <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
         <TextBlock Text="{Binding PersonnageSelectionne.Description}" DockPanel.Dock="Bottom" MinHeight="200"/>
-        <Image Source="{Binding PersonnageSelectionne.Image}" MaxWidth="100" Margin="10" DockPanel.Dock="Left" HorizontalAlignment="Left"/>
+        <Image Source="{Binding PersonnageSelectionne.Image, Converter={StaticResource String2ImageConv}}" MaxWidth="100" Margin="10" DockPanel.Dock="Left" HorizontalAlignment="Left"/>
         <Button Click="Arme_Click" DockPanel.Dock="Right" VerticalAlignment="Center">
             <DockPanel>
                 <TextBlock DockPanel.Dock="Bottom" TextAlignment="Center" Text="{Binding PersonnageSelectionne.Arme}"/>
-                <Image MaxHeight="200" Source="{Binding PersonnageSelectionne.Arme.Image}"/>
+                <Image MaxHeight="200" Source="{Binding PersonnageSelectionne.Arme.Image, Converter={StaticResource String2ImageConv}}"/>
             </DockPanel>
         </Button>        
         <TextBlock Text="{Binding PersonnageSelectionne}" VerticalAlignment="Center"/>

@@ -13,7 +13,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <DockPanel>
-                        <Image Width="50" Height="50" Source="{Binding Image}"/>
+                        <Image Width="50" Height="50" Source="{Binding Image, Converter={StaticResource String2ImageConv}}"/>
                         <TextBlock Text="{Binding Nom}"/>
                     </DockPanel>
                 </DataTemplate>
@@ -33,7 +33,7 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Horizontal">
-                <Image MaxHeight="45" Source="{Binding ArmeSélectionné.Image}"/>
+                <Image MaxHeight="45" Source="{Binding ArmeSélectionné.Image, Converter={StaticResource String2ImageConv}}"/>
                 <TextBlock Background="Transparent" Text="{Binding ArmeSélectionné}"/>
             </StackPanel>
 
@@ -41,7 +41,7 @@
 
             <Button Grid.Column="2" Click="Passive_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Grid.Column="3"  Source="{Binding ArmeSélectionné.ArmePass.Image}" MaxWidth="40px"></Image>
+                    <Image Grid.Column="3"  Source="{Binding ArmeSélectionné.ArmePass.Image, Converter={StaticResource String2ImageConv}}" MaxWidth="40px"></Image>
                     <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.ArmePass}"></TextBlock>
                 </StackPanel>
             </Button>
@@ -50,7 +50,7 @@
 
             <Button Grid.Column="4" Click="Amelio_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Grid.Column="6" Source="{Binding ArmeSélectionné.Amelioration.Image}" MaxWidth="40px"></Image>
+                    <Image Grid.Column="6" Source="{Binding ArmeSélectionné.Amelioration.Image, Converter={StaticResource String2ImageConv}}" MaxWidth="40px"></Image>
                     <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.Amelioration}"></TextBlock>
                 </StackPanel>
             </Button>
@@ -62,7 +62,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image Source="{Binding ArmeSélectionné.Image}" MinWidth="50px" MaxWidth="200px"></Image>
+            <Image Source="{Binding ArmeSélectionné.Image, Converter={StaticResource String2ImageConv}}" MinWidth="50px" MaxWidth="200px"></Image>
             <TextBlock Text="{Binding ArmeSélectionné}" Padding="15" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold"/>
         </Grid>
     </DockPanel>
