@@ -19,6 +19,12 @@ namespace BibliothequeClassesVSC
         public ArmeActive(string nom, string desc, string image,HashSet<Stat> particularite, List<HashSet<Stat>> statsNiveau)
             : base(nom, desc, image, particularite, statsNiveau)
         {
+            stats.Add(new Stat(Stat.NomStat.Area, 0));
+            stats.Add(new Stat(Stat.NomStat.Speed, 0));
+            stats.Add(new Stat(Stat.NomStat.Duration , 0));
+            stats.Add(new Stat(Stat.NomStat.Amount, 0));
+            stats.Add(new Stat(Stat.NomStat.Cooldown, 0));
+
             AjoutStats(particularite);
         }
 
@@ -27,9 +33,16 @@ namespace BibliothequeClassesVSC
         /// </summary>
         public Amelioration Amelioration { get; set; }
 
+        public ArmePassive ArmePass { get; set; }
+
         public void ajouterAmelioration(Amelioration amelio)
         {
             Amelioration = amelio;
+        }
+
+        public void ajouterArmePasssive(ArmePassive arme)
+        {
+            ArmePass = arme;
         }
     } 
 }

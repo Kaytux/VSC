@@ -1,28 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BibliothequeClassesVSC;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace VuesVSC
 {
     /// <summary>
     /// Logique d'interaction pour UCCartes.xaml
     /// </summary>
+    /// 
     public partial class UCCartes : UserControl
     {
+        public Manager Manager => (App.Current as App).Manager;
         public UCCartes()
         {
             InitializeComponent();
+            DataContext = Manager;
+            Manager.ApCarteSelectionne = Manager.CarteSelectionne.LesObjetsCaches;
+            Manager.EnnCarteSelectionne = Manager.CarteSelectionne.LesEnnemies;
+        }
+
+        private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Manager.CarteSelectionne = e.AddedItems[0] as Carte;
+            Manager.ApCarteSelectionne = Manager.CarteSelectionne.LesObjetsCaches;
+            Manager.EnnCarteSelectionne = Manager.CarteSelectionne.LesEnnemies;
         }
     }
 }

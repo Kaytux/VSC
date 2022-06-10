@@ -17,15 +17,22 @@ using System.Windows.Shapes;
 namespace VuesVSC
 {
     /// <summary>
-    /// Logique d'interaction pour UCPersonnages.xaml
+    /// Logique d'interaction pour UCEnnemie.xaml
     /// </summary>
-    public partial class UCEntites : UserControl
+    public partial class UCEnnemie : UserControl
     {
         public Manager Manager => (App.Current as App).Manager;
-        public UCEntites()
+        public UCEnnemie()
         {
             InitializeComponent();
             DataContext = Manager;
+            Manager.StatsSelectionne = Manager.EnnemieSelectionne.stats.ToList();
+        }
+
+        private void lBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Manager.EnnemieSelectionne= e.AddedItems[0] as Ennemie;
+            Manager.StatsSelectionne = Manager.EnnemieSelectionne.stats.ToList();
         }
     }
 }

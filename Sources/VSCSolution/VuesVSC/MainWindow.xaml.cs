@@ -3,17 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace VuesVSC
 {
@@ -22,44 +13,55 @@ namespace VuesVSC
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Navigator Nav => (App.Current as App).Navigator;
+        public Manager Mgr => (App.Current as App).Manager;
         public MainWindow()
         {
             InitializeComponent();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new UCTypesArmes();
+            DataContext = this;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Main_Click(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCMainPage();
+            Nav.NavigateTo(Navigator.PART_MAIN);
+            lboxMenu.SelectedIndex = -1;
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private async void Steam_Click(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new UCEntites();
-        }
+            if (Mgr.Utilisateur != null)
+            {
+                Nav.NavigateTo(Navigator.PART_PROFIL);
+                lboxMenu.SelectedIndex = -1;
+            }
+            else
+            {
+                contentControlConnexion.Content = new UCChargement();
+                int test = Mgr.ChargeSteamAPI();
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            SystemSounds.Hand.Play();
-            contentControl.Content = new UCProfil();
-        }
+                if (test==0)
+                {
+                    SystemSounds.Hand.Play();
+                    await Mgr.GetSuccesJoueur();
+                    contentControlConnexion.Content = new UCConnecte();
+                    Nav.NavigateTo(Navigator.PART_PROFIL);
+                    lboxMenu.SelectedIndex = -1;
+                }
+                else
+                {
+                    if (test == 1)
+                    {
+                        MessageBox.Show("Erreur : Veuillez lancer Steam, et réessayez");
+                        contentControlConnexion.Content = new UCNonConnecte();
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new UCListe();
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            contentControl.Content = new UCListe();
-        }
-
-        private void UCMainPage_Loaded(object sender, RoutedEventArgs e)
-        {
-
+                    }
+                    else if(test == 2)
+                    {
+                        MessageBox.Show("Erreur : Votre compte Steam ne possède pas Vampire Survivors, initialisation impossible");
+                        contentControlConnexion.Content = new UCNonConnecte();
+                    }
+                }
+            }
         }
     }
 }

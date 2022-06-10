@@ -21,8 +21,10 @@ namespace InitTests
 
             string image = "/Sources/VSCSolution/VuesVSC/Images/Sprite-Hollow_Heart.png";
 
+            string nomArme = "arme";
 
-            Personnage personnage = new Personnage(nom, desc, image, particularites);
+
+            Personnage personnage = new Personnage(nom, desc, image, particularites,nomArme);
 
             Assert.Equal(nom, personnage.Nom);
 
