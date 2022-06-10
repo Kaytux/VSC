@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace VuesVSC.Converters
 {
     public class String2ImageConverter : IValueConverter
     {
-        private static string imagesPath; 
+        private static string imagesPath;
 
         static String2ImageConverter()
         {
@@ -19,9 +15,9 @@ namespace VuesVSC.Converters
         }
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string imageName= value as string;
-            
-            if (string.IsNullOrWhiteSpace(imageName)) return null; 
+            string imageName = value as string;
+
+            if (string.IsNullOrWhiteSpace(imageName)) return null;
 
             string imagePath = Path.Combine(imagesPath, imageName);
 

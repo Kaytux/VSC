@@ -1,5 +1,4 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -58,7 +57,7 @@ namespace InitTests
             statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritMultiplier, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
             statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritRate, 12) });
 
-            ArmeActive active = new ArmeActive(nom, "N/A","N/A", particularites, statsNiveau);
+            ArmeActive active = new ArmeActive(nom, "N/A", "N/A", particularites, statsNiveau);
 
             Assert.Equal(nom, active.Nom);
 

@@ -1,10 +1,7 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataContractPersistanceVSC
 {
@@ -20,7 +17,7 @@ namespace DataContractPersistanceVSC
     static class StatExtensions
     {
         public static Stat ToPOCO(this StatDTO dto)
-            => new Stat(dto.Nom,dto.Valeur);
+            => new Stat(dto.Nom, dto.Valeur);
 
         public static IEnumerable<Stat> ToPOCOs(this IEnumerable<StatDTO> dtos)
             => dtos.Select(dto => dto.ToPOCO());

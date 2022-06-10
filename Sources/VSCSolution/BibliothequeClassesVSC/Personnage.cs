@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BibliothequeClassesVSC
 {
@@ -29,7 +25,7 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.Magnet, 0));
             stats.Add(new Stat(Stat.NomStat.Area, 0));
             stats.Add(new Stat(Stat.NomStat.Speed, 0));
-            stats.Add(new Stat(Stat.NomStat.Duration , 0));
+            stats.Add(new Stat(Stat.NomStat.Duration, 0));
             stats.Add(new Stat(Stat.NomStat.Amount, 0));
             stats.Add(new Stat(Stat.NomStat.Cooldown, 0));
             stats.Add(new Stat(Stat.NomStat.Recovery, 0));

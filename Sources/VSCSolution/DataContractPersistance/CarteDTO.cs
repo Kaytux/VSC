@@ -1,10 +1,7 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataContractPersistanceVSC
 {
@@ -42,7 +39,8 @@ namespace DataContractPersistanceVSC
                 Description = poco.Description,
                 Image = poco.Image,
                 NomsEnnemies = poco.NomEnn,
-                NomsArmesPass = poco.NomArmPass};
+                NomsArmesPass = poco.NomArmPass
+            };
         public static IEnumerable<CarteDTO> ToDTOs(this IEnumerable<Carte> pocos)
             => pocos.Select(poco => poco.ToDTO());
     }

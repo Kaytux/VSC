@@ -30,7 +30,7 @@ namespace ConsoleAppVSC
             Console.WriteLine("Image path : " + Manager.LesAmeliorations[0].Image);
             Console.WriteLine("Arme Active : " + Manager.LesAmeliorations[0].ArmeAct);
             Console.WriteLine("Arme Passive : " + Manager.LesAmeliorations[0].ArmePass);
-            foreach(Stat stat in Manager.LesAmeliorations[0].stats)
+            foreach (Stat stat in Manager.LesAmeliorations[0].stats)
             {
                 Console.WriteLine("Stats : " + stat);
             }
@@ -94,6 +94,6 @@ namespace ConsoleAppVSC
                 Console.WriteLine("Stats : " + stat);
             }
 
-        } 
+        }
     }
 }

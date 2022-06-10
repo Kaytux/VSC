@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Math;
 
 namespace BibliothequeClassesVSC
 {
-    public partial class Stat :IEquatable<Stat>, IComparable<Stat>,IComparable
+    public partial class Stat : IEquatable<Stat>, IComparable<Stat>, IComparable
     {
         /// <summary>
         /// Une stat possède sa valeur
@@ -25,7 +20,7 @@ namespace BibliothequeClassesVSC
         /// </summary>
         /// <param name="nom">Nom de la stat</param>
         /// <param name="valeur">Valeur de la stat</param>
-        public Stat (NomStat nom, int valeur=0)
+        public Stat(NomStat nom, int valeur = 0)
         {
             Nom = nom;
             Valeur = valeur;
@@ -38,17 +33,17 @@ namespace BibliothequeClassesVSC
         public override string ToString()
         {
             string res = Nom.ToString() + " : ";
-            string val=Valeur.ToString();
+            string val = Valeur.ToString();
 
-            if(Math.Sign(Valeur)==1) { val = "+" + Valeur.ToString(); }
+            if (Math.Sign(Valeur) == 1) { val = "+" + Valeur.ToString(); }
             if (Valeur == 0) { return res + "-"; }
             switch (Nom)
             {
                 case Stat.NomStat.MoveSpeed:
                 case Stat.NomStat.Luck:
-                    return res+ val+"%";
+                    return res + val + "%";
             }
-            return res+val;
+            return res + val;
         }
         /// <summary>
         /// surcharge du protocole d'égalité, pour comparer deux Stat
@@ -66,9 +61,9 @@ namespace BibliothequeClassesVSC
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            if(ReferenceEquals(obj, null)) return false;
-            if(ReferenceEquals(obj, this)) return true;
-            if(obj.GetType() != this.GetType()) return false;
+            if (ReferenceEquals(obj, null)) return false;
+            if (ReferenceEquals(obj, this)) return true;
+            if (obj.GetType() != this.GetType()) return false;
             return Equals(obj as Stat);
         }
         /// <summary>
@@ -95,11 +90,11 @@ namespace BibliothequeClassesVSC
         /// <returns></returns>
         int IComparable.CompareTo(object obj)
         {
-            if(!(obj is Stat))
+            if (!(obj is Stat))
             {
                 throw new ArgumentException("Argument is not a Stat", "obj");
             }
-            Stat otherstat=obj as Stat;
+            Stat otherstat = obj as Stat;
             return this.CompareTo(otherstat);
         }
         /// <summary>

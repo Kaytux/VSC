@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
@@ -50,8 +47,8 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// declaration de l'attribut Nom avec son getter et setter
         /// </summary>
-        public string Nom{get;set;}
-        public IEnumerable<INote> LesNotes => lesNotes.Where(note => note.Contenu.Length >0);
+        public string Nom { get; set; }
+        public IEnumerable<INote> LesNotes => lesNotes.Where(note => note.Contenu.Length > 0);
         public HashSet<Note> lesNotes = new HashSet<Note>();
         /// <summary>
         /// classe interne à Utilisateur, créant un succès composé de 3 attributs (nom, desc, reussi)

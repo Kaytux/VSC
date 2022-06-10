@@ -1,5 +1,4 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -103,7 +102,7 @@ namespace InitTests
             Assert.Equal("Test", armePassive.Image);
             Assert.Equal(amelioration, armePassive.Amelioration);
         }
-        
+
         [Fact]
         public void TestAjouterArmeActive()
         {

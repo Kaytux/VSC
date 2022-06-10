@@ -1,10 +1,7 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataContractPersistanceVSC
 {
@@ -26,7 +23,7 @@ namespace DataContractPersistanceVSC
     static class PersonnageExtensions
     {
         public static Personnage ToPOCO(this PersonnageDTO dto)
-            => new Personnage(dto.Nom, dto.Description, dto.Image, dto.particularites.ToPOCOs().ToHashSet(),dto.NomArme);
+            => new Personnage(dto.Nom, dto.Description, dto.Image, dto.particularites.ToPOCOs().ToHashSet(), dto.NomArme);
 
         public static IEnumerable<Personnage> ToPOCOs(this IEnumerable<PersonnageDTO> dtos)
             => dtos.Select(dto => dto.ToPOCO());

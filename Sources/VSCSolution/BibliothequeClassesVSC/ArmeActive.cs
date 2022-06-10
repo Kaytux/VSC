@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BibliothequeClassesVSC
 {
@@ -16,12 +12,12 @@ namespace BibliothequeClassesVSC
         /// <param name="image"></param>
         /// <param name="niveau"></param>
         /// <param name="amelioration"></param>
-        public ArmeActive(string nom, string desc, string image,HashSet<Stat> particularite, List<HashSet<Stat>> statsNiveau)
+        public ArmeActive(string nom, string desc, string image, HashSet<Stat> particularite, List<HashSet<Stat>> statsNiveau)
             : base(nom, desc, image, particularite, statsNiveau)
         {
             stats.Add(new Stat(Stat.NomStat.Area, 0));
             stats.Add(new Stat(Stat.NomStat.Speed, 0));
-            stats.Add(new Stat(Stat.NomStat.Duration , 0));
+            stats.Add(new Stat(Stat.NomStat.Duration, 0));
             stats.Add(new Stat(Stat.NomStat.Amount, 0));
             stats.Add(new Stat(Stat.NomStat.Cooldown, 0));
 
@@ -55,5 +51,5 @@ namespace BibliothequeClassesVSC
         {
             ArmePass = arme;
         }
-    } 
+    }
 }

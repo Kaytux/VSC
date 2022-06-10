@@ -1,6 +1,4 @@
-﻿using Stub;
-using System;
-using BibliothequeClassesVSC;
+﻿using BibliothequeClassesVSC;
 
 namespace TestDataContract
 {

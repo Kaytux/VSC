@@ -1,5 +1,4 @@
 using BibliothequeClassesVSC;
-using System;
 using Xunit;
 
 namespace InitTests

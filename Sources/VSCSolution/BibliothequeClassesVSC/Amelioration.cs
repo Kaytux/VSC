@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BibliothequeClassesVSC
 {
@@ -40,7 +36,7 @@ namespace BibliothequeClassesVSC
         /// declaration de l'attribut ArmeAct (arme active necessaire à l'amélioration) avec son getter et setter
         /// </summary>
         public ArmeActive ArmeAct { get; set; }
-        
+
 
         /// <summary>
         /// declaration de l'attribut ArmePass (arme passive necessaire à l'amélioration) avec son getter et setter

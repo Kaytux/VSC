@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using SteamWebAPI2.Interfaces;
+using SteamWebAPI2.Utilities;
+using SteamworksSharp;
+using SteamworksSharp.Native;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
-using SteamWebAPI2.Interfaces;
-using SteamWebAPI2.Utilities;
-using SteamworksSharp;
-using SteamworksSharp.Native;
 
 namespace BibliothequeClassesVSC
 {
@@ -36,23 +31,23 @@ namespace BibliothequeClassesVSC
 
         public Utilisateur Utilisateur { get; set; }
 
-        public Dictionary<ulong, Dictionary<string,string>> lesNotes=new Dictionary<ulong, Dictionary<string,string>>();
+        public Dictionary<ulong, Dictionary<string, string>> lesNotes = new Dictionary<ulong, Dictionary<string, string>>();
 
         public event PropertyChangedEventHandler PropertyChanged;
         public Arme ArmeSélectionné
         {
-            get => armeSélectionné; 
+            get => armeSélectionné;
             set
             {
-                if(ArmeSélectionné != value)
+                if (ArmeSélectionné != value)
                 {
                     armeSélectionné = value;
                     OnPropertyChanged(nameof(ArmeSélectionné));
                 }
             }
         }
-        private Arme armeSélectionné; 
-        
+        private Arme armeSélectionné;
+
         public Personnage PersonnageSelectionne
         {
             get => personnageSelectionne;
@@ -183,9 +178,9 @@ namespace BibliothequeClassesVSC
             {
                 lesCartes.Add(donn);
             }
-            foreach(var donn in données.lesNotes)
+            foreach (var donn in données.lesNotes)
             {
-                lesNotes.Add(donn.Key,donn.Value);
+                lesNotes.Add(donn.Key, donn.Value);
             }
 
             LesArmesPassives = new ReadOnlyCollection<ArmePassive>(new List<ArmePassive>(lesArmesPassives));
@@ -208,37 +203,37 @@ namespace BibliothequeClassesVSC
         public void SauvegardeDonnées()
         {
             bool exist = false;
-            if(Utilisateur!=default)
+            if (Utilisateur != default)
             {
-                foreach(var user in lesNotes)
+                foreach (var user in lesNotes)
                 {
-                    if(user.Key == Utilisateur.Id)
+                    if (user.Key == Utilisateur.Id)
                     {
                         exist = true;
                         user.Value.Clear();
-                        foreach(var note in Utilisateur.lesNotes)
+                        foreach (var note in Utilisateur.lesNotes)
                         {
                             user.Value.Add(note.Element, note.Contenu);
                         }
                         break;
                     }
                 }
-                if(!exist)
+                if (!exist)
                 {
-                    lesNotes.Add(Utilisateur.Id,new Dictionary<string, string>());
-                    foreach(var note in Utilisateur.lesNotes)
+                    lesNotes.Add(Utilisateur.Id, new Dictionary<string, string>());
+                    foreach (var note in Utilisateur.lesNotes)
                     {
                         lesNotes[Utilisateur.Id].Add(note.Element, note.Contenu);
                     }
                 }
             }
-             Persistance.SauvegardeDonnées(lesArmesPassives,
-                                          lesArmesActives,
-                                          lesAmeliorations,
-                                          lesPersonnages,
-                                          lesEnnemies,
-                                          lesCartes,
-                                          lesNotes);
+            Persistance.SauvegardeDonnées(lesArmesPassives,
+                                         lesArmesActives,
+                                         lesAmeliorations,
+                                         lesPersonnages,
+                                         lesEnnemies,
+                                         lesCartes,
+                                         lesNotes);
         }
         /// <summary>
         /// Constructeur du Manager
@@ -273,7 +268,7 @@ namespace BibliothequeClassesVSC
             else
             {
                 Debug.WriteLine("Steam c'est bien lancé"); // une fois lancer on envoie un message pour le dire
-                
+
                 bool test = SteamApi.Initialize(1794680); // on initialise l'api sur Vampire Survivors
 
                 if (!test)
@@ -291,13 +286,13 @@ namespace BibliothequeClassesVSC
 
                     Utilisateur = new Utilisateur(userName, userId);
 
-                    foreach(var user in lesNotes)
+                    foreach (var user in lesNotes)
                     {
-                        if(user.Key == Utilisateur.Id)
+                        if (user.Key == Utilisateur.Id)
                         {
-                            foreach(var note in user.Value)
+                            foreach (var note in user.Value)
                             {
-                                Utilisateur.lesNotes.Add(new Utilisateur.Note(note.Key,note.Value));
+                                Utilisateur.lesNotes.Add(new Utilisateur.Note(note.Key, note.Value));
                             }
                             break;
                         }
@@ -319,7 +314,7 @@ namespace BibliothequeClassesVSC
 
             //Succés
 
-             var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
+            var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUserStats>(); // on créer une interface UserStats
 
             var ach = await steamUserInterface.GetPlayerAchievementsAsync(1794680, Utilisateur.Id); // on récupere les succés de l'utilisateur sur Vampire Survivors
 
@@ -331,8 +326,9 @@ namespace BibliothequeClassesVSC
                 {
                     Utilisateur.achievements.Add(new Utilisateur.Achievements(res.Current.Name, res.Current.Description, "Oui"));
                 }
-                else if(res.Current.Achieved == 0){
-                    Utilisateur.achievements.Add( new Utilisateur.Achievements(res.Current.Name, res.Current.Description, "Non"));
+                else if (res.Current.Achieved == 0)
+                {
+                    Utilisateur.achievements.Add(new Utilisateur.Achievements(res.Current.Name, res.Current.Description, "Non"));
                 }
                 Debug.WriteLine("Achievement name : " + res.Current.Name);
                 Debug.WriteLine("Achievement descirption : " + res.Current.Description);

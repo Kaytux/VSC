@@ -1,5 +1,4 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -24,7 +23,7 @@ namespace InitTests
             string nomArme = "arme";
 
 
-            Personnage personnage = new Personnage(nom, desc, image, particularites,nomArme);
+            Personnage personnage = new Personnage(nom, desc, image, particularites, nomArme);
 
             Assert.Equal(nom, personnage.Nom);
 

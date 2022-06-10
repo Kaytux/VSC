@@ -26,7 +26,7 @@ namespace InitTests
             {
                 foreach (Stat stat in ennemie.stats)
                 {
-                    if(particularite.Nom == stat.Nom)
+                    if (particularite.Nom == stat.Nom)
                     {
                         Assert.Equal(particularite, stat);
                     }

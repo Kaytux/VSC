@@ -1,11 +1,10 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using Xunit;
 
 namespace InitTests
 {
-    
+
     public class UnitTests_Carte
     {
         [Fact]
@@ -27,7 +26,7 @@ namespace InitTests
             statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.Luck, 12) });
 
             Ennemie e1 = new Ennemie("ennemie1", "desc", "img", stats);
-            Ennemie e2 = new Ennemie("ennemie2","desc" ,"img", stats);
+            Ennemie e2 = new Ennemie("ennemie2", "desc", "img", stats);
 
             ArmePassive a1 = new ArmePassive("passive1", "desc", "img", stats, statsNiveau);
             ArmePassive a2 = new ArmePassive("passive2", "desc", "img", stats, statsNiveau);
@@ -120,7 +119,7 @@ namespace InitTests
 
         //    string attente = "";
         //    int i = 1;
-            
+
         //    foreach (Ennemie ennemie in lesEnnemies)
         //    {
         //        attente = attente + "Ennemie n°" + i.ToString() + " présent dans la zone : " + ennemie.Nom;
@@ -158,7 +157,7 @@ namespace InitTests
 
         //    string attente = "";
         //    int i = 1;
-            
+
         //    foreach (ArmePassive objetCacher in lesObjetsCacher)
         //    {
         //        attente = attente + "Arme passive caché n°" + i.ToString() + " : " + objetCacher.Nom;

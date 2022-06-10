@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BibliothequeClassesVSC
 {
-    public abstract class Arme: PossedeStats
+    public abstract class Arme : PossedeStats
     {
         /// <summary>
         /// constructeur de la classe abstraite  Arme
@@ -16,7 +12,7 @@ namespace BibliothequeClassesVSC
         /// <param name="image"></param>
         /// <param name="niveau"></param>
         public Arme(string nom, string desc, string image, HashSet<Stat> lesStats, List<HashSet<Stat>> statsNiveau)
-            : base(nom, desc, image , lesStats)
+            : base(nom, desc, image, lesStats)
         {
             Niveau = 1;
             this.statsNiveau = statsNiveau;
@@ -66,7 +62,7 @@ namespace BibliothequeClassesVSC
             {
                 Niveau = Niveau - 1;
                 this.EnleverStats(statsNiveau[Niveau - 1]);
-            } 
+            }
         }
     }
 }

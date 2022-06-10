@@ -1,10 +1,7 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataContractPersistanceVSC
 {
@@ -33,12 +30,12 @@ namespace DataContractPersistanceVSC
             => new Amelioration(dto.Nom,
                                 dto.Description,
                                 dto.Image,
-                                dto.particularites.ToPOCOs().ToHashSet(), 
+                                dto.particularites.ToPOCOs().ToHashSet(),
                                 dto.NomArmeAct,
                                 dto.NomArmePass,
                                 dto.statsNiveau.ToListHashSetPOCO());
 
-        
+
 
         public static IEnumerable<Amelioration> ToPOCOs(this IEnumerable<AmeliorationDTO> dtos)
             => dtos.Select(dto => dto.ToPOCO());
@@ -55,7 +52,7 @@ namespace DataContractPersistanceVSC
                 statsNiveau = poco.statsNiveau.ToListHashSetDTO()
             };
 
-        
+
         public static IEnumerable<AmeliorationDTO> ToDTOs(this IEnumerable<Amelioration> pocos)
             => pocos.Select(poco => poco.ToDTO());
     }

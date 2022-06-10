@@ -1,5 +1,4 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using Xunit;
 
 namespace InitTests
@@ -23,7 +22,7 @@ namespace InitTests
             Utilisateur utilisateur = new Utilisateur("test", 100);
 
             Utilisateur.Achievements achievements = new Utilisateur.Achievements("test", "test1", "test2");
-            
+
             utilisateur.achievements.Add(achievements);
 
             Assert.Equal(achievements, utilisateur.achievements[0]);

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BibliothequeClassesVSC
 {
@@ -15,8 +11,8 @@ namespace BibliothequeClassesVSC
         /// <param name="desc"></param>
         /// <param name="image"></param>
         /// <param name="particularites"></param>
-        protected PossedeStats(string nom, string desc, string image, HashSet<Stat> particularites) 
-            : base(nom, desc, image) 
+        protected PossedeStats(string nom, string desc, string image, HashSet<Stat> particularites)
+            : base(nom, desc, image)
         {
             this.particularites = particularites;
         }

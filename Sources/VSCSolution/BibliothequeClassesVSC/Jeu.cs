@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BibliothequeClassesVSC
 {
@@ -13,10 +9,10 @@ namespace BibliothequeClassesVSC
         /// </summary>
         /// <param name="description"></param>
         /// <param name="patch"></param>
-        public Jeu(string description,PatchNote patch)
+        public Jeu(string description, PatchNote patch)
         {
-            Description=description;
-            Patch=patch;
+            Description = description;
+            Patch = patch;
         }
         /// <summary>
         /// declaration de l'attribut description avec son getter et setter

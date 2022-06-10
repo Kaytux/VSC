@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BibliothequeClassesVSC
 {
@@ -24,12 +20,12 @@ namespace BibliothequeClassesVSC
         /// <param name="lesEnnemies">liste des ennemies présent dans la carte</param>
         /// <param name="lesObjetsCaches">liste des objets chachés dans la carte</param>
         public Carte(string nom, string desc, string image, List<string> lesEnnemies, List<string> lesObjetsCaches)
-            :base(nom,desc,image)
+            : base(nom, desc, image)
         {
             NomEnn = lesEnnemies;
             NomArmPass = lesObjetsCaches;
         }
-        
+
         /// <summary>
         /// declaration de la list de string NomEnn qui contient le nom de tout les ennemies present sur la carte
         /// </summary>

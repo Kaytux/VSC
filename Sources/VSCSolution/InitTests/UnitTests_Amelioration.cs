@@ -1,5 +1,4 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -28,8 +27,8 @@ namespace InitTests
             statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritMultiplier, 8), new Stat(Stat.NomStat.MaxLevel, 4) });
             statsNiveau.Add(new HashSet<Stat>() { new Stat(Stat.NomStat.CritRate, 12) });
 
-            ArmeActive active = new ArmeActive("Magic Wand","N/A","N/A", particularites, statsNiveau);
-            ArmePassive passive = new ArmePassive("Empty Tome", "N/A","N/A", particularites, statsNiveau);
+            ArmeActive active = new ArmeActive("Magic Wand", "N/A", "N/A", particularites, statsNiveau);
+            ArmePassive passive = new ArmePassive("Empty Tome", "N/A", "N/A", particularites, statsNiveau);
             Amelioration amelioration = new Amelioration(nom, desc, image, particularites, "Magic Wand", "Empty Tome", statsNiveau);
 
             amelioration.ArmeAct = active;

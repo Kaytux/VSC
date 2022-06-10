@@ -1,10 +1,7 @@
 ﻿using BibliothequeClassesVSC;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataContractPersistanceVSC
 {
@@ -37,13 +34,13 @@ namespace DataContractPersistanceVSC
 
         public static ArmePassiveDTO ToDTO(this ArmePassive poco)
             => new ArmePassiveDTO
-                {
-                    Nom = poco.Nom,
-                    Description = poco.Description,
-                    Image = poco.Image,
-                    particularites = poco.particularites.ToDTOs().ToHashSet(),
-                    statsNiveau = poco.statsNiveau.ToListHashSetDTO()
-                };
+            {
+                Nom = poco.Nom,
+                Description = poco.Description,
+                Image = poco.Image,
+                particularites = poco.particularites.ToDTOs().ToHashSet(),
+                statsNiveau = poco.statsNiveau.ToListHashSetDTO()
+            };
         public static IEnumerable<ArmePassiveDTO> ToDTOs(this IEnumerable<ArmePassive> pocos)
             => pocos.Select(poco => poco.ToDTO());
     }

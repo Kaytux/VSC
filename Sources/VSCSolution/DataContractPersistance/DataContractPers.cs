@@ -1,6 +1,5 @@
 ﻿using BibliothequeClassesVSC;
 using DataContractPersistanceVSC;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,15 +28,15 @@ namespace DataContractPersistance
                                                                                                  PreserveObjectReferences = true
                                                                                              });
 
-        public (IEnumerable<ArmePassive> lesArmesPassives, 
-                IEnumerable<ArmeActive> lesArmesActives, 
-                IEnumerable<Amelioration> lesAmeliorations, 
-                IEnumerable<Personnage> lesPersonnages, 
-                IEnumerable<Ennemie> lesEnnemies, 
+        public (IEnumerable<ArmePassive> lesArmesPassives,
+                IEnumerable<ArmeActive> lesArmesActives,
+                IEnumerable<Amelioration> lesAmeliorations,
+                IEnumerable<Personnage> lesPersonnages,
+                IEnumerable<Ennemie> lesEnnemies,
                 IEnumerable<Carte> lesCartes,
-                Dictionary<ulong, Dictionary<string,string>> lesNotes) ChargeDonnées()
+                Dictionary<ulong, Dictionary<string, string>> lesNotes) ChargeDonnées()
         {
-            if(!File.Exists(PersFile))
+            if (!File.Exists(PersFile))
             {
                 throw new FileNotFoundException("the persistance file is missing");
             }
@@ -57,7 +56,7 @@ namespace DataContractPersistance
             LesCartes = data.Ca.ToPOCOs().ToList();
             LesNotes = data.No;
 
-            LiensDesClasses(LesArmesPassives, LesArmesActives, LesAmeliorations, LesCartes, LesEnnemies,LesPersonnages);
+            LiensDesClasses(LesArmesPassives, LesArmesActives, LesAmeliorations, LesCartes, LesEnnemies, LesPersonnages);
 
             return (LesArmesPassives,
                     LesArmesActives,

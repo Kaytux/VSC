@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BibliothequeClassesVSC
 {
-    public class ArmePassive:Arme
+    public class ArmePassive : Arme
     {
         /// <summary>
         /// constructeur de la classe ArmePassive
@@ -17,7 +13,7 @@ namespace BibliothequeClassesVSC
         /// <param name="niveau"></param>
         /// <param name="amelioration"></param>
         public ArmePassive(string nom, string desc, string image, HashSet<Stat> particularite, List<HashSet<Stat>> statsNiveau)
-            : base(nom, desc, image, particularite, statsNiveau) 
+            : base(nom, desc, image, particularite, statsNiveau)
         {
             AjoutStats(particularite);
         }
