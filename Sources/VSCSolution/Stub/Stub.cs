@@ -136,8 +136,9 @@ namespace Stub
                             );
                 
             AjoutCollection(lesCartes,
-                new Carte("Carte 1","","", new List<string>() { "Ennemie 1" }, new List<string>() { "Arme Passive 1" }),
-                new Carte("Carte 2", "", "", new List<string>() { "Ennemie 2" }, new List<string>() { "Arme Passive 2" }));
+                new Carte("Mad Forest", "Mad Forest is the first stage in Vampire Survivors. This stage is free and is the only stage that is unlocked from the start. It is also the only stage that is available in the demo version of the game on itch.io, the others being completely unavailable, rather than being locked like in the full version of the game.", "Sprite-Mad_Forest.png", new List<string>() { "Bat", "Red Eyed Bat", "Zombie", "Glowing Bat", "Silver Bat" }, new List<string>() { "Clover", "Hollow Heart", "Spinach" }),
+                new Carte("Carte 2", "", "", new List<string>() { "Ennemie 2" }, new List<string>() { "Arme Passive 2" })
+                );
 
             LiensDesClasses(lesArmesPassives, lesArmesActives, lesAmeliorations, lesCartes, lesEnnemies,lesPersonnages);
 
