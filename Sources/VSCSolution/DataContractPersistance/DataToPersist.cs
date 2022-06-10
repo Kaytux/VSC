@@ -6,6 +6,9 @@ namespace DataContractPersistanceVSC
     [DataContract]
     public class DataToPersist
     {
+        /// <summary>
+        /// Déclaration des collections d'éléments à serializer
+        /// </summary>
         [DataMember]
         public List<ArmePassiveDTO> Ap { get; set; } = new List<ArmePassiveDTO>();
         [DataMember]

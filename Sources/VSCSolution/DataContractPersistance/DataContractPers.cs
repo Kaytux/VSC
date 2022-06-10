@@ -10,10 +10,16 @@ namespace DataContractPersistance
 {
     public class DataContractPers : IPersistanceManager
     {
+        /// <summary>
+        /// Déclaration de l'attribut donnant le chemin du fichier XML
+        /// </summary>
         public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML");
         public string FileName { get; set; } = "vsc.xml";
         public string PersFile => Path.Combine(FilePath, FileName);
 
+        /// <summary>
+        /// Déclaration des collections recevant les éléments déserializés
+        /// </summary>
         internal List<ArmePassive> LesArmesPassives { get; set; } = new List<ArmePassive>();
         internal List<ArmeActive> LesArmesActives { get; set; } = new List<ArmeActive>();
         internal List<Amelioration> LesAmeliorations { get; set; } = new List<Amelioration>();
@@ -22,12 +28,20 @@ namespace DataContractPersistance
         internal List<Carte> LesCartes { get; set; } = new List<Carte>();
         internal Dictionary<ulong, Dictionary<string, string>> LesNotes { get; set; } = new Dictionary<ulong, Dictionary<string, string>>();
 
+        /// <summary>
+        /// Déclaration du sérializeur XML
+        /// </summary>
         private DataContractSerializer Serializer { get; set; } = new DataContractSerializer(typeof(DataToPersist),
                                                                                              new DataContractSerializerSettings()
                                                                                              {
                                                                                                  PreserveObjectReferences = true
                                                                                              });
 
+        /// <summary>
+        /// Méthode chargeant les éléments
+        /// </summary>
+        /// <returns>Les collections d'éléments chargés</returns>
+        /// <exception cref="FileNotFoundException"></exception>
         public (IEnumerable<ArmePassive> lesArmesPassives,
                 IEnumerable<ArmeActive> lesArmesActives,
                 IEnumerable<Amelioration> lesAmeliorations,
@@ -67,6 +81,15 @@ namespace DataContractPersistance
                     LesNotes);
         }
 
+        /// <summary>
+        /// Méthode créant les liens de référence entre les éléments
+        /// </summary>
+        /// <param name="armesPassives">Collection des armes passives</param>
+        /// <param name="armesActives">Collection des armes actives</param>
+        /// <param name="ameliortions">Collection des armes ameliorations</param>
+        /// <param name="cartes">Collection des cartes</param>
+        /// <param name="ennemies">Collection des ennemies</param>
+        /// <param name="persos">Collection des personnages</param>
         public void LiensDesClasses(List<ArmePassive> armesPassives, List<ArmeActive> armesActives, List<Amelioration> ameliortions, List<Carte> cartes, List<Ennemie> ennemies, List<Personnage> persos)
         {
             foreach (Amelioration amelio in ameliortions)
@@ -111,6 +134,17 @@ namespace DataContractPersistance
                 p.Arme = armesActives.Where(a => a.Nom == p.NomArme).DefaultIfEmpty().First();
             }
         }
+
+        /// <summary>
+        /// Méthode sauvegardant les données
+        /// </summary>
+        /// <param name="lesArmesPassives">Collections des armes passives</param>
+        /// <param name="lesArmesActives">Collections des armes actives</param>
+        /// <param name="lesAmeliorations">Collections des améliorations</param>
+        /// <param name="lesPersonnages">Collections des personnages</param>
+        /// <param name="lesEnnemies">Collections des ennemies</param>
+        /// <param name="lesCartes">Collections des cartes</param>
+        /// <param name="lesNotes">Collections des notes</param>
         public void SauvegardeDonnées(IEnumerable<ArmePassive> lesArmesPassives,
                                       IEnumerable<ArmeActive> lesArmesActives,
                                       IEnumerable<Amelioration> lesAmeliorations,

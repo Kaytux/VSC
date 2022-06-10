@@ -12,7 +12,13 @@ namespace BibliothequeClassesVSC
 {
     public class Manager : INotifyPropertyChanged
     {
-        public IPersistanceManager Persistance { get; /*private*/ set; }
+        /// <summary>
+        /// Déclaration de l'interface pour la persistance.
+        /// </summary>
+        public IPersistanceManager Persistance { get; private set; }
+        /// <summary>
+        /// Déclaration des collections d'éléments de l'application.
+        /// </summary>
         public ReadOnlyCollection<ArmePassive> LesArmesPassives { get; private set; }
         private HashSet<ArmePassive> lesArmesPassives = new HashSet<ArmePassive>();
         public ReadOnlyCollection<ArmeActive> LesArmesActives { get; private set; }
@@ -29,11 +35,25 @@ namespace BibliothequeClassesVSC
         public ReadOnlyCollection<Carte> LesCartes { get; private set; }
         private HashSet<Carte> lesCartes = new HashSet<Carte>();
 
+        /// <summary>
+        /// Déclaration de l'utilisateur.
+        /// Il n'est instancié que si la méthode de connexion est appelé est fonctionne.
+        /// </summary>
         public Utilisateur Utilisateur { get; set; }
 
+        /// <summary>
+        /// Déclaration du dictionnaire des notes, une paire représente toutes les notes des élements pour un seul utilisateur.
+        /// Il sera utilisé pour faire le lien avec l'utilisateur dans la persistance.
+        /// La clé représente un identifiant d'utilisateur, la valeur représente un dictionnaire de notes.
+        /// Le dictionnaire de notes a pour clé le nom de l'élément et pour valeur la note correspondante.
+        /// </summary>
         public Dictionary<ulong, Dictionary<string, string>> lesNotes = new Dictionary<ulong, Dictionary<string, string>>();
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Déclaration des élements sélectionnés dans les listbox.
+        /// </summary>
         public Arme ArmeSélectionné
         {
             get => armeSélectionné;
@@ -148,8 +168,9 @@ namespace BibliothequeClassesVSC
 
         void OnPropertyChanged(string propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
         /// <summary>
-        /// Fonction permettant de charger les données.
+        /// Méthode permettant de charger les données récupérées par la persistance dans les collections qui seront utilisées.
         /// </summary>
         public void ChargeDonnées()
         {
@@ -198,7 +219,7 @@ namespace BibliothequeClassesVSC
             EnnCarteSelectionne = CarteSelectionne.LesEnnemies;
         }
         /// <summary>
-        /// Méthode de Manager permettant la sauvegarde des données en appellant la méthode "SauvegardeDonnées" de la persistance
+        /// Méthode de Manager permettant la sauvegarde des données avec la persistance
         /// </summary>
         public void SauvegardeDonnées()
         {
