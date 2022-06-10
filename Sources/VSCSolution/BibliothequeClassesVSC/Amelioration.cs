@@ -27,7 +27,13 @@ namespace BibliothequeClassesVSC
             //passive.ajouterAmelioration(this);
         }
 
+        /// <summary>
+        /// Ajout de l'attribut NomArmeAct qui correspond au nom de l'arme active necessaire à la création de l'amélioration
+        /// </summary>
         public string NomArmeAct { get; set; }
+        /// <summary>
+        /// Ajout de l'attribut NomArmePass qui correspond au nom de l'arme passive necessaire à la création de l'amélioration
+        /// </summary>
         public string NomArmePass { get; set; }
 
         /// <summary>

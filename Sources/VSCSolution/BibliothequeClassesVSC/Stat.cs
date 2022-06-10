@@ -31,6 +31,10 @@ namespace BibliothequeClassesVSC
             Valeur = valeur;
         }
 
+        /// <summary>
+        /// redifinnition du toString de Stat
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string res = Nom.ToString() + " : ";

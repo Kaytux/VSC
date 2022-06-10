@@ -30,7 +30,14 @@ namespace BibliothequeClassesVSC
             NomArmPass = lesObjetsCaches;
         }
         
+        /// <summary>
+        /// declaration de la list de string NomEnn qui contient le nom de tout les ennemies present sur la carte
+        /// </summary>
         public List<string> NomEnn;
+
+        /// <summary>
+        /// declaration de la list de string NomArmPass qui contient le nom de tout les objets cachés présent sur la carte
+        /// </summary>
         public List<string> NomArmPass;
     }
 }
