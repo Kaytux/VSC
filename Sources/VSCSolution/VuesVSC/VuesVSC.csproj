@@ -30,6 +30,7 @@
     <None Remove="Images\Sprite-Crimson_Shroud.png" />
     <None Remove="Images\Sprite-Cross.png" />
     <None Remove="Images\Sprite-Crown.png" />
+    <None Remove="Images\Sprite-Dairy_Plant.png" />
     <None Remove="Images\Sprite-Death_Spiral.png" />
     <None Remove="Images\Sprite-Devil.png" />
     <None Remove="Images\Sprite-Dommario.png" />
@@ -44,6 +45,7 @@
     <None Remove="Images\Sprite-Flame_Dragon_Shrimp.png" />
     <None Remove="Images\Sprite-Flower.png" />
     <None Remove="Images\Sprite-Gallo.png" />
+    <None Remove="Images\Sprite-Gallo_Tower.png" />
     <None Remove="Images\Sprite-Garlic.png" />
     <None Remove="Images\Sprite-Gennaro.png" />
     <None Remove="Images\Sprite-Ghost.png" />
@@ -67,6 +69,7 @@
     <None Remove="Images\Sprite-Imelda.png" />
     <None Remove="Images\Sprite-Imp.png" />
     <None Remove="Images\Sprite-Infinite_Corridor.png" />
+    <None Remove="Images\Sprite-Inlaid_Library.png" />
     <None Remove="Images\Sprite-King_Bible.png" />
     <None Remove="Images\Sprite-Knife.png" />
     <None Remove="Images\Sprite-Krochi.png" />
@@ -77,6 +80,7 @@
     <None Remove="Images\Sprite-Lesser_Dullahan.png" />
     <None Remove="Images\Sprite-Lightning_Ring.png" />
     <None Remove="Images\Sprite-Lion_Head.png" />
+    <None Remove="Images\Sprite-Mad_Forest.png" />
     <None Remove="Images\Sprite-Magic_Wand.png" />
     <None Remove="Images\Sprite-Marrabbio.png" />
     <None Remove="Images\Sprite-Medusa_Head.png" />
@@ -181,6 +185,9 @@
     <Content Include="Images\Sprite-Cross.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Sprite-Dairy_Plant.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Sprite-Death_Spiral.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -221,6 +228,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Sprite-Gallo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Gallo_Tower.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Sprite-Garlic.png">
@@ -289,6 +299,9 @@
     <Content Include="Images\Sprite-Infinite_Corridor.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Sprite-Inlaid_Library.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Sprite-King_Bible.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -317,6 +330,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Sprite-Lion_Head.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sprite-Mad_Forest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Sprite-Magic_Wand.png">
