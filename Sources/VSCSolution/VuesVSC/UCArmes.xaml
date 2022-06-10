@@ -56,14 +56,15 @@
             </Button>
         </Grid>
 
-        <TextBlock DockPanel.Dock="Bottom" Margin="25" Text="{Binding ArmeSélectionné.Description}"/>
-        <Grid Margin="25">
+        <Grid DockPanel.Dock="Top" Margin="25">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Image Source="{Binding ArmeSélectionné.Image, Converter={StaticResource String2ImageConv}}" MinWidth="50px" MaxWidth="200px"></Image>
             <TextBlock Text="{Binding ArmeSélectionné}" Padding="15" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold"/>
         </Grid>
+
+        <TextBlock Margin="25" Text="{Binding ArmeSélectionné.Description}"/>
     </DockPanel>
 </UserControl>
