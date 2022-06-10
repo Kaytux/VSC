@@ -23,7 +23,7 @@ namespace BibliothequeClassesVSC
         /// </summary>
         /// <param name="lesEnnemies">liste des ennemies présent dans la carte</param>
         /// <param name="lesObjetsCaches">liste des objets chachés dans la carte</param>
-        public Carte(string nom, string desc, string image,  List<string> lesEnnemies, List<string> lesObjetsCaches)
+        public Carte(string nom, string desc, string image, List<string> lesEnnemies, List<string> lesObjetsCaches)
             :base(nom,desc,image)
         {
             NomEnn = lesEnnemies;
