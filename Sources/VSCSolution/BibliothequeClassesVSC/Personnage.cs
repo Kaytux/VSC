@@ -34,6 +34,7 @@ namespace BibliothequeClassesVSC
             stats.Add(new Stat(Stat.NomStat.Cooldown, 0));
             stats.Add(new Stat(Stat.NomStat.Recovery, 0));
             stats.Add(new Stat(Stat.NomStat.Armor, 0));
+            stats.Add(new Stat(Stat.NomStat.Curse, 0));
 
             AjoutStats(particularite);
         }

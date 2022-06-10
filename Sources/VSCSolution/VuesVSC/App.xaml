@@ -6,7 +6,8 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <conv:Func2WindowPartConverter x:Key="Func2WpConv"/>
-        
+        <conv:String2ImageConverter x:Key="String2ImageConv"/>
+
         <FontFamily x:Key="FontVSC">pack://application:,,,/Fonts/#Courier New</FontFamily>
         <SolidColorBrush x:Key="GreyBackground" Color="LightGray" Opacity="0.2"/>
         

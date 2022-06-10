@@ -11,21 +11,14 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <DockPanel>
-                        <Image Width="50" Height="50" Source="{Binding Image}"/>
+                        <Image Width="50" Height="50" Source="{Binding Image, Converter={StaticResource String2ImageConv}}"/>
                         <TextBlock Text="{Binding Nom}"/>
                     </DockPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Grid DockPanel.Dock="Top" Margin="25">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="4*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Image Source="{Binding ArmeSélectionné.Image}" MaxWidth="50px"></Image>
-            <TextBlock Text="{Binding ArmeSélectionné}" Padding="15" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold"/>
-        </Grid>
+        
         <TextBox Height="80" Margin="20, 5" DockPanel.Dock="Bottom" VerticalAlignment="Stretch">Notes :</TextBox>
 
         <Grid DockPanel.Dock="Bottom" Margin="25" Background="{StaticResource GreyBackground}" >
@@ -39,7 +32,7 @@
 
             <Button Click="Active_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding ArmeSélectionné.ArmeAct.Image}" MaxWidth="40px"></Image>
+                    <Image Source="{Binding ArmeSélectionné.ArmeAct.Image, Converter={StaticResource String2ImageConv}}" MaxWidth="40px"></Image>
                     <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.ArmeAct}"></TextBlock>
                 </StackPanel>
             </Button>
@@ -48,7 +41,7 @@
 
             <Button Grid.Column="2" Click="Passive_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding ArmeSélectionné.ArmePass.Image}" MaxWidth="40px"></Image>
+                    <Image Source="{Binding ArmeSélectionné.ArmePass.Image, Converter={StaticResource String2ImageConv}}" MaxWidth="40px"></Image>
                     <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmeSélectionné.ArmePass}"></TextBlock>
                 </StackPanel>
             </Button>
@@ -56,11 +49,23 @@
             <TextBlock Background="Transparent" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">=</TextBlock>
 
             <StackPanel Grid.Column="4" Orientation="Horizontal">
-                <Image MaxHeight="45" Source="{Binding ArmeSélectionné.Image}"/>
+                <Image MaxHeight="45" Source="{Binding ArmeSélectionné.Image, Converter={StaticResource String2ImageConv}}"/>
                 <TextBlock Background="Transparent" Text="{Binding ArmeSélectionné}"/>
             </StackPanel>
             
         </Grid>
+
+        <ListBox Style="{StaticResource lb_stats}" DockPanel.Dock="Right" ItemsSource="{Binding StatsSelectionne}"/>
+
+        <Grid DockPanel.Dock="Top" Margin="25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding ArmeSélectionné.Image, Converter={StaticResource String2ImageConv}}" MinWidth="50px" MaxWidth="200px"></Image>
+            <TextBlock Text="{Binding ArmeSélectionné}" Padding="15" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold"/>
+        </Grid>
+
         <TextBlock Margin="25" Text="{Binding ArmeSélectionné.Description}"/>
     </DockPanel>
 </UserControl>

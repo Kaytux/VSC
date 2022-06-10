@@ -37,21 +37,21 @@
                                 </Grid.ColumnDefinitions>
 
                             <StackPanel Orientation="Horizontal">
-                                <Image MaxHeight="45" Source="{Binding ArmeAct.Image}"/>
+                                <Image MaxHeight="45" Source="{Binding ArmeAct.Image, Converter={StaticResource String2ImageConv}}"/>
                                 <TextBlock Background="Transparent" Text="{Binding ArmeAct}"/>
                             </StackPanel>
 
                             <TextBlock Background="Transparent" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">+</TextBlock>
 
                             <StackPanel Grid.Column="2" Orientation="Horizontal">
-                                <Image Grid.Column="3"  Source="{Binding ArmePass.Image}" MaxWidth="40px"></Image>
+                                <Image Grid.Column="3"  Source="{Binding ArmePass.Image, Converter={StaticResource String2ImageConv}}" MaxWidth="40px"></Image>
                                 <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ArmePass}"></TextBlock>
                             </StackPanel>
 
                             <TextBlock Background="Transparent" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24">=</TextBlock>
 
                             <StackPanel Grid.Column="4" Orientation="Horizontal">
-                                <Image Grid.Column="6" Source="{Binding Image}" MaxWidth="40px"></Image>
+                                <Image Grid.Column="6" Source="{Binding Image, Converter={StaticResource String2ImageConv}}" MaxWidth="40px"></Image>
                                 <TextBlock Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Nom}"></TextBlock>
                             </StackPanel>
                         </Grid>
