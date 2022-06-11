@@ -15,7 +15,7 @@ namespace BibliothequeClassesVSC
         /// <summary>
         /// Déclaration de l'interface pour la persistance.
         /// </summary>
-        public IPersistanceManager Persistance { get; private set; }
+        public IPersistanceManager Persistance { get; /*private*/ set; }
         /// <summary>
         /// Déclaration des collections d'éléments de l'application.
         /// </summary>

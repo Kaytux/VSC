@@ -13,7 +13,7 @@ namespace DataContractPersistance
         /// <summary>
         /// Déclaration de l'attribut donnant le chemin du fichier XML
         /// </summary>
-        public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML");
+        public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "XML");
         public string FileName { get; set; } = "vsc.xml";
         public string PersFile => Path.Combine(FilePath, FileName);
 
