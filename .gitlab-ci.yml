@@ -23,7 +23,7 @@ doxygen:
         - mv * ../Documentation/doxygen
     artifacts:
         paths:
-            - ../Documentation/doxygen
+            - ../Documentation/doxygen/*
 
 test:
     stage: test
