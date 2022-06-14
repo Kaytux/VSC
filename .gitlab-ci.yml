@@ -14,7 +14,6 @@ build:
         - cd ../../doxygen
         - apt update && apt install -y doxygen
         - doxygen Doxyfile
-        - mv ./documentation/html/ ../Documentation/
     artifacts:
         paths:
             - $CI_PROJECT_DIR/build/release
