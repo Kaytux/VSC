@@ -14,6 +14,6 @@ pages:
     - mv doxygen/documentation/html/ /Documentation/
   artifacts:
     paths:
-      - Documentation
+      - vampire-survivors-compagnon
   only:
       - master
