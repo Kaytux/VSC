@@ -5,15 +5,20 @@
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Pages/Doxygen.gitlab-ci.yml
 
 # Full project: https://gitlab.com/pages/doxygen
-image: alpine
+image: mcr.microsoft.com/dotnet/sdk:5.0
 
-pages:
+before-script:
+  - cd
+
+build:
+  stage:
+    - build
   script:
     - apk update && apk add doxygen
     - doxygen doxygen/Doxyfile
-    - mv doxygen/documentation/html/ public/
+    - mv doxygen/documentation/html/ Documentation/
   artifacts:
     paths:
-      - public
+      - Documentation
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
