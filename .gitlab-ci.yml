@@ -11,23 +11,19 @@ build:
     script :
         - dotnet build VSCSolution-CI.sln -c Release --no-restore
         - dotnet publish VSCSolution-CI.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release
-    artifacts:
-        paths:
-            - $CI_PROJECT_DIR/build/release
-            
-
-doxygen:
-    stage: build
-    tags:
-        - doxygen
-    script:
         - cd ../../doxygen
         - apt update && apt install -y doxygen
         - doxygen Doxyfile
-        - mv ./documentation/html/ /Documentation/
+        - mv ./documentation/html/ ../Documentation/
     artifacts:
         paths:
-            - /Documentation/
+            - $CI_PROJECT_DIR/build/release
+
+doxygen:
+    stage: doxygen
+    tags:
+        -doxygen
+    script:
 
 test:
     stage: test
