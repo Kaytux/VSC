@@ -25,7 +25,6 @@ namespace VuesVSC
         private void Main_Click(object sender, RoutedEventArgs e)
         {
             Nav.NavigateTo(Navigator.PART_MAIN);
-            lboxMenu.SelectedIndex = -1;
         }
 
         private async void Steam_Click(object sender, RoutedEventArgs e)

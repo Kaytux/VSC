@@ -6,7 +6,11 @@
              xmlns:local="clr-namespace:VuesVSC"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <Border BorderThickness="3" 
+                BorderBrush="Black" 
+                CornerRadius="10">
+        <TextBlock Style="{StaticResource MenuText}" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="{StaticResource GreyBackground}" Padding="15">Synchoniser avec un compte Steam</TextBlock>
+    </Border>
 
-    <TextBlock Style="{StaticResource MenuText}" HorizontalAlignment="Center" Background="{StaticResource GreyBackground}" Padding="5px">Sign in with Steam</TextBlock>
 
 </UserControl>

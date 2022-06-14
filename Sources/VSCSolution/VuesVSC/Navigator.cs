@@ -12,7 +12,7 @@ namespace VuesVSC
 {
     public class Navigator : INotifyPropertyChanged
     {
-        public const string PART_MAIN = "Main";
+        public const string PART_MAIN = "Acceuil";
         public const string PART_PROFIL = "Profil";
 
         public const string PART_ARMES = "Armes";
@@ -34,6 +34,7 @@ namespace VuesVSC
         public ReadOnlyDictionary<string,Func<UserControl>> WindowParts { get; private set; }
         Dictionary<string, Func<UserControl>> windowParts { get; set; } = new Dictionary<string, Func<UserControl>>
         {
+            [PART_MAIN] = () => new UCMainPage(),
             [PART_ARMES] = () => new UCTypesArmes(),
             [PART_PERSONNAGES] = () => new UCPersonnages(),
             [PART_ENNEMIES] = () => new UCEnnemie(),
@@ -55,7 +56,7 @@ namespace VuesVSC
             WindowPartsSpecial = new ReadOnlyDictionary<string, Func<UserControl>>(windowPartsSpecial);
             WindowPartsScnd = new ReadOnlyDictionary<string, Func<UserControl>>(windowPartsScnd);
 
-            SelectedUserControlCreator = WindowPartsSpecial.First();
+            SelectedUserControlCreator = WindowParts.First();
             SelectedUserControlCreatorScnd = WindowPartsScnd.First();
         }
 

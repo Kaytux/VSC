@@ -8,49 +8,49 @@
         Title="Vampire Survivors Compagnon" 
         Icon="Images/icon.png" 
         WindowState="Maximized" 
-        Height="600" Width="800" MinHeight="600" MinWidth="800"
+        Height="600" Width="1000" MinHeight="600" MinWidth="1200"
         Closed="Window_Closed">
     <DockPanel>
         <DockPanel.Background >
-            <ImageBrush Stretch="UniformToFill" AlignmentY="Top" AlignmentX="Center" ImageSource="Images/introBG.png"/>
+            <ImageBrush Stretch="UniformToFill" 
+                        AlignmentY="Top" 
+                        AlignmentX="Center" 
+                        ImageSource="Images/new_wallpaper.jfif"/>
         </DockPanel.Background>
-        <Border DockPanel.Dock="Top" BorderBrush="Black" BorderThickness="0,0,0,2">
-            <DockPanel>
-                <Button Click="Main_Click" Margin="5">
-                    <Image MaxHeight="120" Source="Images/icon.png"/>
-                </Button>
-                <Button DockPanel.Dock="Right" Style="{StaticResource MenuButton}" Click="Steam_Click" Margin="10,0, 10,0">
-                    <ContentControl x:Name="contentControlConnexion">
-                        <local:UCNonConnecte></local:UCNonConnecte>
-                    </ContentControl>
-                </Button>
-                <ListBox x:Name="lboxMenu"
-                         Margin="0,10,0,10"
-                         Padding="20"
-                         DockPanel.Dock="Right" Background="{StaticResource GreyBackground}" 
-                         SelectionMode="Extended"
-                         ItemsSource="{Binding Nav.WindowParts}" 
-                         SelectedItem="{Binding Nav.SelectedUserControlCreator}"
-                         IsSynchronizedWithCurrentItem="False"
-                         VerticalAlignment="Stretch"
-                         HorizontalAlignment="Center">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel/>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Margin="100,20,100,20" Style="{StaticResource MenuText}" Text="{Binding Key}"/>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </DockPanel>
-        </Border>
+        
+        <StackPanel HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <Button Margin="5" Click="Main_Click">
+                <Image MaxHeight="100" Source="Images/icon.png"/>
+            </Button>
 
-        <ContentControl x:Name="contentControl" 
+            <ComboBox x:Name="lboxMenu"
+                      MinWidth="600"
+                        Margin="10,10,10,10"
+                        ItemsSource="{Binding Nav.WindowParts}" 
+                        SelectedItem="{Binding Nav.SelectedUserControlCreator}"
+                        IsSynchronizedWithCurrentItem="False"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Center">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Foreground="Black"
+                                   Background="White"
+                                   FontSize="60"
+                                   Text="{Binding Key}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Button Style="{StaticResource MenuButton}" Click="Steam_Click" Margin="10,0, 10,0">
+                <ContentControl Height="100" 
+                                x:Name="contentControlConnexion">
+                    <local:UCNonConnecte></local:UCNonConnecte>
+                </ContentControl>
+            </Button>
+        </StackPanel>
+
+        <ContentControl x:Name="contentControl"
                         DataContext="{Binding Nav}" 
-                        Content="{Binding SelectedUserControlCreator.Value,Converter={StaticResource Func2WpConv}}"/>
+                        Content="{Binding SelectedUserControlCreator.Value,Converter={StaticResource Func2WpConv}}" />
 
     </DockPanel>
 </Window>

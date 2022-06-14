@@ -8,8 +8,8 @@
         <conv:Func2WindowPartConverter x:Key="Func2WpConv"/>
         <conv:String2ImageConverter x:Key="String2ImageConv"/>
 
-        <FontFamily x:Key="FontVSC">pack://application:,,,/Fonts/#Courier New</FontFamily>
-        <SolidColorBrush x:Key="GreyBackground" Color="LightGray" Opacity="0.2"/>
+        <FontFamily x:Key="FontVSC">Comic Sans MS</FontFamily>
+        <SolidColorBrush x:Key="GreyBackground" Color="Black" Opacity="0.7"/>
         
         <Style x:Key="MenuButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>

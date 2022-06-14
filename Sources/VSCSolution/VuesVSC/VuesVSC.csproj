@@ -12,6 +12,7 @@
     <None Remove="icon.png" />
     <None Remove="Images\icon.png" />
     <None Remove="Images\introBG.png" />
+    <None Remove="Images\new_wallpaper.jfif" />
     <None Remove="Images\Sprite-Adept_Witch.png" />
     <None Remove="Images\Sprite-Antonio.png" />
     <None Remove="Images\Sprite-Apprentice_Witch.png" />
@@ -460,6 +461,9 @@
   <ItemGroup>
     <Resource Include="Fonts\ANY.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\new_wallpaper.jfif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 
