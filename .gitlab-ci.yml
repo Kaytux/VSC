@@ -19,12 +19,6 @@ build:
         paths:
             - $CI_PROJECT_DIR/build/release
 
-doxygen:
-    stage: doxygen
-    tags:
-        -doxygen
-    script:
-
 test:
     stage: test
     tags:
