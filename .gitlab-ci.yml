@@ -22,7 +22,7 @@ doxygen:
         - doxygen Doxyfile
     artifacts:
         paths:
-            - doxygen/Doxyfile
+            - doxygen
 
 test:
     stage: test
