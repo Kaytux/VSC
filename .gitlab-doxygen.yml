@@ -11,7 +11,7 @@ pages:
   script:
     - apk update && apk add doxygen
     - doxygen doxygen/Doxyfile
-    - mv doxygen/documentation/html/ /Documentation/
+    - cp doxygen/documentation/html/ /Documentation/
   artifacts:
     paths:
       - vampire-survivors-compagnon
