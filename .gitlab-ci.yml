@@ -19,7 +19,7 @@ build:
 doxygen:
     stage: doxygen
     tags:
-        -doxygen
+        - doxygen
     script:
         - cd ../../doxygen
         - apt update && apt install -y doxygen
