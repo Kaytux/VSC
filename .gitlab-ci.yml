@@ -20,10 +20,9 @@ doxygen:
         - cd ../../doxygen
         - apt update && apt install -y doxygen
         - doxygen Doxyfile
-        - mv * ../Documentation/doxygen
     artifacts:
         paths:
-            - ../Documentation/doxygen/*
+            - doxygen/Doxyfile
 
 test:
     stage: test
